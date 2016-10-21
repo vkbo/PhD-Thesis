@@ -7,10 +7,14 @@
 
 \documentclass[twoside,openright,12pt]{book}
 
-% Packages
+%  Packages
+%***********
+
 \usepackage[utf8]{inputenc}
 \usepackage[UKenglish]{babel}
 \usepackage[T1]{fontenc}
+
+% Layout
 \usepackage{titlesec}
 \usepackage{pdfpages}
 \usepackage{biblatex}
@@ -18,11 +22,27 @@
 \usepackage[a4paper]{geometry}
 \usepackage{setspace}
 \usepackage[garamondx,expert]{mathdesign}
-\usepackage[scaled]{berasans}
-\usepackage[scaled]{beramono}
+%\usepackage[scaled]{berasans}
+%\usepackage[scaled]{beramono}
+\usepackage[scaled]{raleway}
 \usepackage{textcomp}
 \usepackage{tgtermes}
+\usepackage{hanging}                      % Used for indented paragraphs
+\usepackage{appendix}                     % Added functionality for appendices
+\usepackage{fancyhdr}
 
+% Text
+
+% Math
+\usepackage{nicefrac}
+%\usepackage{xfrac}
+
+% Colours
+\usepackage{color}
+\definecolor{chapter}{gray}{0.6}
+\definecolor{appendix}{gray}{0.5}
+
+% Disabled
 %~ \usepackage{latexsym}
 %~ \usepackage{amsmath}
 %~ \usepackage{amssymb}
@@ -30,8 +50,6 @@
 %~ \usepackage{graphicx}
 %~ \usepackage{float}
 %~ \usepackage{listings}
-%~ \usepackage{color}
-%~ \usepackage{fancyhdr}
 %~ \usepackage{simplewick}
 %~ \usepackage{datetime}
 
@@ -44,6 +62,14 @@
 \addbibresource{Bibliography.bib}
 
 
+% Fix section numbering bug in titlesec
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+
 % Custom Commands
 %*****************
 
@@ -51,9 +77,11 @@
 \newcommand{\eq}[1]{Eq. \ref{#1}}
 \newcommand{\fig}[1]{Fig. \ref{#1}}
 \newcommand{\tbl}[1]{Table \ref{#1}}
+\newcommand{\ts}[1]{\textsuperscript{#1}}
 
 % Math Commands
 \newcommand{\unit}[1]{\,\mathrm{#1}}
+\newcommand{\funit}[2]{\,\nicefrac{\mathrm{#1}}{\mathrm{#2}}}
 \newcommand{\mexp}[1]{\mathrm{e}^{#1}}
 \newcommand{\nexp}[1]{\times 10^{#1}}
 
@@ -61,20 +89,48 @@
 % Page Layout
 %*************
 
+% Plain Page Numbering
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LE,RO]{\thepage}
+}
+
+% Header style for numbered chapters
+\newcommand{\defaulthead}{
+    \fancyhead[LE]{\nouppercase{\itshape\leftmark}}
+    \fancyhead[RO]{\nouppercase{\itshape\rightmark}}
+}
+
+% Custom heading for unnumbered chapters
+\newcommand{\simplehead}[1]{
+    \fancyhead[LE]{\nouppercase{\itshape #1}}
+    \fancyhead[RO]{\nouppercase{\itshape #1}}
+}
+
+\pagestyle{fancy}
+
 % Page Header
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ ::\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ --\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhf{}
+\defaulthead
+\headheight 15pt
+\fancyfoot[LE,RO]{\thepage}
+
+
+% Parts
+\titleformat{\part}[block]{}{}{}{\centering\fontsize{40}{50}\sffamily}
 
 % Numbered Chapters
 \titlespacing*{\chapter}{0mm}{10mm}{20mm}
-\titleformat{\chapter}[display]{\Large\scshape}{\chaptertitlename\ \thechapter}{8mm}{\huge\scshape}[\titlerule]
-
-% Unnumbered Chapters
-\titlespacing*{name=\chapter,numberless}{0mm}{0mm}{8mm}
-\titleformat{name=\chapter,numberless}[hang]{}{}{0mm}{\centering\Large\scshape}
+\titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\huge\sffamily}
 
 % Sections
-\titleformat{\section}{\large\bfseries}{\thesection}{2mm}{\large}
+\titleformat{\section}{\large\sffamily}{\thesection}{2mm}{\large}
+\titleformat{\subsection}{\normalsize\sffamily}{\thesubsection}{2mm}{}
 
 
 % Main Document
@@ -82,22 +138,55 @@
 
 \begin{document}
 
+% Front Matters
+
 \frontmatter
     \input{includes/incFrontPage}
     \input{includes/incAbstract}
     \input{includes/incAcknowledgements}
     \tableofcontents
 
+% Main Matters
+
+\pagestyle{fancy}
+
 \mainmatter
-\chapter{Introduction}
-Introduction text
-\section{Test section}
-Section text
-\chapter{Paper 1}
-Loading of a plasma-wakefield accelerator section driven by a self-modulated proton bunch
-\includepdf[pages=1-last,openright]{includes/incPaper1.pdf}
+    \input{chapters/chIntroduction}
+
+
+% Formatting for Appendices and Publications
+\titleformat{\chapter}[display]%
+    {\Large\sffamily}%
+    {\textcolor{appendix}\chaptertitlename\ \textcolor{appendix}\thechapter}%
+    {8mm}%
+    {\Large\sffamily}
+
+% Appendices
+
+\part*{Appendices}
+\appendix
+    \chapter{First Appendix}
+    Text
+    \chapter{Second Appendix}
+    Text
+
+% Publications
+
+\part*{Publications}
+\renewcommand\appendixtocname{Publications}
+\renewcommand\appendixname{Publication}
+\pagestyle{plain}
 
 \appendix
+    \renewcommand{\thechapter}{\Roman{chapter}}
+    \input{includes/incIPAC15}
+    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC15-WEPWA026.pdf}
+    \input{includes/incNAPAC16}
+    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/NAPAC16-TUA4CO03.pdf}
+
+% Back Matters
+
 \backmatter
+\printbibliography
 
 \end{document}
