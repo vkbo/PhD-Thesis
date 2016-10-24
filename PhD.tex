@@ -30,6 +30,7 @@
 \usepackage{hanging}                      % Used for indented paragraphs
 \usepackage{appendix}                     % Added functionality for appendices
 \usepackage{fancyhdr}
+\usepackage{tocloft}                      % For modifying the Table of Contents
 
 % Text
 
@@ -54,13 +55,15 @@
 %~ \usepackage{datetime}
 
 % Package Settings
+%==================
+
+% Layout
 \geometry{twoside,margin=2.5cm}
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\ttdefault}{pcr}
 \AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
 \addbibresource{Bibliography.bib}
-
 
 % Fix section numbering bug in titlesec
 \usepackage{etoolbox}
@@ -69,6 +72,13 @@
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}
 \makeatother
 
+% TOC
+\renewcommand\cftpartfont{\sffamily\large}
+\renewcommand\cftpartpagefont{\mdseries}
+\renewcommand\cftchapfont{\mdseries}
+\renewcommand\cftchappagefont{\mdseries}
+\renewcommand\cfttoctitlefont{\huge\sffamily}
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 % Custom Commands
 %*****************
@@ -144,7 +154,10 @@
     \input{includes/incFrontPage}
     \input{includes/incAbstract}
     \input{includes/incAcknowledgements}
+    \tocloftpagestyle{plain}
+    \cleardoublepage
     \tableofcontents
+    \cleardoublepage
 
 % Main Matters
 
@@ -152,6 +165,7 @@
 
 \mainmatter
     \input{chapters/chIntroduction}
+    \input{chapters/chPWFA}
 
 
 % Formatting for Appendices and Publications
@@ -161,14 +175,20 @@
     {8mm}%
     {\Large\sffamily}
 
+\addtocontents{toc}{\cftpagenumbersoff{part}}
+
 % Appendices
 
 \part*{Appendices}
 \appendix
     \chapter{First Appendix}
     Text
+    \section{One}
+    Section
     \chapter{Second Appendix}
     Text
+    \section{One}
+    Section
 
 % Publications
 
