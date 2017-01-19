@@ -136,7 +136,11 @@
 
 % Numbered Chapters
 \titlespacing*{\chapter}{0mm}{10mm}{20mm}
-\titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\huge\sffamily}
+\titleformat{\chapter}[hang]%
+    {\fontsize{60}{70}\sffamily}%
+    {\textcolor{chapter}\thechapter}%
+    {8mm}%
+    {\huge\sffamily}
 
 % Sections
 \titleformat{\section}{\large\sffamily}{\thesection}{2mm}{\large}
@@ -202,9 +206,19 @@
 \appendix
     \renewcommand{\thechapter}{\Roman{chapter}}
     \input{includes/incIPAC15}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC15-WEPWA026.pdf}
+    \includepdf[
+        pages=1-last,
+        openright,
+        scale=0.95,
+        pagecommand={}
+    ]{files/IPAC15-WEPWA026.pdf}
     \input{includes/incNAPAC16}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/NAPAC16-TUA4CO03.pdf}
+    \includepdf[
+        pages=1-last,
+        openright,
+        scale=0.95,
+        pagecommand={}
+    ]{files/NAPAC16-TUA4CO03.pdf}
 
 % Back Matters
 
