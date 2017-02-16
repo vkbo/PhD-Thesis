@@ -3,14 +3,62 @@
 % =======
 %
 
-\chapter{Computing Tools and Data Acquisition}
+\chapter{Tools and Data Acquisition}
 \label{Ch:Tools}
+
+The OSIRIS simulation code does not include a data analysis framework. It has been very useful to develop a tool for effective analysis of the large amount of data produced by these simulations.
+
+For the experiment itself a portion of the PhD project has been spent developing data acquistion tools and integrating these with the existing CERN data acquisition infrastructure.
+
+As of the time of writing, the OsirisAnalysis framework is publicly available on GitHub \cite{berglyd_olsen_osirisanalysis:_2013}.
 
 % =============================================================================================== %
 \section{Osiris Analysis Framework}
 \label{Tools:OA}
 
-Some text.
+The OsirisAnalysis framweork is a modular and object oriented data analysis framweork written in MATLAB. It was designed as a three layer tool to wrap a single data set of OSIRIS simulation data.
+
+\begin{itemize}
+    \item \textbf{Layer 1:} Cosnists of the core datawrapper, OsirisData, which provides an interface through which raw data files as well as the simulation input file is parsed. It provides a uniform method for extracting data, and gives access to all the simulation parameters and conversion factors for converting Osiris' normalised units into SI units.
+    \item \textbf{Layer 2:} The second layer consists of a set of classes that takes an OsirisData object as input, and returns standardised structs of data that can be scaled and converted to prefered units. They perform often needed tools and methods to parse data and extract more detailed information from the larger raw datasets.
+    \item \textbf{Layer 3:} The third layer consist of a number of useful standardised plots and a GUI tool to quickly do a preliminary analysis of simulation data.
+\end{itemize}
+
+The philosophy behind this layering of the analysis tool is to allow the user the freedom to choose how many of these they will use. Only using the first layer will give the user access to all the simulation parameters as well as a method to extract data in a standardised manner and return a simple matrix of its content. Adding the second layer gives additional access to automatic unit conversion and other tools if needed. The third layer is entirely optional and simply provides a quick way to browse through the data.
+
+% =============================================================================================== %
+\subsection{OsirisAnalysis Core Objects}
+\label{Tools:OALay1}
+
+The innermost layer consists of two classes OsirisData and OsirisConfig.
+
+The OsirisData class wraps the simulation data folder and is the core interface through which data is extracted. The class also provides some simple methods for extracting information about the dataset like physical dimensions of the beam and the distribution of the plasma.
+
+The OsirisConfig class is a wrapper for the input file itself, and contains a parser for this file which extracts all the relevant information for both analysis and provides lists of available diagnostics for the graphical user interface (GUI). All conversion factors to SI units are calculated on the fly when the input file is loaded. The OsirisConfig class is not intended to be called by the user, but is found as a child object of the OsirisData data object.
+
+% =============================================================================================== %
+\subsection{OsirisAnalysis Data Types}
+\label{Tools:OALay2}
+
+The secondary layer of the OsirisAnalysis framework is a set of subclasses under a parent class named OsirisType. The subclasses will give access to specific types of data more or less directly related to the diagnostics types produced by the OSIRIS simulation code.
+
+The classes provided are:
+
+\begin{itemize}
+    \item \textbf{Density and Field:} These are classes that produce grid diagnostics data for the particle density data dumps or the field diagnostics data. They support all the different density diagnostics outputs of Osiris, and will in addition calculate the wakefields from the magnetic and electric fields given by $W = F/q = E - v \times B$.
+    \item \textbf{Momentum:} The Momentum class consists of a set of methods that will calculate the evolution of the beams energy and momentum over several time dumps.
+    \item \textbf{Phase:} The Phase class provides several tools for phase space diagnostics, including calculations of Twiss parameters.
+    \item \textbf{UDist:} This class is similar to the Dnesity and Field classes, and provides methods to process velocity and thermal distribution data.
+    \item \textbf{Species:} The Species class provides a few additional specialised tools for calculating energy deposition and gain into and from the plasma by the beams, and is also the class where particle tracking data is parsed.
+\end{itemize}
+
+In addition to these data parsing classes, there is also a Variables class that will translate Osiris diagnostics variables into readable forms and into strings usable for plot labels. There is also a MathFunc class that provides a math parser that emulates the one used by OSIRIS to parse mathematical functions from the input files. This class is mainly used to extract geometric information about beam density based on the function provided in the input file without the need to first run the code to provide raw particle data.
+
+% =============================================================================================== %
+\subsection{OsirisAnalysis Graphical Interface and Plots}
+\label{Tools:OALay3}
+
+The final layer of the OsirisAnalysis framwork is a set of very flexible plotting tools. Most of them have a long list of optional input argument. Most of these optional arguments are available through a graphical interface also written in MATLAB named AnalysisGUI.
 
 % =============================================================================================== %
 \section{Data Acquisition Classes for FESA}
