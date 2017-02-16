@@ -1,8 +1,13 @@
+##
+# PhD Thesis main Makefile
+##
 
+# Dependencies
 APPENDS  = apxPIC.tex
-CHAPTERS = chIntroduction.tex chWakefield.tex chSimulations.tex chSummary.tex
+CHAPTERS = chIntroduction.tex chWakefield.tex chSimulations.tex chTools.tex chSummary.tex
 DEPENDS  = $(addprefix chapters/,$(CHAPTERS)) $(addprefix appendices/,$(APPENDS))
 
+# EPS figures
 FIGURES := $(wildcard figures/*.eps)
 FIGURES := $(patsubst %.eps,%.pdf,$(FIGURES))
 
