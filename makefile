@@ -3,8 +3,8 @@
 ##
 
 # Dependencies
-APPENDS  = apxPIC.tex
-CHAPTERS = chIntroduction.tex chWakefield.tex chSimulations.tex chTools.tex chSummary.tex
+APPENDS  = apxPIC.tex apxAnalysis.tex
+CHAPTERS = chIntroduction.tex chWakefield.tex chSimulations.tex chDataAcquisition.tex chSummary.tex
 DEPENDS  = $(addprefix chapters/,$(CHAPTERS)) $(addprefix appendices/,$(APPENDS))
 
 # EPS figures
