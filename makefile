@@ -22,3 +22,5 @@ PhD.pdf: PhD.tex $(DEPENDS) $(FIGURES)
 
 clean:
 	latexmk -CA
+	rm PhD.bbl
+	rm PhD.run.xml
