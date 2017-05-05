@@ -3,17 +3,19 @@
 ##
 
 # Dependencies
-APPENDS  = apxPIC.tex apxAnalysis.tex
-CHAPTERS = chIntroduction.tex chWakefield.tex chSimulations.tex chDataAcquisition.tex chSummary.tex
-DEPENDS  = $(addprefix chapters/,$(CHAPTERS)) $(addprefix appendices/,$(APPENDS))
+APPENDS  := $(wildcard appendices/*.tex)
+CHAPTERS := $(wildcard chapters/*.tex)
+INCLUDES := $(wildcard includes/*.tex)
+DEPENDS   = $(APPENDS) $(CHAPTERS) $(INCLUDES)
 
-# EPS figures
+# Files and Figures
+FILES   := $(wildcard files/*.pdf)
 FIGURES := $(wildcard figures/*.eps)
 FIGURES := $(patsubst %.eps,%.pdf,$(FIGURES))
 
 all: PhD.pdf
 
-PhD.pdf: PhD.tex $(DEPENDS) $(FIGURES)
+PhD.pdf: PhD.tex $(DEPENDS) $(FIGURES) $(FILES)
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make PhD.tex
 	latexmk -c
 

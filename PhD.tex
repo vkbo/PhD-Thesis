@@ -10,14 +10,24 @@
 %  Packages
 %***********
 
+% Main
 \usepackage[utf8]{inputenc}
 \usepackage[UKenglish]{babel}
 \usepackage[T1]{fontenc}
 
+% Bibliography
+\usepackage[
+    backend=biber,
+    style=numeric,
+    natbib=true,
+    url=false,
+    doi=true,
+    eprint=false
+]{biblatex}
+
 % Layout
 \usepackage{titlesec}
 \usepackage{pdfpages}
-\usepackage[backend=biber]{biblatex}
 \usepackage{emptypage}
 \usepackage[a4paper]{geometry}
 \usepackage{setspace}
@@ -63,7 +73,20 @@
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\ttdefault}{pcr}
 \AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
+
+% Bibliography
 \addbibresource{Bibliography.bib}
+\AtEveryBibitem{
+    %\clearfield{day}
+    %\clearfield{month}
+    %\clearfield{title}
+    %\clearfield{series}
+    %\clearfield{note}
+    %\clearlist{location}
+    %\clearlist{institution}
+    %\clearlist{language}
+    %\clearname{editor}
+}
 
 % Fix section numbering bug in titlesec
 \usepackage{etoolbox}
@@ -131,7 +154,6 @@
 \headheight 15pt
 \fancyfoot[LE,RO]{\thepage}
 
-
 % Parts
 \titleformat{\part}[block]{}{}{}{\centering\fontsize{40}{50}\sffamily}
 
@@ -176,7 +198,6 @@
     \input{chapters/chDataAcquisition}
     \input{chapters/chSummary}
 
-
 % Formatting for Appendices and Publications
 \titleformat{\chapter}[display]%
     {\Large\sffamily}%
@@ -216,13 +237,20 @@
         scale=0.95,
         pagecommand={}
     ]{files/NAPAC16-TUA4CO03.pdf}
-    \input{includes/incPeerRev17}
     \input{includes/incIPAC17}
+    \includepdf[
+        pages=1-last,
+        openright,
+        scale=0.95,
+        pagecommand={}
+    ]{files/IPAC17-TUPIK061.pdf}
+    \input{includes/incPeerRev17}
 
 % Back Matters
 
 \backmatter
 \printbibliography
+\null
 
 \end{document}
 
