@@ -289,6 +289,17 @@ FUNCTION {format.url}
   if$
 }
 
+FUNCTION {add.url}
+{ duplicate$ empty$
+    { skip$ }
+    { url empty$
+        {}
+        {"\href{" url * "}{" * swap$ * "}" *}
+      if$
+    }
+  if$
+}
+
 FUNCTION {format.doi}
 { doi empty$
     { "" }
@@ -701,7 +712,7 @@ FUNCTION {article}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title add.url "title" output.check
   new.block
   crossref missing$
     { journal emphasize "journal" output.check
@@ -720,7 +731,7 @@ FUNCTION {article}
   if$
   format.issn output
   format.doi output
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -855,7 +866,7 @@ FUNCTION {inproceedings}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title add.url "title" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -882,7 +893,7 @@ FUNCTION {inproceedings}
   if$
   format.isbn output
   format.doi output
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -912,7 +923,7 @@ FUNCTION {mastersthesis}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title add.url "title" output.check
   new.block
   "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
@@ -929,12 +940,12 @@ FUNCTION {misc}
   format.authors output
   author format.key output
   title howpublished new.block.checkb
-  format.title output
+  format.title add.url output
   howpublished new.block.checka
   howpublished output
   format.date output
   format.issn output
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
