@@ -16,14 +16,21 @@
 \usepackage[T1]{fontenc}
 
 % Bibliography
+%~ \usepackage[
+    %~ backend=biber,
+    %~ style=numeric,
+    %~ natbib=true,
+    %~ url=false,
+    %~ doi=true,
+    %~ eprint=false
+%~ ]{biblatex}
 \usepackage[
-    backend=biber,
-    style=numeric,
-    natbib=true,
-    url=false,
-    doi=true,
-    eprint=false
-]{biblatex}
+    square,
+    numbers,
+    sort&compress
+]{natbib}
+\bibliographystyle{plainnat}
+%~ \bibliographystyle{apsrev4-1}
 
 % Layout
 \usepackage{titlesec}
@@ -41,6 +48,8 @@
 \usepackage{appendix}                     % Added functionality for appendices
 \usepackage{fancyhdr}
 \usepackage{tocloft}                      % For modifying the Table of Contents
+\usepackage{hyperref}                     % Managing links
+\usepackage{url}                          % Managing links
 
 % Text
 
@@ -67,6 +76,9 @@
 % Package Settings
 %==================
 
+% Links
+\hypersetup{colorlinks=true, citecolor=blue, urlcolor=blue, linkcolor=blue}
+
 % Layout
 \geometry{twoside,margin=2.5cm}
 \renewcommand{\rmdefault}{ptm}
@@ -75,18 +87,18 @@
 \AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
 
 % Bibliography
-\addbibresource{Bibliography.bib}
-\AtEveryBibitem{
-    %\clearfield{day}
-    %\clearfield{month}
-    %\clearfield{title}
-    %\clearfield{series}
-    %\clearfield{note}
-    %\clearlist{location}
-    %\clearlist{institution}
-    %\clearlist{language}
-    %\clearname{editor}
-}
+%~ \addbibresource{Bibliography.bib}
+%~ \AtEveryBibitem{
+    %~ %\clearfield{day}
+    %~ %\clearfield{month}
+    %~ %\clearfield{title}
+    %~ %\clearfield{series}
+    %~ %\clearfield{note}
+    %~ %\clearlist{location}
+    %~ %\clearlist{institution}
+    %~ %\clearlist{language}
+    %~ %\clearname{editor}
+%~ }
 
 % Fix section numbering bug in titlesec
 \usepackage{etoolbox}
@@ -249,7 +261,8 @@
 % Back Matters
 
 \backmatter
-\printbibliography
+\bibliography{Bibliography}
+%~ \printbibliography
 \null
 
 \end{document}

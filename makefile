@@ -10,17 +10,22 @@ DEPENDS   = $(APPENDS) $(CHAPTERS) $(INCLUDES)
 
 # Files and Figures
 FILES   := $(wildcard files/*.pdf)
-FIGURES := $(wildcard figures/*.eps)
-FIGURES := $(patsubst %.eps,%.pdf,$(FIGURES))
+FIGEPS  := $(wildcard figures/*.eps)
+FIGSVG  := $(wildcard figures/*.svg)
+FIGEPS  := $(patsubst %.eps,%.pdf,$(FIGEPS))
+FIGSVG  := $(patsubst %.svg,%.pdf,$(FIGSVG))
 
 all: PhD.pdf
 
-PhD.pdf: PhD.tex $(DEPENDS) $(FIGURES) $(FILES)
+PhD.pdf: PhD.tex $(DEPENDS) $(FIGEPS) $(FIGSVG) $(FILES)
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make PhD.tex
 	latexmk -c
 
 %.pdf : %.eps
 	epstopdf $<
+
+%.pdf : %.svg
+	inkscape -f $< -A $@
 
 clean:
 	latexmk -CA
