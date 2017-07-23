@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,6 +11,32 @@ V.~K. Berglyd~Olsen.
   {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}.
 \newblock {GitHub} {Repository}, 2013.
 \newblock \url{https://github.com/Jadzia626/OsirisAnalysis}.
+
+\bibitem[Berglyd~Olsen et~al.(2015)Berglyd~Olsen, Adli, Muggli, Amorim, and
+  Vieira]{berglyd_olsen:2015}
+V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, L.~D. Amorim, and J.~Vieira.
+\newblock
+  \href{https://jacowfs.jlab.org/conf/proceedings/IPAC2015/papers/wepwa026.pdf}{Loading
+  of a {Plasma}-{Wakefield} {Accelerator} {Section} {Driven} by a
+  {Self}-{Modulated} {Proton} {Bunch}}.
+\newblock In \emph{Proceedings of {IPAC} 2015}, pages 2551--2554, Richmond, VA,
+  USA, May 2015.
+\newblock ISBN 978-3-95450-168-7.
+
+\bibitem[Berglyd~Olsen et~al.(2016)Berglyd~Olsen, Adli, Muggli, and
+  Vieira]{berglyd_olsen:2016}
+V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, and J.~Vieira.
+\newblock Loading of {Wakefields} in a {Plasma} {Accelerator} {Section}
+  {Driven} by a {Self}-{Modulated} {Proton} {Beam}.
+\newblock In \emph{Proceedings of {NAPAC} 2016}, Chicago, IL, USA, Oct. 2016.
+
+\bibitem[Berglyd~Olsen et~al.(2017)Berglyd~Olsen, Batkiewicz, Deghaye, Gessner,
+  Gschwendtner, and Muggli]{berglyd_olsen:2017}
+V.~K. Berglyd~Olsen, J.~J. Batkiewicz, S.~Deghaye, S.~J. Gessner,
+  E.~Gschwendtner, and P.~Muggli.
+\newblock \href{http://vrws.de/ipac2017/papers/tupik061.pdf}{Data {Acquisition}
+  and {Controls} {Integration} of the {AWAKE} {Experiment} at {CERN}}.
+\newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May 2017.
 
 \bibitem[Braun et~al.(2003)Braun, Döbert, Wilson, and Wuensch]{braun:2003}
 H.~H. Braun, S.~Döbert, I.~Wilson, and W.~Wuensch.

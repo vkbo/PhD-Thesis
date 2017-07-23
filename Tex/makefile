@@ -30,4 +30,3 @@ PhD.pdf: PhD.tex $(DEPENDS) $(FIGEPS) $(FIGSVG) $(FILES)
 clean:
 	latexmk -CA
 	rm PhD.bbl
-	rm PhD.run.xml
