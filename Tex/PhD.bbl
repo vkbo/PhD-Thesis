@@ -8,7 +8,9 @@
 \bibitem[Berglyd~Olsen(2013)]{berglyd_olsen:2013}
 V.~K. Berglyd~Olsen.
 \newblock \href{https://github.com/Jadzia626/OsirisAnalysis}{{OsirisAnalysis}:
-  {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}, 2013.
+  {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}.
+\newblock {GitHub} {Repository}, 2013.
+\newblock \url{https://github.com/Jadzia626/OsirisAnalysis}.
 
 \bibitem[Braun et~al.(2003)Braun, Döbert, Wilson, and Wuensch]{braun:2003}
 H.~H. Braun, S.~Döbert, I.~Wilson, and W.~Wuensch.
@@ -24,7 +26,7 @@ H.~H. Braun, S.~Döbert, I.~Wilson, and W.~Wuensch.
 D.~P. Pritzkau and R.~H. Siemann.
 \newblock
   \href{http://link.aps.org/doi/10.1103/PhysRevSTAB.5.112002}{Experimental
-  study of rf pulsed heating on oxygen free electronic copper}.
+  {Study} of {RF} {Pulsed} {Heating} on {Oxygen} {Free} {Electronic} {Copper}}.
 \newblock \emph{Physical Review Special Topics - Accelerators and Beams},
   5\penalty0 (11):\penalty0 112002, Nov. 2002.
 \newblock \doi{10.1103/PhysRevSTAB.5.112002}.

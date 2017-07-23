@@ -285,7 +285,7 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "URL \url{" url * "}" * }
+    { new.block "\url{" url * "}" * }
   if$
 }
 
@@ -906,13 +906,13 @@ FUNCTION {manual}
   format.authors output
   author format.key output
   new.block
-  format.btitle "title" output.check
+  format.btitle add.url "title" output.check
   organization address new.block.checkb
   organization output
   address output
   format.edition output
   format.date output
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -941,11 +941,13 @@ FUNCTION {misc}
   author format.key output
   title howpublished new.block.checkb
   format.title add.url output
+  new.block
+  "" format.thesis.type output.nonnull
   howpublished new.block.checka
   howpublished output
   format.date output
   format.issn output
-  %format.url output
+  format.url output
   new.block
   note output
   fin.entry
@@ -957,13 +959,13 @@ FUNCTION {phdthesis}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.btitle "title" output.check
+  format.btitle add.url "title" output.check
   new.block
   "PhD thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
   format.date "year" output.check
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -974,7 +976,7 @@ FUNCTION {proceedings}
   format.editors output
   editor format.key output
   new.block
-  format.btitle "title" output.check
+  format.btitle add.url "title" output.check
   format.bvolume output
   format.number.series output
   address output
@@ -984,7 +986,7 @@ FUNCTION {proceedings}
   publisher output
   format.isbn output
   format.doi output
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -995,13 +997,13 @@ FUNCTION {techreport}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title add.url "title" output.check
   new.block
   format.tr.number output.nonnull
   institution "institution" output.check
   address output
   format.date "year" output.check
-  format.url output
+  %format.url output
   new.block
   note output
   fin.entry
@@ -1012,11 +1014,11 @@ FUNCTION {unpublished}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.title add.url "title" output.check
   new.block
   note "note" output.check
   format.date output
-  format.url output
+  %format.url output
   fin.entry
 }
 

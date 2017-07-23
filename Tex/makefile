@@ -6,7 +6,7 @@
 APPENDS  := $(wildcard appendices/*.tex)
 CHAPTERS := $(wildcard chapters/*.tex)
 INCLUDES := $(wildcard includes/*.tex)
-DEPENDS   = $(APPENDS) $(CHAPTERS) $(INCLUDES)
+DEPENDS   = $(APPENDS) $(CHAPTERS) $(INCLUDES) Bibliography.bib
 
 # Files and Figures
 FILES   := $(wildcard files/*.pdf)

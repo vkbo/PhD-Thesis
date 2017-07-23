@@ -48,8 +48,6 @@
 \usepackage{appendix}                     % Added functionality for appendices
 \usepackage{fancyhdr}
 \usepackage{tocloft}                      % For modifying the Table of Contents
-\usepackage{hyperref}                     % Managing links
-\usepackage{url}                          % Managing links
 
 % Text
 
@@ -69,6 +67,12 @@
 \definecolor{m-cyan}  {rgb}{0.301,0.745,0.933}
 \definecolor{m-brown} {rgb}{0.635,0.078,0.184}
 
+% Links
+\usepackage{hyperref}
+\usepackage{url}
+\hypersetup{colorlinks=true, citecolor=m-red, urlcolor=m-blue, linkcolor=m-blue}
+\urlstyle{same}
+
 % Disabled
 %~ \usepackage{latexsym}
 %~ \usepackage{amsmath}
@@ -82,9 +86,6 @@
 
 % Package Settings
 %==================
-
-% Links
-\hypersetup{colorlinks=true, citecolor=m-blue, urlcolor=m-blue, linkcolor=m-blue}
 
 % Layout
 \geometry{twoside,margin=2.5cm}
@@ -269,8 +270,9 @@
 % Back Matters
 
 \backmatter
+\addcontentsline{toc}{part}{End Matters}
+\addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Bibliography}
-%~ \printbibliography
 \null
 
 \end{document}
