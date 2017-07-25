@@ -68,6 +68,7 @@
 \definecolor{m-brown} {rgb}{0.635,0.078,0.184}
 
 % Links
+\usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{url}
 \hypersetup{colorlinks=true, citecolor=m-red, urlcolor=m-blue, linkcolor=m-blue}
@@ -95,7 +96,7 @@
 \AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
 
 % Bibliography
-\citeindextrue
+%~ \citeindextrue
 %~ \addbibresource{Bibliography.bib}
 %~ \AtEveryBibitem{
     %~ %\clearfield{day}
@@ -201,10 +202,18 @@
 
 \frontmatter
     \input{includes/incFrontPage}
+
+    \cleardoublepage
+    \pdfbookmark{Abstract}{Abstract}
     \input{includes/incAbstract}
+
+    \cleardoublepage
+    \pdfbookmark{Acknowledgements}{Acknowledgements}
     \input{includes/incAcknowledgements}
+
     \tocloftpagestyle{plain}
     \cleardoublepage
+    \pdfbookmark{\contentsname}{Contents}
     \tableofcontents
     \cleardoublepage
 
@@ -228,49 +237,54 @@
 
 \addtocontents{toc}{\cftpagenumbersoff{part}}
 
-% Appendices
-
-\part*{Appendices}
-\appendix
-    \input{appendices/apxPIC}
-    \input{appendices/apxAnalysis}
-
 % Publications
 
+\cleardoublepage
+\bookmarksetup{startatroot}
+\phantomsection{}
 \part*{Publications}
+\label{A:Pub}
+
 \renewcommand\appendixtocname{Publications}
 \renewcommand\appendixname{Publication}
 \pagestyle{plain}
 
 \appendix
+    \setcounter{chapter}{0}
     \renewcommand{\thechapter}{\Roman{chapter}}
+    \renewcommand{\theHchapter}{\Roman{chapter}}
     \input{includes/incIPAC15}
-    \includepdf[
-        pages=1-last,
-        openright,
-        scale=0.95,
-        pagecommand={}
-    ]{files/IPAC15-WEPWA026.pdf}
+    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC15-WEPWA026.pdf}
     \input{includes/incNAPAC16}
-    \includepdf[
-        pages=1-last,
-        openright,
-        scale=0.95,
-        pagecommand={}
-    ]{files/NAPAC16-TUA4CO03.pdf}
+    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/NAPAC16-TUA4CO03.pdf}
     \input{includes/incIPAC17}
-    \includepdf[
-        pages=1-last,
-        openright,
-        scale=0.95,
-        pagecommand={}
-    ]{files/IPAC17-TUPIK061.pdf}
+    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC17-TUPIK061.pdf}
     \input{includes/incPeerRev17}
+
+% Appendices
+
+\cleardoublepage
+\bookmarksetup{startatroot}
+\phantomsection{}
+\part*{Appendices}
+\label{A:App}
+
+\renewcommand\appendixtocname{Appendices}
+\renewcommand\appendixname{Appendix}
+
+\appendix
+    \setcounter{chapter}{0}
+    \renewcommand{\thechapter}{\Alph{chapter}}
+    \renewcommand{\theHchapter}{\Alph{chapter}}
+    \input{appendices/apxPIC}
+    \input{appendices/apxAnalysis}
 
 % Back Matters
 
 \backmatter
-\addcontentsline{toc}{part}{End Matters}
+\bookmarksetup{startatroot}
+\cleardoublepage
+\phantomsection
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Bibliography}
 \null
