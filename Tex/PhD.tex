@@ -25,7 +25,8 @@
     %~ eprint=false
 %~ ]{biblatex}
 \usepackage[
-    square,
+    %square,
+    super,
     numbers,
     sort&compress
 ]{natbib}
@@ -49,7 +50,8 @@
 \usepackage{fancyhdr}
 \usepackage{tocloft}                      % For modifying the Table of Contents
 
-% Text
+% Hyphenation
+\hyphenation{wave-length}
 
 % Math
 \usepackage{nicefrac}
@@ -59,6 +61,8 @@
 \usepackage{color}
 \definecolor{chapter}{gray}{0.6}
 \definecolor{appendix}{gray}{0.5}
+\definecolor{d-blue}  {rgb}{0.000,0.200,0.741}
+\definecolor{d-red}   {rgb}{0.850,0.125,0.000}
 \definecolor{m-blue}  {rgb}{0.000,0.447,0.741}
 \definecolor{m-red}   {rgb}{0.850,0.325,0.098}
 \definecolor{m-yellow}{rgb}{0.929,0.694,0.125}
@@ -71,13 +75,13 @@
 \usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{url}
-\hypersetup{colorlinks=true, citecolor=m-red, urlcolor=m-blue, linkcolor=m-blue}
+\hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=d-blue}
 \urlstyle{same}
 
 % Disabled
 %~ \usepackage{latexsym}
-%~ \usepackage{amsmath}
-%~ \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 %~ \usepackage{cite}
 %~ \usepackage{graphicx}
 %~ \usepackage{float}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,6 +38,20 @@ V.~K. Berglyd~Olsen, J.~J. Batkiewicz, S.~Deghaye, S.~J. Gessner,
   and {Controls} {Integration} of the {AWAKE} {Experiment} at {CERN}}.
 \newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May 2017.
 
+\bibitem[Blumenfeld et~al.(2007)Blumenfeld, Clayton, Decker, Hogan, Huang,
+  Ischebeck, Iverson, Joshi, Katsouleas, Kirby, Lu, Marsh, Mori, Muggli, Oz,
+  Siemann, Walz, and Zhou]{blumenfeld:2007}
+I.~Blumenfeld, C.~E. Clayton, F.-J. Decker, M.~J. Hogan, C.~Huang,
+  R.~Ischebeck, R.~Iverson, C.~Joshi, T.~Katsouleas, N.~Kirby, W.~Lu, K.~A.
+  Marsh, W.~B. Mori, P.~Muggli, E.~Oz, R.~H. Siemann, D.~Walz, and M.~Zhou.
+\newblock
+  \href{http://www.nature.com/nature/journal/v445/n7129/full/nature05538.html}{Energy
+  doubling of 42 {GeV} electrons in a metre-scale plasma wakefield
+  accelerator}.
+\newblock \emph{Nature}, 445\penalty0 (7129):\penalty0 741--744, Feb. 2007.
+\newblock ISSN 0028-0836.
+\newblock \doi{10.1038/nature05538}.
+
 \bibitem[Braun et~al.(2003)Braun, Döbert, Wilson, and Wuensch]{braun:2003}
 H.~H. Braun, S.~Döbert, I.~Wilson, and W.~Wuensch.
 \newblock
@@ -48,6 +62,28 @@ H.~H. Braun, S.~Döbert, I.~Wilson, and W.~Wuensch.
   June 2003.
 \newblock \doi{10.1103/PhysRevLett.90.224801}.
 
+\bibitem[Chen et~al.(1985)Chen, Dawson, Huff, and Katsouleas]{chen:1985}
+P.~Chen, J.~M. Dawson, R.~W. Huff, and T.~Katsouleas.
+\newblock
+  \href{http://link.aps.org/doi/10.1103/PhysRevLett.54.693}{Acceleration of
+  {Electrons} by the {Interaction} of a {Bunched} {Electron} {Beam} with a
+  {Plasma}}.
+\newblock \emph{Physical Review Letters}, 54\penalty0 (7):\penalty0 693--696,
+  Feb. 1985.
+\newblock \doi{10.1103/PhysRevLett.54.693}.
+
+\bibitem[Kallos et~al.(2008)Kallos, Katsouleas, Kimura, Kusche, Muggli,
+  Pavlishin, Pogorelsky, Stolyarov, and Yakimenko]{kallos:2008}
+E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
+  I.~Pogorelsky, D.~Stolyarov, and V.~Yakimenko.
+\newblock
+  \href{https://link.aps.org/doi/10.1103/PhysRevLett.100.074802}{High-{Gradient}
+  {Plasma}-{Wakefield} {Acceleration} with {Two} {Subpicosecond} {Electron}
+  {Bunches}}.
+\newblock \emph{Physical Review Letters}, 100\penalty0 (7):\penalty0 074802,
+  Feb. 2008.
+\newblock \doi{10.1103/PhysRevLett.100.074802}.
+
 \bibitem[Pritzkau and Siemann(2002)]{pritzkau:2002}
 D.~P. Pritzkau and R.~H. Siemann.
 \newblock
@@ -56,5 +92,16 @@ D.~P. Pritzkau and R.~H. Siemann.
 \newblock \emph{Physical Review Special Topics - Accelerators and Beams},
   5\penalty0 (11):\penalty0 112002, Nov. 2002.
 \newblock \doi{10.1103/PhysRevSTAB.5.112002}.
+
+\bibitem[Rosenzweig et~al.(1988)Rosenzweig, Cline, Cole, Figueroa, Gai,
+  Konecny, Norem, Schoessow, and Simpson]{rosenzweig:1988}
+J.~B. Rosenzweig, D.~B. Cline, B.~Cole, H.~Figueroa, W.~Gai, R.~Konecny,
+  J.~Norem, P.~Schoessow, and J.~Simpson.
+\newblock
+  \href{https://link.aps.org/doi/10.1103/PhysRevLett.61.98}{Experimental
+  {Observation} of {Plasma} {Wake}-{Field} {Acceleration}}.
+\newblock \emph{Physical Review Letters}, 61\penalty0 (1):\penalty0 98--101,
+  July 1988.
+\newblock \doi{10.1103/PhysRevLett.61.98}.
 
 \end{thebibliography}
