@@ -1,3 +1,11 @@
+%%
+%  Modified Citation Style for PhD Thesis
+% ========================================
+%  By Veronica Berglyd Olsen
+%%
+
+%% Original header:
+%%
 %% File: `abbrvnat.bst'
 %% A modification of `abbrv.bst' for use with natbib package 
 %%

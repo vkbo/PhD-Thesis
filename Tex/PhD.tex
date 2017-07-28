@@ -7,55 +7,72 @@
 
 \documentclass[twoside,openright,12pt]{book}
 
-%  Packages
-%***********
+% ==================================================================================================================== %
+
+% Main Packages
+%***************
 
 % Main
 \usepackage[utf8]{inputenc}
 \usepackage[UKenglish]{babel}
 \usepackage[T1]{fontenc}
 
-% Bibliography
-%~ \usepackage[
-    %~ backend=biber,
-    %~ style=numeric,
-    %~ natbib=true,
-    %~ url=false,
-    %~ doi=true,
-    %~ eprint=false
-%~ ]{biblatex}
-\usepackage[
-    %square,
-    super,
-    numbers,
-    sort&compress
-]{natbib}
-\bibliographystyle{PhD}
-\usepackage{doi}
-
-% Layout
-\usepackage{titlesec}
-\usepackage{pdfpages}
-\usepackage{emptypage}
-\usepackage[a4paper]{geometry}
-\usepackage{setspace}
-\usepackage[garamondx,expert]{mathdesign}
-%\usepackage[scaled]{berasans}
-%\usepackage[scaled]{beramono}
-\usepackage[scaled]{raleway}
-\usepackage{textcomp}
-\usepackage{tgtermes}
-\usepackage{hanging}                      % Used for indented paragraphs
-\usepackage{appendix}                     % Added functionality for appendices
-\usepackage{fancyhdr}
-\usepackage{tocloft}                      % For modifying the Table of Contents
-
-% Hyphenation
-\hyphenation{wave-length}
-
 % Math
 \usepackage{nicefrac}
 %\usepackage{xfrac}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Bibliography
+\usepackage[super,numbers,sort&compress]{natbib}
+\bibliographystyle{PhD}                   % Custom citation style PhD.bst
+\usepackage{doi}                          % Makes DOIs clickable
+
+% Layout
+\usepackage[a4paper]{geometry}            % Page geometry
+\usepackage{emptypage}                    % Prevents page numbers on empty pages
+\usepackage{setspace}                     % Line spacing
+\usepackage{titlesec}                     % Alternative section titles
+\usepackage{fancyhdr}                     % Changing headers and footers
+\usepackage{tocloft}                      % For modifying the Table of Contents
+\usepackage{hanging}                      % Used for indented paragraphs
+\usepackage{appendix}                     % Added functionality for appendices
+
+% Fonts
+\usepackage[garamondx,expert]{mathdesign} % Adds additional math symbols
+\usepackage[scaled]{raleway}              % Raleway font for titles
+\usepackage{textcomp}                     % Adds additional text symbols
+\usepackage{tgtermes}                     % TEX Gyre Termes font
+
+% Content
+\usepackage{pdfpages}                     % Include PDF files
+
+% Disabled
+%~ \usepackage{latexsym}
+%~ \usepackage{cite}
+%~ \usepackage{graphicx}
+%~ \usepackage{float}
+%~ \usepackage{listings}
+%~ \usepackage{simplewick}
+%~ \usepackage{datetime}
+
+% ==================================================================================================================== %
+
+% Document Layout
+%*****************
+
+\geometry{twoside,margin=2.5cm}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{pcr}
+\AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
+
+% Fix section numbering bug in titlesec
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
 
 % Colours
 \usepackage{color}
@@ -78,49 +95,6 @@
 \hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=d-blue}
 \urlstyle{same}
 
-% Disabled
-%~ \usepackage{latexsym}
-\usepackage{amsmath}
-\usepackage{amssymb}
-%~ \usepackage{cite}
-%~ \usepackage{graphicx}
-%~ \usepackage{float}
-%~ \usepackage{listings}
-%~ \usepackage{simplewick}
-%~ \usepackage{datetime}
-
-% Package Settings
-%==================
-
-% Layout
-\geometry{twoside,margin=2.5cm}
-\renewcommand{\rmdefault}{ptm}
-\renewcommand{\sfdefault}{phv}
-\renewcommand{\ttdefault}{pcr}
-\AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
-
-% Bibliography
-%~ \citeindextrue
-%~ \addbibresource{Bibliography.bib}
-%~ \AtEveryBibitem{
-    %~ %\clearfield{day}
-    %~ %\clearfield{month}
-    %~ %\clearfield{title}
-    %~ %\clearfield{series}
-    %~ %\clearfield{note}
-    %~ %\clearlist{location}
-    %~ %\clearlist{institution}
-    %~ %\clearlist{language}
-    %~ %\clearname{editor}
-%~ }
-
-% Fix section numbering bug in titlesec
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
-\patchcmd{\ttlh@hang}{\noindent}{}{}{}
-\makeatother
-
 % TOC
 \renewcommand\cftpartfont{\sffamily\large}
 \renewcommand\cftpartpagefont{\mdseries}
@@ -129,8 +103,13 @@
 \renewcommand\cfttoctitlefont{\huge\sffamily}
 %\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
+% ==================================================================================================================== %
+
 % Custom Commands
 %*****************
+
+% Hyphenation
+\hyphenation{wave-length}
 
 % Text
 \newcommand{\eq}[1]{Eq. \ref{#1}}
@@ -185,11 +164,7 @@
 
 % Numbered Chapters
 \titlespacing*{\chapter}{0mm}{10mm}{20mm}
-\titleformat{\chapter}[hang]%
-    {\fontsize{60}{70}\sffamily}%
-    {\textcolor{chapter}\thechapter}%
-    {8mm}%
-    {\huge\sffamily}
+\titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\huge\sffamily}
 
 % Sections
 \titleformat{\section}{\large\sffamily}{\thesection}{2mm}{\large}
