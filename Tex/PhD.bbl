@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,10 +7,10 @@
 
 \bibitem[Berglyd~Olsen(2013)]{berglyd_olsen:2013}
 V.~K. Berglyd~Olsen.
-\newblock \href{https://github.com/Jadzia626/OsirisAnalysis}{{OsirisAnalysis}:
+\newblock \href{https://github.com/vkbo/OsirisAnalysis}{{OsirisAnalysis}:
   {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}.
 \newblock {GitHub} {Repository}, 2013.
-\newblock \url{https://github.com/Jadzia626/OsirisAnalysis}.
+\newblock \url{https://github.com/vkbo/OsirisAnalysis}.
 
 \bibitem[Berglyd~Olsen et~al.(2015)Berglyd~Olsen, Adli, Muggli, Amorim, and
   Vieira]{berglyd_olsen:2015}
@@ -30,13 +30,22 @@ V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, and J.~Vieira.
   {Driven} by a {Self}-{Modulated} {Proton} {Beam}.
 \newblock In \emph{Proceedings of {NAPAC} 2016}, Chicago, IL, USA, Oct. 2016.
 
-\bibitem[Berglyd~Olsen et~al.(2017)Berglyd~Olsen, Batkiewicz, Deghaye, Gessner,
-  Gschwendtner, and Muggli]{berglyd_olsen:2017}
+\bibitem[Berglyd~Olsen et~al.(2017{\natexlab{a}})Berglyd~Olsen, Adli, and
+  Muggli]{berglyd_olsen:2017-1}
+V.~K. Berglyd~Olsen, E.~Adli, and P.~Muggli.
+\newblock \href{http://arxiv.org/abs/1710.04858}{Emittance preservation of an
+  electron beam in a loaded quasi-linear plasma wakefield}.
+\newblock \emph{arXiv:1710.04858 [physics]}, Oct. 2017{\natexlab{a}}.
+\newblock arXiv: 1710.04858.
+
+\bibitem[Berglyd~Olsen et~al.(2017{\natexlab{b}})Berglyd~Olsen, Batkiewicz,
+  Deghaye, Gessner, Gschwendtner, and Muggli]{berglyd_olsen:2017}
 V.~K. Berglyd~Olsen, J.~J. Batkiewicz, S.~Deghaye, S.~J. Gessner,
   E.~Gschwendtner, and P.~Muggli.
 \newblock \href{http://vrws.de/ipac2017/papers/tupik061.pdf}{Data {Acquisition}
   and {Controls} {Integration} of the {AWAKE} {Experiment} at {CERN}}.
-\newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May 2017.
+\newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May
+  2017{\natexlab{b}}.
 
 \bibitem[Blumenfeld et~al.(2007)Blumenfeld, Clayton, Decker, Hogan, Huang,
   Ischebeck, Iverson, Joshi, Katsouleas, Kirby, Lu, Marsh, Mori, Muggli, Oz,
@@ -72,6 +81,15 @@ P.~Chen, J.~M. Dawson, R.~W. Huff, and T.~Katsouleas.
   Feb. 1985.
 \newblock \doi{10.1103/PhysRevLett.54.693}.
 
+\bibitem[Courant and Snyder(1958)]{courant:1958}
+E.~D. Courant and H.~S. Snyder.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/0003491658900125}{Theory
+  of the alternating-gradient synchrotron}.
+\newblock \emph{Annals of Physics}, 3\penalty0 (1):\penalty0 1--48, Jan. 1958.
+\newblock ISSN 0003-4916.
+\newblock \doi{10.1016/0003-4916(58)90012-5}.
+
 \bibitem[Kallos et~al.(2008)Kallos, Katsouleas, Kimura, Kusche, Muggli,
   Pavlishin, Pogorelsky, Stolyarov, and Yakimenko]{kallos:2008}
 E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
@@ -83,6 +101,15 @@ E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
 \newblock \emph{Physical Review Letters}, 100\penalty0 (7):\penalty0 074802,
   Feb. 2008.
 \newblock \doi{10.1103/PhysRevLett.100.074802}.
+
+\bibitem[Lu et~al.(2005)Lu, Huang, Zhou, Mori, and Katsouleas]{lu:2005}
+W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
+\newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.1905587}{Limits of
+  linear plasma wakefield theory for electron or positron beams}.
+\newblock \emph{Physics of Plasmas}, 12\penalty0 (6):\penalty0 063101, May
+  2005.
+\newblock ISSN 1070-664X.
+\newblock \doi{10.1063/1.1905587}.
 
 \bibitem[Pritzkau and Siemann(2002)]{pritzkau:2002}
 D.~P. Pritzkau and R.~H. Siemann.

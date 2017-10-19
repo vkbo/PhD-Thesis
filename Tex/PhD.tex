@@ -24,7 +24,8 @@
 \usepackage{amssymb}
 
 % Bibliography
-\usepackage[super,numbers,sort&compress]{natbib}
+% \usepackage[super,numbers,sort&compress]{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{PhD}                   % Custom citation style PhD.bst
 \usepackage{doi}                          % Makes DOIs clickable
 
@@ -46,6 +47,10 @@
 
 % Content
 \usepackage{pdfpages}                     % Include PDF files
+
+% Tables
+\usepackage{caption} 
+\captionsetup[table]{skip=8pt}
 
 % Disabled
 %~ \usepackage{latexsym}
@@ -124,6 +129,12 @@
 \newcommand{\mexp}[1]{\mathrm{e}^{#1}}
 \newcommand{\nexp}[1]{\times 10^{#1}}
 
+% Values
+\newcommand{\emitN}[0]{\epsilon_{\mathrm{N}}}
+\newcommand{\emitg}[0]{\epsilon_{\mathrm{g}}}
+\newcommand{\gammar}[0]{\gamma_{\mathrm{r}}}
+\newcommand{\betar}[0]{\beta_{\mathrm{r}}}
+
 % ================================================================================================ %
 
 % Page Layout
@@ -190,6 +201,10 @@
     \cleardoublepage
     \pdfbookmark{Acknowledgements}{Acknowledgements}
     \input{includes/incAcknowledgements}
+
+    \cleardoublepage
+    \pdfbookmark{Notes}{Notes}
+    \input{includes/incNotes}
 
     \tocloftpagestyle{plain}
     \cleardoublepage
