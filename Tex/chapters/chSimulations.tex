@@ -60,16 +60,21 @@ Emittance is preserved in the linear regime
 \subsection{Beam Matching}
 \label{Sim:Match}
 
-Text
+In the non-linear $n_{b} > n_{0}$ case where an ion column is formed, the focusing force it produces will cause a pinching effect on the beam. The beam itself, assuming $\emitN > 0$, will cause the beam to try to expand. There exists a beam radius where the focusing force and the beam's tendency to expand are in equilibrium. For a highly relativistic beam, $\gammar \gg 1$, the equilibrium radius is \cite{krall:1995}
+\begin{equation}
+    R_{\mathrm{eq}} = \left( 8 \frac{\emitN^2}{\gammar} \frac{c^2}{\omega_{p}^2} \right)^{1/4} \label{EQ:Sim:Req}
+\end{equation}
+
+Equation \ref{EQ:Sim:Req} follows from the general enevolpe equation \cite{lee:1976} under the assumption that the beam enters the plasma at focus (i.e. $\deriv{\sigma_{r}}/\deriv{z} = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995} \dash the latter being the case in the blow-out regime.
 
 % ================================================================================================ %
 
 \subsection{The Quasi-linear + Non-Linear Case}
 \label{Sim:QLinNonLin}
 
-An electron beam matched to the typical AWAKE plasma density will be, as discussed in \ref{Sim:Match}, very narrow. At a typical normalised emittance of $2.0\unit{\mu m}$ the beam is $5.25\unit{\mu m}$. Even at low beam charge and at the upper limit in terms of beam length, the wakefields of such a beam will quickly reach the non-linear regime. In the base case used in the beam loading study included in Publication \ref{Pub:BL17} \cite{berglyd_olsen:2017-1} the peak density of the beam $n_{b}/n_{0} = 35$, well beyond the saturation level of the bubble that occurs when $n_{b}/n_{0} > 10$ \cite{lu:2005}.
+An electron beam matched to the typical AWAKE plasma density will be, as discussed in \ref{Sim:Match}, very narrow. At a typical normalised emittance of $2.0\unit{\mu m}$ the beam is $5.25\unit{\mu m}$. Even at low beam charge and at the upper limit in terms of beam length, the wakefields of such a beam will quickly reach the non-linear regime. In the base case used in the beam loading study included in Publication \ref{Pub:BL17} \cite{berglyd_olsen:2017-1} the peak density of the beam $n_b/n_0 > 35$, well beyond the saturation level of the bubble that occurs when $n_b/n_0 > 10$ \cite{lu:2005}.
 
-The implication here is that there is an additional benefitial effect of loading the accelerating field with as much charge as it will allow without overloading it. The resulting non-linear wake driven by the head of the beam, which will see emittance growth due to the quasi-linear conditions of the proton wake, ensures that the rest of the beam sees a strong focusing force preventing further emittance growth. As the electron beam gains energy, its transverse size will decrease as its emittance is preserved as $\sigma_{r} = \sqrt{\emitg\beta/\gammar}$.
+The implication here is that there is an additional benefitial effect of loading the accelerating field with as much charge as it will allow without overloading it. The resulting non-linear wake driven by the head of the beam, which will see emittance growth due to the quasi-linear conditions of the proton wake, ensures that the rest of the beam sees a strong focusing force preventing further emittance growth. As the electron beam gains energy, its transverse size will decrease as its emittance is preserved as $\sigma_{r} = \sqrt{\emitN\beta}$ \cite{wille:2001}.
 
 % ================================================================================================ %
 

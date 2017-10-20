@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -102,6 +102,23 @@ E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
   Feb. 2008.
 \newblock \doi{10.1103/PhysRevLett.100.074802}.
 
+\bibitem[Krall and Joyce(1995)]{krall:1995}
+J.~Krall and G.~Joyce.
+\newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.871344}{Transverse
+  equilibrium and stability of the primary beam in the plasma wake-field
+  accelerator}.
+\newblock \emph{Physics of Plasmas}, 2\penalty0 (4):\penalty0 1326--1331, Apr.
+  1995.
+\newblock ISSN 1070-664X.
+\newblock \doi{10.1063/1.871344}.
+
+\bibitem[Lee and Cooper(1976)]{lee:1976}
+E.~P. Lee and R.~K. Cooper.
+\newblock
+  \href{http://inis.iaea.org/Search/search.aspx?orig_q=RN:8293688}{General
+  envelope equation for cylindrically symmetric charged-particle beams}.
+\newblock \emph{Particle Accelerators}, 7\penalty0 (2):\penalty0 83--95, 1976.
+
 \bibitem[Lu et~al.(2005)Lu, Huang, Zhou, Mori, and Katsouleas]{lu:2005}
 W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.1905587}{Limits of
@@ -137,5 +154,12 @@ S.~Van~der Meer.
   efficiency of the plasma wakefield accelerator}.
 \newblock Technical Report CERN/PS/85-65 (AA), CLIC Note No. 3, CERN, Geneva,
   Nov. 1985.
+
+\bibitem[Wille(2001)]{wille:2001}
+K.~Wille.
+\newblock \emph{The {Physics} of {Particle} {Accelerators}: {An}
+  {Introduction}}.
+\newblock Clarendon Press, Oxford, New York, first edition, May 2001.
+\newblock ISBN 978-0-19-850549-5.
 
 \end{thebibliography}
