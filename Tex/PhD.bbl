@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -71,6 +71,17 @@ H.~H. Braun, S.~D{\"o}bert, I.~Wilson, and W.~Wuensch.
   June 2003.
 \newblock \doi{10.1103/PhysRevLett.90.224801}.
 
+\bibitem[Chan(1971)]{chan:1971}
+Y.~W. Chan.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/0375960171903975}{Ultra-intense
+  laser radiation as a possible energy booster for relativistic charged
+  particle}.
+\newblock \emph{Physics Letters A}, 35\penalty0 (4):\penalty0 305--306, June
+  1971.
+\newblock ISSN 0375-9601.
+\newblock \doi{10.1016/0375-9601(71)90397-5}.
+
 \bibitem[Chen et~al.(1985)Chen, Dawson, Huff, and Katsouleas]{chen:1985}
 P.~Chen, J.~M. Dawson, R.~W. Huff, and T.~Katsouleas.
 \newblock
@@ -119,6 +130,20 @@ E.~P. Lee and R.~K. Cooper.
   envelope equation for cylindrically symmetric charged-particle beams}.
 \newblock \emph{Particle Accelerators}, 7\penalty0 (2):\penalty0 83--95, 1976.
 
+\bibitem[Litos et~al.(2014)Litos, Adli, An, Clarke, Clayton, Corde, Delahaye,
+  England, Fisher, Frederico, Gessner, Green, Hogan, Joshi, Lu, Marsh, Mori,
+  Muggli, Vafaei-Najafabadi, Walz, White, Wu, Yakimenko, and Yocky]{litos:2014}
+M.~Litos, E.~Adli, W.~An, C.~I. Clarke, C.~E. Clayton, S.~Corde, J.~P.
+  Delahaye, R.~J. England, A.~S. Fisher, J.~Frederico, S.~Gessner, S.~Z. Green,
+  M.~J. Hogan, C.~Joshi, W.~Lu, K.~A. Marsh, W.~B. Mori, P.~Muggli,
+  N.~Vafaei-Najafabadi, D.~Walz, G.~White, Z.~Wu, V.~Yakimenko, and G.~Yocky.
+\newblock
+  \href{http://www.nature.com/nature/journal/v515/n7525/full/nature13882.html?foxtrotcallback=true}{High-efficiency
+  acceleration of an electron beam in a plasma wakefield accelerator}.
+\newblock \emph{Nature}, 515\penalty0 (7525):\penalty0 92--95, Nov. 2014.
+\newblock ISSN 0028-0836.
+\newblock \doi{10.1038/nature13882}.
+
 \bibitem[Lu et~al.(2005)Lu, Huang, Zhou, Mori, and Katsouleas]{lu:2005}
 W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.1905587}{Limits of
@@ -127,6 +152,16 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
   2005.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.1905587}.
+
+\bibitem[Palmer(1972)]{palmer:1972}
+R.~B. Palmer.
+\newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.1661650}{Interaction
+  of {Relativistic} {Particles} and {Free} {Electromagnetic} {Waves} in the
+  {Presence} of a {Static} {Helical} {Magnet}}.
+\newblock \emph{Journal of Applied Physics}, 43\penalty0 (7):\penalty0
+  3014--3023, July 1972.
+\newblock ISSN 0021-8979.
+\newblock \doi{10.1063/1.1661650}.
 
 \bibitem[Pritzkau and Siemann(2002)]{pritzkau:2002}
 D.~P. Pritzkau and R.~H. Siemann.
@@ -147,6 +182,14 @@ J.~B. Rosenzweig, D.~B. Cline, B.~Cole, H.~Figueroa, W.~Gai, R.~Konecny,
 \newblock \emph{Physical Review Letters}, 61\penalty0 (1):\penalty0 98--101,
   July 1988.
 \newblock \doi{10.1103/PhysRevLett.61.98}.
+
+\bibitem[Tajima and Dawson(1979)]{tajima:1979}
+T.~Tajima and J.~M. Dawson.
+\newblock \href{http://link.aps.org/doi/10.1103/PhysRevLett.43.267}{Laser
+  {Electron} {Accelerator}}.
+\newblock \emph{Physical Review Letters}, 43\penalty0 (4):\penalty0 267--270,
+  July 1979.
+\newblock \doi{10.1103/PhysRevLett.43.267}.
 
 \bibitem[Van~der Meer(1985)]{van_der_meer:1985}
 S.~Van~der Meer.
