@@ -16,6 +16,8 @@ The two main techniques for producing strong accelerating fields in plasmas are 
 
 % Add some more historical information. How usable were the two techniques?
 
+% Move the plasma physics equations here
+
 % ================================================================================================ %
 \subsection{Laser Driven}
 \label{Int:LWFA}
@@ -40,10 +42,8 @@ It has been shown experimentally that energy can be transferred from one or two 
 
 A point like charge travelling at a speed close to the speed of light, will generate fields in its wake \cite{van_der_meer:1985,chen:1985}:
 \begin{align}
-    E_{z} &=            - \frac{Q_{b}k_{pe}^{2}}{2\pi\epsilon_{0}} K_{0}(k_{pe}r)\cos(k_{pe}z - \omega_{pe}t)
-                          \label{EQ:PWFA:EZ} \\
-    E_{r} &= \hphantom{-} \frac{Q_{b}k_{pe}^{2}}{2\pi\epsilon_{0}} K_{1}(k_{pe}r)\sin(k_{pe}z - \omega_{pe}t),
-                          \label{EQ:PWFA:ER}
+    E_{z} &= -\frac{Q_{b}k_{pe}^{2}}{2\pi\epsilon_{0}} K_{0}(k_{pe}r)\cos(k_{pe}z - \omega_{pe}t) \label{EQ:PWFA:EZ} \\
+    E_{r} &= \hphantom{-} \frac{Q_{b}k_{pe}^{2}}{2\pi\epsilon_{0}} K_{1}(k_{pe}r)\sin(k_{pe}z - \omega_{pe}t), \label{EQ:PWFA:ER}
 \end{align}
 where $Q_{b}$ is the charge of the beam, $k_{pe}$ is the plasma wave number, and $K_{0}$ and $K_{1}$ are modified Bessel functions. 
 
@@ -59,18 +59,24 @@ Text
 
 Further details on proton driven plasma wakefield goes here.
 
+Benefit of larger energy per bunch, challange of producing short bunches.
+
 % ================================================================================================ %
 \section{The Self-modulation Instability}
 \label{Int:SMI}
 
-Stuff about SMI goes here
+The instability and how it solves the long bunch problem
 
 % ================================================================================================ %
 \section{Numerical Simulations of PWFA}
 \label{Int:Sim}
 
-Stuff about Osiris and and all that jazz.
+PIC codes. Osiris vs, QuickPIC.
+
+Numerical Cherenkov, Lehe. Relevance to emittance.
 
 Reference to PIC appendix.
+
+Maybe something about resolution and convergence.
 
 % ================================================================================================ %
