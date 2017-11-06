@@ -1,19 +1,19 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Adli and Muggli(2016)]{adli:2016-1}
-E.~Adli and P.~Muggli.
-\newblock
-  \href{http://www.worldscientific.com/doi/abs/10.1142/S1793626816300048}{Proton-{Beam}-{Driven}
-  {Plasma} {Acceleration}}.
-\newblock \emph{Reviews of Accelerator Science and Technology}, 09:\penalty0
-  85--104, Jan. 2016.
-\newblock ISSN 1793-6268.
-\newblock \doi{10.1142/S1793626816300048}.
+\bibitem[Adli and {AWAKE Collaboration}(2016)]{adli:2016-1}
+E.~Adli and {AWAKE Collaboration}.
+\newblock \href{http://jacow.org/ipac2016/papers/wepmy008.pdf}{Towards {Awake}
+  {Applications}: {Electron} {Beam} {Acceleration} in a {Proton} {Driven}
+  {Plasma} {Wake}}.
+\newblock In \emph{Proceedings of {IPAC} 2016}, International {Particle}
+  {Accelerator} {Conference}, pages 2557--2560, Busan, Korea, June 2016. JACoW.
+\newblock ISBN 978-3-95450-147-2.
+\newblock \doi{doi:10.18429/JACoW-IPAC2016-WEPMY008}.
 
 \bibitem[Berglyd~Olsen(2013)]{berglyd_olsen:2013}
 V.~K. Berglyd~Olsen.
@@ -111,6 +111,14 @@ E.~D. Courant and H.~S. Snyder.
 \newblock ISSN 0003-4916.
 \newblock \doi{10.1016/0003-4916(58)90012-5}.
 
+\bibitem[Esarey et~al.(1996)Esarey, Sprangle, Krall, and Ting]{esarey:1996}
+E.~Esarey, P.~Sprangle, J.~Krall, and A.~Ting.
+\newblock Overview of plasma-based accelerator concepts.
+\newblock \emph{IEEE Transactions on Plasma Science}, 24\penalty0 (2):\penalty0
+  252--288, Apr. 1996.
+\newblock ISSN 0093-3813.
+\newblock \doi{10.1109/27.509991}.
+
 \bibitem[Kallos et~al.(2008)Kallos, Katsouleas, Kimura, Kusche, Muggli,
   Pavlishin, Pogorelsky, Stolyarov, and Yakimenko]{kallos:2008}
 E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
@@ -173,6 +181,12 @@ R.~B. Palmer.
 \newblock ISSN 0021-8979.
 \newblock \doi{10.1063/1.1661650}.
 
+\bibitem[P{\'e}cseli(2012)]{pecseli:2012}
+H.~L. P{\'e}cseli.
+\newblock \emph{Waves and {Oscillations} in {Plasmas}}.
+\newblock CRC Press, Boca Raton, 1 edition edition, Sept. 2012.
+\newblock ISBN 978-1-4398-7848-4.
+
 \bibitem[Pritzkau and Siemann(2002)]{pritzkau:2002}
 D.~P. Pritzkau and R.~H. Siemann.
 \newblock
@@ -192,6 +206,13 @@ J.~B. Rosenzweig, D.~B. Cline, B.~Cole, H.~Figueroa, W.~Gai, R.~Konecny,
 \newblock \emph{Physical Review Letters}, 61\penalty0 (1):\penalty0 98--101,
   July 1988.
 \newblock \doi{10.1103/PhysRevLett.61.98}.
+
+\bibitem[Ruth et~al.(1985)Ruth, Morton, Wilson, and Chao]{ruth:1985}
+R.~D. Ruth, P.~Morton, P.~B. Wilson, and A.~Chao.
+\newblock \href{http://cds.cern.ch/record/157249/files/p171.pdf}{A {Plasma}
+  {Wake} {Field} {Accelerator}}.
+\newblock \emph{Particle Accelerators}, 17\penalty0 (SLAC-PUB-3374):\penalty0
+  171--189, 1985.
 
 \bibitem[Schwinn et~al.(2010)Schwinn, Matthies, Pfeiffer, Arruat, Fernandez,
   Locci, and Saavedra]{schwinn:2010}

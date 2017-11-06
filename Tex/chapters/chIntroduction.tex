@@ -12,7 +12,14 @@ Accelerating particle beams in a plasma is an attractive concept as plasmas are 
 \section{Plasma Wakefield Acceleration}
 \label{Int:PWFA}
 
-The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the 1970s both theoretically \cite{chan:1971,palmer:1972} and through the use of computer simulations \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}.
+The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the early 1970s \cite{chan:1971,palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}.
+
+Both these techniques utilise a neutral plasma of some sort, where the collective motion of the electrons define the main parameters of the accelerating structure driven by either the particle or the laser beam. The characteristic time of the electron motion is related to the plasma frequency, $\omega_{pe}$, and the characteristic length is related to the plasma wavelength, $\lambda_{pe}$.
+\begin{align}
+    \lambda_{pe} = \frac{2\pi c}{\omega_{pe}}, \quad
+    \omega_{pe}  = \sqrt{\frac{n_{0}e^{2}}{m_{e}\epsilon_{0}}}, \label{EQ:PWFA:L0W0}
+\end{align}
+where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity \cite{esarey:1996,pecseli:2012}. Here we ignore the ion mass and we assume the plasma is cold, i.e. we ignore the thermal motion of the electrons.
 
 % Add some more historical information. How usable were the two techniques?
 
@@ -46,6 +53,8 @@ A point like charge travelling at a speed close to the speed of light, will gene
     E_{r} &= \hphantom{-} \frac{Q_{b}k_{pe}^{2}}{2\pi\epsilon_{0}} K_{1}(k_{pe}r)\sin(k_{pe}z - \omega_{pe}t), \label{EQ:PWFA:ER}
 \end{align}
 where $Q_{b}$ is the charge of the beam, $k_{pe}$ is the plasma wave number, and $K_{0}$ and $K_{1}$ are modified Bessel functions. 
+
+Cite \cite{ruth:1985}
 
 % ================================================================================================ %
 \subsection{The Non-Linear Regime}
