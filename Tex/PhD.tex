@@ -38,6 +38,7 @@
 \usepackage{tocloft}                      % For modifying the Table of Contents
 \usepackage{hanging}                      % Used for indented paragraphs
 \usepackage{appendix}                     % Added functionality for appendices
+\usepackage{enumerate}                    % Allows for roman numbered lists
 
 % Fonts
 \usepackage[garamondx,expert]{mathdesign} % Adds additional math symbols
@@ -203,10 +204,6 @@
     \pdfbookmark{Acknowledgements}{Acknowledgements}
     \input{includes/incAcknowledgements}
 
-    \cleardoublepage
-    \pdfbookmark{Notes}{Notes}
-    \input{includes/incNotes}
-
     \tocloftpagestyle{plain}
     \cleardoublepage
     \pdfbookmark{\contentsname}{Contents}
@@ -218,6 +215,9 @@
 \pagestyle{fancy}
 
 \mainmatter
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Preface}
+    \input{includes/incPreface}
     \input{chapters/chIntroduction}
     \input{chapters/chWakefield}
     \input{chapters/chSimulations}
