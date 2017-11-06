@@ -1,9 +1,19 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adli and Muggli(2016)]{adli:2016-1}
+E.~Adli and P.~Muggli.
+\newblock
+  \href{http://www.worldscientific.com/doi/abs/10.1142/S1793626816300048}{Proton-{Beam}-{Driven}
+  {Plasma} {Acceleration}}.
+\newblock \emph{Reviews of Accelerator Science and Technology}, 09:\penalty0
+  85--104, Jan. 2016.
+\newblock ISSN 1793-6268.
+\newblock \doi{10.1142/S1793626816300048}.
 
 \bibitem[Berglyd~Olsen(2013)]{berglyd_olsen:2013}
 V.~K. Berglyd~Olsen.
@@ -11,6 +21,13 @@ V.~K. Berglyd~Olsen.
   {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}.
 \newblock {GitHub} {Repository}, 2013.
 \newblock \url{https://github.com/vkbo/OsirisAnalysis}.
+
+\bibitem[Berglyd~Olsen(2016)]{berglyd_olsen:2016}
+V.~K. Berglyd~Olsen.
+\newblock \href{https://indico.cern.ch/event/523605/}{{FESA} {File} {Reader}
+  {Progress}}.
+\newblock 17th {AWAKE} {Technical} {Board}, Feb. 2016.
+\newblock \url{https://indico.cern.ch/event/523605/}.
 
 \bibitem[Berglyd~Olsen et~al.(2015)Berglyd~Olsen, Adli, Muggli, Amorim, and
   Vieira]{berglyd_olsen:2015}
@@ -22,13 +39,6 @@ V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, L.~D. Amorim, and J.~Vieira.
 \newblock In \emph{Proceedings of {IPAC} 2015}, pages 2551--2554, Richmond, VA,
   USA, May 2015.
 \newblock ISBN 978-3-95450-168-7.
-
-\bibitem[Berglyd~Olsen et~al.(2016)Berglyd~Olsen, Adli, Muggli, and
-  Vieira]{berglyd_olsen:2016}
-V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, and J.~Vieira.
-\newblock Loading of {Wakefields} in a {Plasma} {Accelerator} {Section}
-  {Driven} by a {Self}-{Modulated} {Proton} {Beam}.
-\newblock In \emph{Proceedings of {NAPAC} 2016}, Chicago, IL, USA, Oct. 2016.
 
 \bibitem[Berglyd~Olsen et~al.(2017{\natexlab{a}})Berglyd~Olsen, Adli, and
   Muggli]{berglyd_olsen:2017-1}
@@ -182,6 +192,16 @@ J.~B. Rosenzweig, D.~B. Cline, B.~Cole, H.~Figueroa, W.~Gai, R.~Konecny,
 \newblock \emph{Physical Review Letters}, 61\penalty0 (1):\penalty0 98--101,
   July 1988.
 \newblock \doi{10.1103/PhysRevLett.61.98}.
+
+\bibitem[Schwinn et~al.(2010)Schwinn, Matthies, Pfeiffer, Arruat, Fernandez,
+  Locci, and Saavedra]{schwinn:2010}
+A.~Schwinn, S.~Matthies, D.~Pfeiffer, M.~Arruat, L.~Fernandez, F.~Locci, and
+  D.~G. Saavedra.
+\newblock \href{WECOAA03}{{FESA}3 {\textendash} {The} {New} {Front}-{End}
+  {Software} {Framework} at {CERN} and the {FAIR} {Facility}}.
+\newblock In \emph{Proceedings of {PCaPAC} 2010}, pages 22--26, Saskatoon,
+  Saskatchewan, Canada, 2010. JACoW.
+\newblock ISBN 978-1-63266-483-9.
 
 \bibitem[Tajima and Dawson(1979)]{tajima:1979}
 T.~Tajima and J.~M. Dawson.

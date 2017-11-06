@@ -1,16 +1,43 @@
 %
-%  Tools
-% =======
+%  AWAKE Data Acquisition
+% ========================
 %
 
 \chapter{AWAKE Data Acquisition}
 \label{Ch:DAQ}
 
+Chapter introduction
 
-% ==================================================================================================================== %
-\section{Data Acquisition Classes for FESA}
-\label{Tools:FESA}
+% ================================================================================================ %
+\section{Experiment Setup}
+\label{DAQ:Experiment}
 
-Some text.
+Plasma density measurement
 
-% ==================================================================================================================== %
+Laser diagnostics
+
+Scopes
+
+Universal class for probe measurements, etc.
+
+% ================================================================================================ %
+\section{Data Acquisition}
+\label{DAQ:DAQ}
+
+Text
+
+% ================================================================================================ %
+\subsection{Front End Software Architecture (FESA)}
+\label{DAQ:FESA}
+
+The Front End Software Architecture (FESA), is a software framework originally developed at CERN. It proveds a set of tools for developers to generate large portions of the code needed to control and read instruments and control infrastructure in the main accelerators at CERN. Collectively, the FESA classes provide a standard API towards the higher layers of the controls framework.
+
+While originally developed by CERN, FESA was always intended to be usabel for other experiments. The current iterationm FESA3, is developed in collaboration with GSI Helmholtz Centre for Heavy Ion Research in Germany where it is used at the FAIR facility \cite{schwinn:2010}.
+
+% ================================================================================================ %
+\subsection{AWAKE Integration: File Readers}
+\label{DAQ:Integration}
+
+A summary of how the file reader classes have been designed. Flow chart from presentation. Describe the logic behind it and some of the challenges.
+
+% ================================================================================================ %
