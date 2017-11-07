@@ -6,20 +6,30 @@
 \chapter{Introduction}
 \label{Ch:Intro}
 
-Accelerating particle beams in a plasma is an attractive concept as plasmas are capable of sustaining significantly higher accelerating fields than conventional RF structures. Conventional RF structures suffers electrical breakdowns at very high electric fields, and these breakdowns can over time damage the accelerator structures \cite{braun:2003}. This puts an upper limit on the accelerating gradient of around $350$ to $400\unit{MV/m}$, although in practice the upper limit is determined by the statistical probability of a breakdown and the acceptable number of breakdowns in a given period of time \cite{pritzkau:2002}.
+The Advanced Wakefield Experiment (AWAKE) \cite{awake_collaboration:2014}, located at the old CNGS\footnote{The CERN Neutrinos to Gran Sasso (CNGS) experiment was operational between 2006 and 2012.} facility at CERN, became operational in December 2016. It is a proof-of-concept Proton Driven Plasma Wakefield Accelerator (PDPWFA) using the proton beam from the Super Proton Synchrotron (SPS) as its drive beam. AWAKE is currently in Run 1, where some of the core properties of the proton beam and a sample electron beam will be studied. Run 2 is planned to start after the next Long Shutdown of the LHC in 2019 and 2020, where significant upgrades will be made to the experiment. In preparation for Run 2 a number of design choices needs to be made based on the results of Run 1 and simulations. The work presented in this thesis primarily focuses on the beam loading of a short electron beam.
+
+The key results are presented in Publication \ref{Pub:BL17}. In this chapter we will first cover some of the key concepts involved in plasma wakefield acceleration techniques. The design of the AWAKE experiment is laid out in more detail in the next chapter.
 
 % ================================================================================================ %
 \section{Plasma Wakefield Acceleration}
 \label{Int:PWFA}
 
-The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the early 1970s \cite{chan:1971,palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}.
+Accelerating particle beams in a plasma is an attractive concept as plasmas are capable of sustaining significantly higher accelerating fields than conventional RF structures. Conventional RF structures suffers electrical breakdowns at very high electric fields, and these breakdowns can over time damage the accelerator structures \cite{braun:2003}. This puts an upper limit on the accelerating gradient of around $350$ to $400\unit{MV/m}$, although in practice the upper limit is determined by the statistical probability of a breakdown and the acceptable number of breakdowns in a given period of time \cite{pritzkau:2002} and can therefore be even lower.
+
+The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the early 1970s \cite{chan:1971, palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}.
 
 Both these techniques utilise a neutral plasma of some sort, where the collective motion of the electrons define the main parameters of the accelerating structure driven by either the particle or the laser beam. The characteristic time of the electron motion is related to the plasma frequency, $\omega_{pe}$, and the characteristic length is related to the plasma wavelength, $\lambda_{pe}$.
-\begin{align}
+\begin{equation}
     \lambda_{pe} = \frac{2\pi c}{\omega_{pe}}, \quad
     \omega_{pe}  = \sqrt{\frac{n_{0}e^{2}}{m_{e}\epsilon_{0}}}, \label{EQ:PWFA:L0W0}
-\end{align}
-where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity \cite{esarey:1996,pecseli:2012}. Here we ignore the ion mass and we assume the plasma is cold, i.e. we ignore the thermal motion of the electrons.
+\end{equation}
+where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity \cite{tonks:1929, esarey:1996, pecseli:2012}. Here we ignore the ion mass and we assume the plasma is cold, i.e. we ignore the thermal motion of the electrons.
+
+Plasmas can sustain accelerating electric fields on the order of the nonrelativistic wavebreaking field \cite{dawson:1959, esarey:1996}
+\begin{equation}
+    E_{\mathrm{WB}} = \frac{m_{e} c \omega_{pe}}{e}. \label{EQ:EWB}
+\end{equation}
+For instance, a plasma density of $10^{18}\unit{cm}^{-3}$, the maximum field is on the order of $100\unit{GV/m}$. This has been inferred by experiment in the mid 1990s when a few electrons was accelerated to over $40\unit{MeV}$ in about $300\unit{\mu m}$ of Helium plasma, driven by a $25\unit{TW}$ picosecond laser \cite{modena:1995}.
 
 % Add some more historical information. How usable were the two techniques?
 
@@ -33,13 +43,7 @@ where $n_{0}$ is the initial plasma electron density, $e$ is the elementary char
 \subsection{Beam Driven}
 \label{Int:PDPWFA}
 
-The principles behind beam driven plasma wakefield acceleration (PDPWFA) were formulated in the 1980s by Pisin Chen \emph{et al.} \cite{chen:1985}. Conceptually, the technique involves a beam of particles called the drive beam, travelling through a plasma of a given density. The beam generates strong longitudinal and transverse electric fields in its wake, of witch a trailing beam of particles draws energy in order to accelerate \dash thus we see a transfer of energy from one beam to another through plasma as the intermediate medium.
-
-The trailing fields have a periodic structure determined by the plasma frequency, $\omega_{pe}$, and wavelength, $\lambda_{pe}$; given as
-\begin{align}
-    \lambda_{pe} = \frac{2\pi c}{\omega_{pe}}, \quad \omega_{pe} = \sqrt{\frac{n_{0}e^{2}}{m_{e}\epsilon_{0}}}, \label{EQ:PWFA:L0W0}
-\end{align}
-where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity.
+The principles behind beam driven plasma wakefield acceleration (PDPWFA) were formulated in the 1980s by Pisin Chen \emph{et al.} \cite{chen:1985}. Conceptually, the technique involves a beam of particles, called the \emph{drive beam}, travelling through a plasma of a given density, $n_{0}$. The beam generates strong longitudinal and transverse electric fields in its wake, of witch a trailing beam of particles, called the \emph{witness beam}, draws energy in order to accelerate \dash thus we see a transfer of energy from one beam to another through plasma as the intermediate medium. The trailing fields have a periodic structure determined by the plasma frequency, $\omega_{pe}$, and wavelength, $\lambda_{pe}$. See Eqs. (\ref{EQ:PWFA:L0W0}).
 
 It has been shown experimentally that energy can be transferred from one or two electron drive beams to a single electron witness beam \cite{rosenzweig:1988, blumenfeld:2007, kallos:2008, litos:2014}. A limitation using an electron beams with a similar initial charge and energy for both drive and witness beam is that the witness beam will rapidly gain energy while the drive beam loses energy. This causes the witness beam to catch up with the drive beam, and the acceleration stops. 
 

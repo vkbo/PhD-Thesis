@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,20 +14,33 @@ E.~Adli and {AWAKE Collaboration}.
   {Accelerator} {Conference}, pages 2557--2560, Busan, Korea, June 2016. JACoW.
 \newblock ISBN 978-3-95450-147-2.
 \newblock \doi{doi:10.18429/JACoW-IPAC2016-WEPMY008}.
+\newblock WEPMY008.
 
-\bibitem[Berglyd~Olsen(2013)]{berglyd_olsen:2013}
-V.~K. Berglyd~Olsen.
-\newblock \href{https://github.com/vkbo/OsirisAnalysis}{{OsirisAnalysis}:
-  {Matlab} {Analysis} {Code} for {Osiris} {Simulations}}.
-\newblock {GitHub} {Repository}, 2013.
-\newblock \url{https://github.com/vkbo/OsirisAnalysis}.
-
-\bibitem[Berglyd~Olsen(2016)]{berglyd_olsen:2016}
-V.~K. Berglyd~Olsen.
-\newblock \href{https://indico.cern.ch/event/523605/}{{FESA} {File} {Reader}
-  {Progress}}.
-\newblock 17th {AWAKE} {Technical} {Board}, Feb. 2016.
-\newblock \url{https://indico.cern.ch/event/523605/}.
+\bibitem[{AWAKE Collaboration} et~al.(2014){AWAKE Collaboration}, Assmann,
+  Bingham, Bohl, Bracco, Buttensch{\"o}n, Butterworth, Caldwell, Chattopadhyay,
+  Cipiccia, Feldbaumer, Fonseca, Goddard, Gross, Grulke, Gschwendtner,
+  Holloway, Huang, Jaroszynski, Jolly, Kempkes, Lopes, Lotov, Machacek, Mandry,
+  McKenzie, Meddahi, Militsyn, Moschuering, Muggli, Najmudin, Noakes, Norreys,
+  {\"O}z, Pardons, Petrenko, Pukhov, Rieger, Reimann, Ruhl, Shaposhnikova,
+  Silva, Sosedkin, Tarkeshian, Trines, T{\"u}ckmantel, Vieira, Vincke, Wing,
+  and Xia]{awake_collaboration:2014}
+{AWAKE Collaboration}, R.~Assmann, R.~Bingham, T.~Bohl, C.~Bracco,
+  B.~Buttensch{\"o}n, A.~Butterworth, A.~Caldwell, S.~Chattopadhyay,
+  S.~Cipiccia, E.~Feldbaumer, R.~A. Fonseca, B.~Goddard, M.~Gross, O.~Grulke,
+  E.~Gschwendtner, J.~Holloway, C.~Huang, D.~Jaroszynski, S.~Jolly, P.~Kempkes,
+  N.~Lopes, K.~Lotov, J.~Machacek, S.~R. Mandry, J.~W. McKenzie, M.~Meddahi,
+  B.~L. Militsyn, N.~Moschuering, P.~Muggli, Z.~Najmudin, T.~C.~Q. Noakes,
+  P.~A. Norreys, E.~{\"O}z, A.~Pardons, A.~Petrenko, A.~Pukhov, K.~Rieger,
+  O.~Reimann, H.~Ruhl, E.~Shaposhnikova, L.~O. Silva, A.~Sosedkin,
+  R.~Tarkeshian, R.~M. G.~N. Trines, T.~T{\"u}ckmantel, J.~Vieira, H.~Vincke,
+  M.~Wing, and G.~Xia.
+\newblock \href{http://iopscience.iop.org/0741-3335/56/8/084013}{Proton-driven
+  plasma wakefield acceleration: a path to the future of high-energy particle
+  physics}.
+\newblock \emph{Plasma Physics and Controlled Fusion}, 56\penalty0
+  (8):\penalty0 084013, Aug. 2014.
+\newblock ISSN 0741-3335.
+\newblock \doi{10.1088/0741-3335/56/8/084013}.
 
 \bibitem[Berglyd~Olsen et~al.(2015)Berglyd~Olsen, Adli, Muggli, Amorim, and
   Vieira]{berglyd_olsen:2015}
@@ -39,6 +52,15 @@ V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, L.~D. Amorim, and J.~Vieira.
 \newblock In \emph{Proceedings of {IPAC} 2015}, pages 2551--2554, Richmond, VA,
   USA, May 2015.
 \newblock ISBN 978-3-95450-168-7.
+\newblock WEPWA026.
+
+\bibitem[Berglyd~Olsen et~al.(2016)Berglyd~Olsen, Adli, Muggli, and
+  Vieira]{berglyd_olsen:2016}
+V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, and J.~Vieira.
+\newblock Loading of {Wakefields} in a {Plasma} {Accelerator} {Section}
+  {Driven} by a {Self}-{Modulated} {Proton} {Beam}.
+\newblock In \emph{Proceedings of {NAPAC} 2016}, Chicago, IL, USA, Oct. 2016.
+\newblock TUA4CO03.
 
 \bibitem[Berglyd~Olsen et~al.(2017{\natexlab{a}})Berglyd~Olsen, Adli, and
   Muggli]{berglyd_olsen:2017-1}
@@ -56,6 +78,7 @@ V.~K. Berglyd~Olsen, J.~J. Batkiewicz, S.~Deghaye, S.~J. Gessner,
   and {Controls} {Integration} of the {AWAKE} {Experiment} at {CERN}}.
 \newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May
   2017{\natexlab{b}}.
+\newblock TUPIK061.
 
 \bibitem[Blumenfeld et~al.(2007)Blumenfeld, Clayton, Decker, Hogan, Huang,
   Ischebeck, Iverson, Joshi, Katsouleas, Kirby, Lu, Marsh, Mori, Muggli, Oz,
@@ -110,6 +133,14 @@ E.~D. Courant and H.~S. Snyder.
 \newblock \emph{Annals of Physics}, 3\penalty0 (1):\penalty0 1--48, Jan. 1958.
 \newblock ISSN 0003-4916.
 \newblock \doi{10.1016/0003-4916(58)90012-5}.
+
+\bibitem[Dawson(1959)]{dawson:1959}
+J.~M. Dawson.
+\newblock \href{https://link.aps.org/doi/10.1103/PhysRev.113.383}{Nonlinear
+  {Electron} {Oscillations} in a {Cold} {Plasma}}.
+\newblock \emph{Physical Review}, 113\penalty0 (2):\penalty0 383--387, Jan.
+  1959.
+\newblock \doi{10.1103/PhysRev.113.383}.
 
 \bibitem[Esarey et~al.(1996)Esarey, Sprangle, Krall, and Ting]{esarey:1996}
 E.~Esarey, P.~Sprangle, J.~Krall, and A.~Ting.
@@ -171,6 +202,16 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.1905587}.
 
+\bibitem[Modena et~al.(1995)Modena, Najmudin, Dangor, Clayton, Marsh, Joshi,
+  Malka, Darrow, Danson, Neely, and Walsh]{modena:1995}
+A.~Modena, Z.~Najmudin, A.~E. Dangor, C.~E. Clayton, K.~A. Marsh, C.~Joshi,
+  V.~Malka, C.~B. Darrow, C.~Danson, D.~Neely, and F.~N. Walsh.
+\newblock \href{https://www.nature.com/articles/377606a0}{Electron acceleration
+  from the breaking of relativistic plasma waves}.
+\newblock \emph{Nature}, 377\penalty0 (6550):\penalty0 377606a0, Oct. 1995.
+\newblock ISSN 1476-4687.
+\newblock \doi{10.1038/377606a0}.
+
 \bibitem[Palmer(1972)]{palmer:1972}
 R.~B. Palmer.
 \newblock \href{http://aip.scitation.org/doi/abs/10.1063/1.1661650}{Interaction
@@ -184,7 +225,7 @@ R.~B. Palmer.
 \bibitem[P{\'e}cseli(2012)]{pecseli:2012}
 H.~L. P{\'e}cseli.
 \newblock \emph{Waves and {Oscillations} in {Plasmas}}.
-\newblock CRC Press, Boca Raton, 1 edition edition, Sept. 2012.
+\newblock CRC Press, Boca Raton, 1st edition, Sept. 2012.
 \newblock ISBN 978-1-4398-7848-4.
 
 \bibitem[Pritzkau and Siemann(2002)]{pritzkau:2002}
@@ -218,11 +259,12 @@ R.~D. Ruth, P.~Morton, P.~B. Wilson, and A.~Chao.
   Locci, and Saavedra]{schwinn:2010}
 A.~Schwinn, S.~Matthies, D.~Pfeiffer, M.~Arruat, L.~Fernandez, F.~Locci, and
   D.~G. Saavedra.
-\newblock \href{WECOAA03}{{FESA}3 {\textendash} {The} {New} {Front}-{End}
-  {Software} {Framework} at {CERN} and the {FAIR} {Facility}}.
+\newblock {FESA}3 {\textendash} {The} {New} {Front}-{End} {Software}
+  {Framework} at {CERN} and the {FAIR} {Facility}.
 \newblock In \emph{Proceedings of {PCaPAC} 2010}, pages 22--26, Saskatoon,
   Saskatchewan, Canada, 2010. JACoW.
 \newblock ISBN 978-1-63266-483-9.
+\newblock WECOAA03.
 
 \bibitem[Tajima and Dawson(1979)]{tajima:1979}
 T.~Tajima and J.~M. Dawson.
@@ -231,6 +273,14 @@ T.~Tajima and J.~M. Dawson.
 \newblock \emph{Physical Review Letters}, 43\penalty0 (4):\penalty0 267--270,
   July 1979.
 \newblock \doi{10.1103/PhysRevLett.43.267}.
+
+\bibitem[Tonks and Langmuir(1929)]{tonks:1929}
+L.~Tonks and I.~Langmuir.
+\newblock \href{https://link.aps.org/doi/10.1103/PhysRev.33.195}{Oscillations
+  in {Ionized} {Gases}}.
+\newblock \emph{Physical Review}, 33\penalty0 (2):\penalty0 195--210, Feb.
+  1929.
+\newblock \doi{10.1103/PhysRev.33.195}.
 
 \bibitem[Van~der Meer(1985)]{van_der_meer:1985}
 S.~Van~der Meer.
