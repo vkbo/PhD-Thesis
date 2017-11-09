@@ -3,10 +3,11 @@
 ##
 
 # Dependencies
+BIBLIO   := $(wildcard *.bib)
 APPENDS  := $(wildcard appendices/*.tex)
 CHAPTERS := $(wildcard chapters/*.tex)
 INCLUDES := $(wildcard includes/*.tex)
-DEPENDS   = $(APPENDS) $(CHAPTERS) $(INCLUDES) Bibliography.bib
+DEPENDS   = $(BIBLIO) $(APPENDS) $(CHAPTERS) $(INCLUDES) 
 
 # Files and Figures
 FILES   := $(wildcard files/*.pdf)

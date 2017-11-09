@@ -48,19 +48,19 @@
 
 % Content
 \usepackage{pdfpages}                     % Include PDF files
+\usepackage{datetime}                     % Used for the last page timestamp
 
 % Tables
 \usepackage{caption} 
 \captionsetup[table]{skip=8pt}
 
 % Disabled
-%~ \usepackage{latexsym}
-%~ \usepackage{cite}
-%~ \usepackage{graphicx}
-%~ \usepackage{float}
-%~ \usepackage{listings}
-%~ \usepackage{simplewick}
-%~ \usepackage{datetime}
+% \usepackage{latexsym}
+% \usepackage{cite}
+% \usepackage{graphicx}
+% \usepackage{float}
+% \usepackage{listings}
+% \usepackage{simplewick}
 
 % ================================================================================================ %
 
@@ -285,6 +285,14 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Bibliography,Additional}
 \null
+
+\phantomsection
+\pdfbookmark{End}{EndOfDoc}
+\vspace*{\fill}
+\footnotesize
+\noindent Document compiled on \today~at~\currenttime
+\newline
+\pdftexbanner
 
 \end{document}
 
