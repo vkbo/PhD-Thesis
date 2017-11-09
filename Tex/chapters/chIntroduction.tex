@@ -25,6 +25,13 @@ Both these techniques utilise a neutral plasma of some sort, where the collectiv
 \end{equation}
 where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity \cite{tonks:1929, esarey:1996, pecseli:2012}. Here we ignore the ion mass and we assume the plasma is cold, i.e. we ignore the thermal motion of the electrons.
 
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.70\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/dummy}
+    \caption{\label{Fig:PWFA:Example}
+        An example figure showing the wakefields produced by a particle drive beam.}
+\end{figure}
+
 Plasmas can sustain accelerating electric fields on the order of the nonrelativistic wavebreaking field \cite{dawson:1959, esarey:1996}
 \begin{equation}
     E_{\mathrm{WB}} = \frac{m_{e} c \omega_{pe}}{e}. \label{EQ:EWB}
@@ -67,7 +74,7 @@ Cite \cite{ruth:1985}
 Text
 
 % ================================================================================================ %
-\section{Proton Driven Plasma Wakefield Acceleration}
+\section{Protons vs. Electrons as Drive Beam}
 \label{Int:PDPWFA}
 
 Further details on proton driven plasma wakefield goes here.
@@ -80,7 +87,13 @@ Cite \cite{adli:2016-1}.
 \section{The Self-modulation Instability}
 \label{Int:SMI}
 
-The instability and how it solves the long bunch problem
+A long beam with respect to the plasma wavelength will generate a density wave driven by its own head. This is true for both laser beams \cite{esarey:1994} and particle beams \cite{kumar:2010}, and they are caused by the same underlying physics. For a laser beam, this produces alternating regions of focusing and defraction. For a particle beam, the wakefields generated within the beam acts back on itself, breaking it up into short microbunches with a surrounding, defocused halo.
+
+In the 1980s, this self-modulating effect was taken advantage of in LWFA experiments as only long laser pulses were available. Advances in ultrashort laser technology later removed the dependence of this effect \cite{pukhov:2002}, however for proton drive beams this is still an issue. For instance, the SPS proton beam used by AWAKE is orders of magnitude longer than the plasma wavelength needed for the experiment.
+
+The self-modulation instability (SMI), is one of several instabilites affecting long beams in plasma.
+
+% To add: Phase velocity of SMI WF. Two-stream and hosing.
 
 % ================================================================================================ %
 \section{Numerical Simulations of PWFA}

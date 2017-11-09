@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -142,6 +142,14 @@ J.~M. Dawson.
   1959.
 \newblock \doi{10.1103/PhysRev.113.383}.
 
+\bibitem[Esarey et~al.(1994)Esarey, Krall, and Sprangle]{esarey:1994}
+E.~Esarey, J.~Krall, and P.~Sprangle.
+\newblock \href{https://link.aps.org/doi/10.1103/PhysRevLett.72.2887}{Envelope
+  analysis of intense laser pulse self-modulation in plasmas}.
+\newblock \emph{Physical Review Letters}, 72\penalty0 (18):\penalty0
+  2887--2890, May 1994.
+\newblock \doi{10.1103/PhysRevLett.72.2887}.
+
 \bibitem[Esarey et~al.(1996)Esarey, Sprangle, Krall, and Ting]{esarey:1996}
 E.~Esarey, P.~Sprangle, J.~Krall, and A.~Ting.
 \newblock Overview of plasma-based accelerator concepts.
@@ -171,6 +179,15 @@ J.~Krall and G.~Joyce.
   1995.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.871344}.
+
+\bibitem[Kumar et~al.(2010)Kumar, Pukhov, and Lotov]{kumar:2010}
+N.~Kumar, A.~Pukhov, and K.~Lotov.
+\newblock
+  \href{http://link.aps.org/doi/10.1103/PhysRevLett.104.255003}{Self-{Modulation}
+  {Instability} of a {Long} {Proton} {Bunch} in {Plasmas}}.
+\newblock \emph{Physical Review Letters}, 104\penalty0 (25):\penalty0 255003,
+  June 2010.
+\newblock \doi{10.1103/PhysRevLett.104.255003}.
 
 \bibitem[Lee and Cooper(1976)]{lee:1976}
 E.~P. Lee and R.~K. Cooper.
@@ -236,6 +253,15 @@ D.~P. Pritzkau and R.~H. Siemann.
 \newblock \emph{Physical Review Special Topics - Accelerators and Beams},
   5\penalty0 (11):\penalty0 112002, Nov. 2002.
 \newblock \doi{10.1103/PhysRevSTAB.5.112002}.
+
+\bibitem[Pukhov and Meyer-ter Vehn(2002)]{pukhov:2002}
+A.~Pukhov and J.~Meyer-ter Vehn.
+\newblock \href{https://link.springer.com/article/10.1007/s003400200795}{Laser
+  wake field acceleration: the highly non-linear broken-wave regime}.
+\newblock \emph{Applied Physics B}, 74\penalty0 (4-5):\penalty0 355--361, Apr.
+  2002.
+\newblock ISSN 0946-2171, 1432-0649.
+\newblock \doi{10.1007/s003400200795}.
 
 \bibitem[Rosenzweig et~al.(1988)Rosenzweig, Cline, Cole, Figueroa, Gai,
   Konecny, Norem, Schoessow, and Simpson]{rosenzweig:1988}
