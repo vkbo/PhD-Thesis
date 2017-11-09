@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -15,6 +15,39 @@ E.~Adli and {AWAKE Collaboration}.
 \newblock ISBN 978-3-95450-147-2.
 \newblock \doi{doi:10.18429/JACoW-IPAC2016-WEPMY008}.
 \newblock WEPMY008.
+
+\bibitem[Adli et~al.(2016)Adli, Berglyd~Olsen, Lindstr{\o}m, Muggli, Reimann,
+  Vieira, Amorim, Clarke, Gessner, Green, Hogan, Litos, O?Shea, Yakimenko,
+  Clayton, Marsh, Mori, Joshi, Vafaei-Najafabadi, and Williams]{adli:2016}
+E.~Adli, V.~K. Berglyd~Olsen, C.~A. Lindstr{\o}m, P.~Muggli, O.~Reimann, J.~M.
+  Vieira, L.~D. Amorim, C.~I. Clarke, S.~J. Gessner, S.~Z. Green, M.~J. Hogan,
+  M.~D. Litos, B.~D. O?Shea, V.~Yakimenko, C.~Clayton, K.~A. Marsh, W.~B. Mori,
+  C.~Joshi, N.~Vafaei-Najafabadi, and O.~Williams.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0168900216002515}{Progress
+  of plasma wakefield self-modulation experiments at {FACET}}.
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  829:\penalty0 334--338, Sept. 2016.
+\newblock ISSN 0168-9002.
+\newblock \doi{10.1016/j.nima.2016.02.075}.
+
+\bibitem[An et~al.(2013)An, Decyk, Mori, and Antonsen]{an:2013}
+W.~An, V.~K. Decyk, W.~B. Mori, and T.~M. Antonsen.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999113003525}{An
+  improved iteration loop for the three dimensional quasi-static
+  particle-in-cell algorithm: {QuickPIC}}.
+\newblock \emph{Journal of Computational Physics}, 250:\penalty0 165--177, Oct.
+  2013.
+\newblock ISSN 0021-9991.
+\newblock \doi{10.1016/j.jcp.2013.05.020}.
+
+\bibitem[{AWAKE Collaboration} and Caldwell(2016)]{awake_collaboration:2016}
+{AWAKE Collaboration} and A.~Caldwell.
+\newblock \href{https://cds.cern.ch/record/1952982}{{AWAKE} {Status} {Report},
+  2016}.
+\newblock Technical Report CERN-SPSC-2016-033, CERN, Geneva, Oct. 2016.
 
 \bibitem[{AWAKE Collaboration} et~al.(2014){AWAKE Collaboration}, Assmann,
   Bingham, Bohl, Bracco, Buttensch{\"o}n, Butterworth, Caldwell, Chattopadhyay,
@@ -118,6 +151,62 @@ H.~H. Braun, S.~D{\"o}bert, I.~Wilson, and W.~Wuensch.
   June 2003.
 \newblock \doi{10.1103/PhysRevLett.90.224801}.
 
+\bibitem[Caldwell et~al.(2009)Caldwell, Lotov, Pukhov, and
+  Simon]{caldwell:2009}
+A.~Caldwell, K.~Lotov, A.~Pukhov, and F.~Simon.
+\newblock
+  \href{http://www.nature.com/nphys/journal/v5/n5/abs/nphys1248.html}{Proton-driven
+  plasma-wakefield acceleration}.
+\newblock \emph{Nature Physics}, 5\penalty0 (5):\penalty0 363--367, May 2009.
+\newblock ISSN 1745-2473.
+\newblock \doi{10.1038/nphys1248}.
+
+\bibitem[Caldwell et~al.(2016)Caldwell, Adli, Amorim, Apsimon, Argyropoulos,
+  Assmann, Bachmann, Batsch, Bauche, Berglyd~Olsen, Bernardini, Bingham,
+  Biskup, Bohl, Bracco, Burrows, Burt, Buttensch{\"o}n, Butterworth, Cascella,
+  Chattopadhyay, Chevallay, Cipiccia, Damerau, Deacon, Dirksen, Doebert, Dorda,
+  Elsen, Farmer, Fartoukh, Fedosseev, Feldbaumer, Fiorito, Fonseca, Friebel,
+  Geschonke, Goddard, Gorn, Grulke, Gschwendtner, Hansen, Hessler, Hillenbrand,
+  Hofle, Holloway, Huang, H{\"u}ther, Jaroszynski, Jensen, Jolly, Joulaei,
+  Kasim, Keeble, Kersevan, Kumar, Li, Liu, Lopes, Lotov, Lu, Machacek, Mandry,
+  Martin, Martorelli, Martyanov, Mazzoni, Meddahi, Merminga, Mete, Minakov,
+  Mitchell, Moody, M{\"u}ller, Najmudin, Noakes, Norreys, Osterhoff, {\"O}z,
+  Pardons, Pepitone, Petrenko, Plyushchev, Pozimski, Pukhov, Reimann, Rieger,
+  Roesler, Ruhl, Rusnak, Salveter, Savard, Schmidt, von~der Schmitt, Seryi,
+  Shaposhnikova, Sheng, Sherwood, Silva, Simon, Soby, Sosedkin, Spitsyn,
+  Tajima, Tarkeshian, Timko, Trines, T{\"u}ckmantel, Tuev, Turner, Velotti,
+  Verzilov, Vieira, Vincke, Wei, Welsch, Wing, Xia, Yakimenko, Zhang, and
+  Zimmermann]{caldwell:2016}
+A.~Caldwell, E.~Adli, L.~Amorim, R.~Apsimon, T.~Argyropoulos, R.~Assmann, A.~M.
+  Bachmann, F.~Batsch, J.~Bauche, V.~K. Berglyd~Olsen, M.~Bernardini,
+  R.~Bingham, B.~Biskup, T.~Bohl, C.~Bracco, P.~N. Burrows, G.~Burt,
+  B.~Buttensch{\"o}n, A.~Butterworth, M.~Cascella, S.~Chattopadhyay,
+  E.~Chevallay, S.~Cipiccia, H.~Damerau, L.~Deacon, P.~Dirksen, S.~Doebert,
+  U.~Dorda, E.~Elsen, J.~Farmer, S.~Fartoukh, V.~Fedosseev, E.~Feldbaumer,
+  R.~Fiorito, R.~Fonseca, F.~Friebel, G.~Geschonke, B.~Goddard, A.~A. Gorn,
+  O.~Grulke, E.~Gschwendtner, J.~Hansen, C.~Hessler, S.~Hillenbrand, W.~Hofle,
+  J.~Holloway, C.~Huang, M.~H{\"u}ther, D.~Jaroszynski, L.~Jensen, S.~Jolly,
+  A.~Joulaei, M.~Kasim, F.~Keeble, R.~Kersevan, N.~Kumar, Y.~Li, S.~Liu,
+  N.~Lopes, K.~V. Lotov, W.~Lu, J.~Machacek, S.~Mandry, I.~Martin,
+  R.~Martorelli, M.~Martyanov, S.~Mazzoni, M.~Meddahi, L.~Merminga, O.~Mete,
+  V.~A. Minakov, J.~Mitchell, J.~Moody, A.~S. M{\"u}ller, Z.~Najmudin, T.~C.~Q.
+  Noakes, P.~Norreys, J.~Osterhoff, E.~{\"O}z, A.~Pardons, K.~Pepitone,
+  A.~Petrenko, G.~Plyushchev, J.~Pozimski, A.~Pukhov, O.~Reimann, K.~Rieger,
+  S.~Roesler, H.~Ruhl, T.~Rusnak, F.~Salveter, N.~Savard, J.~Schmidt,
+  H.~von~der Schmitt, A.~Seryi, E.~Shaposhnikova, Z.~M. Sheng, P.~Sherwood,
+  L.~Silva, F.~Simon, L.~Soby, A.~P. Sosedkin, R.~I. Spitsyn, T.~Tajima,
+  R.~Tarkeshian, H.~Timko, R.~Trines, T.~T{\"u}ckmantel, P.~V. Tuev, M.~Turner,
+  F.~Velotti, V.~Verzilov, J.~Vieira, H.~Vincke, Y.~Wei, C.~P. Welsch, M.~Wing,
+  G.~Xia, V.~Yakimenko, H.~Zhang, and F.~Zimmermann.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0168900215016307}{Path
+  to {AWAKE}: {Evolution} of the concept}.
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  829:\penalty0 3--16, Sept. 2016.
+\newblock ISSN 0168-9002.
+\newblock \doi{10.1016/j.nima.2015.12.050}.
+
 \bibitem[Chan(1971)]{chan:1971}
 Y.~W. Chan.
 \newblock
@@ -172,6 +261,90 @@ E.~Esarey, P.~Sprangle, J.~Krall, and A.~Ting.
 \newblock ISSN 0093-3813.
 \newblock \doi{10.1109/27.509991}.
 
+\bibitem[Fonseca et~al.(2002)Fonseca, Silva, Tsung, Decyk, Lu, Ren, Mori, Deng,
+  Lee, Katsouleas, and Adam]{fonseca:2002}
+R.~A. Fonseca, L.~O. Silva, F.~S. Tsung, V.~K. Decyk, W.~Lu, C.~Ren, W.~B.
+  Mori, S.~Deng, S.~Lee, T.~Katsouleas, and J.~C. Adam.
+\newblock {OSIRIS}: {A} {Three}-{Dimensional}, {Fully} {Relativistic}
+  {Particle} in {Cell} {Code} for {Modeling} {Plasma} {Based} {Accelerators}.
+\newblock In P.~M.~A. Sloot, A.~G. Hoekstra, C.~J.~K. Tan, and J.~J. Dongarra,
+  editors, \emph{Computational {Science} {\textemdash} {ICCS} 2002}, number
+  2331 in Lecture {Notes} in {Computer} {Science}, pages 342--351. Springer
+  Berlin Heidelberg, 2002.
+\newblock ISBN 978-3-540-43594-5 978-3-540-47789-1.
+\newblock \url{http://link.springer.com/chapter/10.1007/3-540-47789-6_36}.
+
+\bibitem[Godfrey(1974)]{godfrey:1974}
+B.~B. Godfrey.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/002199917490076X}{Numerical
+  {Cherenkov} instabilities in electromagnetic particle codes}.
+\newblock \emph{Journal of Computational Physics}, 15\penalty0 (4):\penalty0
+  504--521, Aug. 1974.
+\newblock ISSN 0021-9991.
+\newblock \doi{10.1016/0021-9991(74)90076-X}.
+
+\bibitem[Greenwood et~al.(2004)Greenwood, Cartwright, Luginsland, and
+  Baca]{greenwood:2004}
+A.~D. Greenwood, K.~L. Cartwright, J.~W. Luginsland, and E.~A. Baca.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999104002608}{On
+  the elimination of numerical {Cerenkov} radiation in {PIC} simulations}.
+\newblock \emph{Journal of Computational Physics}, 201\penalty0 (2):\penalty0
+  665--684, Dec. 2004.
+\newblock ISSN 0021-9991.
+\newblock \doi{10.1016/j.jcp.2004.06.021}.
+
+\bibitem[Gschwendtner et~al.(2016)Gschwendtner, Adli, Amorim, Apsimon, Assmann,
+  Bachmann, Batsch, Bauche, Berglyd~Olsen, Bernardini, Bingham, Biskup, Bohl,
+  Bracco, Burrows, Burt, Buttensch{\"o}n, Butterworth, Caldwell, Cascella,
+  Chevallay, Cipiccia, Damerau, Deacon, Dirksen, Doebert, Dorda, Farmer,
+  Fedosseev, Feldbaumer, Fiorito, Fonseca, Friebel, Gorn, Grulke, Hansen,
+  Hessler, Hofle, Holloway, H{\"u}ther, Jaroszynski, Jensen, Jolly, Joulaei,
+  Kasim, Keeble, Li, Liu, Lopes, Lotov, Mandry, Martorelli, Martyanov, Mazzoni,
+  Mete, Minakov, Mitchell, Moody, Muggli, Najmudin, Norreys, {\"O}z, Pardons,
+  Pepitone, Petrenko, Plyushchev, Pukhov, Rieger, Ruhl, Salveter, Savard,
+  Schmidt, Seryi, Shaposhnikova, Sheng, Sherwood, Silva, Soby, Sosedkin,
+  Spitsyn, Trines, Tuev, Turner, Verzilov, Vieira, Vincke, Wei, Welsch, Wing,
+  Xia, and Zhang]{gschwendtner:2016}
+E.~Gschwendtner, E.~Adli, L.~Amorim, R.~Apsimon, R.~Assmann, A.~M. Bachmann,
+  F.~Batsch, J.~Bauche, V.~K. Berglyd~Olsen, M.~Bernardini, R.~Bingham,
+  B.~Biskup, T.~Bohl, C.~Bracco, P.~N. Burrows, G.~Burt, B.~Buttensch{\"o}n,
+  A.~Butterworth, A.~Caldwell, M.~Cascella, E.~Chevallay, S.~Cipiccia,
+  H.~Damerau, L.~Deacon, P.~Dirksen, S.~Doebert, U.~Dorda, J.~Farmer,
+  V.~Fedosseev, E.~Feldbaumer, R.~Fiorito, R.~Fonseca, F.~Friebel, A.~A. Gorn,
+  O.~Grulke, J.~Hansen, C.~Hessler, W.~Hofle, J.~Holloway, M.~H{\"u}ther,
+  D.~Jaroszynski, L.~Jensen, S.~Jolly, A.~Joulaei, M.~Kasim, F.~Keeble, Y.~Li,
+  S.~Liu, N.~Lopes, K.~V. Lotov, S.~Mandry, R.~Martorelli, M.~Martyanov,
+  S.~Mazzoni, O.~Mete, V.~A. Minakov, J.~Mitchell, J.~Moody, P.~Muggli,
+  Z.~Najmudin, P.~Norreys, E.~{\"O}z, A.~Pardons, K.~Pepitone, A.~Petrenko,
+  G.~Plyushchev, A.~Pukhov, K.~Rieger, H.~Ruhl, F.~Salveter, N.~Savard,
+  J.~Schmidt, A.~Seryi, E.~Shaposhnikova, Z.~M. Sheng, P.~Sherwood, L.~Silva,
+  L.~Soby, A.~P. Sosedkin, R.~I. Spitsyn, R.~Trines, P.~V. Tuev, M.~Turner,
+  V.~Verzilov, J.~Vieira, H.~Vincke, Y.~Wei, C.~P. Welsch, M.~Wing, G.~Xia, and
+  H.~Zhang.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0168900216001881}{{AWAKE},
+  {The} {Advanced} {Proton} {Driven} {Plasma} {Wakefield} {Acceleration}
+  {Experiment} at {CERN}}.
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section A},
+  829:\penalty0 76--82, Sept. 2016.
+\newblock ISSN 0168-9002.
+\newblock \doi{10.1016/j.nima.2016.02.026}.
+
+\bibitem[Huang et~al.(2006)Huang, Decyk, Ren, Zhou, Lu, Mori, Cooley, Antonsen,
+  and Katsouleas]{huang:2006}
+C.~Huang, V.~K. Decyk, C.~Ren, M.~Zhou, W.~Lu, W.~B. Mori, J.~H. Cooley, T.~M.
+  Antonsen, and T.~Katsouleas.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999106000283}{{QUICKPIC}:
+  {A} highly efficient particle-in-cell code for modeling wakefield
+  acceleration in plasmas}.
+\newblock \emph{Journal of Computational Physics}, 217\penalty0 (2):\penalty0
+  658--679, Sept. 2006.
+\newblock ISSN 0021-9991.
+\newblock \doi{10.1016/j.jcp.2006.01.039}.
+
 \bibitem[Kallos et~al.(2008)Kallos, Katsouleas, Kimura, Kusche, Muggli,
   Pavlishin, Pogorelsky, Stolyarov, and Yakimenko]{kallos:2008}
 E.~Kallos, T.~Katsouleas, W.~D. Kimura, K.~Kusche, P.~Muggli, I.~Pavlishin,
@@ -210,6 +383,16 @@ E.~P. Lee and R.~K. Cooper.
   envelope equation for cylindrically symmetric charged-particle beams}.
 \newblock \emph{Particle Accelerators}, 7\penalty0 (2):\penalty0 83--95, 1976.
 
+\bibitem[Lehe et~al.(2013)Lehe, Lifschitz, Thaury, Malka, and
+  Davoine]{lehe:2013}
+R.~Lehe, A.~Lifschitz, C.~Thaury, V.~Malka, and X.~Davoine.
+\newblock
+  \href{http://link.aps.org/doi/10.1103/PhysRevSTAB.16.021301}{Numerical growth
+  of emittance in simulations of laser-wakefield acceleration}.
+\newblock \emph{Physical Review Special Topics - Accelerators and Beams},
+  16\penalty0 (2):\penalty0 021301, Feb. 2013.
+\newblock \doi{10.1103/PhysRevSTAB.16.021301}.
+
 \bibitem[Litos et~al.(2014)Litos, Adli, An, Clarke, Clayton, Corde, Delahaye,
   England, Fisher, Frederico, Gessner, Green, Hogan, Joshi, Lu, Marsh, Mori,
   Muggli, Vafaei-Najafabadi, Walz, White, Wu, Yakimenko, and Yocky]{litos:2014}
@@ -242,6 +425,39 @@ A.~Modena, Z.~Najmudin, A.~E. Dangor, C.~E. Clayton, K.~A. Marsh, C.~Joshi,
 \newblock \emph{Nature}, 377\penalty0 (6550):\penalty0 377606a0, Oct. 1995.
 \newblock ISSN 1476-4687.
 \newblock \doi{10.1038/377606a0}.
+
+\bibitem[Muggli and Hogan(2009)]{muggli:2009}
+P.~Muggli and M.~J. Hogan.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S1631070509000383}{Review
+  of high-energy plasma wakefield experiments}.
+\newblock \emph{Comptes Rendus Physique}, 10\penalty0 (2):\penalty0 116--129,
+  Mar. 2009.
+\newblock ISSN 1631-0705.
+\newblock \doi{10.1016/j.crhy.2009.03.004}.
+
+\bibitem[Muggli et~al.(2014)Muggli, {O. Reimann}, Adli, Olsen, Amorim, Gessner,
+  Hogan, Li, Litos, Joshi, Marsh, Mori, Vafaei-Najafabadi, Lopes, and
+  Vieira]{muggli:2014}
+P.~Muggli, {O. Reimann}, E.~Adli, V.~Olsen, L.~Amorim, S.~Gessner, M.~Hogan,
+  S.~Li, M.~Litos, C.~Joshi, K.~Marsh, W.~Mori, N.~Vafaei-Najafabadi, N.~Lopes,
+  and J.~Vieira.
+\newblock \href{https://inspirehep.net/record/1313831?ln=en}{Electron {Bunch}
+  {Self}-modulation in {Long} {Plasmas} at {SLAC} {FACET}}.
+\newblock In \emph{Proceedings of {IPAC}2014}, pages 1476--1478, Dresden,
+  Germany, 2014.
+
+\bibitem[{\"O}z et~al.(2016){\"O}z, Batsch, and Muggli]{oz:2016}
+E.~{\"O}z, F.~Batsch, and P.~Muggli.
+\newblock \href{http://arxiv.org/abs/1511.08763}{An accurate {Rb} density
+  measurement method for a plasma wakefield accelerator experiment using a
+  novel {Rb} reservoir}.
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  829:\penalty0 321--325, Sept. 2016.
+\newblock ISSN 01689002.
+\newblock \doi{10.1016/j.nima.2016.02.005}.
+\newblock arXiv: 1511.08763.
 
 \bibitem[Palmer(1972)]{palmer:1972}
 R.~B. Palmer.
@@ -295,6 +511,16 @@ R.~D. Ruth, P.~Morton, P.~B. Wilson, and A.~Chao.
 \newblock \emph{Particle Accelerators}, 17\penalty0 (SLAC-PUB-3374):\penalty0
   171--189, 1985.
 
+\bibitem[Salin et~al.(1987)Salin, Georges, Roger, and Brun]{salin:1987}
+F.~Salin, P.~Georges, G.~Roger, and A.~Brun.
+\newblock
+  \href{https://www.osapublishing.org/abstract.cfm?uri=ao-26-21-4528}{Single-shot
+  measurement of a 52-fs pulse}.
+\newblock \emph{Applied Optics}, 26\penalty0 (21):\penalty0 4528--4531, Nov.
+  1987.
+\newblock ISSN 1539-4522.
+\newblock \doi{10.1364/AO.26.004528}.
+
 \bibitem[Schwinn et~al.(2010)Schwinn, Matthies, Pfeiffer, Arruat, Fernandez,
   Locci, and Saavedra]{schwinn:2010}
 A.~Schwinn, S.~Matthies, D.~Pfeiffer, M.~Arruat, L.~Fernandez, F.~Locci, and
@@ -335,5 +561,14 @@ K.~Wille.
   {Introduction}}.
 \newblock Clarendon Press, Oxford, New York, first edition, May 2001.
 \newblock ISBN 978-0-19-850549-5.
+
+\bibitem[Yee(1966)]{yee:1966}
+K.~Yee.
+\newblock Numerical solution of initial boundary value problems involving
+  maxwell's equations in isotropic media.
+\newblock \emph{IEEE Transactions on Antennas and Propagation}, 14\penalty0
+  (3):\penalty0 302--307, May 1966.
+\newblock ISSN 0018-926X.
+\newblock \doi{10.1109/TAP.1966.1138693}.
 
 \end{thebibliography}
