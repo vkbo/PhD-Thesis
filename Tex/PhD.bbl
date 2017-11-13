@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -415,6 +415,14 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
   2005.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.1905587}.
+
+\bibitem[Mobs(2016)]{add:mobs:2016}
+E.~Mobs.
+\newblock \href{https://cds.cern.ch/record/2197559}{{The} {CERN} accelerator
+  complex. {Complexe} des accélérateurs du {CERN}}.
+\newblock Illustration.
+\newblock OPEN-PHO-ACCEL-2016-009, July 2016.
+\newblock \url{https://cds.cern.ch/record/2197559}.
 
 \bibitem[Modena et~al.(1995)Modena, Najmudin, Dangor, Clayton, Marsh, Joshi,
   Malka, Darrow, Danson, Neely, and Walsh]{modena:1995}
