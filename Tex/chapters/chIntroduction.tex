@@ -18,13 +18,7 @@ In this chapter we will first cover some of the key concepts involved in plasma 
 
 Accelerating particle beams in a plasma is an attractive concept as plasmas are capable of sustaining significantly higher accelerating fields than conventional RF structures. Conventional RF structures suffer electrical breakdowns at very high electric fields, and these breakdowns can over time damage the accelerator structures \cite{braun:2003}. This puts an upper limit on the accelerating gradient of around $350$ to $400\unit{MV/m}$, although in practice the upper limit is determined by the statistical probability of a breakdown and the acceptable number of breakdowns in a given period of time \cite{pritzkau:2002} and can therefore be even lower.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaWakefield}
-    \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/deceleratring regions (as seen for an electron witness beam) are produced behind the drive beam.}
-\end{figure}
-
-The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the early 1970s \cite{chan:1971, palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}. A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig. \ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can both accelerated and focused.
+The two main techniques for producing strong accelerating fields in plasmas are by the use of an intense laser beam, or by the use of a particle drive beam. Laser accelerator techniques were investigated in the early 1970s \cite{chan:1971, palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade \cite{tajima:1979}. Using particle beams to drive accelerating wakefields were proposed some time later, in 1985 \cite{chen:1985}.
 
 Both these beam and laser driver techniques utilise a neutral plasma of some sort where the collective motion of the electrons define the main parameters of the accelerating structure. The characteristic time of the electron motion is related to the plasma frequency, $\omega_{pe}$, and the characteristic length is related to the plasma wavelength, $\lambda_{pe}$.
 \begin{equation}
@@ -53,11 +47,21 @@ For instance, a plasma density of $10^{18}\unit{cm}^{-3}$, the maximum field is 
 \subsection{Laser Driven}
 \label{Int:LWFA}
 
+In a laser wakefield driven plasma accelerator (LWFA), the plasma acts like a transformer changing high frequency transverse field of the laser pulse into a low frequency longitudinal wave \cite{malka:2009}. The effect was described by Tajima and Dawson in 1979. The ponderomotive force at the front of the laser pulse drives plasma electrons forward, while at the back of the pulse it pushes them backwards. This generates a longitudinal wave that is at its most efficient when the length of the laser pulse $L_{ph} = \lambda_{pe}/2$ \cite{tajima:1979}.
+
 % ================================================================================================ %
 \subsection{Beam Driven}
 \label{Int:BDPWFA}
 
-The principles behind beam driven plasma wakefield acceleration (PDPWFA) were formulated in the 1980s by Pisin Chen \emph{et al.} \cite{chen:1985}. Conceptually, the technique involves a beam of particles, called the \emph{drive beam}, travelling through a plasma of a given density, $n_{0}$. The beam generates strong longitudinal and transverse electric fields in its wake, of witch a trailing beam of particles, called the \emph{witness beam}, draws energy in order to accelerate. We thus see a transfer of energy from one beam to another through plasma as the intermediate medium. The trailing fields have a periodic structure determined by the plasma frequency, $\omega_{pe}$, and wavelength, $\lambda_{pe}$. See Eqs. (\ref{EQ:PWFA:L0W0}).
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaWakefield}
+    \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/deceleratring regions (as seen for an electron witness beam) are produced behind the drive beam.}
+\end{figure}
+
+The principles behind beam driven plasma wakefield acceleration were formulated in the 1980s by Pisin Chen \emph{et al.} \cite{chen:1985}. The technique involves a beam of particles, called the \emph{drive beam}, travelling through a neutral plasma. The space charge of the drive beam displaces the plasma electrons, which oscillate at the plasma frequency, creating periodic regions of low and high electron density; see Eqs. (\ref{EQ:PWFA:L0W0}). The strong longitudinal and transverse electric fields generated by this wake is then loaded by a trailing beam of particles, called the \emph{witness beam}, which draws energy from the field in order to accelerate. We thus see a transfer of energy from the drive beam to the witness beam through plasma as the intermediate medium \cite{muggli:2009}.
+
+The electrons displaced by the drive beam's space charge are pulled back on axis by the ions within the characteristic time $\omega_{p}^{-1}$. A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig. \ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can amplify the wakefields.
 
 It has been shown experimentally that energy can be transferred from one or more electron drive beams to a single electron witness beam \cite{rosenzweig:1988, blumenfeld:2007, kallos:2008, litos:2014}. A limitation using an electron beams with a similar initial charge and energy for both drive and witness beams is that the witness beam will rapidly gain energy, while the drive beam loses energy. This causes the witness beam to catch up with the drive beam, so to speak, and the acceleration will therefore stop. Typically after a few tens of centimetres of plasma.
 

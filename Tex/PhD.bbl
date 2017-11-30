@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -415,6 +415,16 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
   2005.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.1905587}.
+
+\bibitem[Malka and Mora(2009)]{malka:2009}
+V.~Malka and P.~Mora.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S1631070509000437}{Principles
+  of laser{\textendash}plasma accelerators}.
+\newblock \emph{Comptes Rendus Physique}, 10\penalty0 (2):\penalty0 106--115,
+  Mar. 2009.
+\newblock ISSN 1631-0705.
+\newblock \doi{10.1016/j.crhy.2009.03.008}.
 
 \bibitem[Mobs(2016)]{add:mobs:2016}
 E.~Mobs.
