@@ -6,12 +6,19 @@
 \chapter{Simulations}
 \label{Ch:Sim}
 
-% ================================================================================================ %
+The work presented in this thesis has been done using simulations with two particle-in-cell (PIC) codes; OSIRIS \cite{fonseca:2002} and QuickPIC \cite{an:2013, huang:2006}. OSIRIS is a proprietary full PIC code available in 1, 2 and 3 dimensions, with a choice between cartesian and cylindrical coordinates. QuickPIC is a quasi-static 3D PIC code. In this work the open source version of QuickPIC has been used \cite{add:quickpic:web}. For a more detailed description on PIC codes, see Appendix \ref{Apx:PIC}.
 
+Although PIC codes use macro particles, that is, simulated particles represent more than one physical beam or plasma particle, these codes require a lot of CPU power. This is especially true when running in 3D. The preliminary studies presented in Publications \ref{Pub:IPAC15} and \ref{Pub:NAPAC16} were done using OSIRIS with 2D cylindrical coordinates. The main study, Publication \ref{Pub:BL17}, was done using QuickPIC in 3D. In order to perform the detailed parameter scans needed for these studies, the drive beam and accelerating structure had to be scaled down into a more manageable size than the full SPS proton beam. This section will outline the simulation environment chosen for these studies, and the reasons behind these.
+
+% ================================================================================================ %
 \section{Evolution of the Proton Beam}
 \label{Sim:PBeam}
 
-Text
+An initial set of simulations were run to study the evolution of the self-modulation instability in the SPS proton beam. These simulations assumed the plasma was ionised at the centre of the proton beam, so only the back half of the beam was actually simulated. The beam profile function took the form:
+\begin{equation}
+    Q_{pb} = A_{q}\pi \int_{0}^{L} \int_{0}^{R} 1 + \cos\left(\xi\frac{\pi}{L}\right) \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right) r \deriv{r}\deriv{\xi}, \label{EQ:SPS-Profile}
+\end{equation}
+where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor to match the SPS bunch charge.
 
 % ================================================================================================ %
 
