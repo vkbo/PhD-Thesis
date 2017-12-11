@@ -14,18 +14,30 @@ Although PIC codes use macro particles, that is, simulated particles represent m
 \section{Evolution of the Proton Beam}
 \label{Sim:PBeam}
 
-An initial set of simulations were run to study the evolution of the self-modulation instability in the SPS proton beam. These simulations assumed the plasma was ionised at the centre of the proton beam, so only the back half of the beam was actually simulated. The beam profile function took the form:
+An initial set of simulations were run to study the evolution of the self-modulation instability in the SPS proton beam. These simulations assumed the plasma was ionised at the centre of the beam, so only the back half of the beam was actually simulated. The beam profile function took the form:
 \begin{equation}
-    Q_{pb} = A_{q}\pi \int_{0}^{L} \int_{0}^{R} 1 + \cos\left(\xi\frac{\pi}{L}\right) \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right) r \deriv{r}\deriv{\xi}, \label{EQ:SPS-Profile}
+    f(\xi,r) = \frac{A}{2} \left[1 + \cos\left(\xi\frac{\pi}{L}\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:SPS-Profile}
 \end{equation}
-where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor to match the SPS bunch charge.
+where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor to match the SPS bunch charge. The charge of the proton beam in cylindrical coordinates is thus given by
+\begin{equation}
+    Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv{r}\deriv{\xi}, \label{EQ:SPS-Charge}
+\end{equation}
+and $A$ is tuned so that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKE-Run1}.
+
+% Add figure with FFT of beam.
 
 % ================================================================================================ %
 
 \subsection{Studies with Pre-modulated Beam}
 \label{Sim:PBPreMod}
 
-Text
+In order to make the simulations more manageable in size, for the beam loading studies we decided to move to a sample proton beam of $26$ micro bunches. The simulations were all done using OSIRIS 3.0. With this version it is necessary for the beams to drift in vacuum for a short distance for the EM-fields to develop properly as they start at zero (see further discussion in Section \ref{PIC:Full}). Since the evolution of the self-modulation instability was not of primary interest in this study, we chose to modify the beam profile to emulate a section of modulated beam. We refer to this as pre-modulation. This was done by shortening the wavelength of the profile in Eq. \ref{EQ:SPS-Profile} to match that of the plasma wavelength:
+\begin{equation}
+    f(\xi,r) = A\sqrt{2} \left[\frac{1}{2\sqrt{2}} + \cos\left(k_{pe}\xi - \mu\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:PB-PreMod}
+\end{equation}
+where $\mu$ is the position of the first micro bunch and $k_{pe}$ is the plasma wave number \cite{berglyd_olsen:2015}. The offset of the cosine function is chosen such that the width of the micro bunch matches the width of a bunch in the simulations done with a full beam. Since OSIRIS ignores profile densities with negative values, the profile is automatically clipped at $0$.
+
+Due to the necessary initial drift stage of these simulations, it is technically challenging to inject an electron witness beam while strictly controlling parameters like emittance, energy spread and transverse size as these evolve during this drift phase. There are several ways of preventing the beam from evolving, like slowly ramping up the beam charge or ramping up the beam energy. 
 
 % ================================================================================================ %
 
