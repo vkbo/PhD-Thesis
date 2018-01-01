@@ -1,4 +1,4 @@
-\begin{thebibliography}{55}
+\begin{thebibliography}{57}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -432,6 +432,28 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
   2005.
 \newblock ISSN 1070-664X.
 \newblock \doi{10.1063/1.1905587}.
+
+\bibitem[Lu et~al.(2006{\natexlab{a}})Lu, Huang, Zhou, Mori, and
+  Katsouleas]{lu:2006a}
+W.~Lu, C.~Huang, M.~Zhou, W.~B. Mori, and T.~Katsouleas.
+\newblock
+  \href{http://link.aps.org/doi/10.1103/PhysRevLett.96.165002}{Nonlinear
+  {Theory} for {Relativistic} {Plasma} {Wakefields} in the {Blowout} {Regime}}.
+\newblock \emph{Physical Review Letters}, 96\penalty0 (16):\penalty0 165002,
+  Apr. 2006{\natexlab{a}}.
+\newblock \doi{10.1103/PhysRevLett.96.165002}.
+
+\bibitem[Lu et~al.(2006{\natexlab{b}})Lu, Huang, Zhou, Tzoufras, Tsung, Mori,
+  and Katsouleas]{lu:2006}
+W.~Lu, C.~Huang, M.~Zhou, M.~Tzoufras, F.~S. Tsung, W.~B. Mori, and
+  T.~Katsouleas.
+\newblock
+  \href{http://scitation.aip.org/content/aip/journal/pop/13/5/10.1063/1.2203364}{A
+  nonlinear theory for multidimensional relativistic plasma wave wakefieldsa)}.
+\newblock \emph{Physics of Plasmas (1994-present)}, 13\penalty0 (5):\penalty0
+  056709, May 2006{\natexlab{b}}.
+\newblock ISSN 1070-664X, 1089-7674.
+\newblock \doi{10.1063/1.2203364}.
 
 \bibitem[Malka and Mora(2009)]{malka:2009}
 V.~Malka and P.~Mora.
