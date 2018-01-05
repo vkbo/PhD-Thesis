@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -104,9 +104,14 @@ V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, L.~D. Amorim, and J.~Vieira.
 \bibitem[Berglyd~Olsen et~al.(2016)Berglyd~Olsen, Adli, Muggli, and
   Vieira]{berglyd_olsen:2016}
 V.~K. Berglyd~Olsen, E.~Adli, P.~Muggli, and J.~Vieira.
-\newblock Loading of {Wakefields} in a {Plasma} {Accelerator} {Section}
-  {Driven} by a {Self}-{Modulated} {Proton} {Beam}.
-\newblock In \emph{Proceedings of {NAPAC} 2016}, Chicago, IL, USA, Oct. 2016.
+\newblock
+  \href{http://accelconf.web.cern.ch/AccelConf/napac2016/papers/tua4co03.pdf}{Loading
+  of {Wakefields} in a {Plasma} {Accelerator} {Section} {Driven} by a
+  {Self}-{Modulated} {Proton} {Beam}}.
+\newblock In \emph{Proceedings of {NAPAC} 2016}, North {American} {Particle}
+  {Accelerator} {Conference}, Chicago, IL, USA, Oct. 2016. JACoW.
+\newblock ISBN 978-3-95450-180-9.
+\newblock \doi{10.18429/JACoW-NAPAC2016-TUA4CO03}.
 \newblock TUA4CO03.
 
 \bibitem[Berglyd~Olsen et~al.(2017{\natexlab{a}})Berglyd~Olsen, Adli, and
@@ -121,10 +126,14 @@ V.~K. Berglyd~Olsen, E.~Adli, and P.~Muggli.
   Deghaye, Gessner, Gschwendtner, and Muggli]{berglyd_olsen:2017}
 V.~K. Berglyd~Olsen, J.~J. Batkiewicz, S.~Deghaye, S.~J. Gessner,
   E.~Gschwendtner, and P.~Muggli.
-\newblock \href{http://vrws.de/ipac2017/papers/tupik061.pdf}{Data {Acquisition}
-  and {Controls} {Integration} of the {AWAKE} {Experiment} at {CERN}}.
-\newblock In \emph{Proceedings of {IPAC}2017}, Copenhagen, Denmark, May
-  2017{\natexlab{b}}.
+\newblock
+  \href{http://accelconf.web.cern.ch/AccelConf/ipac2017/doi/JACoW-IPAC2017-TUPIK061.html}{Data
+  {Acquisition} and {Controls} {Integration} of the {AWAKE} {Experiment} at
+  {CERN}}.
+\newblock In \emph{Proceedings of {IPAC} 2017}, Copenhagen, Denmark, May
+  2017{\natexlab{b}}. JACoW.
+\newblock ISBN 978-3-95450-182-3.
+\newblock \doi{10.18429/JACoW-IPAC2017-TUPIK061}.
 \newblock TUPIK061.
 
 \bibitem[Blumenfeld et~al.(2007)Blumenfeld, Clayton, Decker, Hogan, Huang,
@@ -301,16 +310,33 @@ A.~D. Greenwood, K.~L. Cartwright, J.~W. Luginsland, and E.~A. Baca.
 \newblock ISSN 0021-9991.
 \newblock \doi{10.1016/j.jcp.2004.06.021}.
 
+\bibitem[Gschwendtner et~al.(2010)Gschwendtner, Cornelis, Efthymiopoulos,
+  Ferrari, Pardons, Treberspurg, Vincke, Wenninger, Autiero, Guglielmi, and
+  Sala]{gschwendtner:2010}
+E.~Gschwendtner, K.~Cornelis, I.~Efthymiopoulos, A.~Ferrari, A.~Pardons,
+  W.~Treberspurg, H.~Vincke, J.~Wenninger, D.~Autiero, A.~Guglielmi, and
+  P.~Sala.
+\newblock
+  \href{http://accelconf.web.cern.ch/AccelConf/IPAC10/papers/thpec046.pdf}{Performance
+  and {Operational} {Experience} of the {CNGS} {Facility}}.
+\newblock In \emph{Proceedings of {IPAC} 2010}, pages 4164--4166, Kyoto, Japan,
+  May 2010. JACoW.
+\newblock ISBN 978-92-9083-352-9.
+\newblock THPEC046.
+
 \bibitem[Gschwendtner et~al.(2014)Gschwendtner, Bohl, Bracco, Butterworth,
   Cipiccia, Doebert, Fedosseev, Feldbaumer, Hessler, Hofle, Martyanov, Meddahi,
   Osborne, Pardons, Petrenko, and Vincke]{gschwendtner:2014}
 E.~Gschwendtner, T.~Bohl, C.~Bracco, A.~Butterworth, S.~Cipiccia, S.~Doebert,
   V.~Fedosseev, E.~Feldbaumer, C.~Hessler, W.~Hofle, M.~Martyanov, M.~Meddahi,
   J.~Osborne, A.~Pardons, A.~Petrenko, and H.~Vincke.
-\newblock The {AWAKE} {Experimental} {Facility} at {CERN}.
+\newblock
+  \href{http://accelconf.web.cern.ch/AccelConf/IPAC2014/papers/mopri005.pdf}{The
+  {AWAKE} {Experimental} {Facility} at {CERN}}.
 \newblock In \emph{Proceedings of {IPAC} 2014}, pages 582--585, Dresden,
-  Germany, 2014.
+  Germany, 2014. JACoW.
 \newblock ISBN 978-3-95450-132-8.
+\newblock MOPRI005.
 
 \bibitem[Gschwendtner et~al.(2016)Gschwendtner, Adli, Amorim, Apsimon, Assmann,
   Bachmann, Batsch, Bauche, Berglyd~Olsen, Bernardini, Bingham, Biskup, Bohl,
@@ -434,7 +460,7 @@ W.~Lu, C.~Huang, M.~M. Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock \doi{10.1063/1.1905587}.
 
 \bibitem[Lu et~al.(2006{\natexlab{a}})Lu, Huang, Zhou, Mori, and
-  Katsouleas]{lu:2006a}
+  Katsouleas]{lu:2006}
 W.~Lu, C.~Huang, M.~Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock
   \href{http://link.aps.org/doi/10.1103/PhysRevLett.96.165002}{Nonlinear
@@ -444,7 +470,7 @@ W.~Lu, C.~Huang, M.~Zhou, W.~B. Mori, and T.~Katsouleas.
 \newblock \doi{10.1103/PhysRevLett.96.165002}.
 
 \bibitem[Lu et~al.(2006{\natexlab{b}})Lu, Huang, Zhou, Tzoufras, Tsung, Mori,
-  and Katsouleas]{lu:2006}
+  and Katsouleas]{lu:2006a}
 W.~Lu, C.~Huang, M.~Zhou, M.~Tzoufras, F.~S. Tsung, W.~B. Mori, and
   T.~Katsouleas.
 \newblock
@@ -501,8 +527,9 @@ P.~Muggli, {O. Reimann}, E.~Adli, V.~Olsen, L.~Amorim, S.~Gessner, M.~Hogan,
   and J.~Vieira.
 \newblock \href{https://inspirehep.net/record/1313831?ln=en}{Electron {Bunch}
   {Self}-modulation in {Long} {Plasmas} at {SLAC} {FACET}}.
-\newblock In \emph{Proceedings of {IPAC}2014}, pages 1476--1478, Dresden,
-  Germany, 2014.
+\newblock In \emph{Proceedings of {IPAC} 2014}, pages 1476--1478, Dresden,
+  Germany, 2014. JACoW.
+\newblock ISBN 978-3-95450-132-8.
 
 \bibitem[{\"O}z et~al.(2016){\"O}z, Batsch, and Muggli]{oz:2016}
 E.~{\"O}z, F.~Batsch, and P.~Muggli.
