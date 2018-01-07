@@ -24,7 +24,6 @@ Evolution paper \cite{caldwell:2016}
 
 Technical specs including simulation parameters \cite{gschwendtner:2016}
 
-Status report \cite{awake_collaboration:2016}
 
 % ================================================================================================ %
 \section{Evolution of the Concept}
@@ -39,7 +38,35 @@ Self modulation at FACET \cite{adli:2016}
 Review by Patric \cite{muggli:2009}
 
 % ================================================================================================ %
-\section{The Advanced Wakefield Experiment (AWAKE)}
+\section{AWAKE: A Design Overview}
+\label{WFA:Design}
+
+AWAKE is, as of the writing of this thesis, in Run 1. At the end of the proton beam line from the SPS, a $10\unit{m}$ plasma stage has been installed, with the laser needed to ionise the vapour. In addition, an electron source has been installed, and a new side tunnel had to be dug to fit the electron beam line connecting the source to the main assembly.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.99\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/AwakeExperiment}
+    \caption{\label{Fig:WFA:AWAKE} A CAD drawing of the AWAKE experimental area.}
+\end{figure}
+
+% ================================================================================================ %
+\subsection{Plasma Source}
+\label{WFA:Design:Plasma}
+
+As per the 2015 Status Report, the requirements for the plasma source for AWAKE is a $10\unit{m}$ long cell with a plasma electron density of $1-10\nexp{14}\unit{cm}^{-3}$. The density variation should be within $0.2\%$, and the radius of the plasma channel should be $\geq 1\unit{mm}$. The plasma should also consist of heavy ions to mitigate ion motion \cite{caldwell:2015}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.99\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaCell}
+    \caption{\label{Fig:WFA:PlasmaCell} A CAD drawing of the plasma cell and its related components, as presented in the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.}
+\end{figure}
+
+For the AWAKE vapour source, rubidium (Rb) was chosen. Rubidium has a low melting point, $39.3\celsius$; a low first ionisation energy, $4.18\unit{eV}$; and a standard atomic weight of $85.47$. The plasma wavelength of rubidium ions with a $+1$ charge is roughly $400$ times that of the plasma electrons (see Eq. \ref{EQ:PWFA:L0W0}). An additional benefit of using an alkaline metal like rubidium is that the second ionisation level is significantly higher, $27.3\unit{eV}$, preventing a high risk of further ionisation and thus a lower charge/mass ratio. The rubidium vapour is created by heating the reservoir and the plasma cell to around $150-200\celsius$ to reach the density range required for AWAKE \cite{caldwell:2015}.
+
+The ionisation of the Rb vapour is achieved with a short laser pulse co-propagating with the proton drive beam. In order to seed the self-modulation of the driver, the laser can be timed such that the plasma channel is created inside the beam itself.
+
+% ================================================================================================ %
+\section{Stages of the Experiment}
 \label{WFA:AWAKE}
 
 A summary of the AWAKE experiment
