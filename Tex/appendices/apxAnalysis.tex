@@ -6,25 +6,25 @@
 \chapter{Data Analysis}
 \label{Apx:DA}
 
-It has been very useful to develop a tool for effective analysis of the large amount of data produced by the Osiris and QuickPIC simulations used in this study. Most of the initial studies have been done using Osiris, and while the emittance studies have been mostly done using QuickPIC.
+The simulation codes used in these studies produce large amounts of data. It has been very useful to develop a tool for effective analysis of bot input and output files. Most of the initial studies were done using OSIRIS (Publication \ref{Pub:IPAC15} and \ref{Pub:NAPAC16}), and the final emittance study was done using QuickPIC (Publication \ref{Pub:BL17}).
 
-For the experiment itself a portion of the PhD project has been spent developing data acquistion tools and integrating these with the existing CERN data acquisition infrastructure.
+The analysis code written for these studies are publicly available on GitHub. The toolbox for OSIRIS is named OsirisAnalysis \cite{code:osiris_analysis:2013}, and the corresponding toolbox for QuickPIC is named QuickPICAnalysis \cite{code:quickpic_analysis:2017}. Both toolboxes are written in MATLAB.
 
-As of the time of writing, the OsirisAnalysis framework is publicly available on GitHub \cite{code:osiris_analysis:2013}.
+This appendix briefly outlines the structure and basic function of these tools.
 
 % ================================================================================================ %
-\section{Osiris Analysis Framework}
+\section{Osiris Analysis Toolbox}
 \label{Tools:OA}
 
-The OsirisAnalysis framweork is a modular and object oriented data analysis framweork written in MATLAB. It was designed as a three layer tool to wrap a single data set of OSIRIS simulation data.
+The OsirisAnalysis toolbox is a modular and object oriented data analysis toolbox written in MATLAB. It was designed as a three layer tool to wrap a single data set of OSIRIS simulation data:
 
 \begin{itemize}
-    \item \textbf{Layer 1:} Consists of the core datawrapper, OsirisData, which provides an interface through which raw data files as well as the simulation input file is parsed. It provides a uniform method for extracting data, and gives access to all the simulation parameters and conversion factors for converting Osiris' normalised units into SI units.
-    \item \textbf{Layer 2:} The second layer consists of a set of classes that takes an OsirisData object as input, and returns standardised structs of data that can be scaled and converted to preferred units. They perform often needed tools and methods to parse data and extract more detailed information from the larger raw datasets.
-    \item \textbf{Layer 3:} The third layer consist of a number of useful standardised plots and a GUI tool to quickly do a preliminary analysis of simulation data.
+    \item \textbf{Layer 1} consists of the core data wrapper class OsirisData with its subclass OsirisConfig. The OsirisData class provides an interface for accessing the raw data files, while the OsirisConfig class parses the simulation input file. OsirisData provides a uniform set of calls for extracting the data, and gives through OsirisConfig access to all the simulation parameters and conversion factors for converting Osiris' normalised units into SI units.
+    \item \textbf{Layer 2} consists of a set of classes that takes an OsirisData object as input, and returns standardised structs of data that can be scaled and converted to preferred units. They perform often needed tools and methods to parse data and extract more detailed information from the larger raw datasets.
+    \item \textbf{Layer 3} consist of a number of useful standardised plots, and a GUI tool to quickly do a preliminary analysis of simulation data.
 \end{itemize}
 
-The philosophy behind this layering of the analysis tool is to allow the user the freedom to choose how many of these they will use. Only using the first layer will give the user access to all the simulation parameters as well as a method to extract data in a standardised manner and return a simple matrix of its content. Adding the second layer gives additional access to automatic unit conversion and other tools if needed. The third layer is entirely optional and simply provides a quick way to browse through the data.
+The idea behind this layering of the analysis tool is to allow the user to choose how many of these they will use. Only using the first layer will give the user access to all the simulation parameters as well as a method to extract data in a standardised manner and return a simple matrix of its content. Adding the second layer gives additional access to automatic unit conversion and other data conversion tools like slicing and lineouts, as well as various properties extracted from the macro particle arrays. The third layer provides a quick way to browse through the datasets and display density plots, phasespace plots, Twiss parameters, time evolution, etc.
 
 % ================================================================================================ %
 \subsection{OsirisAnalysis Core Objects}
