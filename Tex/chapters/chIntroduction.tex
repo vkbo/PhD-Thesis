@@ -57,11 +57,21 @@ A limitation using an electron beam with a similar initial charge and energy for
 \section{Beam-Plasma Interaction}
 \label{Int:BPI}
 
-Some introduction text to the two regimes and such.
+As a beam propagates through plasma, it affects the local density of the plasma electrons. A positively charged beam will pull plasma electrons towards the propagation axis, while a negatively charged beam will push them away \cite{lee:2001,adli:2016b}. Plasma electrons expelled from the axis by a negative beam will be pulled back by the relatively stationary ions. When these electrons are pulled towards the axis by a positive charge from ions or a beam they overshoot, resulting in a oscillating system. Tne magnitude of these oscillations are determined by the beam current, and the oscillation period by the plasma wavelength. If the current is sufficiently large, electrons are completely expelled from the axis, forming a \textit{bubble} \cite{hogan:2016,muggli:2017}. An illustration of an electron beam travelling though a plasma is shown in Figure \ref{Fig:PWFA:Illust}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaWakefield}
+    \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/deceleratring regions (as seen for an electron witness beam) are produced behind the drive beam.}
+\end{figure}
 
 % ================================================================================================ %
 \subsection{The Linear Regime}
 \label{Int:BPI:Lin}
+
+When the charge density of the beam is smaller than that of the plasma, the system is in the \textit{linear regime}. 
+
+[Add stuff from Patric's \cite{muggli:2017}]
 
 A point like charge travelling at a speed close to the speed of light, will generate fields in its wake \cite{van_der_meer:1985, chen:1985}:
 \begin{align}
@@ -73,13 +83,6 @@ where $Q_{b}$ is the charge of the beam, $k_{pe}$ is the plasma wave number, and
 Cite \cite{ruth:1985}
 
 % ================================================================================================ %
-
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaWakefield}
-    \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/deceleratring regions (as seen for an electron witness beam) are produced behind the drive beam.}
-\end{figure}
-
 \subsection{The Non-Linear Regime}
 \label{Int:BPI:NLin}
 
