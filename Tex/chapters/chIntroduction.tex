@@ -107,38 +107,39 @@ The implication of this is that for relativistic beams, the transverse dynamics 
 
 The aim of plasma wakefield acceleration is to transfer energy from a drive beam to a witness beam via the plasma. The efficiency of the energy transfer \dash i.e. the ratio of accelerating field amplitude at the position of the witness beam to the decelerating field amplitude within the drive bunch \dash is referred to as the \textit{transformer ration}.
 
-Following Ruth \textit{et al.} \cite{ruth:1985}, let us consider a drive bunch of zero length, with $N_{1}$ particles of individual energy $E_{1}$. The energy loss of the bunch in the decelerating field $W_{\xi}$ is given by:
+Following Ruth \textit{et al.} \cite{ruth:1985}, let us consider a drive bunch of zero length, with $N_{d}$ particles of individual energy $E_{d}$, and $W_{e}(\xi)$ is the wakefield per unit charge. The energy loss of the bunch in the decelerating field is given by:
 \begin{equation}
-    \frac{\deriv (N_{1}E_{1})}{\deriv z} = - N_{1}^{2}e^{2}W(0), \label{EQ:TRat:Drive}
+    \frac{\deriv (N_{d}E_{d})}{\deriv z} = - N_{d}^{2}e^{2}W_{e}(0), \label{EQ:TRat:Drive}
 \end{equation}
-where $\xi_{1} = 0$ is the position of the drive bunch.
+where $\xi_{d} = 0$ is the position of the drive bunch.
 
-The trailing witness bunch at position $\xi_{2}$, will see the wakefield left by the drive bunch as well as its own wakefield:
+The trailing witness bunch at position $\xi_{w}$, will see the wakefield left by the drive bunch as well as its own wakefield:
 \begin{equation}
-    \frac{\deriv (N_{2}E_{2})}{\deriv z} = - N_{2}^{2}e^{2}W(0) - N_{1}N_{2}e^{2}W(\xi_{2}), \label{EQ:TRat:Witness}
+    \frac{\deriv (N_{w}E_{w})}{\deriv z}
+        = - N_{w}^{2}e^{2}W_{e}(0) - N_{d}N_{w}e^{2}W_{e}(\xi_{w}), \label{EQ:TRat:Witness}
 \end{equation}
-where $N_{2}$ is the number of particles in the witness bunch, and $E_{2}$ is their individual energy.
+where $N_{w}$ is the number of particles in the witness bunch, and $E_{w}$ is their individual energy.
 
 As required by energy conservation, the total energy of the system cannot increase. It thus follows that
 \begin{equation}
-    (N_{1}^{2} + N_{2}^{2})W(0) + N_{1}N_{2}W(\xi_{2}) \geq 0, \label{EQ:TRat:EConv}
+    (N_{d}^{2} + N_{w}^{2})W_{e}(0) + N_{d}N_{w}W_{e}(\xi_{w}) \geq 0, \label{EQ:TRat:EConv}
 \end{equation}
 giving the requirement that the acceleration gradient experienced by a trailing particle satisfies
 \begin{equation}
-    \frac{\deriv E_{2}}{\deriv z} \leq (2N_{1} - N_{2})e^{2}W(0). \label{EQ:TRat:Grad}
+    \frac{\deriv E_{w}}{\deriv z} \leq (2N_{d} - N_{w})e^{2}W_{e}(0). \label{EQ:TRat:Grad}
 \end{equation}
 
 Assuming the drive bunch transfers all of its energy to the wakefields, it would stop after a distance
 \begin{equation}
-    L = \frac{E_{1}}{N_{1}e^{2}W(0)}, \label{EQ:Trat:LStop}
+    L = \frac{E_{d}}{N_{d}e^{2}W_{e}(0)}, \label{EQ:Trat:LStop}
 \end{equation}
-and the energy a witness beam particle can gain must satisfy
+the energy a witness beam particle can gain must satisfy
 \begin{equation}
-    \Delta E_{2} = \frac{\deriv E_{2}}{\deriv z}L
-                 \leq E_{1}\left(2-\frac{N_{2}}{N_{1}}\right). \label{EQ:TRat:DeltaE}
+    \Delta E_{w} = \frac{\deriv E_{w}}{\deriv z}L
+                 \leq E_{d}\left(2-\frac{N_{w}}{N_{d}}\right). \label{EQ:TRat:DeltaE}
 \end{equation}
 
-The maximum energy gain approaches twice the energy of the drive bunch as $N_{2} \to 0$. In a wakefield accelerator we define the transformer ratio as the maximum accelerating field \textit{behind} the drive bunch where the witness beam is position, to the maximum decelerating field \textit{within} the drive bunch \cite{muggli:2017}:
+The maximum energy gain approaches twice the energy of the drive bunch as $N_{w} \to 0$. In a wakefield accelerator we define the transformer ratio as the maximum accelerating field \textit{behind} the drive bunch where the witness beam is position, to the maximum decelerating field \textit{within} the drive bunch \cite{muggli:2017}:
 \begin{equation}
     R = \frac{E_{+}}{E_{-}}. \label{EQ:TRat}
 \end{equation}
@@ -232,7 +233,11 @@ This follows from the general envelope equation \cite{lee:1976} under the assump
 \section{The Proton Drive Beam}
 \label{Int:DBeam}
 
-So far the theory presented has focused on short electron bunches as drivers for plasma wakefield acceleration. Electron bunches used in such experiments have typically been on the order of $100\unit{J}$
+So far the theory presented has focused on short electron bunches as drivers for plasma wakefield acceleration. Electron bunches used in such experiments have a low total energy and thus a limited propagation length in the plasma as can be estimated using Eq. \ref{EQ:Trat:LStop}.
+
+One experiment, at the Stanford Linear Accelerator Center (SLAC) \cite{blumenfeld:2007}, achieved up to a doubling of energy of electrons with a $42\unit{GeV}$ driver with $1.8\nexp{10}$ particles, corresponding to a total beam energy of $120\unit{J}$. The propagation length of such a beam is on the order of a metre, and the experiment used an $85\unit{cm}$ lithium plasma cell to achieve the energy doubling with a gradient of $52\unit{GeV}$.
+
+Such short accelerator segments are suitable for multi staged accelerators, but they require multiple high energy electron beams. 
 
 % ================================================================================================ %
 \subsection{Protons vs. Electrons as Drive Beam}
