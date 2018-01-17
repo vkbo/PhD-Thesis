@@ -20,7 +20,7 @@ An initial set of simulations were run to study the evolution of the self-modula
 \end{equation}
 where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor to match the SPS bunch charge. The charge of the proton beam in cylindrical coordinates is thus given by
 \begin{equation}
-    Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv{r}\deriv{\xi}, \label{EQ:SPS-Charge}
+    Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
 \end{equation}
 and $A$ is tuned so that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKE-Run1}.
 
@@ -79,9 +79,11 @@ Emittance is preserved in the linear regime
 \subsection{The Quasi-linear + Non-Linear Case}
 \label{Sim:QLinNonLin}
 
-An electron beam matched to the typical AWAKE plasma density will be, as discussed in \ref{Sim:Match}, very narrow. At a typical normalised emittance of $2.0\unit{\mu m}$ the beam is $5.25\unit{\mu m}$. Even at low beam charge and at the upper limit in terms of beam length, the wakefields of such a beam will quickly reach the non-linear regime. In the base case used in the beam loading study included in Publication \ref{Pub:BL17} \cite{berglyd_olsen:2018} the peak density of the beam $n_b/n_0 > 35$, well beyond the saturation level of the bubble that occurs when $n_b/n_0 > 10$ \cite{lu:2005}.
+Quasi-linear reference \cite{rosenzweig:2010}.
 
-The implication here is that there is an additional benefitial effect of loading the accelerating field with as much charge as it will allow without overloading it. The resulting non-linear wake driven by the head of the beam, which will see emittance growth due to the quasi-linear conditions of the proton wake, ensures that the rest of the beam sees a strong focusing force preventing further emittance growth. As the electron beam gains energy, its transverse size will decrease as its emittance is preserved as $\sigma_{r} = \sqrt{\emitN\beta}$ \cite{wille:2001}.
+An electron beam matched to the typical AWAKE plasma density will be, as discussed in \ref{Int:BPI:Match}, very narrow. At a typical normalised emittance of $2.0\unit{\mu m}$ the beam is $5.25\unit{\mu m}$. Even at low beam charge and at the upper limit in terms of beam length, the wakefields of such a beam will quickly reach the non-linear regime. In the base case used in the beam loading study included in Publication \ref{Pub:BL17} \cite{berglyd_olsen:2018} the peak density of the beam $n_b/n_0 > 35$, well beyond the saturation level of the bubble that occurs when $n_b/n_0 > 10$ \cite{lu:2005}.
+
+The implication here is that there is an additional beneficial effect of loading the accelerating field with as much charge as it will allow without overloading it. The resulting non-linear wake driven by the head of the beam, which will see emittance growth due to the quasi-linear conditions of the proton wake, ensures that the rest of the beam sees a strong focusing force preventing further emittance growth. As the electron beam gains energy, its transverse size will decrease as its emittance is preserved as $\sigma_{r} = \sqrt{\emitN\beta}$ \cite{wille:2001}.
 
 % ================================================================================================ %
 

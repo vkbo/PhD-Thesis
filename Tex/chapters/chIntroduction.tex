@@ -57,13 +57,15 @@ A limitation using an electron beam with a similar initial charge and energy for
 \section{Beam-Plasma Interaction}
 \label{Int:BPI}
 
-As a relativistic, charged beam propagates through plasma, it affects the local density of the plasma electrons. The charged beam generates strong transverse fields, pushing or pulling the plasma electrons away or towards the propagation axis of the beam \cite{lee:2001,adli:2016b}. As the heavier plasma ions will move one a much longer time scale, due to inertia, the plasma electrons expelled from the axis will be pulled back towards it by the ion charge. The electrons will tend to overshoot the axis, creating an oscillation system. A positively charged drive beam will initially pull the electrons towards the axis, where they overshoot, creating a similar effect to a negative drive beam with a half-period phase offset. The oscillation period is determined by the plasma wavelength of the electrons \cite{hogan:2016,muggli:2017}. An illustration of an electron beam travelling though a plasma is shown in Figure \ref{Fig:PWFA:Illust}.
+As a relativistic, charged beam propagates through plasma, it affects the local density of the plasma electrons. The charged beam generates strong transverse fields, pushing or pulling the plasma electrons away or towards the propagation axis of the beam \cite{lee:2001,adli:2016b}. As the heavier plasma ions will move one a much longer time scale, due to inertia, the plasma electrons expelled from the axis will be pulled back towards it by the ion charge. The electrons will tend to overshoot the axis, creating an oscillation system. A positively charged drive beam will initially pull the electrons towards the axis, where they overshoot, creating a similar effect to a negative drive beam with a half-period phase offset. The oscillation period is determined by the plasma wavelength of the electrons \cite{hogan:2016,muggli:2017}. 
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaWakefield}
     \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/deceleratring regions (as seen for an electron witness beam) are produced behind the drive beam.}
 \end{figure}
+
+A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig. \ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can be both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can amplify the wakefields.
 
 % ================================================================================================ %
 \subsection{The Drive Beam}
@@ -97,10 +99,54 @@ for two sample particles with energy difference $\Delta\gamma$ \cite{muggli:2017
               = q_{b}E_{r}\left(1 - \frac{v_{b}^{2}}{c^{2}}\right)
               = \frac{1}{\gamma^2}q_{b}E_{r}. \label{EQ:DeFocR}
 \end{equation}
-The implication being that for relativistic beams, the transverse dynamics are dominated by emittance and external forces \cite{muggli:2017}.
+The implication of this is that for relativistic beams, the transverse dynamics are dominated by emittance and external forces \cite{muggli:2017}.
 
 % ================================================================================================ %
-\subsection{The Linear Regime}
+\subsection{The Transformer Ratio}
+\label{Int:BPI:TRat}
+
+The aim of plasma wakefield acceleration is to transfer energy from a drive beam to a witness beam via the plasma. The efficiency of the energy transfer \dash i.e. the ratio of accelerating field amplitude at the position of the witness beam to the decelerating field amplitude within the drive bunch \dash is referred to as the \textit{transformer ration}.
+
+Following Ruth \textit{et al.} \cite{ruth:1985}, let us consider a drive bunch of zero length, with $N_{1}$ particles of individual energy $E_{1}$. The energy loss of the bunch in the decelerating field $W_{\xi}$ is given by:
+\begin{equation}
+    \frac{\deriv (N_{1}E_{1})}{\deriv z} = - N_{1}^{2}e^{2}W(0), \label{EQ:TRat:Drive}
+\end{equation}
+where $\xi_{1} = 0$ is the position of the drive bunch.
+
+The trailing witness bunch at position $\xi_{2}$, will see the wakefield left by the drive bunch as well as its own wakefield:
+\begin{equation}
+    \frac{\deriv (N_{2}E_{2})}{\deriv z} = - N_{2}^{2}e^{2}W(0) - N_{1}N_{2}e^{2}W(\xi_{2}), \label{EQ:TRat:Witness}
+\end{equation}
+where $N_{2}$ is the number of particles in the witness bunch, and $E_{2}$ is their individual energy.
+
+As required by energy conservation, the total energy of the system cannot increase. It thus follows that
+\begin{equation}
+    (N_{1}^{2} + N_{2}^{2})W(0) + N_{1}N_{2}W(\xi_{2}) \geq 0, \label{EQ:TRat:EConv}
+\end{equation}
+giving the requirement that the acceleration gradient experienced by a trailing particle satisfies
+\begin{equation}
+    \frac{\deriv E_{2}}{\deriv z} \leq (2N_{1} - N_{2})e^{2}W(0). \label{EQ:TRat:Grad}
+\end{equation}
+
+Assuming the drive bunch transfers all of its energy to the wakefields, it would stop after a distance
+\begin{equation}
+    L = \frac{E_{1}}{N_{1}e^{2}W(0)}, \label{EQ:Trat:LStop}
+\end{equation}
+and the energy a witness beam particle can gain must satisfy
+\begin{equation}
+    \Delta E_{2} = \frac{\deriv E_{2}}{\deriv z}L
+                 \leq E_{1}\left(2-\frac{N_{2}}{N_{1}}\right). \label{EQ:TRat:DeltaE}
+\end{equation}
+
+The maximum energy gain approaches twice the energy of the drive bunch as $N_{2} \to 0$. In a wakefield accelerator we define the transformer ratio as the maximum accelerating field \textit{behind} the drive bunch where the witness beam is position, to the maximum decelerating field \textit{within} the drive bunch \cite{muggli:2017}:
+\begin{equation}
+    R = \frac{E_{+}}{E_{-}}. \label{EQ:TRat}
+\end{equation}
+
+While the maximum transformer ratio is $2$, larger values can be achieved by for instance bunch ramping \cite{bane:1985} or by a train of bunches \cite{jing:2006}.
+
+% ================================================================================================ %
+\subsection{The Linear Plasma Regime}
 \label{Int:BPI:Lin}
 
 When the charge density of the beam is smaller than that of the plasma, $n_{b} \ll n_{pe}$, the system is in the \textit{linear regime}. The linear regime is not of much interest for accelerator applications as it does not produce strong wakefields, and the transverse and longitudinal fields have continuous variations. These variations will strongly affect the energy spread and emittance of the witness beam. However, this regime is interesting from a theoretical perspective because it is well described analytically \cite{muggli:2017}.
@@ -114,16 +160,16 @@ where we still assume $n_{b} \ll n_{pe}$.
 The solution to Eq. \ref{EQ:BeamPlasmaWF} in the longitudinal dimension is the Green’s function for a harmonic oscillator in 1D \cite{katsouleas:1987}, and the radial dependency can be calculated from 2D theory for different radial profiles \cite{chen:1987}. For a beam that has a Gaussian profile in both dimensions, the wakefields are
 \begin{align}
     W_{\parallel}(r,\xi) &= \frac{e}{\epsilon_{0}}
-        \int_{-\infty}^{\xi} n_{b\parallel}(\xi^{\prime}) \cos\left[k_{pe}(\xi-\xi^{\prime})\right] \deriv{\xi^{\prime}} \,\cdot\, R(r) \label{EQ:WzFull} \\
+        \int_{-\infty}^{\xi} n_{b\parallel}(\xi^{\prime}) \cos\left[k_{pe}(\xi-\xi^{\prime})\right] \,\deriv\xi^{\prime} \,\cdot\, R(r) \label{EQ:WzFull} \\
     W_{\perp}(r,\xi) &= \frac{e}{\epsilon_{0}k_{pe}}
-        \int_{-\infty}^{\xi} n_{b\parallel}(\xi^{\prime}) \sin\left[k_{pe}(\xi-\xi^{\prime})\right] \deriv{\xi^{\prime}} \,\cdot\, \frac{\mathrm{d}}{\mathrm{d}r}R(r), \label{EQ:WrFull}
+        \int_{-\infty}^{\xi} n_{b\parallel}(\xi^{\prime}) \sin\left[k_{pe}(\xi-\xi^{\prime})\right] \,\deriv\xi^{\prime} \,\cdot\, \frac{\mathrm{d}}{\mathrm{d}r}R(r), \label{EQ:WrFull}
 \end{align}
 where the transverse dependency $R(r)$ is
 \begin{align}
     R(r) &= k_{pe}^{2} \int_{0}^{r} n_{b\perp}(r^{\prime}) I_{0}(k_{pe}r^{\prime})
-           K_{0}(k_{pe}r) \,r^{\prime}\deriv{r}^{\prime} \nonumber \\
+           K_{0}(k_{pe}r) \,r^{\prime}\,\deriv r^{\prime} \nonumber \\
          &+ k_{pe}^{2} \int_{r}^{\infty} n_{b\perp}(r^{\prime}) I_{0}(k_{pe}r)
-           K_{0}(k_{pe}r^{\prime}) \,r^{\prime}\deriv{r}^{\prime}. \label{EQ:WFRadial}
+           K_{0}(k_{pe}r^{\prime}) \,r^{\prime}\,\deriv r^{\prime}. \label{EQ:WFRadial}
 \end{align}
 Here $I_{0}$ and $K_{0}$ are the zeroth-order modified Bessel functions of the first and second kind, respectively \cite{chen:1987,muggli:2017}.
 
@@ -135,30 +181,62 @@ Here $I_{0}$ and $K_{0}$ are the zeroth-order modified Bessel functions of the f
 
 As can be seen from Figure \ref{Fig:BPI:Kat87}, the longitudinal wakefield is at its maximum on-axis. For very wide beams, $\sigma_{r} \gg k_{pe}$, we converge at the 1D result as we expect. For very narrow beams, $\sigma_{r} \gg k_{pe}$, the maximum decreases rapidly with radius causing different parts of the witness beam at different radii to see different accelerating fields. The cosine component of Eq. \ref{EQ:WzFull} also implies longitudinal variations of the accelerating field. Combined, these produce a large energy spread for the accelerating beam. Additional, the sinusoidally varying focusing field from Eq. \ref{EQ:WrFull} produces emittance growth \cite{muggli:2017,katsouleas:1987}.
 
-% Cite \cite{ruth:1985}
-
 % ================================================================================================ %
-\subsection{The Non-Linear Regime}
+\subsection{The Non-Linear Plasma Regime}
 \label{Int:BPI:NLin}
 
-In the non-linear regime, also referred to as the \textit{blowout} regime in the literature, the plasma electrons are expelled from the region around the axis to form a region populated by only plasma ions. As the ions are practically stationary on the time scale of the plasma electrons, they form a uniform column of positive charge. The electrons displaced by the space charge of the drive beam are pulled back on axis by the ions, within the characteristic time $\omega_{pe}^{-1}$, to form a thin sheath of electrons with the shape of a bubble \cite{lu:2006a,lu:2006}. Hence, this is also sometimes referred to as the \textit{bubble} regime or the \textit{blow out} regime.
+When the beam density $n_{b} > n_{pe}$, the system is in the non-linear regime, also often referred to as the \textit{blowout} regime. Using this regime for plasma wakefield acceleration was proposed by Rosenzweig \textit{et al.} in 1991 \cite{rosenzweig:1991}. In this regime the plasma electrons are expelled entirely from the region around the axis to form a region populated by only plasma ions. As the ions are practically stationary on the time scale of the plasma electrons, they form a uniform column of positive charge. The electrons displaced by the space charge of the drive beam are pulled back on axis by the ions in the form a thin sheath with the shape of a bubble. Hence, this is also sometimes referred to as the \textit{bubble}.
 
-A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig. \ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can amplify the wakefields.
+The large transverse forces produced by the drive beam in this regime, followed by the strong restoring force of the ion channel, produces a large density spike behind the formed bubble. After this point, the motion becomes non-linear \cite{dawson:1959,rosenzweig:1991}.
+
+[Reproduce plots in figure 2 of Rosenzweig 1991 from QuickPIC data and insert here.]
+
+The radial wakefield, $W_{r}$, produces linear focusing, while the accelerating wakefield, $W_{\xi}$, is uniform within the bubble. In other words, while the focusing prevents emittance growth. the accelerating gradient of the witness bunch being independent of radial position for a range of positions avoid large energy spreads; both disadvantages with the linear regime.
+
+Unlike in the linear case, there is no full theory describing the non-linear case. However, under certain assumed conditions a non-linear kinetic theory by Lu \textit{et al.} has been developed \cite{lu:2006a,lu:2006}.
+
+% ================================================================================================ %
+\subsection{Beam Loading}
+\label{Int:BPI:BLoad}
+
+A challenge with both the linear and the non-linear regime is the longitudinally varying accelerating field, producing energy spread in the accelerated bunch. Ideally, the accelerating field should be uniform in the region occupied by the witness bunch. As the witness bunch generates its own wakefield, these fields are combined with those from the drive bunch. It follows, then, that the properties of the witness bunch can both worsen or improve the flatness of the field.
+
+[Add beam loading plot, or combine with plot from previous subsection]
+
+In the linear case, the challenge is to create a uniform accelerating field in both the transverse and longitudinal direction. The non-uniformity challenges have been outlined, and solutions proposed, by Van der Meer \cite{van_der_meer:1985} as well as Katsouleas \textit{et al.} \cite{katsouleas:1987} in the 1980s. The latter suggesting triangular and trapezoidal witness bunches in order to exactly cancel the variations in the field within the bunch.
+
+In the non-linear case, the radial accelerating field variation vanishes, provided witness bunch transverse size is within about $2\sigma_{r}$ of the drive bunch \cite{rosenzweig:1991}. The longitudinal variation, however, remains.
+
+A short bunch with respect to the accelerating phase of the wakefield, $L \leq \lambda_{pe}/4$, will affect the shape of the plasma electron sheath, but still allow them to return to the axis while decreasing their transverse momentum. If the total momentum reaches zero, the witness beam has extracted all the energy of the accelerating field \cite{lu:2006a,lu:2006}. This is generally not achievable, but as outlined by Tzoufras \textit{et al.} \cite{tzoufras:2009}, a trapezoidal witness bunch, with a density maximum at its head, can theoretically both flatten the field and achieve a high transformer ratio. They further show that a flat top bunch is similarly efficient, and Gaussian bunches also have comparable properties \dash all being sensitive to fine tuning of position within the bubble and its spot size.
+
+Tzoufras \textit{et al.} provides a solution for the energy absorbed per unit length for an ideal trapezoidal bunch. stating that
+\begin{equation}
+    Q_{tr}E_{t} = \frac{\pi R_{b}^{4}}{16}, \label{EQ:Trapez}
+\end{equation}
+where $Q_{tr}$ is the total charge of the trapezoidal bunch, $E_{t}$ is the longitudinal field at the head of the bunch, and $R_{b}$ is the radius of the bubble. It immediately follows that at optimal beam loading there is a trade-off between charge and the energy gradient and thus energy gain \cite{tzoufras:2009}.
 
 % ================================================================================================ %
 \subsection{Beam Matching}
-\label{Sim:Match}
+\label{Int:BPI:Match}
 
-In the non-linear case where an ion column is formed, the focusing force it produces will cause a pinching effect on the beam. The beam itself, assuming $\emitN > 0$, will cause the beam to try to expand. There exists a beam radius where the focusing force and the beam's tendency to expand are in equilibrium. For a highly relativistic beam, $\gammar \gg 1$, the equilibrium radius is given by \cite{krall:1995}
+In the non-linear case where an ion column is formed, the focusing force it produces will cause a pinching effect on the beam. While the beam itself, assuming $\emitN > 0$, will try to expand, there exists a beam radius where the focusing force and the beam's tendency to expand are in equilibrium. For a highly relativistic beam, $\gammar \gg 1$, the equilibrium radius is given by \cite{krall:1995}
 \begin{equation}
-    R_{\mathrm{eq}} = \left( 8 \frac{\emitN^2}{\gammar} \frac{c^2}{\omega_{p}^2} \right)^{1/4}. \label{EQ:Sim:Req}
+    R_{\mathrm{eq}} = \left( 8 \frac{\emitN^2}{\gammar} \frac{c^2}{\omega_{p}^2} \right)^{1/4}. \label{EQ:BMatch}
 \end{equation}
 
-Equation \ref{EQ:Sim:Req} follows from the general enevolpe equation \cite{lee:1976} under the assumption that the beam enters the plasma at focus (i.e. $\deriv{\sigma_{r}}/\deriv{z} = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995} \dash the latter being the case in the blow-out regime.
+This follows from the general envelope equation \cite{lee:1976} under the assumption that the beam enters the plasma at focus (i.e. $\deriv\sigma_{r}/\deriv z = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995}.
+
+[Insert figure from Publication 4 showing the pinching.]
 
 % ================================================================================================ %
-\section{Protons vs. Electrons as Drive Beam}
-\label{Int:PDPWFA}
+\section{The Proton Drive Beam}
+\label{Int:DBeam}
+
+So far the theory presented has focused on short electron bunches as drivers for plasma wakefield acceleration. Electron bunches used in such experiments have typically been on the order of $100\unit{J}$
+
+% ================================================================================================ %
+\subsection{Protons vs. Electrons as Drive Beam}
+\label{Int:DBeam:PDPWFA}
 
 Further details on proton driven plasma wakefield goes here.
 
@@ -167,8 +245,8 @@ Benefit of larger energy per bunch, challenge of producing short bunches.
 Cite \cite{adli:2016a}.
 
 % ================================================================================================ %
-\section{The Self-modulation Instability}
-\label{Int:SMI}
+\subsection{The Self-modulation Instability}
+\label{Int:DBeam:SMI}
 
 A long beam with respect to the plasma wavelength will generate a density wave driven by its own head. This is true for both laser beams \cite{esarey:1994} and particle beams \cite{kumar:2010}, and they are caused by the same underlying physics. For a laser beam, this produces alternating regions of focusing and diffraction. For a particle beam, the wakefields generated within the beam acts back on itself, breaking it up into short micro bunches with a surrounding, defocused halo.
 
@@ -179,17 +257,5 @@ The self-modulation instability (SMI), is one of several instabilities affecting
 % To add: Phase velocity of SMI WF. Two-stream and hosing.
 
 In electron beam \cite{muggli:2014}.
-
-% ================================================================================================ %
-\section{Numerical Simulations of PWFA}
-\label{Int:Sim}
-
-PIC codes. Osiris vs, QuickPIC.
-
-Numerical Cherenkov, Lehe. Relevance to emittance.
-
-Reference to PIC appendix.
-
-Maybe something about resolution and convergence.
 
 % ================================================================================================ %
