@@ -176,7 +176,7 @@ Here $I_{0}$ and $K_{0}$ are the zeroth-order modified Bessel functions of the f
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.70\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/RepKatsouleas1987}
+    \includegraphics[width=0.8125\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/RepKatsouleas1987}
     \caption{\label{Fig:BPI:Kat87} The radial function $R(r)$ for a range of uniform beams cut of at a radius $a$ up to twice the plasma skin depth $k_{pe}^{-1}$. The plot is reproduced from Katsouleas \textit{et al.} \cite{katsouleas:1987}.}
 \end{figure}
 
@@ -225,7 +225,13 @@ In the non-linear case where an ion column is formed, the focusing force it prod
 
 This follows from the general envelope equation \cite{lee:1976} under the assumption that the beam enters the plasma at focus (i.e. $\deriv\sigma_{r}/\deriv z = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995}.
 
-[Insert figure from Publication 4 showing the pinching.]
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1.0\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/BeamMatching}
+    \caption{\label{Fig:BPI:Match} The evolution of the transverse RMS size of an initially matched electron beam as it accelerates through a plasma. The tail of the beam, in red, remains in a region where it is matched, while the head of the beam, in blue, does not. The black line corresponds to the theoretical spot size of the beam at nominal plasma density. Based on simulation data from Publication \ref{Pub:BL17}.}
+\end{figure}
+
+Figure \ref{Fig:BPI:Match} shows the evolution of the transverse RMS size of an electron beam as it travels through a plasma. The beam has an emittance of $2\unit{\mu m}$, and is initially matched to a plasma density of $7\nexp{14}\unit{cm}^{-3}$. The tail of the beam, in red, is in the plasma bubble and thus sees an ion density equal to the plasma density. The head of the beam, in blue, where the bubble is forming, sees a lower density. The head of the beam is thus not matched, and instead oscillates around an equilibrium point at a larger radius. The black line shows the line given by Eq. \ref{EQ:BMatch} at initial plasma density and beam energy as a function of $z$ as the beam is accelerated \cite{berglyd_olsen:2018}.
 
 % ================================================================================================ %
 \section{The Proton Drive Beam}
@@ -241,11 +247,13 @@ Such short accelerator segments are suitable for multi staged accelerators, but 
 \subsection{Protons vs. Electrons as Drive Beam}
 \label{Int:DBeam:PDPWFA}
 
+For a beam to efficiently drive wakefields, it should have a length $k_{pe}\sigma_{z} \simeq \sqrt{2}$ \cite{lu:2005,lee:2000}, and transverse size $k_{pe}\sigma_{r} \lesssim 1$. Wider beams will cause filamentation instabilities \cite{allen:2012,sentoku:2003}. As mentioned, high transformer ratios can in addition be achieved with multiple drive bunches \cite{jing:2006} with a $\lambda_{pe}$ separation as these will resonantly drive increasing wakefields. 
+
 Further details on proton driven plasma wakefield goes here.
 
 Benefit of larger energy per bunch, challenge of producing short bunches.
 
-Cite \cite{adli:2016a}.
+Cite \cite{adli:2016a,adli:2016b}.
 
 % ================================================================================================ %
 \subsection{The Self-modulation Instability}

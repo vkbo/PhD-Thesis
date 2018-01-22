@@ -22,7 +22,7 @@ where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton b
 \begin{equation}
     Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
 \end{equation}
-and $A$ is tuned so that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKE-Run1}.
+and $A$ is tuned so that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKE-Run1}. A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape, as the cosine goes to zero at a finite length \cite{lotov:2010}.
 
 % Add figure with FFT of beam.
 
@@ -31,11 +31,13 @@ and $A$ is tuned so that $Q_{pb}$ matches the charge outlined in Table \ref{T:AW
 \subsection{Studies with Pre-modulated Beam}
 \label{Sim:PBPreMod}
 
-In order to make the simulations more manageable in size, for the beam loading studies we decided to move to a sample proton beam of $26$ micro bunches. The simulations were all done using OSIRIS 3.0. With this version it is necessary for the beams to drift in vacuum for a short distance for the EM-fields to develop properly as they start at zero (see further discussion in Section \ref{PIC:Full}). Since the evolution of the self-modulation instability was not of primary interest in this study, we chose to modify the beam profile to emulate a section of modulated beam. We refer to this as pre-modulation. This was done by shortening the wavelength of the profile in Eq. \ref{EQ:SPS-Profile} to match that of the plasma wavelength:
+In order to make the simulations more manageable in size, for the beam loading studies we decided to move to a sample proton beam of $26$ micro bunches. These simulations were all done using OSIRIS 3.0. With this version it is necessary for the beams to drift in vacuum for a short distance for the electro-magnetic fields to develop properly as they start at zero (see further discussion in Section \ref{PIC:Full}). Since the evolution of the self-modulation instability was not of primary interest at this stage, we chose to modify the beam profile to emulate a section of modulated beam. We refer to this as pre-modulation. This was done by shortening the period of the density envelope cosine function in Eq. \ref{EQ:SPS-Profile} to match that of the plasma wavelength.
 \begin{equation}
     f(\xi,r) = A\sqrt{2} \left[\frac{1}{2\sqrt{2}} + \cos\left(k_{pe}\xi - \mu\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:PB-PreMod}
 \end{equation}
-where $\mu$ is the position of the first micro bunch and $k_{pe}$ is the plasma wave number \cite{berglyd_olsen:2015}. The offset of the cosine function is chosen such that the width of the micro bunch matches the width of a bunch in the simulations done with a full beam. Since OSIRIS ignores profile densities with negative values, the profile is automatically clipped at $0$.
+where $\mu$ is the position of the first micro bunch, and $k_{pe}$ is the plasma wave number \cite{berglyd_olsen:2015}. The offset of the cosine function is chosen such that the width of the micro bunch matches the width of a bunch in the simulations done with a full beam. Since OSIRIS ignores profile densities with negative values, the profile is automatically clipped at $0$.
+
+% Comment about the separation between bunch 1 and 2?
 
 Due to the necessary initial drift stage of these simulations, it is technically challenging to inject an electron witness beam while strictly controlling parameters like emittance, energy spread and transverse size as these evolve during this drift phase. There are several ways of preventing the beam from evolving, like slowly ramping up the beam charge or ramping up the beam energy. 
 
@@ -55,10 +57,10 @@ Text
 
 % ================================================================================================ %
 
-\subsection{The Linear Regime}
-\label{Sim:Lin}
+\section{Emittance Evolution}
+\label{Sim:Emitt}
 
-The ideal case from Tzoufras 2008.
+Emittance is preserved in the linear regime
 
 % ================================================================================================ %
 
@@ -66,13 +68,6 @@ The ideal case from Tzoufras 2008.
 \label{Sim:QLin}
 
 Text
-
-% ================================================================================================ %
-
-\section{Emittance Evolution}
-\label{Sim:Emitt}
-
-Emittance is preserved in the linear regime
 
 % ================================================================================================ %
 
