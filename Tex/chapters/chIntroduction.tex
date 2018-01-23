@@ -221,18 +221,18 @@ where $Q_{tr}$ is the total charge of the trapezoidal bunch, $E_{t}$ is the long
 
 In the non-linear case, where an ion column is formed, the focusing force it produces will cause a pinching effect on the beam. While the beam itself, assuming $\emitN > 0$, will try to expand, there exists a beam radius where the focusing force and the beam's tendency to expand are in equilibrium. For a highly relativistic beam, $\gammar \gg 1$, the equilibrium radius is given by \cite{krall:1995}
 \begin{equation}
-    R_{\mathrm{eq}} = \left( 8 \frac{\emitN^2}{\gammar} \frac{c^2}{\omega_{p}^2} \right)^{1/4}. \label{EQ:BMatch}
+    \sigma_{r,\mathrm{eq}} = \left( 8 \frac{\emitN^2}{\gammar} \frac{c^2}{\omega_{p}^2} \right)^{1/4}. \label{EQ:BMatch}
 \end{equation}
 
-This follows from the general envelope equation \cite{lee:1976} under the assumption that the beam enters the plasma at focus (i.e. $\deriv\sigma_{r}/\deriv z = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995}.
+This follows from the general envelope equation \cite{lee:1976} under the assumption that: the beam enters the plasma at focus (i.e. $\deriv\sigma_{r}/\deriv z = 0$), does not diverge significantly from a Gaussian transverse density profile, and that the focusing force is linear \cite{krall:1995}.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=1.0\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/BeamMatching}
+    \includegraphics[width=0.875\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/BeamMatching}
     \caption{\label{Fig:BPI:Match} The evolution of the transverse RMS size of an initially matched electron beam as it accelerates through a plasma. The tail of the beam, in red, remains in a region where it is matched, while the head of the beam, in blue, does not. The black line corresponds to the theoretical spot size of the beam at nominal plasma density. Based on simulation data from Publication \ref{Pub:BL17}.}
 \end{figure}
 
-Figure \ref{Fig:BPI:Match} shows the evolution of the transverse RMS size of an electron beam as it travels through a plasma. The beam has a normalised emittance of $2\unit{\mu m}$, and is initially matched to a plasma density of $7\nexp{14}\unit{cm}^{-3}$. The tail of the beam, in red, is in the plasma bubble and thus sees an ion density equal to the plasma density. The head of the beam, in blue, where the bubble is forming, sees a lower density. It is thus not matched, and instead oscillates around an equilibrium point at a larger radius. The black line is the predicted $\sigma_{r}$ given by Eq. \ref{EQ:BMatch} at initial plasma density, and beam energy as a function of $z$ as the beam is accelerated \cite{berglyd_olsen:2018}.
+Figure \ref{Fig:BPI:Match} shows the evolution of the transverse RMS size of an electron beam as it travels through a plasma. The beam has a normalised emittance of $2\unit{\mu m}$, and is initially matched to a plasma density of $7\nexp{14}\unit{cm}^{-3}$ with a $\sigma_{r} = 5.24\unit{\mu m}$. The tail of the beam, in red, is in the plasma bubble and thus sees an ion density equal to the plasma density. The head of the beam, in blue, where the bubble is forming, sees a lower density. It is thus not matched, and instead oscillates around an equilibrium point at a larger radius. The black line is the predicted $\sigma_{r}$ given by Eq. \ref{EQ:BMatch} at initial plasma density, and beam energy as a function of $z$ as the beam is accelerated \cite{berglyd_olsen:2018}.
 
 % ================================================================================================ %
 \section{The Proton Drive Beam}
