@@ -88,3 +88,50 @@ The implication here is that there is an additional beneficial effect of loading
 Bringing it all together.
 
 % ================================================================================================ %
+
+% ================================================================================================ %
+\section{Overview of Simulation Studies}
+\label{Sim:Summary}
+
+\begin{table}[hbt]
+    \centering
+    \caption{Overview of total simulation cost. $97\%$ of the simulations were run on the supercomputer \textit{Abel}, on Oct Core Intel Xeon E5-2670 CPUs. The remainder were run on older nodes with Quad Core AMD Opteron 2354 CPUs.}
+    \label{T:SimCost}
+    \begin{tabularx}{\textwidth}{Xlrrr}
+        \rowcolor{tblhead}
+        \texthh{Topic of Studies}
+            & \texthh{Code} & \texthh{Count} & \texthh{CPU Time} & \texthh{Average} \\
+        \hline
+        Preliminary studies (mostly testing)
+            & OSIRIS   &  $21$ & $266\,599\unit{h}$ & $12\,695\unit{h}$ \\
+        Full length AWAKE proton bunch studies
+            & OSIRIS   &  $38$ & $440\,583\unit{h}$ & $11\,594\unit{h}$ \\
+        Pre-modulated beam studies$^{1}$
+            & OSIRIS   & $144$ & $319\,093\unit{h}$ &  $2\,216\unit{h}$ \\
+        3D reference studies
+            & OSIRIS   &  $23$ & $245\,974\unit{h}$ & $10\,695\unit{h}$ \\
+        Single drive bunch studies$^{2}$
+            & OSIRIS   & $124$ &  $47\,837\unit{h}$ &     $386\unit{h}$ \\
+        Beam loading and emittance studies$^{3}$
+            & QuickPIC & $293$ & $369\,887\unit{h}$ &  $1\,262\unit{h}$ \\
+        \hline
+        \rowcolor{tblfoot}
+        Total & & $657$ & $1\,479\,350\unit{h}$ & $2\,252\unit{h}$ \\
+        \multicolumn{5}{p{50mm}}{\footnotesize
+            $^{1}$ Main studies for Publication \ref{Pub:IPAC15} \newline
+            $^{2}$ Main studies for Publication \ref{Pub:NAPAC16} \newline
+            $^{3}$ Main studies for Publication \ref{Pub:BL17} \newline
+        }
+    \end{tabularx}
+\end{table}
+
+% Series	Description	Count	Hours	Average
+% Q-Series	Single proton drive bunch simulations in 3D	293	369887	1262,4
+% R-Series	Early test simulations.	21	266599	12695,2
+% S-Series	AWAKE full scale simulations	38	440583	11594,3
+% T-Series	General Osiris technical test simulations	35	55977	1599,3
+% U-Series	AWAKE small scale simulations with 26 proton microbunches	144	319093	2215,9
+% V-Series	AWAKE full scale simulations based on small scale	1	12120	12119,8
+% W-Series	AWAKE 3D simulations	23	245974	10694,5
+% X-Series	Single proton drive bunch simulations in 2D and 3D	124	47837	385,8
+% 		679	1758069,3548905	2589,2
