@@ -38,8 +38,6 @@
 \usepackage{hanging}                      % Used for indented paragraphs
 \usepackage{appendix}                     % Added functionality for appendices
 \usepackage{enumerate}                    % Allows for roman numbered lists
-\usepackage{tabularx}                     % Allows full width tables
-\usepackage{colortbl}                     % Allows table colouring
 
 % Fonts
 \usepackage[garamondx,expert]{mathdesign} % Adds additional math symbols
@@ -50,6 +48,15 @@
 % Content
 \usepackage{pdfpages}                     % Include PDF files
 \usepackage{datetime}                     % Used for the last page timestamp
+
+% Tables
+\usepackage{tabularx}                     % Allows full width tables
+\usepackage{colortbl}                     % Allows table colouring
+\usepackage{dcolumn}                      % Special decimal cells
+
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+%\newcolumntype{d}{D{.}{.}{-1}}
+%\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
 
 % Disabled
 % \usepackage{latexsym}
@@ -83,6 +90,7 @@
 \definecolor{appendix}{gray}{0.50}
 \definecolor{capcol}  {gray}{0.25}
 \definecolor{tblhead} {gray}{0.85}
+\definecolor{tblunit} {gray}{0.95}
 \definecolor{tblfoot} {gray}{0.95}
 \definecolor{d-blue}  {rgb}{0.000,0.200,0.741}
 \definecolor{d-red}   {rgb}{0.850,0.125,0.000}
@@ -199,8 +207,11 @@
 \titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\huge\sffamily}
 
 % Sections
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 \titleformat{\section}{\large\sffamily}{\thesection}{2mm}{\large}
 \titleformat{\subsection}{\normalsize\sffamily}{\thesubsection}{2mm}{}
+\titleformat{\subsubsection}{\normalsize\sffamily}{\thesubsubsection}{2mm}{}
 
 % ================================================================================================ %
 

@@ -148,16 +148,22 @@ The maximum energy gain approaches twice the energy of the drive bunch as $N_{w}
 While the maximum transformer ratio is $2$, larger values can be achieved by for instance bunch ramping \cite{bane:1985} or by a train of bunches \cite{jing:2006}.
 
 % ================================================================================================ %
-\subsection{The Linear Plasma Regime}
-\label{Int:BPI:Lin}
+\subsection{Plasma Regimes}
+\label{Int:BPI:Reg}
 
-When the charge density of the beam is smaller than that of the plasma, $n_{b} \ll n_{pe}$, the system is in the \textit{linear regime}. The linear regime is not of much interest for accelerator applications as it does not utilise the full potential of the plasma for generating strong wakefields, and the transverse and longitudinal fields have continuous variations. These variations will strongly affect the energy spread and emittance of the witness beam. However, this regime is interesting from a theoretical perspective because it is well described analytically \cite{muggli:2017}.
+The effect of a beam on the plasma, as it travels through it, can be divided into a linear and a non-linear regime. In addition to these two there is a transitional region between these often referred to as \textit{quasi-linear}. It is also useful in some contexts to distinguish between a non-linear and a highly non-linear regime. Figure \ref{Fig:BPI:Regime} illustrates the four regimes considered here with representative proton drive beams.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1.0\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/Regimes}
-    \caption{\label{Fig:BPI:Regime} }
+    \caption{\label{Fig:BPI:Regime} Four sample simulations of a proton beam of varying density $n_{b} $with respect to the plasma density $n_{pe}$. Each simulation is representative for the four regimes. The longitudinal and perpendicular wakefields are normalised to their own maxima to illustrate their shape rather than their absolute magnitude.}
 \end{figure}
+
+% ================================================================================================ %
+\subsubsection{The Linear Regime}
+\label{Int:BPI:Lin}
+
+When the charge density of the beam is smaller than that of the plasma, $n_{b} \ll n_{pe}$ (see Figure \ref{Fig:BPI:Regime}), the system is in the \textit{linear regime}. The linear regime is not of much interest for accelerator applications as it does not utilise the full potential of the plasma for generating strong wakefields, and the transverse and longitudinal fields have continuous variations. These variations will strongly affect the energy spread and emittance of the witness beam. However, this regime is interesting from a theoretical perspective because it is well described analytically \cite{muggli:2017}.
 
 A linear theory for plasma accelerators can be derived using a cold, non-relativistic fluid model of the plasma. The response of the cold plasma can be found from the linearised equations of motion and continuity, and the Maxwell equations. (For examples of linearisation, see \cite{pecseli:2012,chen:1974}.) The equations of motion and continuity are linearised assuming the perturbed plasma density, $n_{1}$, is much smaller than the unperturbed density, $n_{0} = n_{pe}$ \cite{chen:1987}. By further combining the fluid equation and the Poisson equation \cite{katsouleas:1987}, a wave equation for for the plasma density perturbation by the beam can be derived \cite{chen:1987,muggli:2017}:
 \begin{equation}
@@ -190,16 +196,22 @@ Here $I_{0}$ and $K_{0}$ are the zeroth-order modified Bessel functions of the f
 As can be seen from Figure \ref{Fig:BPI:Kat87}, the longitudinal wakefield is at its maximum on-axis. For very wide beams, $\sigma_{r} \gg k_{pe}$, we converge at the one-dimensional result. For very narrow beams, $\sigma_{r} \ll k_{pe}$, the maximum decreases rapidly with radius causing different parts of the witness beam at different radii to see different accelerating fields. The cosine component of Eq. \ref{EQ:WzFull} also implies longitudinal variations of the accelerating field. Combined, these produce a large energy spread for the accelerating beam. Additionally, the sinusoidally varying focusing field from Eq. \ref{EQ:WrFull} produces emittance growth \cite{muggli:2017,katsouleas:1987}.
 
 % ================================================================================================ %
-\subsection{The Non-Linear Plasma Regime}
+\subsubsection{The Non-Linear Regime}
 \label{Int:BPI:NLin}
 
-When the beam density $n_{b} > n_{pe}$, the system enters the non-linear regime, and becomes highly non-linear when $n_{b} \gg n_{pe}$ \dash often referred to as the \textit{blowout} regime. Using this regime for plasma wakefield acceleration was proposed by Rosenzweig \etal in 1991 \cite{rosenzweig:1991}. In this regime the plasma electrons are expelled entirely from the region around the axis to form a region populated by only plasma ions. As the ions are practically stationary on the time scale of the plasma electrons, they form a uniform column of positive charge. The electrons displaced by the space charge of the drive beam are pulled back on axis by the ions in the form a thin sheath with the shape of a bubble. Hence, this regime is also sometimes referred to as the \textit{bubble regime}. The large transverse forces produced by the drive beam in this regime, followed by the strong restoring force of the ion channel, produces a large density spike behind the formed bubble \cite{dawson:1959,rosenzweig:1991}.
+When the beam density $n_{b} > n_{pe}$ , the system enters the non-linear regime, and becomes highly non-linear when $n_{b} \gg n_{pe}$ \dash often referred to as the \textit{blowout} regime (see Figure \ref{Fig:BPI:Regime}). Using this regime for plasma wakefield acceleration was proposed by Rosenzweig \etal in 1991 \cite{rosenzweig:1991}. In this regime the plasma electrons are expelled entirely from the region around the axis to form a region populated by only plasma ions. As the ions are practically stationary on the time scale of the plasma electrons, they form a uniform column of positive charge. The electrons displaced by the space charge of the drive beam are pulled back on axis by the ions in the form a thin sheath with the shape of a bubble. Hence, this regime is also sometimes referred to as the \textit{bubble regime}. The large transverse forces produced by the drive beam in this regime, followed by the strong restoring force of the ion channel, produces a large density spike behind the formed bubble \cite{dawson:1959,rosenzweig:1991}.
 
 [Reproduce plots in figure 2 of Rosenzweig 1991 from QuickPIC data and insert here.]
 
 The radial wakefield, $W_{r}$, produces linear focusing, while the accelerating wakefield, $W_{\xi}$, is uniform within the bubble. In other words: while the focusing prevents emittance growth, the accelerating gradient of the witness bunch, being independent of radial position for a range of positions, avoids large energy spreads \dash both disadvantages with the linear regime.
 
 Unlike in the linear case, there is no full theory describing the non-linear case. However, a non-linear kinetic theory has been developed by Lu \etal that is valid under certain assumed conditions \cite{lu:2006a,lu:2006}.
+
+% ================================================================================================ %
+\subsubsection{The Quasi-Linear Regime}
+\label{Int:BPI:QLin}
+
+The quasi-linear regime, when $n_{b} \lesssim n_{pe}$ (see Figure \ref{Fig:BPI:Regime}), can be interesting for some applications where multiple drive bunches are used. The regime is weakly non-linear in the sense that although a bubble in the plasma does not form, a significant depletion of electrons occur such that some of the beneficial effects are present in a narrower region around the axis than in the fully non-linear case. It is thus possible to have focusing fields as well as radially near uniform accelerating fields while at the same time have a non-linear wake that can be added linearly over multiple drive bunches, allowing for improved efficiency or transformer ratios \cite{muggli:2017,rosenzweig:2010}.
 
 % ================================================================================================ %
 \subsection{Beam Loading}
@@ -272,25 +284,48 @@ One experiment, at the Stanford Linear Accelerator Center (SLAC) \cite{blumenfel
 \subsection{Protons vs. Electrons as Drive Beam}
 \label{Int:DBeam:PDPWFA}
 
-AS ultra-high energy electron bunches are not readily available, it is tempting to suggest using protons as drivers instead. The much higher mass carries orders of magnitude more energy at relatively low gamma values. This effectively eliminates the problem with short propagation lengths in plasma as it scales linearly with the beam energy; see Eq. \ref{EQ:Trat:LStop}.
+As ultra-high energy electron bunches are not readily available, the possibility of using protons as drive beams instead has been of interest for some time \cite{blue:2003,caldwell:2009}. The much higher mass carries orders of magnitude more energy at relatively low gamma values. This effectively eliminates the problem with short propagation lengths in plasma as it scales linearly with the beam energy; see Eq. \ref{EQ:Trat:LStop}. Several accelerators exist which delivers kJ-scale proton beams. See Table \ref{T:ProtonBeams} for an overview.
 
-[Table of proton beam energies]
+\begin{table}[hbt]
+    \centering
+    \caption{Accelerators world wide with proton beams with an energy higher thant $10\unit{GeV}$. The table was compiled by Adli and Muggli \cite{adli:2016b}.}
+    \label{T:ProtonBeams}
+    \begin{tabularx}{\textwidth}{X d{1} d{1} d{1} d{1}}
+        \rowcolor{tblhead}
+        \texthh{Accelerator}
+            & \multicolumn{2}{c}{\texthh{Max Energy}} & \multicolumn{2}{c}{\texthh{Bunch Length}} \\
+        \rowcolor{tblunit}
+            & \unit{GeV} & \unit{kJ} & \unit{ns} & \unit{mm} \\
+        \hline
+        CERN PS, Geneva, Switzerland \cite{assmann:2009}
+            &   26 &   0.54 &  1    &  300 \\
+        CERN SPS, Geneva, Switzerland \cite{assmann:2009}
+            &  450 &   8.3  &  0.4  &  120 \\
+        CERN LHC, Geneva, Switzerland \cite{assmann:2009}
+            & 7000 & 124    &  0.25 &   75 \\
+        Fermilab Main Injector, Batavia, Illinois, USA \cite{nagaitsev:2014}
+            &  120 &   2.1  &  0.6  &  180 \\
+        J-PARC, Ibaraki Prefecture, Japan \cite{hotchi:2012}
+            &   30 & 130    & 15    & 4500 \\
+        IHEP U70, Protvino, Russia \cite{ivanov:2014}
+            &   50 &   4.0  & 12    & 3600 \\
+        \hline
+    \end{tabularx}
+\end{table}
 
-Add: challenge of producing short bunches.
-
-Cite \cite{adli:2016a,adli:2016b}.
-
-The problem with $\gg\lambda_{pe}$ proton bunches can be solved by exploiting one of several instabilities that can occur when a long bunch propagates through plasma.
+However, in order to produce GV/m-scale plasma wakefield accelerators, the plasma density needs to be on the order of $\gtrsim 10^{14}\unit{cm}^{-3}$. This corresponds to plasma wavelengths on the order of a few millimetres. To maximise efficiency in the transfer of energy from the drive beam to the plasma, as discussed in Section \ref{Int:BPI:TRat}, the bunch must satisfy $k_{pe}\sigma_{z} \simeq \sqrt{2}$. Such short bunches are not readily available, but options for creating short bunches have been proposed \cite{assmann:2009}. On the other hand, the problem with $\gg\lambda_{pe}$ proton bunches can be solved by exploiting one of several instabilities that can occur when a long bunch propagates through plasma.
 
 % ================================================================================================ %
 \subsection{The Self-modulation Instability}
 \label{Int:DBeam:SMI}
 
-A long beam with respect to the plasma wavelength will generate a density wave driven by its own head. This is true for both laser beams \cite{esarey:1994} and particle beams \cite{kumar:2010}, and they are caused by the same underlying physics. For a laser beam, this produces alternating regions of focusing and diffraction. For a particle beam, the wakefields generated within the beam acts back on itself, breaking it up into short micro bunches with a surrounding, defocused halo.
+A long bunch with respect to the plasma wavelength will generate a density wave driven by its own head. This is true for both laser beams \cite{esarey:1994} and particle beams \cite{kumar:2010}, and they are caused by the same underlying physics. In the 1980s, this self-modulating effect was taken advantage of in LWFA experiments as only long laser pulses were available. Advances in ultra short laser technology later removed the dependence of this effect \cite{pukhov:2002}, but for proton bunches, this remains a challenge.
 
-In the 1980s, this self-modulating effect was taken advantage of in LWFA experiments as only long laser pulses were available. Advances in ultra short laser technology later removed the dependence of this effect \cite{pukhov:2002}, however for proton drive beams this is still an issue. For instance, the SPS proton beam used by AWAKE is orders of magnitude longer than the plasma wavelength needed for the experiment.
+For a laser beam, the self-modulation arises from alternating regions of focusing and diffraction. For a particle beam, the wakefields generated within the beam acts back on itself, breaking it up into short micro bunches with a surrounding, defocused halo. In a long proton bunch, the train of micro bunches generated by this effect resonantly drives wakefields to high amplitudes, and thus becomes a multi-bunch drive beam as discussed above.
 
-The self-modulation instability (SMI), is one of several instabilities affecting long beams in plasma.
+
+
+
 
 % To add: Phase velocity of SMI WF. Two-stream and hosing.
 
