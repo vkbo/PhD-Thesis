@@ -153,6 +153,12 @@ While the maximum transformer ratio is $2$, larger values can be achieved by for
 
 When the charge density of the beam is smaller than that of the plasma, $n_{b} \ll n_{pe}$, the system is in the \textit{linear regime}. The linear regime is not of much interest for accelerator applications as it does not utilise the full potential of the plasma for generating strong wakefields, and the transverse and longitudinal fields have continuous variations. These variations will strongly affect the energy spread and emittance of the witness beam. However, this regime is interesting from a theoretical perspective because it is well described analytically \cite{muggli:2017}.
 
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1.0\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/Regimes}
+    \caption{\label{Fig:BPI:Regime} }
+\end{figure}
+
 A linear theory for plasma accelerators can be derived using a cold, non-relativistic fluid model of the plasma. The response of the cold plasma can be found from the linearised equations of motion and continuity, and the Maxwell equations. (For examples of linearisation, see \cite{pecseli:2012,chen:1974}.) The equations of motion and continuity are linearised assuming the perturbed plasma density, $n_{1}$, is much smaller than the unperturbed density, $n_{0} = n_{pe}$ \cite{chen:1987}. By further combining the fluid equation and the Poisson equation \cite{katsouleas:1987}, a wave equation for for the plasma density perturbation by the beam can be derived \cite{chen:1987,muggli:2017}:
 \begin{equation}
     \frac{\partial^{2}}{\partial\xi^{2}}n_{1} + k_{pe}^{2}n_{1} = \frac{q_{b}}{e}k_{pe}^{2}n_{b}, \label{EQ:BeamPlasmaWF}
@@ -275,6 +281,7 @@ Add: challenge of producing short bunches.
 Cite \cite{adli:2016a,adli:2016b}.
 
 The problem with $\gg\lambda_{pe}$ proton bunches can be solved by exploiting one of several instabilities that can occur when a long bunch propagates through plasma.
+
 % ================================================================================================ %
 \subsection{The Self-modulation Instability}
 \label{Int:DBeam:SMI}

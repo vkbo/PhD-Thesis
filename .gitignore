@@ -5,3 +5,7 @@ PhD.synctex.gz
 PhD.aux
 PhD.log
 PhD.toc
+
+*.e
+*.h5
+elog*
