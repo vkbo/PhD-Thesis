@@ -32,7 +32,7 @@ cTitle  = {'Linear','Quasi-Linear','Non-Linear','Highly Non-Linear'};
 for i=1:numel(cRegime)
     
     oData.Path = sprintf('/home/vkbo/Work/PhD Thesis/Simulations/Regimes/%s', cRegime{i});
-
+    
     dLFac  = oData.Config.Convert.SI.LengthFac;
     dTStep = oData.Config.Simulation.TimeStep;
     dEMass = oData.Config.Constants.EV.ElectronMass;
@@ -43,11 +43,11 @@ for i=1:numel(cRegime)
     aSize  = oData.Config.Simulation.XMax;
     aRes   = aSize./aGrid;
     iZero  = aGrid(2)/2;
-
+    
     aZAxis = linspace(0,aSize(1),aGrid(1))-200e-6;
     aXAxis = linspace(-aSize(2)/2,aSize(2)/2,aGrid(2))*1e3;
     aZAxis = aZAxis/dLFac;
-
+    
     aDenPE = oData.Data(1,'Q','','EP01','XZ');
     aDenPB = oData.Data(1,'Q','','EB','XZ');
     aFEZ   = oData.Data(1,'F','EZ','','XZ');
@@ -63,7 +63,7 @@ for i=1:numel(cRegime)
     
     %dMaxPB
     %min(abs(aDenPE(iZero,:)))
-
+    
     %figure(2)
     %plot(sum(aDenPB,1))
     %plot(aDenPB(iZero,:));
@@ -80,55 +80,46 @@ for i=1:numel(cRegime)
     aDenPB(aDenPB <  0.0) =  0.0;
     aDenPE(aDenPE < -4.0) = -4.0;
     %aDenPB(aDenPB >  0.1) =  0.1;
-
+    
     aDenPE = aDenPE/4.0;
     aDenPB = aDenPB/0.1;
     
-    aLnEZ = aLnEZ/max(abs(aLnEZ));
-    aLnWX = aLnWX/max(aLnWX);
-
+    aLnEZ = aLnEZ/max(abs(aLnEZ))/2;
+    aLnWX = aLnWX/max(aLnWX)/2;
+    
     axes(aAxes(i));
-
+    
     hold on;
     
-    yyaxis left;
-
     caxis([-1 0]);
     hPE = imagesc(aZAxis,aXAxis,aDenPE);
     colormap(gray);
     freezeColors;
-
+    
     hPB = imagesc(aZAxis,aXAxis,aDenPB);
     colormap(cMap);
     set(hPB,'AlphaData', aDenPB);
     freezeColors;
-
-    yticks([]);
-    ylim([-0.6 0.6]);
-    
-    yyaxis right;
     
     plot(aZAxis,aLnEZ,'Color',cLine(7,:),'LineStyle','-');
     plot(aZAxis,aLnWX,'Color',cLine(4,:),'LineStyle','-');
-
-    yticks([]);
-    ylim([-1.2 1.2]);
-
+    
     hold off;
     
-    
-    
-    xlim([aZAxis(1) aZAxis(end)]);
     xticks([]);
+    yticks([]);
+    xlim([aZAxis(1) aZAxis(end)]);
+    ylim([-0.6 0.6]);
+    
     %xlabel('c/\omega_p');
     xlabel(sprintf('n_{b}/n_{pe} = %.2f',dMaxPB));
-    title(sprintf('%s',cTitle{i}));
+    title(cTitle{i},'FontWeight','Normal');
     hL = legend({'E_z','W_\perp'},'Location','NW');
     set(hL,'Box','Off');
     set(hL,'TextColor', 'Black');
-
+    
     drawnow;
-
+    
 end % for
 
 %axes(aAxes(5));
