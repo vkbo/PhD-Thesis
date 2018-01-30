@@ -25,7 +25,7 @@ cLine = lines(7);
 
 cRegime = {'Linear','QuasiLinear', 'NonLinear', 'HighlyNonLinear'};
 cTitle  = {'Linear','Quasi-Linear','Non-Linear','Highly Non-Linear'};
-cLegend = {'n_{b}/n_{pe} = 0.05','n_{b}/n_{pe} = 0.8','n_{b}/n_{pe} = 3.0','n_{b}/n_{pe} = 8.0'};
+cLegend = {'Beam [a.u.]','n_{b}/n_{pe} = 0.05','n_{b}/n_{pe} = 0.8','n_{b}/n_{pe} = 3.0','n_{b}/n_{pe} = 8.0'};
 
 for i=1:numel(cRegime)
     
@@ -45,7 +45,6 @@ for i=1:numel(cRegime)
     
     aZAxis = linspace(0,aSize(1),aGrid(1))-200e-6;
     aXAxis = linspace(-aSize(2)/2,aSize(2)/2,aGrid(2))*1e3;
-    aZAxis = aZAxis/dLFac;
     
     aDenPE = oData.Data(1,'Q','','EP01','XZ');
     aDenPB = oData.Data(1,'Q','','EB','XZ');
@@ -54,11 +53,11 @@ for i=1:numel(cRegime)
     aFBY   = oData.Data(1,'F','BY','','XZ');
     
     % Calculate beam profiles
-    %aProPB = oData.Config.Beam.Beam01.Profile;
-    %aPosPB = oData.Config.Beam.Beam01.Position;
-    %dNPB   = oData.Config.Beam.Beam01.NumParticles;
-    %dMaxPB = double(dNPB)/(2*pi)^(3/2)/prod(aProPB)/dN0;
-    %aProPB = dMaxPB*exp(-(aZAxis-aPosPB(1)*1e3).^2/(2*(aProPB(1)*1e3)^2));
+    if i == 1
+        aProPB = oData.Config.Beam.Beam01.Profile;
+        aPAxis = aZAxis(12:75);
+        aProPB = 0.6*exp(-aPAxis.^2/(2*(aProPB(1))^2));
+    end % if
     
     %dMaxPB
     %min(abs(aDenPE(iZero,:)))
@@ -79,6 +78,9 @@ for i=1:numel(cRegime)
     aLnWZ  = aLnEZ/dQBeam;
     aLnWX  = (aLnEX - aLnBY)/dQBeam;
     
+    aZAxis = aZAxis/dLFac;
+    aPAxis = aPAxis/dLFac;
+    
     %aDenPB(aDenPB <  0.0) =  0.0;
     %aDenPE(aDenPE < -4.0) = -4.0;
     %aDenPB(aDenPB >  0.1) =  0.1;
@@ -92,6 +94,9 @@ for i=1:numel(cRegime)
     axes(aAxes(1));
     
     hold on;
+    if i == 1
+        area(aPAxis,aProPB,'ShowBaseLine','Off','EdgeColor',cLine(i,:),'FaceColor',cLine(i,:));
+    end % if
     plot(aZAxis,aLnWZ*1e-18,'Color',cLine(i,:),'LineWidth',1.5);
     hold off;
     
@@ -106,6 +111,9 @@ for i=1:numel(cRegime)
     axes(aAxes(2));
 
     hold on;
+    if i == 1
+        area([0],[0]);
+    end % if
     plot(aZAxis,aLnPE,'Color',cLine(i,:),'LineWidth',1.5);
     hold off;
     
