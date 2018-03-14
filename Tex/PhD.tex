@@ -48,6 +48,7 @@
 % Content
 \usepackage{pdfpages}                     % Include PDF files
 \usepackage{datetime}                     % Used for the last page timestamp
+\usepackage{todonotes}                    % Add todo notes
 
 % Tables
 \usepackage{tabularx}                     % Allows full width tables
@@ -71,7 +72,7 @@
 % Document Layout
 %*****************
 
-\geometry{twoside,margin=2.5cm}
+\geometry{twoside,left=25mm,right=25mm,top=30mm,bottom=30mm}
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\ttdefault}{pcr}
@@ -110,12 +111,13 @@
 % Orange    0.929  0.694  0.125    237   177    32    edb120ff
 % Purple    0.494  0.184  0.556    126    47   142    7e2f8eff
 % Green     0.466  0.674  0.188    119   172    48    77ac30ff
-% Cyan      0.301  0.745  0.933     77   190   238
-% Brown     0.635  0.078  0.184    162    20    47
+% Cyan      0.301  0.745  0.933     77   190   238    4dbeeeff
+% Brown     0.635  0.078  0.184    162    20    47    a2142fff
 
 % Captions
 \usepackage[font={color=capcol}]{caption} 
-\captionsetup[table]{skip=8pt}
+\captionsetup[table]{labelfont=sc,skip=8pt}
+\captionsetup[figure]{labelfont=sc}
 
 % Links
 \usepackage{bookmark}
@@ -148,7 +150,7 @@
 \newcommand{\dash}{\textendash~}
 \newcommand{\celsius}{\,^{\circ}\mathrm{C}}
 \newcommand{\texthh}[1]{\textbf{#1}}
-\newcommand{\etal}{\textit{et al.}}
+\newcommand{\etal}{\textit{et~al.}}
 
 % Math Commands
 \newcommand{\unit}[1]{\,\mathrm{#1}}
@@ -173,26 +175,27 @@
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
 }
 
 % Header style for numbered chapters
 \newcommand{\defaulthead}{
-    \fancyhead[LE]{\nouppercase{\itshape\leftmark}}
-    \fancyhead[RO]{\nouppercase{\itshape\rightmark}}
+    \fancyhead[LE]{\nouppercase{\scshape\leftmark}}
+    \fancyhead[RO]{\nouppercase{\scshape\rightmark}}
 }
 
 % Custom heading for unnumbered chapters
 \newcommand{\simplehead}[1]{
-    \fancyhead[LE]{\nouppercase{\itshape #1}}
-    \fancyhead[RO]{\nouppercase{\itshape #1}}
+    \fancyhead[LE]{\nouppercase{\scshape #1}}
+    \fancyhead[RO]{\nouppercase{\scshape #1}}
 }
 
 \pagestyle{fancy}
 
 % Page Header
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ --\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
 \fancyhf{}
@@ -271,9 +274,9 @@
 \part*{Publications}
 \label{A:Pub}
 
-\renewcommand\appendixtocname{Publications}
-\renewcommand\appendixname{Publication}
 \pagestyle{plain}
+\renewcommand{\appendixtocname}{Publications}
+\renewcommand{\appendixname}{Publication}
 
 \appendix
     \setcounter{chapter}{0}
@@ -296,8 +299,11 @@
 \part*{Appendices}
 \label{A:App}
 
-\renewcommand\appendixtocname{Appendices}
-\renewcommand\appendixname{Appendix}
+\pagestyle{fancy}
+\renewcommand{\appendixtocname}{Appendices}
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\headrulewidth}{0.5pt}
+\defaulthead
 
 \appendix
     \setcounter{chapter}{0}
