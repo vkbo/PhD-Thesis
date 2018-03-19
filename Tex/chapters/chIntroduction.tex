@@ -14,7 +14,7 @@ The key results are presented in Publication~\ref{Pub:BL17}, with the studies le
 
 In this chapter we will first cover some of the key concepts involved in plasma wakefield acceleration techniques relevant to the work presented in this thesis. The design of the AWAKE experiment itself is laid out in more detail in the next chapter, and the framework for the simulations is described in the third chapter. The fourth chapter outlines the work done in integrating AWAKE Run~1 with the control system at CERN.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Plasma Wakefield Acceleration}
 \label{Int:PWFA}
 
@@ -37,13 +37,13 @@ For instance, for a plasma density of $10^{18}\unit{cm}^{-3}$, the maximum field
 
 Both techniques require a drive beam that deposits energy into the plasma in the form of wakefields. The drive beam is trailed by another beam which draws energy from the fields in order to accelerate. We thus see a transfer of energy from the drive beam to the witness beam through plasma as the intermediate medium~\cite{muggli:2009}. Let us briefly introduce the core principle of the two methods of plasma wakefield acceleration. 
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Laser Driven Acceleration}
 \label{Int:LWFA}
 
 In a laser wakefield driven plasma accelerator (LWFA), the plasma acts like a transformer, changing high frequency transverse field of the laser pulse into a low frequency longitudinal wave~\cite{malka:2009}. The effect driving the accelerating fields was described by Tajima and Dawson in 1979, and can be summarised as follows: The ponderomotive force at the front of the laser pulse drives plasma electrons forward, while at the back of the pulse it pushes them backwards. This generates a longitudinal wave that is at its most efficient when the length of the laser pulse $L_{ph} = \lambda_{pe}/2$~\cite{tajima:1979}. A trailing particle beam can then be position on the accelerating flank of the field. In some instances plasma electrons can also be captured and accelerated instead.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Beam Driven Acceleration}
 \label{Int:BDPWFA}
 
@@ -53,7 +53,7 @@ Any type of charged particle beam can be used in such an accelerator. Most exper
 
 A limitation using an electron beam with a similar initial charge and energy for both drive and witness beams is that the witness beam will rapidly gain energy, while the drive beam loses energy. This both causes the drive beam to quickly decelerate, while the witness beam undergoing acceleration will at the same time catch up with the drive beam. Typically propagation length of an electron drive beam is a few tens of centimetres of plasma.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Beam--Plasma Interaction}
 \label{Int:BPI}
 
@@ -67,7 +67,7 @@ As a relativistic, charged beam propagates through plasma, it affects the local 
 
 A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig.~\ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can be both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can resonantly amplify the wakefields.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{The Drive Beam}
 \label{Int:BPI:Drive}
 
@@ -101,7 +101,7 @@ The implication of this is that for relativistic beams, the transverse dynamics 
 \end{equation}
 for two sample particles with energy difference $\Delta\gamma$~\cite{muggli:2017}. For a relativistic beam, this is also not a significant over a fem metres.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{The Transformer Ratio}
 \label{Int:BPI:TRat}
 
@@ -147,7 +147,7 @@ The maximum energy gain approaches twice the energy of the drive bunch as $N_{w}
 \end{equation}
 While the maximum transformer ratio is $2$, larger values can be achieved by for instance bunch ramping~\cite{bane:1985} or by a train of bunches~\cite{jing:2006}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Plasma Regimes}
 \label{Int:BPI:Reg}
 
@@ -159,7 +159,7 @@ The effect of a beam on the plasma, as it travels through it, can be divided int
     \caption{\label{Fig:BPI:Regime} Four sample simulations of a proton beam of varying density $n_{b}$ with respect to the plasma density $n_{pe}$. Each simulation is representative for the four regimes. The longitudinal and perpendicular wakefields are normalised to their own maxima to illustrate their shape rather than their absolute magnitude.}
 \end{figure}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsubsection{The Linear Regime}
 \label{Int:BPI:Lin}
 
@@ -195,7 +195,7 @@ Here $I_{0}$ and $K_{0}$ are the zeroth-order modified Bessel functions of the f
 
 As can be seen from Fig.~\ref{Fig:BPI:Kat87}, the longitudinal wakefield is at its maximum on-axis. For very wide beams, $\sigma_{r} \gg k_{pe}$, we converge at the one-dimensional result. For very narrow beams, $\sigma_{r} \ll k_{pe}$, the maximum decreases rapidly with radius causing different parts of the witness beam at different radii to see different accelerating fields. The cosine component of Eq.~\ref{EQ:WzFull} also implies longitudinal variations of the accelerating field. Combined, these produce a large energy spread for the accelerating beam. Additionally, the sinusoidally varying focusing field from Eq.~\ref{EQ:WrFull} produces emittance growth~\cite{muggli:2017,katsouleas:1987}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsubsection{The Non-Linear Regime}
 \label{Int:BPI:NLin}
 
@@ -211,13 +211,13 @@ The radial wakefield, $W_{r}$, produces linear focusing, while the accelerating 
 
 Unlike in the linear case, there is no full theory describing the non-linear case. However, a non-linear kinetic theory has been developed by Lu \etal ~that is valid under certain assumed conditions~\cite{lu:2006a,lu:2006}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsubsection{The Quasi-Linear Regime}
 \label{Int:BPI:QLin}
 
 The quasi-linear regime, when $n_{b} \lesssim n_{pe}$ (see Fig.~\ref{Fig:BPI:Regime}), can be interesting for some applications where multiple drive bunches are used. The regime is weakly non-linear in the sense that although a bubble in the plasma does not form, a significant depletion of electrons occur such that some of the beneficial effects are present in a narrower region around the axis than in the fully non-linear case. It is thus possible to have focusing fields as well as radially near uniform accelerating fields while at the same time have a non-linear wake that can be added linearly over multiple drive bunches, allowing for improved efficiency or transformer ratios~\cite{muggli:2017,rosenzweig:2010}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Beam Loading}
 \label{Int:BPI:BLoad}
 
@@ -237,7 +237,7 @@ Tzoufras \etal ~provides a solution for the energy absorbed per unit length for 
 \end{equation}
 where $Q_{tr}$ is the total charge of the trapezoidal bunch, $E_{t}$ is the longitudinal field at the head of the bunch, and $R_{b}$ is the radius of the bubble. It immediately follows that at optimal beam loading, there is a trade-off between charge and the accelerating gradient and thus energy gain~\cite{tzoufras:2009}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Beam Matching}
 \label{Int:BPI:Match}
 
@@ -256,7 +256,7 @@ This follows from the general envelope equation~\cite{lee:1976} under the assump
 
 The simulation in Fig.~\ref{Fig:BPI:Match} shows the evolution of the transverse RMS size of an electron beam as it travels through a plasma. The beam has a normalised emittance of $2\unit{\mu m}$, and is initially matched to a plasma density of $7\nexp{14}\unit{cm}^{-3}$ with a $\sigma_{r} = 5.24\unit{\mu m}$. The tail of the beam, in red, is in the plasma bubble and thus sees an ion density equal to the plasma density. The head of the beam, in blue, where the bubble is forming, sees a lower density. It is thus not matched, and instead oscillates around an equilibrium point at a larger radius. The black line is the predicted $\sigma_{r}$ given by Eq.~\ref{EQ:BMatch} at initial plasma density, and beam energy as a function of $z$ as the beam is accelerated~\cite{berglyd_olsen:2018}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Multiple Drive Bunches}
 \label{Int:BPI:Multi}
 
@@ -276,7 +276,7 @@ This yields a maximum energy gain
 \end{equation}
 where $N_{d,1}$ is the first of $M$ drive bunches. Compared to Eq.~\ref{EQ:TRat:DeltaE} this is an improvement, although not linearly increasing with the number of bunches~\cite{ruth:1985}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Using a Proton Drive Beam}
 \label{Int:DBeam}
 
@@ -284,7 +284,7 @@ So far the theory presented has focused on short electron bunches as drivers for
 
 One experiment, at the Stanford Linear Accelerator Center (SLAC)~\cite{blumenfeld:2007}, achieved up to a doubling of energy of electrons with a $42\unit{GeV}$ driver with $1.8\nexp{10}$ particles, corresponding to a total beam energy of $120\unit{J}$. The propagation length of such a beam is on the order of a metre, and the experiment used an $85\unit{cm}$ lithium plasma cell to achieve the energy doubling, with a gradient of up to $52\unit{GeV}$. Such short accelerator segments are suitable for multi staged accelerators, but they require multiple high energy electron drive beams. 
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Protons vs. Electrons as Drive Beam}
 \label{Int:DBeam:PDPWFA}
 
@@ -296,32 +296,23 @@ As ultra-high energy electron bunches are not readily available, the possibility
     \label{T:ProtonBeams}
     \begin{tabularx}{\textwidth}{X d{1} d{1} d{1} d{1}}
         \rowcolor{tblhead}
-        \texthh{Accelerator}
-            & \multicolumn{2}{c}{\texthh{Max Energy}} & \multicolumn{2}{c}{\texthh{Bunch Length}} \\
-        \rowcolor{tblunit}
-            & \unit{GeV} & \unit{kJ} & \unit{ns} & \unit{mm} \\
+        \texthh{Accelerator} & \multicolumn{2}{c}{\texthh{Max Energy}} & \multicolumn{2}{c}{\texthh{Bunch Length}} \\
+        \rowcolor{tblunit}   & \unit{GeV} & \unit{kJ}                  & \unit{ns} & \unit{mm} \\
         \hline
-        CERN PS, Geneva, Switzerland \cite{assmann:2009}
-            &   26 &   0.54 &  1    &  300 \\
-        J-PARC, Ibaraki Prefecture, Japan \cite{hotchi:2012}
-            &   30 & 130    & 15    & 4500 \\
-        IHEP U70, Protvino, Russia \cite{ivanov:2014}
-            &   50 &   4.0  & 12    & 3600 \\
-        Fermilab Main Injector, Batavia, Illinois, USA \cite{nagaitsev:2014}
-            &  120 &   2.1  &  0.6  &  180 \\
-        CERN SPS, Geneva, Switzerland \cite{assmann:2009}
-            &  450 &   8.3  &  0.4  &  120 \\
-        CERN LHC, Geneva, Switzerland \cite{assmann:2009}
-            & 7000 & 124    &  0.25 &   75 \\
-        CERN HL-LHC, Geneva, Switzerland \cite{apollinari:2017}
-            & 7000 & 247    &  0.27 &   81 \\
+        CERN PS, Geneva, Switzerland \cite{assmann:2009}                     &   26 &   0.54 &  1    &  300 \\
+        J-PARC, Ibaraki Prefecture, Japan \cite{hotchi:2012}                 &   30 & 130    & 15    & 4500 \\
+        IHEP U70, Protvino, Russia \cite{ivanov:2014}                        &   50 &   4.0  & 12    & 3600 \\
+        Fermilab Main Injector, Batavia, Illinois, USA \cite{nagaitsev:2014} &  120 &   2.1  &  0.6  &  180 \\
+        CERN SPS, Geneva, Switzerland \cite{assmann:2009}                    &  450 &   8.3  &  0.4  &  120 \\
+        CERN LHC, Geneva, Switzerland \cite{assmann:2009}                    & 7000 & 124    &  0.25 &   75 \\
+        CERN HL-LHC, Geneva, Switzerland \cite{apollinari:2017}              & 7000 & 247    &  0.27 &   81 \\
         \hline
     \end{tabularx}
 \end{table}
 
 However, in order to produce GV/m-scale plasma wakefield accelerators, the plasma density needs to be on the order of $\gtrsim 10^{14}\unit{cm}^{-3}$; see Eq.~\ref{EQ:EWB}. This corresponds to plasma wavelengths on the order of a few millimetres. To maximise efficiency in the transfer of energy from the drive beam to the plasma, as discussed in Section~\ref{Int:BPI:TRat}, the bunch must satisfy $k_{pe}\sigma_{z} \simeq \sqrt{2}$. Such short bunches are not readily available, but options for creating short bunches have been proposed~\cite{assmann:2009}. On the other hand, the problem with $\gg\lambda_{pe}$ proton bunches can be solved by exploiting one of several instabilities that can occur when a long bunch propagates through plasma.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{The Self-Modulation Instability}
 \label{Int:DBeam:SMI}
 
@@ -335,4 +326,4 @@ The micro bunching caused by self-modulation is close to the plasma wavelength, 
 
 Self-modulation has been shown experimentally for long electron bunches at SLAC~\cite{muggli:2014,muggli:2015} as well halo formation on short and long positron bunches~\cite{muggli:2008,hogan:2003}. Self-modulation has also recently been seen for proton bunches at AWAKE~\cite{muggli:2017a}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %

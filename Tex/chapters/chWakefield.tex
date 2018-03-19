@@ -22,7 +22,7 @@ AWAKE is physically located at the former site of the CERN Neutrinos to Gran Sas
 % Technical specs including simulation parameters \cite{gschwendtner:2016}
 % Collaboration paper by Patric \cite{muggli:2017a}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Evolution of the Concept}
 \label{WFA:History}
 
@@ -34,11 +34,11 @@ Self modulation at FACET \cite{adli:2016}
 Review by Patric \cite{muggli:2009}
 
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{AWAKE: A Design Overview}
 \label{WFA:Design}
 
-AWAKE is, as of the writing of this thesis, operational and in Run~1. The proton beam line arriving from the SPS joins with the laser beam, and the electron beam line, and connects to a $10\unit{m}$ plasma stage. In addition, an electron source has been installed, and a new side tunnel had to be dug to fit the electron beam line connecting the source to the main assembly. Figure \ref{Fig:WFA:AWAKE} gives and overview of the experimental layout in the tunnel. The old CNGS target is still present, behind a shielding wall as it is highly radioactive. This, unfortunately, has created some constraints for fitting the downstream beam line and diagnostics, and may pose additional challenges for Run 2.
+AWAKE is, as of the writing of this thesis, operational and in Run~1. The proton beam line arriving from the SPS joins with the laser beam and the electron beam line, and connects to a $10\unit{m}$ plasma stage. In addition, an electron source has been installed, and a new side tunnel had to be dug to fit the electron beam line connecting the source to the main assembly. Figure \ref{Fig:WFA:AWAKE} gives and overview of the experimental layout in the tunnel. The old CNGS target is still present, behind a shielding wall as it is highly radioactive. This, unfortunately, has created some constraints for fitting the downstream beam line and diagnostics, and may pose additional challenges for Run~2.
 
 \begin{figure}[hbt]
     \centering
@@ -46,7 +46,7 @@ AWAKE is, as of the writing of this thesis, operational and in Run~1. The proton
     \caption{\label{Fig:WFA:AWAKE} Drawing of the AWAKE experimental area with the key components labelled.}
 \end{figure}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Plasma Source}
 \label{WFA:Design:Plasma}
 
@@ -64,7 +64,7 @@ The ionisation of the Rb vapour is achieved with a short laser pulse co-propagat
 
 The ionisation laser used for AWAKE is a $780\unit{nm}$ Ti:Sapphire laser with a pulse length of $120\unit{fs}$ and a maximum compressed energy of $450\unit{mJ}$. The peak intensity is around $1.2\nexp{14}\unit{W/cm}^{2}$, with a spot size radius of $1\unit{mm}$ \cite{awake_collaboration:2017}. The appearance intensity needed for ionisation of rubidium is around $1.7\nexp{12}\unit{W/cm}^{2}$ \cite{augst:1989}. Ionisation of a second electron requires some $455$ times higher intensity, so we expect no secondary ionisation \cite{muggli:2017a}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Electron Source}
 \label{WFA:Design:ESource}
 
@@ -76,49 +76,40 @@ The AWAKE electron source needed for Run 1 consists of a $2.5$ cell RF-gun and a
     \caption{\label{Fig:WFA:ESource} A CAD drawing of the electron source and accelerating structure \cite{pepitone:2016}.}
 \end{figure}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Stages of the Experiment}
 \label{WFA:AWAKE}
 
 A summary of the AWAKE experiment
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{AWAKE Run 1}
 \label{WFA:AWAKE:R1}
 
 \begin{table}[hbt]
     \centering
-    \caption{Nominal AWAKE experiment beam parameters for Run 1 \cite{gschwendtner:2014, gschwendtner:2016}.}
+    \caption{Nominal AWAKE experiment beam parameters for Run~1 \cite{gschwendtner:2014, gschwendtner:2016}.}
     \label{T:AWAKE-Run1}
     \begin{tabular}{lll}
         \rowcolor{tblhead}
-        \texthh{Parameter} & \texthh{Proton Beam} & \texthh{Electron Beam} \\
+        \texthh{Parameter}                    & \texthh{Proton Beam}          & \texthh{Electron Beam} \\
         \hline
-        Momentum &
-            $400\unit{GeV}$               & $16\unit{MeV}$ \\
-        Charge &
-            $4.8\unit{nC}$                & $200\unit{pC}$ \\
-        Particles &
-            $3\nexp{11}$                  & $1.25\nexp{9}$ \\
-        Bunch length ($\sigma_{z}$) &
-            $12\unit{cm}\;(0.4\unit{ns})$ & $1.2\unit{mm}\;(4\unit{ps})$ \\
-        Bunch size ($\sigma_{x,y}$) &
-            $200\unit{\mu m}$             & $250\unit{\mu m}$ \\
-        Normalised emittance ($\emitN$) &
-            $3.5\unit{\mu m}$             & $2\unit{\mu m}$ \\
-        Relative energy spread ($\Delta p/p$) &
-            $0.035\%$                     & $0.5\%$ \\
-        Beta function ($\beta^{*}_{x,y}$) &
-            $4.9\unit{m}$                 & $0.4\unit{m}$ \\
-        Dispersion ($D^{*}_{x,y}$) &
-            $0$                           & $0$ \\
+        Momentum                              & $400\unit{GeV}$               & $16\unit{MeV}$ \\
+        Charge                                & $4.8\unit{nC}$                & $200\unit{pC}$ \\
+        Particles                             & $3\nexp{11}$                  & $1.25\nexp{9}$ \\
+        Bunch length ($\sigma_{z}$)           & $12\unit{cm}\;(0.4\unit{ns})$ & $1.2\unit{mm}\;(4\unit{ps})$ \\
+        Bunch size ($\sigma_{x,y}$)           & $200\unit{\mu m}$             & $250\unit{\mu m}$ \\
+        Normalised emittance ($\emitN$)       & $3.5\unit{\mu m}$             & $2\unit{\mu m}$ \\
+        Relative energy spread ($\Delta p/p$) & $0.035\%$                     & $0.5\%$ \\
+        Beta function ($\beta^{*}_{x,y}$)     & $4.9\unit{m}$                 & $0.4\unit{m}$ \\
+        Dispersion ($D^{*}_{x,y}$)            & $0$                           & $0$ \\
         \hline
     \end{tabular}
 \end{table}
 
 Description of Run 1. SMI, long e-beam.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{AWAKE Run 2}
 \label{WFA:AWAKE:R2}
 
@@ -128,7 +119,7 @@ Problems relevant for this thesis.
 
 Erik \cite{adli:2016a}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{The Self-Modulation Instability in AWAKE}
 \label{WFA:SMI}
 
@@ -138,4 +129,4 @@ Karl \cite{rieger:2017}
 
 Does the SMI require a seed? See muggli:2017 \cite{muggli:2017a}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
