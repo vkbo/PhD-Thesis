@@ -51,13 +51,10 @@
 \usepackage{todonotes}                    % Add Todo notes
 
 % Tables
+\usepackage{array}                        % Used for centred p elements
 \usepackage{tabularx}                     % Allows full width tables
 \usepackage{colortbl}                     % Allows table colouring
 \usepackage{dcolumn}                      % Special decimal cells
-
-\newcolumntype{d}[1]{D{.}{.}{#1}}
-%\newcolumntype{d}{D{.}{.}{-1}}
-%\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
 
 % Disabled
 % \usepackage{latexsym}
@@ -90,9 +87,12 @@
 \definecolor{chapter} {gray}{0.60}
 \definecolor{appendix}{gray}{0.50}
 \definecolor{capcol}  {gray}{0.25}
-\definecolor{tblhead} {gray}{0.85}
-\definecolor{tblunit} {gray}{0.95}
-\definecolor{tblfoot} {gray}{0.95}
+%\definecolor{tblhead} {gray}{0.85}
+\definecolor{tblhead} {rgb}{0.929,0.792,0.467}
+%\definecolor{tblunit} {gray}{0.95}
+\definecolor{tblunit} {rgb}{0.929,0.863,0.698}
+\definecolor{tblfoot} {gray}{0.90}
+%\definecolor{tblfoot} {rgb}{0.929,0.863,0.698}
 \definecolor{d-blue}  {rgb}{0.000,0.200,0.741}
 \definecolor{d-red}   {rgb}{0.850,0.125,0.000}
 \definecolor{d-green} {rgb}{0.231,0.333,0.094}
@@ -126,6 +126,16 @@
 \hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=m-brown}
 \urlstyle{same}
 
+% Tables
+\newcommand{\texthh}[1]{\textsc{#1}}
+\newcommand{\textun}[1]{\small[\texttt{#1}]}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+%\newcolumntype{d}{D{.}{.}{-1}}
+%\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+
 % TOC
 \renewcommand\cftpartfont{\sffamily\large}
 \renewcommand\cftpartpagefont{\mdseries}
@@ -149,7 +159,6 @@
 \newcommand{\ts}[1]{\textsuperscript{#1}}
 \newcommand{\dash}{\textendash~}
 \newcommand{\celsius}{\,^{\circ}\mathrm{C}}
-\newcommand{\texthh}[1]{\textbf{#1}}
 \newcommand{\etal}{\textit{et~al.}}
 
 % Math Commands
