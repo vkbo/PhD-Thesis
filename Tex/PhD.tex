@@ -6,7 +6,7 @@
 
 \documentclass[twoside,openright,12pt]{book}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 
 % Main Packages
 %***************
@@ -35,13 +35,14 @@
 \usepackage{titlesec}                     % Alternative section titles
 \usepackage{fancyhdr}                     % Changing headers and footers
 \usepackage{tocloft}                      % For modifying the Table of Contents
-\usepackage{hanging}                      % Used for indented paragraphs
 \usepackage{appendix}                     % Added functionality for appendices
 \usepackage{enumerate}                    % Allows for Roman numbered lists
+\usepackage{float}                        % Floating of figures and tables
 
 % Fonts
 \usepackage[garamondx,expert]{mathdesign} % Adds additional math symbols
-\usepackage[scaled]{raleway}              % Raleway font for titles
+\usepackage[scaled]{raleway}              % Raleway font for sans-serif text
+\usepackage[scaled]{sourcecodepro}        % Source Code Pro font for typewriter text
 \usepackage{textcomp}                     % Adds additional text symbols
 \usepackage{tgtermes}                     % TEX Gyre Termes font
 
@@ -56,23 +57,12 @@
 \usepackage{colortbl}                     % Allows table colouring
 \usepackage{dcolumn}                      % Special decimal cells
 
-% Disabled
-% \usepackage{latexsym}
-% \usepackage{cite}
-% \usepackage{graphicx}
-% \usepackage{float}
-% \usepackage{listings}
-% \usepackage{simplewick}
-
-% ================================================================================================ %
+% ================================================================================================================================ %
 
 % Document Layout
 %*****************
 
 \geometry{twoside,left=25mm,right=25mm,top=30mm,bottom=30mm}
-\renewcommand{\rmdefault}{ptm}
-\renewcommand{\sfdefault}{phv}
-\renewcommand{\ttdefault}{pcr}
 \AtBeginDocument{\parskip=0pt plus 2.5pt\relax\setstretch{1.1}}
 
 % Fix section numbering bug in Titlesec
@@ -92,6 +82,8 @@
 \definecolor{tblce}   {rgb}{0.930,0.930,1.000}
 \definecolor{tblunit} {rgb}{0.929,0.863,0.698}
 \definecolor{tblfoot} {gray}{0.90}
+\definecolor{ttcol}   {rgb}{0.333,0.039,0.098}
+\definecolor{emcol}   {rgb}{0.333,0.039,0.098}
 \definecolor{d-blue}  {rgb}{0.000,0.200,0.741}
 \definecolor{d-red}   {rgb}{0.850,0.125,0.000}
 \definecolor{d-green} {rgb}{0.231,0.333,0.094}
@@ -113,11 +105,6 @@
 % Cyan      0.301  0.745  0.933     77   190   238    4dbeeeff
 % Brown     0.635  0.078  0.184    162    20    47    a2142fff
 
-% Captions
-\usepackage[font={color=capcol}]{caption}
-\captionsetup[table]{labelfont=sc,skip=8pt}
-\captionsetup[figure]{labelfont=sc}
-
 % Links
 \usepackage{bookmark}
 \usepackage{hyperref}
@@ -128,12 +115,27 @@
 % Tables
 \newcommand{\texthh}[1]{\textsc{#1}}
 \newcommand{\textun}[1]{\small[\texttt{#1}]}
+\renewcommand{\arraystretch}{1.16}
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-%\newcolumntype{d}{D{.}{.}{-1}}
-%\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+
+% Figures
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+% Captions
+\usepackage[font={color=capcol}]{caption}
+\captionsetup[table]{labelfont=sc,skip=8pt}
+\captionsetup[figure]{labelfont=sc}
+
+% Text
+\renewcommand{\rmdefault}{ptm} % Times
+% \renewcommand{\sfdefault}{sb}
+% \renewcommand{\ttdefault}{sourcecodepro}
+\renewcommand{\texttt}[1]{\textcolor{ttcol}{\small\ttfamily #1}}
+\renewcommand{\emph}[1]{\textcolor{emcol}{\slshape #1}}
 
 % TOC
 \renewcommand\cftpartfont{\sffamily\large}
@@ -143,13 +145,10 @@
 \renewcommand\cfttoctitlefont{\huge\sffamily}
 %\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 
 % Custom Commands
 %*****************
-
-% Hyphenation
-\hyphenation{wave-length}
 
 % Text
 \newcommand{\eq}[1]{Eq. \ref{#1}}
@@ -174,7 +173,10 @@
 \newcommand{\gammar}[0]{\gamma_{\mathrm{r}}}
 \newcommand{\betar}[0]{\beta_{\mathrm{r}}}
 
-% ================================================================================================ %
+% Hyphenation
+\hyphenation{wave-length}
+
+% ================================================================================================================================ %
 
 % Page Layout
 %*************
@@ -212,20 +214,20 @@
 \fancyfoot[LE,RO]{\thepage}
 
 % Parts
-\titleformat{\part}[block]{}{}{}{\centering\fontsize{40}{50}\sffamily}
+\titleformat{\part}[block]{}{}{}{\centering\fontsize{40}{50}\sffamily\scshape}
 
 % Numbered Chapters
 \titlespacing*{\chapter}{0mm}{10mm}{20mm}
-\titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\huge\sffamily}
+\titleformat{\chapter}[hang]{\fontsize{60}{70}\sffamily}{\textcolor{chapter}\thechapter}{8mm}{\Huge\sffamily}
 
 % Sections
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\titleformat{\section}{\large\sffamily}{\thesection}{2mm}{\large}
-\titleformat{\subsection}{\normalsize\sffamily}{\thesubsection}{2mm}{}
-\titleformat{\subsubsection}{\normalsize\sffamily}{\thesubsubsection}{2mm}{}
+\titleformat{\section}{\Large\sffamily\mdseries}{\thesection}{2mm}{}
+\titleformat{\subsection}{\large\sffamily\mdseries}{\thesubsection}{2mm}{}
+\titleformat{\subsubsection}{\normalsize\sffamily\mdseries}{\thesubsubsection}{2mm}{}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 
 % Main Document
 %***************
@@ -267,10 +269,10 @@
 
 % Formatting for Appendices and Publications
 \titleformat{\chapter}[display]%
-    {\Large\sffamily}%
+    {\Large\sffamily\scshape}%
     {\textcolor{appendix}\chaptertitlename\ \textcolor{appendix}\thechapter}%
-    {8mm}%
-    {\Large\sffamily}
+    {2mm}%
+    {\Huge\sffamily\upshape}
 
 \addtocontents{toc}{\cftpagenumbersoff{part}}
 
@@ -341,4 +343,4 @@
 
 \end{document}
 
-% ================================================================================================ %
+% ================================================================================================================================ %
