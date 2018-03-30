@@ -1,0 +1,90 @@
+%
+%  Appendix : Analysis
+% =====================
+%
+
+\chapter{Simulation Analysis}
+\label{Apx:SA}
+
+This appendix details some of the key calculations used when analysing simulation data used for this thesis work.
+
+% ================================================================================================================================ %
+\section{Emittance and Twiss Parameters}
+\label{Apx:SA:EnTwiss}
+
+The Twiss parameters are useful quantities to describe the trajectory of particles in an accelerator in the transverse phase space.
+The following, brief, derivation is based on Klauss Wille, \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.
+
+The general solution to the trajectory of particles in an accelerator is given by
+\begin{align}
+    x(s)          &=  \sqrt{\epsilon\beta(s)} \cos\left[\Psi(s) + \phi\right] \label{EQ:PTrajX} \\
+    x^{\prime}(s) &= -\sqrt{\frac{\epsilon}{\beta(s)}}
+                     \left[\alpha(s)\cos\left(\Psi(s) + \phi\right) + \sin\left(\Psi(s) + \phi\right)\right], \label{EQ:PTrajXP}
+\end{align}
+where the parameter
+\begin{equation}
+    \alpha(s) \equiv -\frac{\beta^{\prime}(s)}{2}. \label{EQ:TwissAlpha}
+\end{equation}
+
+In order to arrive at an expression describing the particle motion in the $x$--$x^\prime$ plane, we must eliminate the terms depending on $\Psi$.
+We thus obtain:
+\begin{equation}
+    \epsilon = \frac{x^2}{\beta(s)} + \left(\frac{\alpha(s)}{\sqrt{\beta(s)}}x + \sqrt{\beta(s)}x^{\prime}\right)^2.
+\end{equation}
+
+By introducing the parameter
+\begin{equation}
+    \gamma(s) \equiv \frac{1+\alpha^2(s)}{\beta(s)}, \label{EQ:TwissGamma}
+\end{equation}
+we obtain
+\begin{equation}
+    \epsilon^2 = \gamma(s)x^2(s) + 2\alpha(s)x(s)x^{\prime}(s) + \beta(s)x^{\prime 2}(s). \label{EQ:EmittFull}
+\end{equation}
+
+This equation describes an ellipse in phase space, and how the Twiss parameters $\alpha$, $\beta$ and $\gamma$ relates to the geometric emittance $\epsilon$ and the shape of the ellipse is illustrated in Figure~\ref{Fig:Twiss}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/Twiss}
+    \caption{\label{Fig:Twiss} The phase space ellipse of bunch particles. The figure is recreated from Figure 3.23 by Klauss Wille in \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.}
+\end{figure}
+
+% ================================================================================================================================ %
+\subsection{Extracting Twiss Parameters from Simulation Data}
+\label{Apx:SA:EnTwiss:Sim}
+
+Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
+To study the collective motion of particles, it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
+Equation~\ref{EQ:EmittFull} can be rewritten in terms of the statistical distributions of its particles such that
+\begin{equation}
+    \epsilon = \sqrt{\gamma\sigma_{x}^{2} + 2\alpha\sigma_{x}\sigma_{x^{\prime}} + \beta\sigma_{x^{\prime}}^{2}}, \label{EQ:Emitt}
+\end{equation}
+where the angle of the $i$-th particles can be taken from its momentum
+\begin{equation}
+    x_{i}^{\prime} = \frac{p_{i,x}}{p_{i,z}}.
+\end{equation}
+
+For a set of macro particles, the emittance can be calculated directly by taking the covariance matrix of the $x$ and $x^{\prime}$ vectors
+\begin{equation}
+    \mathbf{T} = \mathrm{cov}\left(\mathbf{x}, \mathbf{x}^{\prime}\right)
+\end{equation}
+and then taking the square root of its determinant
+\begin{equation}
+    \epsilon = \sqrt{\mathrm{det}\left(\mathbf{T}\right)}.
+\end{equation}
+The Twiss parameters can be extracted from the matrix $\mathbf{T}$ as well:
+\begin{equation}
+    \alpha = \mathrm{T}_{12}/\epsilon, \quad
+    \beta  = \mathrm{T}_{11}/\epsilon, \quad
+    \gamma = \mathrm{T}_{22}/\epsilon
+\end{equation}
+
+% ================================================================================================================================ %
+\section{A Measure for Beam Quality}
+\label{Apx:SA:QTilde}
+
+For the emittance study (Publication~\ref{Pub:BL17}), it was necessary to define a convenient unit for the quality of the accelerated bunch.
+
+\todo[inline]{Incomplete}
+
+% ================================================================================================================================ %
