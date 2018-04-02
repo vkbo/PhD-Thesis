@@ -153,7 +153,7 @@ Examples from IPAC15 on gradient versus erosion. Maybe cite Alexey et al?
 %   Simulation Analysis
 % ================================================================================================================================ %
 \section{Simulation Analysis}
-\label{Apx:SA}
+\label{Sim:Analysis}
 
 Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
 A lot of work has been put into writing analysis tools to perform both initial and quich, as well as detailed analyses, of the many simultaions run.
@@ -164,7 +164,7 @@ They also apply to the OSIRIS 3 data arrays, but the weights need to be consider
 
 % ================================================================================================================================ %
 \subsection{Extracting Twiss Parameters from Particle Arrays}
-\label{Apx:SA:EnTwiss:Sim}
+\label{Sim:Analysis:EnTwiss}
 
 To study the collective motion of particles, it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
 Equation~\ref{EQ:EmittFull} from Section~\ref{Int:BPI:EnTwiss} can be rewritten in terms of the statistical distributions of its particles such that
@@ -193,7 +193,7 @@ The Twiss parameters can be extracted from the matrix $\mathbf{T}$ as well:
 
 % ================================================================================================================================ %
 \subsection{A Measure for Beam Quality}
-\label{Apx:SA:QTilde}
+\label{Sim:Analysis:QTilde}
 
 For the emittance study in Publication~\ref{Pub:BL17}, it was necessary to define a convenient unit for the quality of the accelerated bunch in terms of emittance evolution in regions along the bunch length.
 In the quasi-linear plus non-linear regime this publication investigates, emittance growth only occurs at the head of the bunch.
@@ -204,27 +204,27 @@ In the study, we defines the quantity
 \end{equation}
 where $M$ is the number of longitudinal grid slices of length $\Delta\xi$ which contains macro particles for the witness bunch, and with corresponding coordinate $\xi_{m}$; $N$ is the number of such slices to average over; and $\chi(\xi_{m},N)$ is the step function
 \begin{equation}
-    \chi(\zeta,N) =
+    \chi(\xi_{i},N) =
     \begin{cases}
         0, & \frac{\epsilon(\zeta) - \epsilon_{0}}{\epsilon_{0}} > 5\% \\
         1, & \frac{\epsilon(\zeta) - \epsilon_{0}}{\epsilon_{0}} \leq 5\%
     \end{cases}
     \quad\mathrm{for}\quad
-    \xi_{m} < \zeta \leq \xi_{m} + N\Delta\xi,
+    \xi_{i} < \zeta \leq \xi_{i} + N\Delta\xi,
 \end{equation}
-where $\epsilon(\zeta)$ is the emittance as defined by Equations~\ref{EQ:ECalc1} and~\ref{EQ:ECalc2} for a set of macro particles within the interval $\xi_{m}$ to $\xi_{m} + N\Delta\xi$.
+where $\epsilon(\zeta)$ is the emittance as defined by Equations~\ref{EQ:ECalc1} and~\ref{EQ:ECalc2} for a set of macro particles within the interval $\xi_{i}$ to $\xi_{i} + N\Delta\xi$, and $\epsilon_{0}$ is the initial emittance defined in the simulation input file.
 For the studies included in Publication~\ref{Pub:BL17},
 \begin{equation}
     M = \left\lfloor \frac{10\sigma_{z}}{\Delta\xi} \right\rceil, \quad
     N = 4.
 \end{equation}
-The first slice
+The first slice coordinate for the iterator $m$ is
 \begin{equation}
-    \xi_{0} = \mu_{\mathrm{eb}} - 5\sigma_{z,\mathrm{eb}} - 0.5\Delta\xi,
+    \xi_{m=0} = \mu_{\mathrm{eb}} - 5\sigma_{z,\mathrm{eb}} - 0.5\Delta\xi,
 \end{equation}
 where $\mu_{\mathrm{eb}}$ is the longitudinal centre of the bunch.
 
-\paragraph{Note:} This method may yield a misleading result if the Twiss parameter $\alpha$ varies too much along the length of the bunch.
+\paragraph{Note:} This method may yield a misleading result if the Twiss parameter $\alpha$ varies too much along the length of the bunch (the rotation of the ellipse, see Figure~\ref{Fig:BPI:Twiss}).
 That is, the emittance can be locally small, and qualify for the $5\%$ criterion, even if the total emittance of the region included in $\tilde{Q}$ is not.
 This can easily be checked after the seemingly optimal region of the bunch is known by verifying that its total emittance does not exceed the same criterion.
 
@@ -239,7 +239,8 @@ As can be seen from Table \ref{T:SimCost}, these simulations took an average of 
 
 \todo[inline]{Add plot showing full SMI proton beam from S-series simulations. Also add FFT plot.}
 
-
+% ================================================================================================================================ %
+%  Beam Loading and Energy Spread
 % ================================================================================================================================ %
 \section{Beam Loading and Energy Spread}
 \label{Sim:BLoad}
@@ -248,6 +249,8 @@ The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$,
 The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication \ref{Pub:IPAC15}, but several lengths were tested in simulations.
 $40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}).
 
+% ================================================================================================================================ %
+%  Emittance Evolution
 % ================================================================================================================================ %
 \section{Emittance Evolution}
 \label{Sim:Emitt}
@@ -279,11 +282,10 @@ The radial wakefields within the plasma bubble are linear, but so are the fields
 The effect of linear focusing could thus be an artefact of resolution.
 Especially in the case where the grid cells were only a factor $2.5$ smaller than the bunch $\sigma_{x,y}$, and thus the bubble radius also small.\todo{Verify and cite.}
 
-% Add description of the Q_Tilde parameter somewhere.
-
 \begin{table}[hbt]
     \centering
-    \caption{Convergence results for a reference simulations for Publication~\ref{Pub:BL17}. The reference bunch has a charge of $250\unit{pC}$, and the emittance tolerance criterion for the $\tilde{Q}$ parameter is $5\%$.}
+    \caption{Convergence results for a reference simulations for Publication~\ref{Pub:BL17}.
+    The reference bunch has a charge of $250\unit{pC}$, and the emittance tolerance criterion for the $\tilde{Q}$ parameter is $5\%$ (see Section~\ref{Sim:Analysis:QTilde}).}
     \label{T:Converg}
     \begin{tabularx}{130mm}{Xl d{1}l d{1}l d{1}l}
         \rowcolor{tblhead}
