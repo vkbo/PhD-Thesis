@@ -15,6 +15,8 @@ The key results are presented in Publication~\ref{Pub:BL17}, with the studies le
 In this chapter we will first cover some of the key concepts involved in plasma wakefield acceleration techniques relevant to the work presented in this thesis. The design of the AWAKE experiment itself is laid out in more detail in the next chapter, and the framework for the simulations is described in the third chapter. The fourth chapter outlines the work done in integrating AWAKE Run~1 with the control system at CERN.
 
 % ================================================================================================================================ %
+%  Plasma Wakefield Acceleration
+% ================================================================================================================================ %
 \section{Plasma Wakefield Acceleration}
 \label{Int:PWFA}
 
@@ -54,7 +56,9 @@ Any type of charged particle beam can be used in such an accelerator. Most exper
 A limitation using an electron beam with a similar initial charge and energy for both drive and witness beams is that the witness beam will rapidly gain energy, while the drive beam loses energy. This both causes the drive beam to quickly decelerate, while the witness beam undergoing acceleration will at the same time catch up with the drive beam. Typically propagation length of an electron drive beam is a few tens of centimetres of plasma.
 
 % ================================================================================================================================ %
-\section{Beam--Plasma Interaction}
+%  Beam and Plasma Interactions
+% ================================================================================================================================ %
+\section{Beam and Plasma Interactions}
 \label{Int:BPI}
 
 As a relativistic, charged beam propagates through plasma, it affects the local density of the plasma electrons. The charged beam generates strong transverse fields, pushing or pulling the plasma electrons away or towards the propagation axis of the beam~\cite{lee:2001,adli:2016b}. As the heavier plasma ions will move one a much longer time scale, due to inertia, the plasma electrons expelled from the axis will be pulled back towards it by the ion charge. The electrons will tend to overshoot the axis, creating an oscillation system. A positively charged drive beam will initially pull the electrons towards the axis, where they overshoot, creating a similar effect to a negative drive beam with a half-period phase offset. The oscillation period is determined by the plasma wavelength of the electrons~\cite{hogan:2016,muggli:2017}. 
@@ -65,7 +69,54 @@ As a relativistic, charged beam propagates through plasma, it affects the local 
     \caption{\label{Fig:PWFA:Illust} Illustration of a plasma wakefield accelerating structure with a single electron drive beam. A series of focusing/defocusing and accelerating/decelerating regions (as seen for an electron witness beam) are produced behind the drive beam.}
 \end{figure}
 
-A conceptual illustration of an electron beam driven plasma accelerator is shown in Fig.~\ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can be both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can resonantly amplify the wakefields.
+A conceptual illustration of an electron beam driven plasma accelerator is shown in Figure~\ref{Fig:PWFA:Illust}. Several regions of decreasing magnitude of accelerating/decelerating and focusing/defocusing are generated behind the drive beam. By positioning a trailing beam in an optimal phase, such a beam can be both accelerated and focused. The drive beam needs to be shorter than the plasma period for this structure to develop, but multiple short drive beams with a separation of the plasma wave length can resonantly amplify the wakefields.
+
+% ================================================================================================================================ %
+\subsection{Beam Emittance and Twiss Parameters}
+\label{Int:BPI:EnTwiss}
+
+Before we continue, let us briefly introduce an important set of parameter when describing the eovolution of a charged particle beam: the beam emittance, and the Twiss parameters also known as the Courant-Snyder parameters \cite{courant:1958}.
+The Twiss parameters are useful quantities to describe the trajectory of particles in an accelerator in the transverse phase space.
+The following, brief, derivation is based on Klauss Wille, \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.
+
+The general solution to the trajectory of particles in an accelerator is given by
+\begin{align}
+    x(s)          &=  \sqrt{\epsilon\beta(s)} \cos\left[\Psi(s) + \phi\right] \label{EQ:PTrajX} \\
+    x^{\prime}(s) &= -\sqrt{\frac{\epsilon}{\beta(s)}}
+                     \left[\alpha(s)\cos\left(\Psi(s) + \phi\right) + \sin\left(\Psi(s) + \phi\right)\right], \label{EQ:PTrajXP}
+\end{align}
+where the parameter
+\begin{equation}
+    \alpha(s) \equiv -\frac{\beta^{\prime}(s)}{2}. \label{EQ:TwissAlpha}
+\end{equation}
+
+In order to arrive at an expression describing the particle motion in the $x$--$x^\prime$ plane, we must eliminate the terms depending on $\Psi$.
+We thus obtain:
+\begin{equation}
+    \epsilon = \frac{x^2}{\beta(s)} + \left(\frac{\alpha(s)}{\sqrt{\beta(s)}}x + \sqrt{\beta(s)}x^{\prime}\right)^2.
+\end{equation}
+
+By introducing the parameter
+\begin{equation}
+    \gamma(s) \equiv \frac{1+\alpha^2(s)}{\beta(s)}, \label{EQ:TwissGamma}
+\end{equation}
+we obtain
+\begin{equation}
+    \epsilon^2 = \gamma(s)x^2(s) + 2\alpha(s)x(s)x^{\prime}(s) + \beta(s)x^{\prime 2}(s). \label{EQ:EmittFull}
+\end{equation}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/Twiss}
+    \caption{\label{Fig:Twiss} The phase space ellipse of bunch particles.
+    The figure is recreated from Figure 3.23 by Klauss Wille in \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.}
+\end{figure}
+
+This equation describes an ellipse in phase space, and how the Twiss parameters $\alpha$, $\beta$ and $\gamma$ relates to the geometric emittance $\epsilon$ and the shape of the ellipse is illustrated in Figure~\ref{Fig:Twiss}.
+It is often useful to refer to normalised emittance, which is the geometric emii8tance multiplied with the relativistic factor
+\begin{equation}
+    \emitN = \epsilon \gammar.
+\end{equation}
 
 % ================================================================================================================================ %
 \subsection{The Drive Beam}
