@@ -24,7 +24,6 @@
 \usepackage{mathtools}
 
 % Bibliography
-% \usepackage[super,numbers,sort&compress]{natbib}
 \usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{PhD}                   % Custom citation style
 \usepackage{doi}                          % Makes DOIs clickable
@@ -41,7 +40,6 @@
 \usepackage{float}                        % Floating of figures and tables
 
 % Fonts
-\usepackage[garamondx,expert]{mathdesign} % Adds additional math symbols
 \usepackage[scaled]{raleway}              % Raleway font for sans-serif text
 \usepackage[scaled]{sourcecodepro}        % Source Code Pro font for typewriter text
 \usepackage{textcomp}                     % Adds additional text symbols
@@ -72,6 +70,12 @@
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}
 \makeatother
+
+% Stretches text to fix underfull or overfull errors
+\usepackage[activate=true,final,stretch=10,shrink=10]{microtype}
+
+% Silence underfull errors for bibliography
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
 % Colours
 \usepackage{color}
@@ -176,6 +180,9 @@
 
 % Hyphenation
 \hyphenation{wave-length}
+\hyphenation{Swit-zer-land}
+\hyphenation{de-fo-cus-ing}
+\hyphenation{de-cel-er-at-ing}
 
 % ================================================================================================================================ %
 
@@ -251,7 +258,9 @@
     \tocloftpagestyle{plain}
     \cleardoublepage
     \pdfbookmark{\contentsname}{Contents}
+    \microtypesetup{protrusion=false}
     \tableofcontents
+    \microtypesetup{protrusion=true}
     \cleardoublepage
 
 % Main Matters

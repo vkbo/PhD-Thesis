@@ -150,7 +150,7 @@ However, the effect on the witness bunch was not significant.
 Examples from IPAC15 on gradient versus erosion. Maybe cite Alexey et al?
 
 % ================================================================================================================================ %
-%   Simulation Analysis
+%  Simulation Analysis
 % ================================================================================================================================ %
 \section{Simulation Analysis}
 \label{Sim:Analysis}
@@ -200,19 +200,20 @@ In the quasi-linear plus non-linear regime this publication investigates, emitta
 However, the region of emittance growth varies when parameters such as charge and beam size changes.
 In the study, we defines the quantity
 \begin{equation}
-    \tilde{Q} = \sum_{m=0}^{M} \frac{1}{N} \left[\sum_{n=0}^{N} Q_{m+n}\right] \cdot \chi(\xi_{m},N),
+    % \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \left[\sum_{n=0}^{N} Q_{m+n}\right] \cdot \chi(\xi_{m},N),
+    \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \sum_{n=0}^{N} Q_{m+n}\,\chi(\xi_{m},N),
 \end{equation}
 where $M$ is the number of longitudinal grid slices of length $\Delta\xi$ which contains macro particles for the witness bunch, and with corresponding coordinate $\xi_{m}$; $N$ is the number of such slices to average over; and $\chi(\xi_{m},N)$ is the step function
 \begin{equation}
     \chi(\xi_{i},N) =
     \begin{cases}
-        0, & \frac{\epsilon(\zeta) - \epsilon_{0}}{\epsilon_{0}} > 5\% \\
-        1, & \frac{\epsilon(\zeta) - \epsilon_{0}}{\epsilon_{0}} \leq 5\%
+        1, & \frac{\epsilon_{i} - \epsilon_{0}}{\epsilon_{0}} \leq 5\% \\
+        0, & \frac{\epsilon_{i} - \epsilon_{0}}{\epsilon_{0}} > 5\%
     \end{cases}
-    \quad\mathrm{for}\quad
-    \xi_{i} < \zeta \leq \xi_{i} + N\Delta\xi,
+    \quad\mathrm{for~}\epsilon_{i}\mathrm{~over~the~interval}\quad
+    [\xi_{i}, \xi_{i} + N\Delta\xi],
 \end{equation}
-where $\epsilon(\zeta)$ is the emittance as defined by Equations~\ref{EQ:ECalc1} and~\ref{EQ:ECalc2} for a set of macro particles within the interval $\xi_{i}$ to $\xi_{i} + N\Delta\xi$, and $\epsilon_{0}$ is the initial emittance defined in the simulation input file.
+where $\epsilon_{i}$ is the emittance as defined by Equations~\ref{EQ:ECalc1} and~\ref{EQ:ECalc2} for a set of macro particles within the interval $\xi_{i}$ to $\xi_{i} + N\Delta\xi$, and $\epsilon_{0}$ is the initial emittance defined in the simulation input file.
 For the studies included in Publication~\ref{Pub:BL17},
 \begin{equation}
     M = \left\lfloor \frac{10\sigma_{z}}{\Delta\xi} \right\rceil, \quad
@@ -232,7 +233,7 @@ This can easily be checked after the seemingly optimal region of the bunch is kn
 %  Full Scale Studies
 % ================================================================================================================================ %
 \section{Full Scale Studies}
-\label{Sim:Plasma}
+\label{Sim:FullScale}
 
 A total of $38$ simulations of a full AWAKE proton bunch, with and without an injected electron bunch, were run.
 As can be seen from Table \ref{T:SimCost}, these simulations took an average of over $11\,000$ CPU hours.
@@ -287,7 +288,7 @@ Especially in the case where the grid cells were only a factor $2.5$ smaller tha
     \caption{Convergence results for a reference simulations for Publication~\ref{Pub:BL17}.
     The reference bunch has a charge of $250\unit{pC}$, and the emittance tolerance criterion for the $\tilde{Q}$ parameter is $5\%$ (see Section~\ref{Sim:Analysis:QTilde}).}
     \label{T:Converg}
-    \begin{tabularx}{130mm}{Xl d{1}l d{1}l d{1}l}
+    \begin{tabularx}{132mm}{Xl d{1}l d{1}l d{1}l}
         \rowcolor{tblhead}
         \texthh{Length} & \texthh{Param.}
             & \multicolumn{2}{c}{\texthh{1024$\times$1024}}
