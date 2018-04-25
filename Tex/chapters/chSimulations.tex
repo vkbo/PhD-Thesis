@@ -34,7 +34,7 @@ The total charge of the simulated proton bunch in cylindrical coordinates is thu
 \begin{equation}
     Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
 \end{equation}
-where $A$ is tuned such that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKE-Run1}.
+where $A$ is tuned such that $Q_{pb}$ matches the charge outlined in Table \ref{T:AWAKERuns}.
 A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape, as the cosine goes to zero at a finite length \cite{lotov:2010}.
 
 % ================================================================================================================================ %
@@ -87,7 +87,7 @@ These challenges differ between the two simulation codes used in these studies.
 \subsection{Witness Bunch Size and Resolution}
 \label{Sim:EBeam:SizeRes}
 
-For the early simulations, a transverse size of $\sigma_{x,y}=105\unit{\mu m}$ was used, see Table~\ref{T:AWAKE-Run2}.
+For the early simulations, a transverse size of $\sigma_{x,y}=105\unit{\mu m}$ was used, see Table~\ref{T:AWAKERuns}.
 For later simulations, when the beam transverse size was matched to its emittance and the plasma density (see Section \ref{Int:BPI:Match}), much narrower beams were used -- on the order of a few micrometres.
 The proton drive beam size is tied to the plasma skin depth (see Section~\ref{Int:DBeam:SMI}), which is $200\unit{\mu m}$.
 This, naturally, poses a resolution challenge when very narrow electron beams need to be resolved while the simulation box needs to be able to contain the proton drive bunch.
@@ -251,7 +251,7 @@ As can be seen from Table \ref{T:SimCost}, these simulations took an average of 
 \section{Beam Loading and Energy Spread}
 \label{Sim:BLoad}
 
-The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table \ref{T:AWAKE-Run2}.
+The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table \ref{T:AWAKERuns}.
 The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication \ref{Pub:IPAC15}, but several lengths were tested in simulations.
 $40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}).
 
