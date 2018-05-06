@@ -6,8 +6,9 @@
 \chapter{The AWAKE Experiment}
 \label{Ch:WFA}
 
-AWAKE is the first proton driven wakefield accelerator experiment in the world. It is a proof-of-concept experiment aiming to inform a design for future high energy accelerators~\cite{gschwendtner:2016} and to prove their feasibility.
-The proton drive beam is delivered by the Super Proton Synchrotron (SPS) at CERN at an energy of $400\unit{GeV}$, and joined by an electron witness beam in a $10\unit{m}$ plasma stage.
+AWAKE is the first proton driven wakefield accelerator experiment in the world.
+It is a proof-of-concept experiment aiming to inform a design for future high energy accelerators~\cite{gschwendtner:2016} and to prove the feasibility of such an accelerator.
+The proton drive beam for the experiment is delivered by the Super Proton Synchrotron (SPS) at CERN at an energy of $400\unit{GeV}$, and joined by an electron witness beam in a $10\unit{m}$ plasma stage.
 
 AWAKE is physically located at the former site of the CERN Neutrinos to Gran Sasso experiment (CNGS) \cite{gschwendtner:2010} in a tunnel below the Swiss-French border, and is connected to the SPS at SPS Point 4.
 The connection of the AWAKE experiment to the rest of the CERN accelerator complex is illustrated in Fig.~\ref{Fig:WFA:AccComp}.
@@ -47,11 +48,11 @@ An experiment at SLAC later produced a discrete, accelerated bunch with a core o
 \label{WFA:Design}
 
 AWAKE is, as of the writing of this thesis, operational and in Run~1.
-The proton beam line arriving from the SPS joins with the laser beam and the electron beam line, and connects to a $10\unit{m}$ plasma stage.
+The proton beam line arriving from the SPS joins with the laser beam and the electron beam line, and connects to a $10\unit{m}$ plasma stage at the end of the tunnel.
 In addition, an electron source has been installed, and a new side tunnel had to be dug to fit the electron beam line connecting the source to the main assembly.
 Figure \ref{Fig:WFA:AWAKE} gives and overview of the experimental layout in the tunnel.
-The old CNGS target is still present, behind a shielding wall as it is highly radioactive.
-This, unfortunately, has created some constraints for fitting the downstream beam line and diagnostics, and may pose additional challenges for Run~2.
+The old CNGS target is still present behind a shielding wall, as it is highly radioactive.
+This, unfortunately, has created some constraints for fitting the downstream beam line and diagnostics, and may pose additional challenges for Run~2 if longer or multiple plasma stages are needed.
 
 \begin{figure}[hbt]
     \centering
@@ -65,34 +66,34 @@ This, unfortunately, has created some constraints for fitting the downstream bea
 \subsection{Plasma Source}
 \label{WFA:Design:Plasma}
 
-The requirements for the plasma source for AWAKE Run~1 were a $10\unit{m}$ long cell with a plasma electron density range of $1-10\nexp{14}\unit{cm}^{-3}$.
+The requirements for the plasma source for AWAKE Run~1 were a $10\unit{m}$ long cell capable of a plasma electron density ranging from $1-10\nexp{14}\unit{cm}^{-3}$.
 The density variation should be within $0.2\%$, and the radius of the plasma channel should be $\geq 1\unit{mm}$.
-The plasma should also consist of heavy ions to mitigate ion motion \cite{caldwell:2015}.
+The plasma should also consist of heavy ions to mitigate ion motion~\cite{caldwell:2015}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.99\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/PlasmaCell}
     \caption{\label{Fig:WFA:PlasmaCell}
-        A CAD drawing of the plasma cell and its related components, as presented in the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.
+        Drawing of the plasma stage and its related components, as presented in the 2016 AWAKE Status Report~\cite{awake_collaboration:2016}.
     }
 \end{figure}
 
 For the AWAKE vapour source, rubidium (Rb) was chosen.
 Rubidium has a low melting point, $39.3\celsius$; a low first ionisation energy, $4.18\unit{eV}$; and a standard atomic weight of $85.47$.
-The plasma wavelength of rubidium ions with a $+1$ charge is roughly $400$ times that of the plasma electrons (see Eq. \ref{EQ:PWFA:L0W0}), preventing significant ion motion for AWAKE application \cite{vieira:2012a}.
-An additional benefit of using an alkaline metal like rubidium is that the second ionisation level is significantly higher, $27.3\unit{eV}$, making it relatively easy to prevent further ionisation and thus a lower charge/mass ratio \cite{awake_collaboration:2017}.
-The rubidium vapour is created by heating the reservoir and the plasma cell to around $150-230\celsius$ to reach the density range required for AWAKE \cite{caldwell:2015,muggli:2017a}.
+The plasma wavelength of rubidium ions with a $+1$ charge is roughly $400$ times that of the plasma electrons (see Equation~\ref{EQ:PWFA:L0W0}), preventing significant ion motion for AWAKE application~\cite{vieira:2012a}.
+An additional benefit of using an alkaline metal like rubidium is that the second ionisation level is significantly higher, $27.3\unit{eV}$, making it relatively easy to prevent further ionisation and thus a lower charge/mass ratio~\cite{awake_collaboration:2017}.
+The rubidium vapour is created by heating the reservoir and the plasma cell to around $150-230\celsius$ to reach the density range required for AWAKE~\cite{caldwell:2015,muggli:2017a}.
 
 The ionisation of the Rb vapour is achieved with a short laser pulse co-propagating with the proton drive beam.
 The laser can be timed such that the plasma channel is created inside the beam itself.
-The short laser pulse produces a sharp plasma edge that provides a good seed for the self-modulation instability \cite{vieira:2014a}.
+The short laser pulse produces a sharp plasma edge that provides a good seed for the self-modulation instability~\cite{vieira:2014a}, as discussed in Section~\ref{Int:DBeam:SMI}.
 The section of the proton beam ahead of the laser does not interact strongly with the neutral rubidium vapour, although a low level of impact ionisation does occur.
-However, this effect is not significant \cite{awake_collaboration:2017}.
+However, this effect is not significant~\cite{awake_collaboration:2017}.
 
 The ionisation laser used for AWAKE is a $780\unit{nm}$ Ti:Sapphire laser with a pulse length of $120\unit{fs}$ and a maximum compressed energy of $450\unit{mJ}$.
-The peak intensity is around $1.2\nexp{14}\unit{W/cm}^{2}$, with a spot size radius of $1\unit{mm}$ \cite{awake_collaboration:2017}.
-The appearance intensity needed for ionisation of rubidium is around $1.7\nexp{12}\unit{W/cm}^{2}$ \cite{augst:1989}.
-Ionisation of a second electron requires some $455$ times higher intensity, so secondary ionisation is not expected \cite{muggli:2017a}.
+The peak intensity is around $1.2\nexp{14}\unit{W/cm}^{2}$, with a spot size radius of $1\unit{mm}$~\cite{awake_collaboration:2017}.
+The appearance intensity needed for ionisation of rubidium is around $1.7\nexp{12}\unit{W/cm}^{2}$~\cite{augst:1989}.
+Ionisation of a second electron requires some $455$ times higher intensity, so secondary ionisation is not expected~\cite{muggli:2017a}.
 
 % Add something about plasma diagnostics, Fabian & Erdem
 
@@ -100,17 +101,17 @@ Ionisation of a second electron requires some $455$ times higher intensity, so s
 \subsection{Electron Source}
 \label{WFA:Design:ESource}
 
-The AWAKE electron source needed for Run~1 consists of a $2.5$ cell RF-gun and a $1\unit{m}$ long booster structure, both operating at $3\unit{GHz}$, a cathode transfer chamber, beam diagnostics, and a beam transport line connecting it to the proton beam line.
+The AWAKE electron source for Run~1 consists of a $2.5$ cell RF-gun and a $1\unit{m}$ long booster structure, both operating at $3\unit{GHz}$, a cathode transfer chamber, beam diagnostics, and a beam transport line connecting it to the proton beam line.
 The beam is boosted to up to $20\unit{MeV}$ by a constant gradient acceleration structure.
-The RF-gun and the booster are powered by a $30\unit{MW}$ klystron \cite{awake_collaboration:2017,pepitone:2016}.
-Several of the components, including the RF-gun and klystron, were re-purposed from the former PHIN injector in the CLIC test facility \cite{chevallay:2012}.
+The RF-gun and the booster are powered by a $30\unit{MW}$ klystron~\cite{awake_collaboration:2017,pepitone:2016}.
+Several of the components, including the RF-gun and klystron, were re-purposed from the former PHIN injector in the CLIC test facility~\cite{chevallay:2012}.
 An overview of the electron source and the accelerating structure can be seen in Figure~\ref{Fig:WFA:ESource}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.70\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/ElectronSource}
     \caption{\label{Fig:WFA:ESource}
-        A CAD drawing of the electron source and accelerating structure \cite{pepitone:2016}.
+        Drawing of the electron source and accelerating structure~\cite{pepitone:2016}.
     }
 \end{figure}
 
@@ -153,7 +154,7 @@ The key, nominal parameters for Run~1, and the planned parameters for Run~2, are
 
 The primary focus of Run~1 of AWAKE was to study the wakefields generated by the SPS proton beam in the $10\unit{m}$ Rubidium plasma stage.
 In the first phase the main focus was on measuring the self-modulation instability and the frequency of this modulation in relation to the plasma density.
-The second phase aims to sample the generated wakefields with a long electron beam capable of sampling a full plasma wavelength \cite{adli:2016a}.
+The second phase aims to sample the generated wakefields with a long electron beam capable of sampling a full plasma wavelength~\cite{adli:2016a}.
 
 A large part of the work involved in Run~1 is related to the operation and diagnostics of all the essential elements involved in the experiment, from the vapour cell and the laser system, to the beam transport; and their respective diagnostics systems.
 Especially the size and and density uniformity of the plasma channel are essential parameters to control.
@@ -176,7 +177,7 @@ Does the SMI require a seed? See muggli:2017 \cite{muggli:2017a}.
 
 % - why do we need to improve on Run 1 e- acceleration? (Run 1: only long electron beam > lambda_p, in order to sample all phases, also transversally large and unmatched. We therefore expect for Run 1: only a fraction of beam accelerated, large energy spectrum, poor emittance. Run 2 needs to demonstrate that we can accelerate beam interesting for applications, this good emittance, low energy spread, high charge.
 
-% - why do we need to demonstrate scalability? Because single stage acceleration is one of the key advantages with proton driven PWFA. We want to avoid staging as much as possible (so you need to rephrase the current text). We might need two plasma stages, one for SSM of the proton beam, and the second for the e- acceleration, but we would like to have ideally only a single stage for the acceleration. For this we need a different kind of plasma source, since we cannot create a laser beam powerful enough for a very long stage, and even if enough energy, it could not propagate through very long distances. You might want to find out why, since one of the opponents is an LWFA experts.  
+% - why do we need to demonstrate scalability? Because single stage acceleration is one of the key advantages with proton driven PWFA. We want to avoid staging as much as possible so you need to rephrase the current text. We might need two plasma stages, one for SSM of the proton beam, and the second for the e- acceleration, but we would like to have ideally only a single stage for the acceleration. For this we need a different kind of plasma source, since we cannot create a laser beam powerful enough for a very long stage, and even if enough energy, it could not propagate through very long distances. You might want to find out why, since one of the opponents is an LWFA experts.  
 
 % The above two points should be sufficient, and will cover 1-2 pages.
 
