@@ -1,0 +1,203 @@
+%
+%  Simulations
+% =============
+%
+
+\chapter{Simulation Analysis}
+\label{Ch:SimA}
+
+Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
+A lot of work has been put into writing analysis tools to perform both initial and quick, as well as detailed analyses, of the many simulations run.
+The tools developed are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
+Following are a couple of the key calculations done on the particle arrays.
+These are for the QuickPIC data arrays, which uses equally weighted macro particles.
+They also apply to the OSIRIS 3 data arrays, but the weights need to be considered when performing the statistical calculations.
+
+% ================================================================================================================================ %
+\section{Extracting Twiss Parameters from Particle Arrays}
+\label{SimA:EnTwiss}
+
+To study the collective motion of particles, it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
+Equation~\ref{EQ:EmittFull} from Section~\ref{Int:BPI:EnTwiss} can be rewritten in terms of the statistical distributions of its particles such that
+\begin{equation}
+    \epsilon = \sqrt{\gamma\sigma_{x}^{2} + 2\alpha\sigma_{x}\sigma_{x^{\prime}} + \beta\sigma_{x^{\prime}}^{2}}, \label{EQ:Emitt}
+\end{equation}
+where the angle of the $i$-th particles can be taken from its momentum
+\begin{equation}
+    x_{i}^{\prime} = \frac{p_{i,x}}{p_{i,z}}.
+\end{equation}
+
+For a set of macro particles, the emittance can be calculated directly by taking the covariance matrix of the $x$ and $x^{\prime}$ vectors
+\begin{equation}
+    \mathbf{T} = \mathrm{cov}\left(\mathbf{x}, \mathbf{x}^{\prime}\right), \label{EQ:ECalc1}
+\end{equation}
+and then taking the square root of its determinant
+\begin{equation}
+    \epsilon = \sqrt{\mathrm{det}\left(\mathbf{T}\right)}. \label{EQ:ECalc2}
+\end{equation}
+The Twiss parameters can be extracted from the matrix $\mathbf{T}$ as well:
+\begin{equation}
+    \alpha = \mathrm{T}_{12}/\epsilon, \quad
+    \beta  = \mathrm{T}_{11}/\epsilon, \quad
+    \gamma = \mathrm{T}_{22}/\epsilon
+\end{equation}
+
+% ================================================================================================================================ %
+\section{A Measure for Beam Quality}
+\label{SimA:QTilde}
+
+For the emittance study in Publication~\ref{Pub:BL17}, it was necessary to define a convenient unit for the quality of the accelerated bunch in terms of emittance evolution in regions along the bunch length.
+In the quasi-linear plus non-linear regime this publication investigates, emittance growth only occurs at the head of the bunch.
+However, the region of emittance growth varies when parameters such as charge and beam size changes.
+In the study, we defines the quantity
+\begin{equation}
+    % \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \left[\sum_{n=0}^{N} Q_{m+n}\right] \cdot \chi(\xi_{m},N),
+    \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \sum_{n=0}^{N} Q_{m+n}\,\chi(\xi_{m},N),
+\end{equation}
+where $M$ is the number of longitudinal grid slices of length $\Delta\xi$ which contains macro particles for the witness bunch, and with corresponding coordinate $\xi_{m}$; $N$ is the number of such slices to average over; and $\chi(\xi_{m},N)$ is the step function
+\begin{equation}
+    \chi(\xi_{i},N) =
+    \begin{cases}
+        1, & \frac{\epsilon_{i} - \epsilon_{0}}{\epsilon_{0}} \leq 5\% \\
+        0, & \frac{\epsilon_{i} - \epsilon_{0}}{\epsilon_{0}} > 5\%
+    \end{cases}
+    \quad\mathrm{for~}\epsilon_{i}\mathrm{~over~the~interval}\quad
+    [\xi_{i}, \xi_{i} + N\Delta\xi],
+\end{equation}
+where $\epsilon_{i}$ is the emittance as defined by Equations~\ref{EQ:ECalc1} and~\ref{EQ:ECalc2} for a set of macro particles within the interval $\xi_{i}$ to $\xi_{i} + N\Delta\xi$, and $\epsilon_{0}$ is the initial emittance defined in the simulation input file.
+For the studies included in Publication~\ref{Pub:BL17},
+\begin{equation}
+    M = \left\lfloor \frac{10\sigma_{z}}{\Delta\xi} \right\rceil, \quad
+    N = 4.
+\end{equation}
+The first slice coordinate for the iterator $m$ is
+\begin{equation}
+    \xi_{m=0} = \mu_{\mathrm{eb}} - 5\sigma_{z,\mathrm{eb}} - 0.5\Delta\xi,
+\end{equation}
+where $\mu_{\mathrm{eb}}$ is the longitudinal centre of the bunch.
+
+\paragraph{Note:} This method may yield a misleading result if the Twiss parameter $\alpha$ varies too much along the length of the bunch (the rotation of the ellipse, see Figure~\ref{Fig:BPI:Twiss}).
+That is, the emittance can be locally small, and qualify for the $5\%$ criterion, even if the total emittance of the region included in $\tilde{Q}$ is not.
+This can easily be checked after the seemingly optimal region of the bunch is known by verifying that its total emittance does not exceed the same criterion.
+
+% ================================================================================================================================ %
+%  Full Scale Studies
+% ================================================================================================================================ %
+\section{Full Scale Studies}
+\label{SimA:FullScale}
+
+A total of $38$ simulations of a full AWAKE proton bunch, with and without an injected electron bunch, were run.
+As can be seen from Table \ref{T:SimCost}, these simulations took an average of over $11\,000$ CPU hours.
+
+\begin{figure}[hbt]
+    \centering
+    % \includegraphics[width=1.0\linewidth]{figures/SelfModulationSim}
+    \includegraphics[width=1.0\linewidth]{figures/PBSelfModulation}
+    \caption{\label{Fig:Sim:SMI} }
+\end{figure}
+
+% ================================================================================================================================ %
+%  Beam Loading and Energy Spread
+% ================================================================================================================================ %
+\section{Beam Loading and Energy Spread}
+\label{SimA:BLoad}
+
+The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table \ref{T:AWAKERuns}.
+The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication \ref{Pub:IPAC15}, but several lengths were tested in simulations.
+$40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}).
+
+% ================================================================================================================================ %
+%  Emittance Evolution
+% ================================================================================================================================ %
+\section{Emittance Evolution}
+\label{SimA:Emitt}
+
+Emittance is preserved in the linear regime
+
+% ================================================================================================================================ %
+\subsection{The Quasi-Linear Regime}
+\label{SimA:QLin}
+
+Text
+
+% ================================================================================================================================ %
+\subsection{The Quasi-Linear + Non-Linear Case}
+\label{SimA:QLinNonLin}
+
+Quasi-linear reference \cite{rosenzweig:2010}.
+
+An electron beam matched to the typical AWAKE plasma density will be, as discussed in \ref{Int:BPI:Match}, very narrow. At a typical normalised emittance of $2.0\unit{\mu m}$ the beam is $5.25\unit{\mu m}$. Even at low beam charge and at the upper limit in terms of beam length, the wakefields of such a beam will quickly reach the non-linear regime. In the base case used in the beam loading study included in Publication \ref{Pub:BL17} \cite{berglyd_olsen:2018} the peak density of the beam $n_b/n_0 > 35$, well beyond the saturation level of the bubble that occurs when $n_b/n_0 > 10$ \cite{lu:2005}.
+
+The implication here is that there is an additional beneficial effect of loading the accelerating field with as much charge as it will allow without overloading it. The resulting non-linear wake driven by the head of the beam, which will see emittance growth due to the quasi-linear conditions of the proton wake, ensures that the rest of the beam sees a strong focusing force preventing further emittance growth. As the electron beam gains energy, its transverse size will decrease as its emittance is preserved as $\sigma_{r} = \sqrt{\emitN\beta}$ \cite{wille:2001}.
+
+% ================================================================================================================================ %
+\subsection{Convergence Scan}
+\label{SimA:Converge}
+
+For the large parameter scans performed for Publication~\ref{Pub:BL17}, it was necessary to verify that the results were not dependant on grid resolution.
+The radial wakefields within the plasma bubble are linear, but so are the fields within one grid cell as they are interpolated on the grid.
+The effect of linear focusing could thus be an artefact of resolution.
+Especially in the case where the grid cells were only a factor $2.5$ smaller than the bunch $\sigma_{x,y}$, and thus the bubble radius also small.\todo{Verify and cite.}
+
+\begin{table}[hbt]
+    \centering
+    \caption{Convergence results for a reference simulations for Publication~\ref{Pub:BL17}.
+    The reference bunch has a charge of $250\unit{pC}$, and the emittance tolerance criterion for the $\tilde{Q}$ parameter is $5\%$ (see Section~\ref{SimA:QTilde}).}
+    \label{T:Converg}
+    \begin{tabularx}{132mm}{Xl d{1}l d{1}l d{1}l}
+        \rowcolor{tblhead}
+        \texthh{Length} & \texthh{Param.}
+            & \multicolumn{2}{c}{\texthh{1024$\times$1024}}
+            & \multicolumn{2}{c}{\texthh{2048$\times$2048}}
+            & \multicolumn{2}{c}{\texthh{4096$\times$4096}} \\
+        \hline
+                         & $\tilde{Q}$ &  213.9 & $\unit{pC}$  &  206.9 & $\unit{pC}$  &  213.1 & $\unit{pC}$  \\
+        $40\unit{\mu m}$ & MEAN$(E)$   & 2263   & $\unit{MeV}$ & 2233   & $\unit{MeV}$ & 2247   & $\unit{MeV}$ \\
+                         & STD$(E)$    &  267.4 & $\unit{MeV}$ &  250.4 & $\unit{MeV}$ &  261.5 & $\unit{MeV}$ \\
+        \hline
+                         & $\tilde{Q}$ &  221.6 & $\unit{pC}$  &  222.0 & $\unit{pC}$  &  222.1 & $\unit{pC}$  \\
+        $60\unit{\mu m}$ & MEAN$(E)$   & 2346   & $\unit{MeV}$ & 2336   & $\unit{MeV}$ & 2333   & $\unit{MeV}$ \\
+                         & STD$(E)$    &  166.8 & $\unit{MeV}$ &  165.0 & $\unit{MeV}$ &  165.5 & $\unit{MeV}$ \\
+        \hline
+                         & $\tilde{Q}$ &  229.9 & $\unit{pC}$  &  226.9 & $\unit{pC}$  &  224.8 & $\unit{pC}$  \\
+        $80\unit{\mu m}$ & MEAN$(E)$   & 2378   & $\unit{MeV}$ & 2379   & $\unit{MeV}$ & 2368   & $\unit{MeV}$ \\
+                         & STD$(E)$    &  120.0 & $\unit{MeV}$ &  117.6 & $\unit{MeV}$ &  119.1 & $\unit{MeV}$ \\
+    \end{tabularx}
+\end{table}
+
+% ================================================================================================================================ %
+\section{Optimising the Witness Beam}
+\label{SimA:Opt}
+
+Bringing it all together.
+
+% ================================================================================================================================ %
+\section{Summary of Simulation Studies}
+\label{SimA:Summary}
+
+\begin{table}[hbt]
+    \centering
+    \caption{Overview of total simulation cost. $97\%$ of the simulations were run on the supercomputer \textit{Abel}, on Oct Core Intel Xeon E5-2670 CPUs. The remainder were run on older nodes with Quad Core AMD Opteron 2354 CPUs.}
+    \label{T:SimCost}
+    \begin{tabularx}{\textwidth}{Xlrrr}
+        \rowcolor{tblhead}
+        \texthh{Topic of Studies}                & \texthh{Code} & \texthh{Count} &     \texthh{CPU Time} &  \texthh{Average} \\
+        \hline
+        Preliminary studies (mostly testing)     & OSIRIS        &           $21$ &    $266\,599\unit{h}$ & $12\,695\unit{h}$ \\
+        Full length AWAKE proton bunch studies   & OSIRIS        &           $38$ &    $440\,583\unit{h}$ & $11\,594\unit{h}$ \\
+        Pre-modulated beam studies$^{1}$         & OSIRIS        &          $144$ &    $319\,093\unit{h}$ &  $2\,216\unit{h}$ \\
+        3D reference studies                     & OSIRIS        &           $23$ &    $245\,974\unit{h}$ & $10\,695\unit{h}$ \\
+        Single drive bunch studies$^{2}$         & OSIRIS        &          $124$ &     $47\,837\unit{h}$ &     $386\unit{h}$ \\
+        Beam loading and emittance studies$^{3}$ & QuickPIC      &          $293$ &    $369\,887\unit{h}$ &  $1\,262\unit{h}$ \\
+        \hline
+        \rowcolor{tblfoot}
+        Total                                    &               &          $657$ & $1\,479\,350\unit{h}$ &  $2\,252\unit{h}$ \\
+        \multicolumn{5}{p{50mm}}{\footnotesize
+            $^{1}$ Main studies for Publication \ref{Pub:IPAC15} \newline
+            $^{2}$ Main studies for Publication \ref{Pub:NAPAC16} \newline
+            $^{3}$ Main studies for Publication \ref{Pub:BL17} \newline
+        }
+    \end{tabularx}
+\end{table}
+
+% ================================================================================================================================ %

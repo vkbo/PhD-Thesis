@@ -1,0 +1,150 @@
+%
+%  Simulations
+% =============
+%
+
+\chapter{Simulation Setup}
+\label{Ch:SimS}
+
+The work presented in this thesis has been performed using simulations with two particle-in-cell (PIC) codes:
+OSIRIS~\cite{fonseca:2002} and QuickPIC~\cite{an:2013, huang:2006}.
+OSIRIS is a proprietary full PIC code available in 1, 2 and 3 dimensions, with a choice between Cartesian and cylindrical coordinates.
+QuickPIC is a quasi-static 3D PIC code, that is available in an open source version~\cite{add:quickpic:web}.
+In the simulations presented here, both OSIRIS and the open source version of QuickPIC has been used.
+For a more detailed description on PIC codes, see Appendix~\ref{Apx:PIC}.
+
+Although PIC codes use macro particles -- that is, simulated particles represent more than one physical beam or plasma particle -- these codes require a lot of CPU power.
+This is especially true when running 3D simulations.
+The preliminary studies presented in Publications~\ref{Pub:IPAC15} and~\ref{Pub:NAPAC16} were done using OSIRIS with 2D cylindrical coordinates.
+The main study, Publication~\ref{Pub:BL17}, was done using QuickPIC in 3D Cartesian coordinates.
+In order to perform the detailed parameter scans needed for these studies, the drive beam and accelerating structure had to be scaled down into a more manageable size than the full SPS proton beam would require.
+The full SPS proton beam are orders of magnitude larger than both the electron beams and the plasma wavelength, as can be seen in Table~\ref{T:AWAKERuns}.
+This chapter will outline the simulation environment chosen for these studies, and the reasons behind these.
+
+% ================================================================================================================================ %
+\section{Simulating the Drive Bunch}
+\label{Sim:PBeam}
+
+An initial set of simulations were run to study the evolution of the self-modulation instability in the SPS proton bunch.
+These simulations assumed the plasma was ionised at the centre of the bunch, so only the back half of it was actually simulated.
+The beam profile function thus used, took the form:
+\begin{equation}
+    f(\xi,r) = \frac{A_{q}}{2} \left[1 + \cos\left(\xi\frac{\pi}{L}\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:SPS-Profile}
+\end{equation}
+where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor such that the total charge of the half beam matches the charge outlined in Table~\ref{T:AWAKERuns}.
+The charge of the simulated proton bunch in cylindrical coordinates is given by:
+\begin{equation}
+    Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
+\end{equation}
+A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape, as the cosine goes to zero at a finite length~\cite{lotov:2010}.
+
+% ================================================================================================================================ %
+
+\subsection{With a Pre-Modulated Beam}
+\label{Sim:PBPreMod}
+
+The half SPS proton beam is on the order of $30\unit{cm}$ long.
+In order to make the simulations more manageable in size for the beam loading studies, we decided to move to a sample proton beam of $26$ micro bunches, an order of magnitude smaller than the previous case.
+
+These simulations were all done using OSIRIS 3.0.
+With this version it is necessary for the beams to drift in vacuum for a short distance for the electro-magnetic fields to develop properly, as they are initialised at zero (see further discussion in Section~\ref{PIC:Full}).
+Since the evolution of the self-modulation instability was not of primary interest at this stage, we chose to modify the beam profile to emulate a section of the modulated bunch.
+We refer to this as \textit{pre-modulation}.
+This was done by shortening the period of the density envelope cosine function from Equation~\ref{EQ:SPS-Profile} to match that of the plasma wavelength.
+\begin{equation}
+    f(\xi,r) = A\sqrt{2} \left[\frac{1}{2\sqrt{2}}
+             + \cos\left(k_{pe}\xi - \mu\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:PB-PreMod}
+\end{equation}
+where $\mu$ is the position of the first micro bunch, and $k_{pe}$ is the plasma wave number~\cite{berglyd_olsen:2015}.
+The offset of the cosine function is chosen such that the width of the micro bunch matches the width of a bunch in the simulations done with a full bunch.
+Since OSIRIS ignores profile densities with negative values, the profile is automatically clipped at $0$, requiring no further manipulation of the profile function to remove negative values.
+
+Again, cosines are preferred over a series of Gaussian bunch profiles, although this time because the cosine is periodic, and because OSIRIS' mathematical functions cannot be longer than $256$ characters.
+
+% Comment about the separation between bunch 1 and 2?
+
+The charge of the proton micro-bunches were matched to that of a micro-bunch generated by the self-modulation instability in the initial simulations.
+This charge, of course, decreases towards the back end of the modulated beam, so they were fixed to a charge for the region were the injection of an electron bunch is reasonable.
+For the pre-modulated simulations, this number was set to $100\unit{pC}$ such that the total charge of the sample proton beam was $2.6\unit{nC}$.
+This corresponds to a peak current of $135\unit{A}$.
+The electron witness bunch was injected between bunch $20$ and $21$.
+
+% ================================================================================================================================ %
+
+\subsection{With a Single Drive Bunch}
+\label{Sim:PBSingle}
+
+Text
+
+% ================================================================================================================================ %
+\section{Simulating the Witness Bunch}
+\label{Sim:EBeam}
+
+There were a few points to consider when simulating the electron witness beam.
+These challenges differ between the two simulation codes used in these studies.
+
+% ================================================================================================================================ %
+\subsection{Witness Bunch Size and Resolution}
+\label{Sim:EBeam:SizeRes}
+
+For the early simulations, a transverse size of $\sigma_{x,y}=105\unit{\mu m}$ was used, see Table~\ref{T:AWAKERuns}.
+For later simulations, when the beam transverse size was matched to its emittance and the plasma density (see Section~\ref{Int:BPI:Match}), much narrower beams were used -- on the order of a few micrometres.
+The proton drive beam size is tied to the plasma skin depth (see Section~\ref{Int:DBeam:SMI}), which is $200\unit{\mu m}$.
+This, naturally, poses a resolution challenge when very narrow electron beams need to be resolved, while at the same time, the simulation box needs to also be able to contain the proton drive bunch.
+
+For the simulations with a pre-modulated proton beam, used for Publication~\ref{Pub:IPAC15}, the simulation box had a radius of $2.12\unit{mm}$ with $425$ grid cells, resulting in a resolution of $5\unit{\mu m}$.
+This is more than sufficient to resolve and contain both the beams, with a small buffer for the plasma (see Section~\ref{Sim:Plasma}).
+For the single drive bunch studies, Publications~\ref{Pub:NAPAC16} and~\ref{Pub:BL17}, the transverse grid resolution had to be increased.
+In most cases we tried to resolve the witness bunch with at least $5$ grid cells per $\sigma_{x,y}$, although this was in some instances increased.
+It was also important to keep an eye on the distribution of macro particles on the simulation grid.
+This was especially important for the OSIRIS 3.0 based simulations, as OSIRIS creates macro particles of varying charge, with a fixed number of particles per cell defined by input parameters.
+Since most OSIRIS simulations were run with a 2D cylindrical geometry, the $1/r$ factor enters into the electromagnetic field equations.
+This results in numerical noise when $r \to 0$, which in return affects the evolution of the bunch itself.
+A sample of the 2D cylindrical simulations were re-run with 3D Cartesian coordinates in order to check that the results were not dominated by this noise.
+
+QuickPIC uses 3D Cartesian coordinates, and thus does not have the $1/r$ problem.
+In addition, it has a fixed charge per macro particle, and instead varies the number of these per grid cell to create a charge distribution.
+A convergence scan of resolution dependency was performed for Publication~\ref{Pub:BL17} to check that the results did not depend on resolution within the range we used for this study. The convergence scan is described in Section~\ref{SimA:Converge}.
+QuickPIC defines resolution in exponents of $2$, and thus are locked to a set of values that rapidly increase for each step.
+The simulations used for Publication~\ref{Pub:BL17} were done with transverse grids of $2^9$ and $2^10$ ($512 \times 512$ and $1024 \times 1024$) cells, resolving a box size of $1.2\unit{mm}$ square.
+In the former case, the grid cell size was thus as large as $2\unit{\mu m}$ for the former case, and $1\unit{\mu m}$ for the latter.
+This did, however, not appear to have any significant impact on the results.
+
+Further details on how QuickPIC and OSIRIS handle beam particles is covered in Appendix~\ref{Apx:PIC}.
+
+% ================================================================================================================================ %
+\subsection{Witness Bunch Transverse Evolution}
+\label{Sim:EBeam:TEvol}
+
+In OSIRIS 3.0, the electromagnetic fields are initialised at zero.
+It is therefore necessary to let the beams drift a short distance before they enter the plasma region, in order for the fields to develop.
+Due to this initial drift stage, it was technically challenging to inject an electron witness bunch while strictly controlling parameters like emittance, energy spread and transverse size as during the drift phase, these parameters undergo evolution.
+There are, however, possible to prevent the beam from evolving by slowly ramping up the beam charge or the beam energy.
+During these ramping stages, the macro particles are prevented from transverse evolution.
+
+For the early studies, and for Publication~\ref{Pub:IPAC15}, only beam loading and acceleration was considered, but for Publications~\ref{Pub:NAPAC16} and \ref{Pub:BL17}, it was necessary to control the witness bunch emittance.
+While QuickPIC has input parameters defining beam emittance in each direction, OSIRIS 3.0 does not.
+OSIRIS 3.0 does, however, let one define spatial and momentum distributions independently (see Appendix~\ref{Apx:PIC}).
+However, as correlation between $\sigma_{p_{i}}$ and $\sigma_{i}$, for dimension $i$, cannot be controlled, the beam can only be initialised at waist (Twiss parameter $\alpha = 0$, see Appendix~\ref{Apx:DA}).
+
+For the OSIRIS simulations, the ramping parameters were tuned such that the bunch was unfrozen a few micrometres before it entered the plasma.
+This prevented betatron oscillations, ensuring that the bunch was still at waist when it entered the plasma region.
+
+% ================================================================================================================================ %
+\section{Simulating the Plasma}
+\label{Sim:Plasma}
+
+For the simulations made with OSIRIS 3.0, where an initial drift stage is necessary, a decision had to be made on how to simulate the entry point into the plasma.
+Early tests showed that freezing the transverse evolution of the electron beam and releasing it immediately before the entry into plasma, posed a few challenges.
+The sudden change in conditions is itself unphysical, and the abrupt change from a frozen state to an evolving bunch while at the same time seeing an instant step in plasma density from $0$ to $7\nexp{14}\unit{cm}^{-3}$, made it challenging to interpret the results.
+This was especially the case when the witness bunch was not matched to the plasma density (see Section~\ref{Int:BPI:Match}).
+A rapid pinching of the bunch occurred immediately after entering the plasma region, causing a spike in the charge density that was within a region too narrow to resolve with the grid resolution we used.
+This is also a numerically noisy region, as discussed in Section~\ref{Sim:EBeam:SizeRes}.
+Eliminating the hard plasma edge by introducing a more realistic plasma ramp over $10\unit{mm}$, using a cosine-shaped density function. was attempted.
+However, the effect on the witness bunch was not significant.
+
+% ================================================================================================================================ %
+\subsection{Plasma Gradient}
+\label{Sim:Plasma:Grad}
+
+Examples from IPAC15 on gradient versus erosion. Maybe cite Alexey et al?
