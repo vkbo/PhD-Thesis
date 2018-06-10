@@ -102,3 +102,18 @@ The conversion was also made easier by QuickPIC having a simpler and more consis
 As QuickPIC was only used for the final set of studies, only the core objects and input file wrapper classes, and the data type classes were converted.
 No graphical user Interface was developed for this toolbox, and only a few standardised plots were added.
 The analysis toolbox is available on GitHub \cite{code:quickpic_analysis:2017}.
+
+% ================================================================================================================================ %
+\section{Additional Tools Extending MATLAB Functionality}
+\label{Tools:OAAdd}
+
+A number of additional statistics and analysis tools were added due to the lack of MATLAB support, or because alternative methods were beneficial.
+
+\begin{description}
+    \item[Weighted Statistics:] Additional functions for weighted mean, percentile and standard deviation used by various parts of both analysis tools were added.
+    \item[Weighted Covariance:] The MATLAB \texttt{cov} function does support weighted datasets, but for the OsirisAnalysis tool an exponentially weighted covariance function was used instead \cite{pozzi:2012}.
+    This was an attempt to reduce effect of noise in the datasets as this method reduces the impact of statistical outliers.
+    For the QuickPIC implementation, the regular MATLAB \texttt{cov} method was used.
+    \item[Wavelets:] The Wavelet implementation used in OsirisAnalysis is provided by two script acquired from the websites of The Department of Atmospheric and Oceanic Sciences at The University of Colorado Boulder \cite{torrence:1998}.
+\end{description}
+
