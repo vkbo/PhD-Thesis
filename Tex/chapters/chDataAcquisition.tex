@@ -6,38 +6,68 @@
 \chapter{AWAKE Data Acquisition}
 \label{Ch:DAQ}
 
-Chapter introduction
+Most of the work presented in this thesis is focused on determining the experiment parameters for the Run~2 of AWAKE.
+However, during the final stages of construction and commissioning of Run~1, several month were designated to help integrate AWAKE instrumentation with the CERN Control System and data logging infrastructure.
+They key points of that work is presented here, and summarised in Publication~\ref{Pub:IPAC17} which was presented at IPAC in Copenhagen in 2017.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Experiment Setup}
 \label{DAQ:Experiment}
 
-Plasma density measurement \cite{oz:2016}
+AWAKE instrumentation involves both CERN standard instruments like analogue cameras (BTVs), sensors, etc.
+These are already supported by the CERN control system.
+Several instruments, however, are not CERN-standard, and a subset of these again only have driver software available for the Windows operating system.
+Since the CERN Control System run on a Linux platform, some adaptations had to be made to make these instruments available to the Control System.
 
-Laser diagnostics \cite{salin:1987}
+\begin{description}
+    \item[Vapour Density Measurement:]
+    The density of the Rubidium vapour is measured using a Mach-Zehnder type interferometers.
+    The interferogram acquired by the interferometers is stored as a file which the needs to be imported into the logging system for post-processing.
+    In post-processing a fitting algorithm is applied to calculate the density to within $\pm0.5\%$ accuracy \cite{oz:2016}.
+    
+    \item[Laser Diagnostics:]
+    The Rubidium vapour is ionised by a $4.5\unit{TW}$, $100-120\unit{fs}$ laser~\cite{gschwendtner:2016}.
+    The pulse length is measured by a single shot optical autocorrelator~\cite{salin:1987}.
+    This device does not produce an automatic log file of the measurement, so a special tool was written to extract the information on a trigger.
+    The digital camera data is post-processed with a fitting algorithm written by the instrument operator, and the pulse width is extracted.
+    The data is the written to a specially designed binary file format.
+    
+    \item[Oscilloscopes:]
+    Fast oscilloscopes are also used, for instance to measure real time signals from various Schottky diodes installed to measure Coherent Transition Radiation (CTR) emitted in the microwave band.
+    Specifically, a 4-channel Tektronix oscilloscope which produces per-channel data files needed to be integrated into the data logging system.
+    
+    \item[Various Probes:]
+    In addition to the above specialised instruments, a number of simple probes needed to send single measurement values to the logging systems.
+    these were treated with a flexible interface that could handle multiple data sources.
+\end{description}
 
-Scopes
-
-Universal class for probe measurements, etc.
-
-% ================================================================================================ %
+% ================================================================================================================================ %
 \section{Data Acquisition}
 \label{DAQ:DAQ}
 
 Text
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{Front End Software Architecture (FESA)}
 \label{DAQ:FESA}
 
-The Front End Software Architecture (FESA), is a software framework originally developed at CERN. It proveds a set of tools for developers to generate large portions of the code needed to control and read instruments and control infrastructure in the main accelerators at CERN. Collectively, the FESA classes provide a standard API towards the higher layers of the controls framework.
+The Front End Software Architecture (FESA), is a software framework originally developed at CERN.
+It provides a set of tools for developers to generate large portions of the code needed to control and read instruments and control infrastructure in the main accelerators at CERN, including the LHC.
+Collectively, the FESA classes provide a standard API towards the higher layers of the controls framework.
 
-While originally developed by CERN, FESA was always intended to be usabel for other experiments. The current iterationm FESA3, is developed in collaboration with GSI Helmholtz Centre for Heavy Ion Research in Germany where it is used at the FAIR facility \cite{schwinn:2010}.
+While originally developed by CERN, FESA was always intended to be usable for other experiments.
+The current iteration, FESA3, is developed in collaboration with GSI Helmholtz Centre for Heavy Ion Research in Germany, where it is used at the FAIR facility \cite{schwinn:2010}.
 
-% ================================================================================================ %
+% ================================================================================================================================ %
 \subsection{AWAKE Integration: File Readers}
 \label{DAQ:Integration}
 
-A summary of how the file reader classes have been designed. Flow chart from presentation. Describe the logic behind it and some of the challenges.
 
-% ================================================================================================ %
+The straight forward solution in most of these cases were to use the file logging features available in most of instrumentation software.
+These files could then be picked up by specially prepared FESA File Reader classes accessing the Windows servers through Samba file shares.
+For the laser diagnostics instrument, the available software did not have an automatic logging feature, so we had to write out own interacting directly with the digital camera in the instrument and write a to binary file format specially designed for our purpose.
+
+
+% A summary of how the file reader classes have been designed. Flow chart from presentation. Describe the logic behind it and some of the challenges.
+
+% ================================================================================================================================ %
