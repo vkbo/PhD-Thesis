@@ -11,7 +11,7 @@ A lot of work has been put into writing analysis tools to perform both initial a
 The tools developed are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
 Following are a couple of the key calculations done on the particle arrays.
 These are for the QuickPIC data arrays, which uses equally weighted macro particles.
-They also apply to the OSIRIS 3 data arrays, but the weights need to be considered when performing the statistical calculations.
+They also apply to the OSIRIS 3 data arrays, which uses weighted macro particles, so the weights need to be considered when performing the statistical calculations.
 
 % ================================================================================================================================ %
 \section{Extracting Twiss Parameters from Particle Arrays}
@@ -86,15 +86,20 @@ This can easily be checked after the seemingly optimal region of the bunch is kn
 \section{Full Scale Studies}
 \label{SimA:FullScale}
 
-A total of $38$ simulations of a full AWAKE proton bunch, with and without an injected electron bunch, were run.
+A total of 38 simulations of a full AWAKE proton bunch, with and without an injected electron bunch, were run.
 As can be seen from Table \ref{T:SimCost}, these simulations took an average of over $11\,000$ CPU hours.
+The simulation parameters are described in Section~\ref{Sim:PBeam}.
 
-\begin{figure}[hbt]
-    \centering
-    % \includegraphics[width=1.0\linewidth]{figures/SelfModulationSim}
-    \includegraphics[width=1.0\linewidth]{figures/PBSelfModulation}
-    \caption{\label{Fig:Sim:SMI} }
-\end{figure}
+The purpose of the full scale studies were mainly to develop some familiarity with OSIRIS 3.0, but also to study the properties of the self-modulated beam in order to make a reasonable approximation of it for the pre-modulated studies (see Section~\ref{Sim:PBPreMod}).
+
+The structure of the self-modulation was studied with both Fast Fourier Transform (FFT)~\cite{van_loan:1992} and Morlet Wavelet Analysis~\cite{goupillaud:1984,bernardino:2005}.
+Both of these tools were implemented in the OsirisAnalysis package (see Section~\ref{Tools:OAAdd}).
+The FFT revealed that the core modulation frequency is indeed the characteristic frequency of the plasma.
+The FFT analysis uses the entire length of the beam in its analysis, while the wavelet analysis provides a two-dimensional analysis of wave number versus the longitudinal position of the beam (add reference figures).
+
+The frequency of the pre-modulated beam was slightly adjusted such that the FFT profiles matched that of the full scale SMI simulations \cite{berglyd_olsen:2015}.
+
+\todo[inline]{Add wavelet and FFT figures.}
 
 % ================================================================================================================================ %
 %  Beam Loading and Energy Spread
@@ -104,7 +109,7 @@ As can be seen from Table \ref{T:SimCost}, these simulations took an average of 
 
 The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table \ref{T:AWAKERuns}.
 The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication \ref{Pub:IPAC15}, but several lengths were tested in simulations.
-$40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}).
+$40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}), and a long enough bunch to contain a reasonable amount of electrons without overloading the wakefield.
 
 % ================================================================================================================================ %
 %  Emittance Evolution

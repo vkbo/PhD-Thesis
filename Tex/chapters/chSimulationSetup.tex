@@ -37,6 +37,13 @@ The charge of the simulated proton bunch in cylindrical coordinates is given by:
     Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
 \end{equation}
 A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape, as the cosine goes to zero at a finite length~\cite{lotov:2010}.
+An example of a self-modulated proton beam, produced by one of the OSIRIS simulations, can be seen in Figure~\ref{Fig:Sim:SMI}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figures/PBSelfModulation}
+    \caption{\label{Fig:Sim:SMI} An example of a seeded SPS proton beam having undergone self-modulation in about $3\unit{m}$ of plasma. The halo of protons ejected from the defocusing regions can be clearly seen, leaving a core of micro bunches on the beam axis.}
+\end{figure}
 
 % ================================================================================================================================ %
 
@@ -93,7 +100,7 @@ To reproduce these conditions, we used a Gaussian bunch of $1.46\nexp{10}$ proto
 \label{Sim:EBeam}
 
 There were a few points to consider when simulating the electron witness beam.
-These challenges differ between the two simulation codes used in these studies.
+They differ between the two simulation codes used in these studies.
 
 % ================================================================================================================================ %
 \subsection{Witness Bunch Size and Resolution}
