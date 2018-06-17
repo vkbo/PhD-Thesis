@@ -21,12 +21,6 @@ The connection of the AWAKE experiment to the rest of the CERN accelerator compl
     }
 \end{figure}
 
-% Intro paper \cite{caldwell:2009}
-% Launch paper \cite{awake_collaboration:2014}
-% Evolution paper \cite{caldwell:2016}
-% Technical specifications including simulation parameters \cite{gschwendtner:2016}
-% Collaboration paper by Patric \cite{muggli:2017a}
-
 % ================================================================================================================================ %
 \section{Evolution of the Concept}
 \label{WFA:History}
@@ -95,7 +89,8 @@ The peak intensity is around $1.2\nexp{14}\unit{W/cm}^{2}$, with a spot size rad
 The appearance intensity needed for ionisation of rubidium is around $1.7\nexp{12}\unit{W/cm}^{2}$~\cite{augst:1989}.
 Ionisation of a second electron requires some $455$ times higher intensity, so secondary ionisation is not expected~\cite{muggli:2017a}.
 
-% Add something about plasma diagnostics, Fabian & Erdem
+The plasma density produced by the laser pulse is currently measured with a Mach-Zehnder type interferometers, which produces an interferogram that requires further processing to provide a density measurement \cite{oz:2016}.
+There are also possible solutions proposed for real-time diagnostics using a Michelson-type interferometer \cite{djotyan:2018}.
 
 % ================================================================================================================================ %
 \subsection{Electron Source}
@@ -163,25 +158,28 @@ Especially the size and and density uniformity of the plasma channel are essenti
 \subsubsection{The Self-Modulation Instability in AWAKE}
 \label{WFA:SMI}
 
-Results from Run 1 of the experiment.
+Run~1 of AWAKE has confirmed that seeded self-modulation of an SPS proton bunch indeed does occur in the AWAKE vapour stage when the laser is operating at high power.
+The results shown in Figure~\ref{Fig:SMI:Results} were presented in the thesis work of M.~Turner for the AWAKE experiment~\cite{turner:2017}.
+The left-most figure shows that no modulation occurs when the laser is at a low power setting and no plasma produced.
+When the laser is switched to high power in the middle figure, the SPS bunch is defocused starting from the region where the laser is positioned.
+The time scale of the vertical axis is too large to show if self-modulation does occur, but the right-most figure shows a region of the defocused bunch at a higher resolution, where the micro-bunch structure is clearly visible.
 
-%Karl \cite{rieger:2017}
-
-Does the SMI require a seed? See muggli:2017 \cite{muggli:2017a}.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.90\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/SMI-Turner}
+    \caption{\label{Fig:SMI:Results}
+        Resolved streak camera images of the SPS proton beam propagating through the Rb vapour in the AWAKE experiment.
+        The read lines indicate the region of the laser pulse.
+        \textbf{Left:} The laser on low power; that is, no plasma.
+        \textbf{Centre:} The laser on high power, ionising the vapour and defocusing the beam.
+        \textbf{Right:} A high resolution image of the defocused region, showing beam modulation.
+        The image is borrowed from the thesis of M. Turner~\cite{turner:2017}.
+    }
+\end{figure}
 
 % ================================================================================================================================ %
 \subsection{AWAKE Run 2}
 \label{WFA:AWAKE:R2}
-
-% As agreed this is the part you have to expand.  I suggest to add/elaborate the following points
-
-% - why do we need to improve on Run 1 e- acceleration? (Run 1: only long electron beam > lambda_p, in order to sample all phases, also transversally large and unmatched. We therefore expect for Run 1: only a fraction of beam accelerated, large energy spectrum, poor emittance. Run 2 needs to demonstrate that we can accelerate beam interesting for applications, this good emittance, low energy spread, high charge.
-
-% - why do we need to demonstrate scalability? Because single stage acceleration is one of the key advantages with proton driven PWFA. We want to avoid staging as much as possible so you need to rephrase the current text. We might need two plasma stages, one for SSM of the proton beam, and the second for the e- acceleration, but we would like to have ideally only a single stage for the acceleration. For this we need a different kind of plasma source, since we cannot create a laser beam powerful enough for a very long stage, and even if enough energy, it could not propagate through very long distances. You might want to find out why, since one of the opponents is an LWFA experts.  
-
-% The above two points should be sufficient, and will cover 1-2 pages.
-
-% You should end by making clear the segway between what you write here your simulation work: you want to find out whether beam loading can help accelerating an electron beam through long distances with emittance preservation ... and the answer was yes :)
 
 The electron bunch for Run~1 was designed to sample all phases of the accelerating field, and is therefore both long with respect to the optimal phase of the field (see Section~\ref{Int:BPI:BLoad}), and wide compared to the matching condition with the plasma density (see Equation~\ref{EQ:BMatch}).
 It is expected that for Run~1, only a small section of electron bunch will be accelerated, and energy spread and emittance will be large, but it will give a good impression of the performance of the different regions of the accelerating structure generated by the SPS drive bunch.
@@ -191,20 +189,24 @@ The first target objective of Run~2 is the successful acceleration of a short el
 The results from Run~1 and simulations will dictate the parameters of the Run~2 electron bunch in order to achieve these goals, and to demonstrate that it is indeed possible to produce an accelerated beam with sufficient quality for further experimental applications.
 
 The second target of Run~2 is to demonstrate scalability.
-Previous experiments have shown that high accelerating gradients can be achieved in very short plasma stages, but using lasers or electron bunches as drivers, puts constraints on the distances such gradients can be sustained over (see Section~\ref{Int:BPI}).
+Previous experiments have shown that high accelerating gradients can be achieved in very short plasma stages, but using lasers or electron bunches as drivers puts constraints on the distances such gradients can be sustained over (see Section~\ref{Int:BPI}).
 As previously discussed, proton drive beams can propagate significantly longer in plasma, sustaining large accelerating fields over very long distances.
 However, producing long plasma channels with high enough quality to sustain such an accelerating structure may prove to be challenging.
 The Rubidium plasma stage currently uses a laser to ionise the vapour, but the availability of high power lasers puts a limit on how long such a plasma channel can be.
 There are two main options for Run~2 to get around this challenge.
 \begin{enumerate}
-    \item Use two stages, where the first stage is used to let the proton bunch undergo self-modulation, and  second plasma stage is used in its entirety for acceleration.
+    \item Use two stages, where the first stage is used to let the proton bunch undergo self-modulation, and a second plasma stage that is used in its entirety for acceleration.
     In this scenario, the electron bunch will be injected between the two stages.
-    However, the optics required to steer the electron bunch onto the axis of the proton bunch, a gap between these two stages would be required.
+    However, the optics required to steer the electron bunch onto the axis of the proton bunch implies a gap between these two stages would be required.
     Such a gap has a negative effect on the amplitude of the longitudinal field, reducing the maximum possible gradient for the second stage.
-    This is in particular covered in Section~12 of the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.
-    An additional limitation here is that the AWAKE experimental area has limited space for extending beam lines and adding multiple plasma stages \cite{adli:2016a}.
+    This issue is in particular covered in Section~12 of the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.
+    An additional limitation to this solution is that the AWAKE experimental area itself has limited space for extending beam lines and adding multiple plasma stages.
+    This is due to the highly radioactive target and shielding from the CNGS experiment is still present, and in the way of expanding the area \cite{adli:2016a}.
     \item To avoid the problems with staging, the ideal option would be to use a single plasma stage.
-    This would require a different approach to the plasma source, [add more stuff here].
+    This would require a different approach to the plasma source.
+    Such alternatives are currently being looked into.
 \end{enumerate}
+
+The simulation work presented in Chapters~\ref{Ch:SimS} and~\ref{Ch:SimA} in this thesis assumes option~1, in that the simulations assume that the available wakefield is reduced due to a gap between the two stages.
 
 % ================================================================================================================================ %
