@@ -99,7 +99,18 @@ The FFT analysis uses the entire length of the beam in its analysis, while the w
 
 The frequency of the pre-modulated beam was slightly adjusted such that the FFT profiles matched that of the full scale SMI simulations \cite{berglyd_olsen:2015}.
 
-\todo[inline]{Add wavelet and FFT figures.}
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figures/PBSMIWavelet}
+    \caption{\label{Fig:SimA:Wavelet}
+        A wavelet analysis of the beam shown in Figure~\ref{Fig:Sim:SMI}, at the same position in the plasma, using a Morlet wavelet \cite{torrence:1998}.
+        The horizontal axis shows the position~$\xi$ in the simulation box.
+        The vertical axis shows the Fourier period in units of the plasma wavelength~$\lambda_p$.
+        This is a density plot of the real component of the transform, showing clearly the peak in frequency in the are around the plasma wavelength.
+        The colour axis is cut in order to show the fine structure of the harmonics.
+        The higher frequencies are likely dominated by numerical noise.
+    }
+\end{figure}
 
 % ================================================================================================================================ %
 %  Beam Loading and Energy Spread

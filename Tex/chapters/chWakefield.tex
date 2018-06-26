@@ -194,21 +194,21 @@ As previously discussed, proton drive beams can propagate significantly longer i
 However, producing long plasma channels with high enough quality to sustain such an accelerating structure may prove to be challenging.
 The Rubidium plasma stage currently uses a laser to ionise the vapour.
 How far the laser can propagate, as well as the availability of high power lasers, puts limits on how long such a plasma channel can be.
+This can be avoided by using multiple stages, but this requires additional beam optics which again increases the length of the accelerator at the expense of the average energy gradient.
 
-% Reshuffle the below
-There are two main options for Run~2 to get around the challenge of long plasma stages.
-\begin{enumerate}
-    \item Use two stages, where the first stage is used to let the proton bunch undergo self-modulation, and a second plasma stage that is used in its entirety for acceleration.
-    In this scenario, the electron bunch will be injected between the two stages.
-    However, the optics required to steer the electron bunch onto the axis of the proton bunch implies a gap between these two stages would be required.
-    Such a gap has a negative effect on the amplitude of the longitudinal field, reducing the maximum possible gradient for the second stage.
-    This issue is in particular covered in Section~12 of the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.
-    An additional limitation to this solution is that the AWAKE experimental area itself has limited space for extending beam lines and adding multiple plasma stages.
-    This is due to the highly radioactive target and shielding from the CNGS experiment is still present, and in the way of expanding the area \cite{adli:2016a}.
-    \item To avoid the problems with staging, the ideal option would be to use a single plasma stage.
-    This would require a different approach to the plasma source.
-    Such alternatives are currently being looked into.
-\end{enumerate}
+There is also another reason why at least two stages may be necessary.
+The electron witness bunch needs to be injected into the accelerating structure when it has formed in order to produce a high quality accelerated bunch.
+This can be achieved by using two stages, where the first stage is used to let the proton bunch undergo self-modulation, and a second plasma stage that is used in its entirety for acceleration.
+In this scenario, the electron bunch will be injected between the two stages.
+However, the optics required to steer the electron bunch onto the axis of the proton bunch implies a gap between these two stages would be required.
+Such a gap has a negative effect on the amplitude of the longitudinal field, reducing the maximum possible gradient for the second stage.
+This issue is in particular covered in Section~12 of the 2016 AWAKE Status Report \cite{awake_collaboration:2016}.
+
+An additional limitation to this solution, specifically for AWAKE, is that the experimental area itself has limited space for extending beam lines and adding multiple plasma stages.
+This is due to the highly radioactive target and shielding from the CNGS experiment is still present, and in the way of expanding the area \cite{adli:2016a}.
+To avoid the problems with staging, the ideal option would be to use a single plasma stage.
+This would require a different approach to the plasma source.
+Such alternatives are currently being looked into.
 
 The simulation work presented in Chapters~\ref{Ch:SimS} and~\ref{Ch:SimA} in this thesis assumes option~1, in that the simulations assume that the available wakefield is reduced due to a gap between the two stages.
 
