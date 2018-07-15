@@ -144,12 +144,24 @@
 \renewcommand{\emph}[1]{\textcolor{emcol}{\slshape #1}}
 
 % TOC
+%% Content
 \renewcommand\cftpartfont{\sffamily\large}
 \renewcommand\cftpartpagefont{\mdseries}
 \renewcommand\cftchapfont{\mdseries}
 \renewcommand\cftchappagefont{\mdseries}
 \renewcommand\cfttoctitlefont{\huge\sffamily}
-%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+%% List of Figures
+\renewcommand\cftloftitlefont{\huge\sffamily}
+\renewcommand\cftfigindent{0pt}
+\renewcommand\cftfignumwidth{65pt}
+\renewcommand\cftfigpresnum{Figure~}
+
+%% List of Tables
+\renewcommand\cftlottitlefont{\huge\sffamily}
+\renewcommand\cfttabindent{0pt}
+\renewcommand\cfttabnumwidth{65pt}
+\renewcommand\cfttabpresnum{Table~}
 
 % ================================================================================================================================ %
 
@@ -183,7 +195,7 @@
 \hyphenation{wave-length}
 \hyphenation{Swit-zer-land}
 \hyphenation{de-fo-cus-ing}
-\hyphenation{de-cel-er-at-ing}
+\hyphenation{de-cel-e-rat-ing}
 
 % ================================================================================================================================ %
 
@@ -261,6 +273,12 @@
     \pdfbookmark{\contentsname}{Contents}
     \microtypesetup{protrusion=false}
     \tableofcontents
+    \vfill\pagebreak
+    \pdfbookmark{\listfigurename}{List of Figures}
+    \listoffigures
+    \vfill\pagebreak
+    \pdfbookmark{\listtablename}{List of Tables}
+    \listoftables
     \microtypesetup{protrusion=true}
     \cleardoublepage
 

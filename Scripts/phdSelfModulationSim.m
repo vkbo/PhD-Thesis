@@ -56,7 +56,7 @@ aAxes(2) = axes('Units','Pixels','Position',[95  48 620 120]);
 oDN      = Density(oData,'PB','Units','SI','Scale','mm');
 oDN.Time = 42;
 stWL     = oDN.Wavelet([3 425], 'Octaves', 7);
-aData    = stWL.Real;
+aData    = stWL.Amplitude;
 cLine    = lines;
 
 % Input data plot
@@ -72,8 +72,12 @@ ylabel('Amplitude');
 % Wavelet plot
 
 axes(aAxes(1));
+hold on;
 imagesc(stWL.HAxis, log2(stWL.Period), aData);
-caxis([-0.2, 0.2]);
+contour(stWL.HAxis, log2(stWL.Period), aData, 'LineColor', [0,0,0]);
+%imagesc(aData);
+%caxis([-0.2, 0.2]);
+box(aAxes(1),'On');
 
 xlim([20 315]);
 
@@ -85,11 +89,13 @@ set(gca, 'YTick', log2(aYTicks(:)), 'YTickLabel', {'1/32','1/16','1/8','1/4','1/
 
 cRed  = [linspace(0.850,1.000,256); linspace(0.325,1.000,256); linspace(0.098,1.000,256)]';
 cBlue = [linspace(0.000,1.000,256); linspace(0.447,1.000,256); linspace(0.741,1.000,256)]';
+cSat  = [linspace(0.000,0.000,512); linspace(0.447,0.447,512); linspace(0.741,0.741,512)]';
 cMap  = [cRed; flipud(cBlue)];
-colormap(cMap);
+%colormap(cMap);
+colormap(flipud([cSat; cBlue]));
 colorbar;
+caxis([0, 3]);
 
-hold on;
 plot(stWL.HAxis, log2(stWL.COI), 'Black', 'LineWidth', 2);
 hold off;
 

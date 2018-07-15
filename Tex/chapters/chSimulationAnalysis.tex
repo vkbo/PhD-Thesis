@@ -6,18 +6,21 @@
 \chapter{Simulation Analysis}
 \label{Ch:SimA}
 
-Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
-A lot of work has been put into writing analysis tools to perform both initial and quick, as well as detailed analyses, of the many simulations run.
-The tools developed are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
-Following are a couple of the key calculations done on the particle arrays.
-These are for the QuickPIC data arrays, which uses equally weighted macro particles.
-They also apply to the OSIRIS 3 data arrays, which uses weighted macro particles, so the weights need to be considered when performing the statistical calculations.
+A lot of work has been put into writing analysis tools to perform both initial and quick, as well as detailed, analyses of the many simulations run.
+This chapter outlines some of the key considerations and calculations performed on the data sets generated in these simulations.
+Analysis tools were developed in MATLAB for both OSIRS and QuickPIC data sets.
+These are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
 
 % ================================================================================================================================ %
 \section{Extracting Twiss Parameters from Particle Arrays}
 \label{SimA:EnTwiss}
 
-To study the collective motion of particles, it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
+Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
+QuickPIC uses equally weighted macro particles, greatly simplifying the analysis.
+OSIRIS 3, however, uses weighted macro particles, so the weights need to be considered when performing the statistical calculations.
+Additional statistical functions were added to MATLAB to perform these weighted calculations (see Appendix~\ref{Apx:DA}).
+
+To study the collective motion of particles it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
 Equation~\ref{EQ:EmittFull} from Section~\ref{Int:BPI:EnTwiss} can be rewritten in terms of the statistical distributions of its particles such that
 \begin{equation}
     \epsilon = \sqrt{\gamma\sigma_{x}^{2} + 2\alpha\sigma_{x}\sigma_{x^{\prime}} + \beta\sigma_{x^{\prime}}^{2}}, \label{EQ:Emitt}
@@ -27,7 +30,7 @@ where the angle of the $i$-th particles can be taken from its momentum
     x_{i}^{\prime} = \frac{p_{i,x}}{p_{i,z}}.
 \end{equation}
 
-For a set of macro particles, the emittance can be calculated directly by taking the covariance matrix of the $x$ and $x^{\prime}$ vectors
+For a set of macro particles, the geometric emittance can be calculated directly by taking the covariance matrix of the $x$ and $x^{\prime}$ vectors
 \begin{equation}
     \mathbf{T} = \mathrm{cov}\left(\mathbf{x}, \mathbf{x}^{\prime}\right), \label{EQ:ECalc1}
 \end{equation}
@@ -87,30 +90,35 @@ This can easily be checked after the seemingly optimal region of the bunch is kn
 \label{SimA:FullScale}
 
 A total of 38 simulations of a full AWAKE proton bunch, with and without an injected electron bunch, were run.
-As can be seen from Table \ref{T:SimCost}, these simulations took an average of over $11\,000$ CPU hours.
-The simulation parameters are described in Section~\ref{Sim:PBeam}.
+As can be seen from Table~\ref{T:SimCost}, these simulations took an average of over $11\,000$ CPU hours each.
+The simulation parameters used for these studies are described in Section~\ref{Sim:PBeam}.
 
-The purpose of the full scale studies were mainly to develop some familiarity with OSIRIS 3.0, but also to study the properties of the self-modulated beam in order to make a reasonable approximation of it for the pre-modulated studies (see Section~\ref{Sim:PBPreMod}).
+The purpose of the full scale studies were mainly to develop some familiarity with OSIRIS 3.0, but also to study the properties of the self-modulated beam in order to make a reasonable approximation of it for the later pre-modulated studies (see Section~\ref{Sim:PBPreMod}).
 
-The structure of the self-modulation was studied with both Fast Fourier Transform (FFT)~\cite{van_loan:1992} and Morlet Wavelet Analysis~\cite{goupillaud:1984,bernardino:2005}.
-Both of these tools were implemented in the OsirisAnalysis package (see Section~\ref{Tools:OAAdd}).
-The FFT revealed that the core modulation frequency is indeed the characteristic frequency of the plasma.
-The FFT analysis uses the entire length of the beam in its analysis, while the wavelet analysis provides a two-dimensional analysis of wave number versus the longitudinal position of the beam (add reference figures).
-
-The frequency of the pre-modulated beam was slightly adjusted such that the FFT profiles matched that of the full scale SMI simulations \cite{berglyd_olsen:2015}.
+The modulation period of the self-modulated beam was checked with both Fast Fourier Transform (FFT)~\cite{van_loan:1992}.
+The FFT revealed that the core modulation frequency is indeed the characteristic frequency of the plasma as presented in Publication~\ref{Pub:IPAC15}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=1.0\linewidth]{figures/PBSMIWavelet}
     \caption{\label{Fig:SimA:Wavelet}
-        A wavelet analysis of the beam shown in Figure~\ref{Fig:Sim:SMI}, at the same position in the plasma, using a Morlet wavelet \cite{torrence:1998}.
+        A wavelet analysis of the beam shown in Figure~\ref{Fig:Sim:SMI}, at the same position in the plasma, using Morlet wavelet analysis~\cite{torrence:1998}.
         The horizontal axis shows the position~$\xi$ in the simulation box.
         The vertical axis shows the Fourier period in units of the plasma wavelength~$\lambda_p$.
-        This is a density plot of the real component of the transform, showing clearly the peak in frequency in the are around the plasma wavelength.
-        The colour axis is cut in order to show the fine structure of the harmonics.
-        The higher frequencies are likely dominated by numerical noise.
+        This density plot is the absolute value of the complex wavelet data, showing clearly the peak in frequency in the area around the plasma wavelength.
+        The colour axis is saturated at amplitude $1$ in order to show the fine structure of the harmonics.
+        The contour plot overlay shows the full range of the density data in steps of $0.5$.
     }
 \end{figure}
+
+A wavelet analysis was also performed using a Morlet Wavelet Analysis~\cite{goupillaud:1984,bernardino:2005}.
+The wavelet adds some additional information about the modulation frequency as a function of position along the modulated beam of micro bunches.
+Such a plot is shown in Figure~\ref{Fig:SimA:Wavelet} where the proton bunch has propagated through about $3\unit{m}$ of plasma.
+The figure shows the magnitude of the wavelet analysis data~\cite{lee:1994}, and the amplitude indicates that the density variation is the highest at the front of the bunch (compare with initial profile in Figure~\ref{Fig:Sim:SMI}).
+
+The frequency of the pre-modulated beam was slightly adjusted such that the FFT profiles matched that of the full scale SMI simulations~\cite{berglyd_olsen:2015}.
+
+Both of these analysis tools were implemented in the OsirisAnalysis package (see Section~\ref{Tools:OAAdd}).
 
 % ================================================================================================================================ %
 %  Beam Loading and Energy Spread
@@ -118,9 +126,28 @@ The frequency of the pre-modulated beam was slightly adjusted such that the FFT 
 \section{Beam Loading and Energy Spread}
 \label{SimA:BLoad}
 
-The transverse size of the beam was chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table \ref{T:AWAKERuns}.
-The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication \ref{Pub:IPAC15}, but several lengths were tested in simulations.
-$40\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section \ref{Int:BPI:BLoad}), and a long enough bunch to contain a reasonable amount of electrons without overloading the wakefield.
+When the parameters of the self-modulated bunch were established, and the pre-modulated studies set up as laid out in Section~\ref{Sim:PBPreMod}, the evolution of the electron beam became the main focus.
+Of particular interest in the early studies was the beam loading of the electron witness beam on the longitudinal wakefields as well as its energy spread as it propagated through the plasma section.
+
+The transverse size of the beam was initially chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table~\ref{T:AWAKERuns}.
+This is the size initially proposed for Run~1.
+The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication~\ref{Pub:IPAC15}, but several lengths were tested in simulations.
+Tuning the longitudinal size is essential.
+A short bunch positioned at an optimal accelerating phase ensures a low energy spread, while a long bunch is capable of holding a larger charge without the charge density becoming critical.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.625\linewidth]{figures/NAPACEGainSpreadScan}
+    \caption{\label{Fig:SimA:BLoadScan}
+        A parameter scan for the 26 bunch pre-modulated studies where six different beam currents and four different beam lengths were considered.
+        The energy gain $P_{z} - P_{z,0}$ after $1.1\unit{m}$ of plasma is shown with the error bars representing the RMS energy spread.
+        The figure is presented in Publication~\ref{Pub:NAPAC16} and in Adli \etal~\cite{adli:2016a}.
+    }
+\end{figure}
+
+The initial studies showed that $\sigma_{z} = 40-60\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section~\ref{Int:BPI:BLoad}), and a long enough bunch to contain a reasonable amount of electrons without overloading the wakefield.
+A larger parameter scan was done for Publication~\ref{Pub:NAPAC16} presented as a contributing talk at North American Particle Accelerator Conference in Chicago in 2016, and was also included in~\cite{adli:2016a}.
+The main results of this parameter scan is shown in Figure~\ref{Fig:SimA:BLoadScan}.
 
 % ================================================================================================================================ %
 %  Emittance Evolution
