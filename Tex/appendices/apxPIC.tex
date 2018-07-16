@@ -45,12 +45,14 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/PIC-Diagram}
-    \caption{\label{Fig:PIC} The four main steps of the PIC algorithm.
-    1: Evolve the velocity and position of the particles using the Newton-Lorentz equations.
-    2: Interpolate and deposit the charge/current densities onto the grid.
-    3: Evolve the Maxwell's equations, or Poisson's equation if electrostatic.
-    4: Interpolate the fields from the grid onto the particles for the next push.
-    Recreated from \cite{vay:2016}.}
+    \caption{\label{Fig:PIC}
+        The four main steps of the PIC algorithm.
+        1: Evolve the velocity and position of the particles using the Newton-Lorentz equations.
+        2: Interpolate and deposit the charge/current densities onto the grid.
+        3: Evolve the Maxwell's equations, or Poisson's equation if electrostatic.
+        4: Interpolate the fields from the grid onto the particles for the next push.
+        Recreated from Vay \etal~\cite{vay:2016}.
+    }
 \end{figure}
 
 \begin{description}
@@ -92,8 +94,8 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
     \includegraphics[width=0.75\linewidth]{figures/EMFSolver}
     \caption{\label{Fig:PIC:EMF}
         \textbf{Left:} On the staggered Yee grid, current densities and electric fields are defined on the edges of the cells, and magnetic fields on the faces.
-        \textbf{Right:} Leapfrog time integration using alternating half time steps for electric and magnetic fields.
-        Figure recreated from Vay \etal~\cite{vay:2016}.
+        \textbf{Right:} Leapfrog time integration uses alternating half time steps for electric and magnetic fields.
+        Recreated from Vay \etal~\cite{vay:2016}.
     }
 \end{figure}
 
