@@ -34,7 +34,7 @@ This method is solved on a grid using Maxwell's equations
     &\nabla\times\vec{E} = -\frac{\partial\vec{B}}{\partial t} \\
     &\nabla\times\vec{B} = \mu_0\left(\vec{J} + \epsilon_0\frac{\partial\vec{E}}{\partial t}\right),
 \end{align}
-while the particles are advanced in time using the Newton-Lorentx equations
+while the particles are advanced in time using the Newton-Lorentz equations
 \begin{align}
     \frac{\mathrm{d}x}{\mathrm{d}x} &= \vec{v} \\
     \frac{\mathrm{d}(\gamma x)}{\mathrm{d}x} &= \frac{q}{m}\left(\vec{E}+\vec{v}\times\vec{B}\right).
@@ -65,7 +65,7 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
     This requires that $\vec{v}^i$ can be represented by the known quantities, to which the Boris' method provides a very efficient second-order accurate and time reversible solution outlined in a 1970 paper \cite{boris:1970}.
     However, this method is not Lorentz-invariant \cite{vay:2008} making it unsuitable for ultra-relativistic applications.
     Lorentz-invariance can be achieved by substituting a velocity average in place of a single-step velocity calculation.
-    This, however, comes woth a performance penalty.
+    This, however, comes with a performance penalty.
     For further details and derivations of the different methods, see \cite{vay:2016} and therein cited references.
     
     \item[Step 2 -- Charge and Current Deposition:] The charge and current can be deposited on the grid using various interpolation methods \cite{abe:1986}.
@@ -93,7 +93,7 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
     \centering
     \includegraphics[width=0.75\linewidth]{figures/EMFSolver}
     \caption{\label{Fig:PIC:EMF}
-        \textbf{Left:} On the staggered Yee grid, current densities and electric fields are defined on the edges of the cells, and magnetic fields on the faces.
+        \textbf{Left:} The staggered Yee grid. Current densities and electric fields are defined on the edges of the cells, and magnetic fields on the faces.
         \textbf{Right:} Leapfrog time integration uses alternating half time steps for electric and magnetic fields.
         Recreated from Vay \etal~\cite{vay:2016}.
     }

@@ -29,7 +29,7 @@ It was designed as a three layer tool to wrap a single data set of OSIRIS simula
 \begin{description}
     \item[Layer 1] consists of the core data wrapper class \emph{OsirisData} with its subclass \emph{OsirisConfig}.
         The \emph{OsirisData} class provides an interface for accessing the raw data files, while the \emph{OsirisConfig} class parses the simulation input file.
-        \emph{OsirisData} provides a uniform set of calls for extracting the data, and gives through \emph{OsirisConfig} access to all the simulation parameters and conversion factors for converting OSIRS' normalised units into SI units.
+        \emph{OsirisData} provides a uniform set of calls for extracting the data, and gives through \emph{OsirisConfig} access to all the simulation parameters and conversion factors for converting OSIRIS' normalised units into SI units.
     \item[Layer 2] consists of a set of classes that takes an \emph{OsirisData} object as input, and returns standardised structs of data that can be scaled and converted to preferred units.
     They perform often needed tools and methods to parse data and extract more detailed information from the larger raw datasets.
     \item[Layer 3] consist of a number of useful standardised plots, and a GUI tool to quickly do a preliminary analysis of simulation data.
@@ -88,7 +88,7 @@ To make these plots easier to use, most of these optional arguments are availabl
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.99\linewidth,trim={0mm 0mm 0mm 0mm},clip]{images/OsirisAnalysisGUI}
-    \caption{\label{Fig:OAGUI} A screenshot of the OsirisAnalysis GUI tool.}
+    \caption{\label{Fig:OAGUI} A screen shot of the OsirisAnalysis GUI tool.}
 \end{figure}
 
 % ================================================================================================================================ %

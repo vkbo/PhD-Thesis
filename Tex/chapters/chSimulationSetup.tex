@@ -38,8 +38,8 @@ The charge of the simulated proton bunch in cylindrical coordinates is given by:
 \end{equation}
 A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape as the cosine goes to zero at a finite length~\cite{lotov:2010}.
 Radially, the bunch is still Gaussian, and requires a cut-off to be added to prevent OSIRIS from generating macro particles with small weights.
-The CPU cost is propottional to the number of simulation particles, regardless of weight.
-An example of the SPS proton bunch before and after self-modulated has occured, as simulated in OSIRIS 3.0, can be seen in Figure~\ref{Fig:Sim:SMI}.
+The CPU cost is proportional to the number of simulation particles, regardless of weight.
+An example of the SPS proton bunch before and after self-modulated has occurred, as simulated in OSIRIS 3.0, can be seen in Figure~\ref{Fig:Sim:SMI}.
 
 \begin{figure}[hbt]
     \centering
@@ -193,7 +193,7 @@ This is discussed further in Appendix~\ref{Apx:PIC}.
 
 For the simulations made with OSIRIS 3.0, where an initial drift stage is necessary, a decision had to be made on how to simulate the entry point into the plasma.
 Early tests showed that freezing the transverse evolution of the electron beam and releasing it immediately before the entry into plasma, posed a few challenges.
-The sudden change in conditions is itself unphysical, and the abrupt change from a frozen state to an evolving bunch while at the same time seeing an instant step in plasma density from $0$ to $7\nexp{14}\unit{cm}^{-3}$, made it challenging to interpret the results.
+The sudden change in conditions is itself un-physical, and the abrupt change from a frozen state to an evolving bunch while at the same time seeing an instant step in plasma density from $0$ to $7\nexp{14}\unit{cm}^{-3}$, made it challenging to interpret the results.
 This was especially the case when the witness bunch was not matched to the plasma density (see Section~\ref{Int:BPI:Match}).
 A rapid pinching of the bunch occurred immediately after entering the plasma region, causing a spike in the charge density that was within a region too narrow to resolve with the grid resolution we used.
 This is also a numerically noisy region, as discussed in Section~\ref{Sim:EBeam:SizeRes}.

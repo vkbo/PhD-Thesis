@@ -8,7 +8,7 @@
 
 A lot of work has been put into writing analysis tools to perform both initial and quick, as well as detailed, analyses of the many simulations run.
 This chapter outlines some of the key considerations and calculations performed on the data sets generated in these simulations.
-Analysis tools were developed in MATLAB for both OSIRS and QuickPIC data sets.
+Analysis tools were developed in MATLAB for both OSIRIS and QuickPIC data sets.
 These are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
 
 % ================================================================================================================================ %
@@ -126,14 +126,16 @@ Both of these analysis tools were implemented in the OsirisAnalysis package (see
 \section{Beam Loading and Energy Spread}
 \label{SimA:BLoad}
 
-When the parameters of the self-modulated bunch were established, and the pre-modulated studies set up as laid out in Section~\ref{Sim:PBPreMod}, the evolution of the electron beam became the main focus.
-Of particular interest in the early studies was the beam loading of the electron witness beam on the longitudinal wakefields as well as its energy spread as it propagated through the plasma section.
+When the parameters of the self-modulated bunch had been established, and the pre-modulated studies set up as laid out in Section~\ref{Sim:PBPreMod}, the evolution of the electron beam became the main focus.
+Of particular interest in the early studies was the beam loading of the electron witness beam on the longitudinal wakefields, as well as its energy spread as it propagated through the plasma section.
 
 The transverse size of the beam was initially chosen to be $\sigma_{x,y}=105\unit{\mu m}$, see Table~\ref{T:AWAKERuns}.
 This is the size initially proposed for Run~1.
 The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication~\ref{Pub:IPAC15}, but several lengths were tested in simulations.
+
 Tuning the longitudinal size is essential.
-A short bunch positioned at an optimal accelerating phase ensures a low energy spread, while a long bunch is capable of holding a larger charge without the charge density becoming critical.
+On the one hand, a short bunch positioned at an optimal accelerating phase ensures a low energy spread as all electrons see close to the same accelerating field.
+On the other hand, a long bunch is capable of holding a larger charge without the charge density becoming critical.
 
 \begin{figure}[hbt]
     \centering
