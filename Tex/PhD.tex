@@ -112,10 +112,12 @@
 
 % Links
 \usepackage{bookmark}
+\usepackage[verbose,hyperpageref]{backref}
 \usepackage{hyperref}
-\usepackage{url}
+% \usepackage{url}
 \hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=m-brown}
 \urlstyle{same}
+\renewcommand*{\backrefalt}[4]{\ifcase #1 No citations.\or Cited on page #2.\else Cited on pages #2.\fi}
 
 % Tables
 \newcommand{\texthh}[1]{\textsc{#1}}
@@ -128,7 +130,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 % Figures
-%\floatstyle{boxed} 
+%\floatstyle{boxed}
 %\restylefloat{figure}
 
 % Captions
@@ -275,10 +277,14 @@
     \tableofcontents
     \vfill\pagebreak
     \pdfbookmark{\listfigurename}{List of Figures}
+    \backrefsetup{disable}
     \listoffigures
+    \backrefsetup{enable}
     \vfill\pagebreak
     \pdfbookmark{\listtablename}{List of Tables}
+    \backrefsetup{disable}
     \listoftables
+    \backrefsetup{enable}
     \microtypesetup{protrusion=true}
     \cleardoublepage
 
