@@ -59,7 +59,7 @@ An example of the SPS proton bunch before and after self-modulated has occurred,
 The half SPS proton bunch is about $30\unit{cm}$ long, or $238\lambda_{pe}$, which requires a large number of grid cells to resolve.
 In order to make the simulations more manageable in size for the beam loading studies, we decided to move to a sample proton bunch of 26 micro bunches -- an order of magnitude smaller than the previous case.
 
-These simulations were all done using OSIRIS 3.0.
+These simulations were all done using OSIRIS~3.0.
 With this version it is necessary for the beams to drift in vacuum for a short distance for the electro-magnetic fields to develop properly, as they are initialised at zero (see further discussion in Section~\ref{PIC:Full}).
 Since the evolution of the self-modulation instability was not of primary interest at this stage, we chose to modify the bunch profile to emulate a section of the modulated bunch.
 We refer to this as \textit{pre-modulation}.
@@ -166,7 +166,7 @@ Further details on how QuickPIC and OSIRIS handle bunch particles is covered in 
 \subsection{Witness Bunch Transverse Evolution}
 \label{Sim:EBeam:TEvol}
 
-In OSIRIS 3.0, the electromagnetic fields are initialised at zero.
+In OSIRIS~3.0, the electromagnetic fields are initialised at zero.
 It is therefore necessary to let the bunches drift a short distance before they enter the plasma region in order for the fields to develop.
 Due to this initial drift stage, it was technically challenging to inject an electron witness bunch while strictly controlling parameters like emittance, energy spread and transverse size during the drift phase.
 These parameters undergo evolution during this initial drift.
@@ -182,8 +182,8 @@ However, as correlation between $\sigma_{p_{i}}$ and $\sigma_{i}$, for dimension
 For the OSIRIS simulations, the ramping parameters were tuned such that the bunch was unfrozen a few micrometres before it entered the plasma.
 This prevented betatron oscillations during the drift stage, ensuring that the bunch was still more or less at waist when it entered the plasma region.
 
-While the need for a drift stage has been removed in OSIRIS 4.0, which was available when we started working on Publication~\ref{Pub:BL17}, the need to study emittance evolution meant QuickPIC was a more suitable tool.
-Full PIC codes suffers from a numerical instability often referred to as the \textit{Numerical Cherenkov} effect, which can partially be mitigated by improving the electromagnetic fields solver \cite{lehe:2013}.
+While the need for a drift stage has been removed in OSIRIS~4.0, which was available when we started working on Publication~\ref{Pub:BL17}, the need to study emittance evolution meant QuickPIC was a more suitable tool.
+Full PIC codes suffers from a numerical instability often referred to as the \textit{Numerical Cherenkov} effect, which can partially be mitigated by improving the electromagnetic fields solver~\cite{lehe:2013}.
 The quasi-static approximation avoids this issue entirely.
 This is discussed further in Appendix~\ref{Apx:PIC}.
 
@@ -191,7 +191,7 @@ This is discussed further in Appendix~\ref{Apx:PIC}.
 \section{Simulating the Plasma}
 \label{Sim:Plasma}
 
-For the simulations made with OSIRIS 3.0, where an initial drift stage is necessary, a decision had to be made on how to simulate the entry point into the plasma.
+For the simulations made with OSIRIS~3.0, where an initial drift stage is necessary, a decision had to be made on how to simulate the entry point into the plasma.
 Early tests showed that freezing the transverse evolution of the electron beam and releasing it immediately before the entry into plasma, posed a few challenges.
 The sudden change in conditions is itself un-physical, and the abrupt change from a frozen state to an evolving bunch while at the same time seeing an instant step in plasma density from $0$ to $7\nexp{14}\unit{cm}^{-3}$, made it challenging to interpret the results.
 This was especially the case when the witness bunch was not matched to the plasma density (see Section~\ref{Int:BPI:Match}).
