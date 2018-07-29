@@ -18,7 +18,7 @@ This is especially true when running 3D simulations.
 The preliminary studies presented in Publications~\ref{Pub:IPAC15} and~\ref{Pub:NAPAC16} were done using OSIRIS with 2D cylindrical coordinates.
 The main study, Publication~\ref{Pub:BL17}, was done using QuickPIC in 3D Cartesian coordinates.
 In order to perform the detailed parameter scans needed for these studies, the drive beam and accelerating structure had to be scaled down into a more manageable size than simulating the full SPS proton bunch would require.
-The full SPS proton bunch is orders of magnitude larger than both the electron bunch and the plasma wavelength, as can be seen in Table~\ref{T:AWAKERuns}.
+The full SPS proton bunch is orders of magnitude longer than both the electron bunch and the plasma wavelength, as can be seen in Table~\ref{T:AWAKERuns}.
 This chapter will outline the simulation environment chosen for these studies, and the reasons behind these.
 
 % ================================================================================================================================ %
@@ -31,13 +31,13 @@ The beam profile function used took the form:
 \begin{equation}
     f(\xi,r) = \frac{A_{q}}{2} \left[1 + \cos\left(\xi\frac{\pi}{L}\right)\right] \exp\left(-\frac{r^{2}}{2\sigma_{r}^{2}}\right), \label{EQ:SPS-Profile}
 \end{equation}
-where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $R$ is the radius of the simulation box, and $A_{q}$ is a charge scaling factor such that the total charge of the half bunch matches the charge outlined in Table~\ref{T:AWAKERuns}.
+where $L = 2.5\sigma_{z,pb} = 30\unit{cm}$ is the length of half an SPS proton bunch, $r$ and $\xi$ are the cylindrical coordinates of the simulation box (see Equation~\ref{EQ:Xi}), and $A_{q}$ is a charge scaling factor such that the total charge of the half bunch matches the charge outlined in Table~\ref{T:AWAKERuns}.
 The charge of the simulated proton bunch in cylindrical coordinates is given by:
 \begin{equation}
     Q_{pb} = 2\pi \iint f(\xi,r) \;r \deriv r \deriv \xi, \label{EQ:SPS-Charge}
 \end{equation}
 A half period cosine function for the longitudinal density profile is more convenient for simulations than a Gaussian shape as the cosine goes to zero at a finite length~\cite{lotov:2010}.
-Radially, the bunch is still Gaussian, and requires a cut-off to be added to prevent OSIRIS from generating macro particles with small weights.
+Radially, the bunch is still Gaussian, and requires a manual cut-off to be applied to prevent OSIRIS from generating macro particles with small weights.
 The CPU cost is proportional to the number of simulation particles, regardless of weight.
 An example of the SPS proton bunch before and after self-modulated has occurred, as simulated in OSIRIS 3.0, can be seen in Figure~\ref{Fig:Sim:SMI}.
 
@@ -48,6 +48,7 @@ An example of the SPS proton bunch before and after self-modulated has occurred,
         \textbf{Top:} An example of a simulation of half SPS proton bunch before reaching plasma.
         \textbf{Bottom:} The same bunch after having undergone self-modulation in about $3\unit{m}$ of plasma.
         The halo of protons ejected from the defocusing regions can be clearly seen, leaving a core of micro bunches on the beam axis.
+        The projected density profile is shown in white.
     }
 \end{figure}
 
@@ -57,7 +58,7 @@ An example of the SPS proton bunch before and after self-modulated has occurred,
 \label{Sim:PBPreMod}
 
 The half SPS proton bunch is about $30\unit{cm}$ long, or $238\lambda_{pe}$, which requires a large number of grid cells to resolve.
-In order to make the simulations more manageable in size for the beam loading studies, we decided to move to a sample proton bunch of 26 micro bunches -- an order of magnitude smaller than the previous case.
+In order to make the simulations more manageable in size for the beam loading studies, we decided to study a sample proton bunch of 26 micro bunches -- an order of magnitude smaller than the previous case.
 
 These simulations were all done using OSIRIS~3.0.
 With this version it is necessary for the beams to drift in vacuum for a short distance for the electro-magnetic fields to develop properly, as they are initialised at zero (see further discussion in Section~\ref{PIC:Full}).
@@ -101,12 +102,12 @@ The electron witness bunch was injected between bunch 20 and 21.
 
 Further approximations needed to be made to decrease the scale of the problem in order to study the beam loading and evolution of the electron witness beam more directly.
 Even the pre-modulated proton beam is somewhat costly to simulate -- both because it still requires a multiple plasma-wavelength simulation box length, and because a large number of simulated particles are needed to populate the beam profile.
-These proved to be a challenge when doing larger parameter scans as the CPU cost would rise to levels beyond available resources.
-While additional resources could potentially have been requested, we considered the option to exclude the evolution of the proton bunch entirely from our studies and instead assume the region where the electron bunch was injected to have the properties laid out in the AWAKE status reports~\cite{awake_collaboration:2016}.
+It proved to be challenging to do larger parameter scans as the CPU cost would rise to levels beyond available resources.
+While additional resources could potentially have been requested, we chose instead to exclude the evolution of the proton bunch entirely from our studies and assume the region where the electron bunch was injected to have the properties laid out in the AWAKE status reports~\cite{awake_collaboration:2016}.
 
 In these single bunch studies we therefore approximated the proton drive beam ahead of the witness bunch injection region as a single, ideal proton drive bunch generating the expected wakefields.
 To reproduce these conditions, we used a Gaussian bunch of $1.46\nexp{10}$ protons corresponding to $2.34\unit{nC}$, a length $\sigma_{z} = 40\unit{\mu m}$ corresponding to $7\unit{kA}$, and a transverse size $\sigma_{x,y}=200\unit{\mu m}$~\cite{berglyd_olsen:2018}.
-To prevent the proton bunch from evolving at the time scale we were interested in for these studies -- up too a $100\unit{m}$ of plasma -- we also increased the mass of the bunch protons by a factor of $1\nexp{6}$.
+To prevent the proton bunch from evolving at the time scale we were interested in for these studies -- up to a $100\unit{m}$ of plasma -- we also increased the mass of the bunch protons by a factor of $1\nexp{6}$.
 This effectively froze the wakefields both longitudinally and transversely, and the only evolution of the wakefields was that which was caused by the electron witness bunch itself.
 
 \begin{figure}[hbt]
@@ -180,7 +181,7 @@ OSIRIS 3.0 does let one define spatial and momentum distributions independently 
 However, as correlation between $\sigma_{p_{i}}$ and $\sigma_{i}$, for dimension $i$, cannot be controlled, the beam can only be initialised at waist (Twiss parameter $\alpha = 0$, see Appendix~\ref{Apx:DA}).
 
 For the OSIRIS simulations, the ramping parameters were tuned such that the bunch was unfrozen a few micrometres before it entered the plasma.
-This prevented betatron oscillations during the drift stage, ensuring that the bunch was still more or less at waist when it entered the plasma region.
+This prevented betatron motion during the drift stage, ensuring that the bunch was still more or less at waist when it entered the plasma region.
 
 While the need for a drift stage has been removed in OSIRIS~4.0, which was available when we started working on Publication~\ref{Pub:BL17}, the need to study emittance evolution meant QuickPIC was a more suitable tool.
 Full PIC codes suffers from a numerical instability often referred to as the \textit{Numerical Cherenkov} effect, which can partially be mitigated by improving the electromagnetic fields solver~\cite{lehe:2013}.
