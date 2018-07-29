@@ -111,8 +111,23 @@ The latter significantly reduces the number of time steps needed by up to $\appr
 \subsection{Numerical Cherencov}
 \label{PIC:NumCher}
 
-The effect \cite{godfrey:1974, greenwood:2004}
-Lehe solver \cite{lehe:2013}
+Relativistic PIC codes nearly universally suffer a well understood numerical instability known as \textit{Numerical Cherenkov}.
+This issue arises with finite difference time domain algorithms like the Yee solver, and is caused by an anisotropic numerical phase error.
+The result of this is that the numerical phase velocity is slower than the physical phase velocity of the fields for some modes.
+It is in addition both frequency dependant and time resolution dependant~\cite{godfrey:1974, greenwood:2004}.
+This implies that it can be managed in many cases by limiting its impact by paying close attention to the time resolution of the simulation as well as ensuring a good grid resolution.
+However, this is not always cost effective in terms of computing power.
+
+The consequence of this numerical instability is that it induces emittance growth in simulations with high charge density witness bunches.
+The problem can be somewhat mitigated by filtering or dampening high-frequencies.
+However, this inevitably has an impact of the physics.
+The problem can also be mitigated by modifying the discretisation of the Maxwell equations such that one can choose a $\Delta t = \Delta x/c$~\cite{pukhov:1999}.
+This scheme, however, triggers numerical oscillations around the Nyquist frequency $k = \pi/\Delta x$~\cite{vay:2011a}.
+
+Other methods were developed to prevent Numerical Cherenkov without the $\delta t = \Delta x/c$ criterion, but which requires an isotropic grid, limiting practical applications~\cite{greenwood:2004}.
+This method modifies the Yee grid by taking into account the fields another grid layer out from the cell being computed, in order to better approximate the curl of the field at high frequency.
+There most recent scheme is the Lehe solver, based on a 2013 paper, which is a modification the isotropic grid solver, but which is adapted for an anisotropic grid~\cite{lehe:2013}.
+OSIRIS~3.0 implements a version of this solver.
 
 % ================================================================================================================================ %
 \section{The Quasi-Static Electromagnetic Method}
@@ -151,6 +166,13 @@ For a full review of the flow and the numerical implementation of each of the st
 \section{Considerations}
 \label{PIC:Full}
 
-Mention how OSIRIS needs a ramp-up for fields to be valid
-Describe how macro particles are defined
-Describe how emittance can be described in OSIRIS
+OSIRIS~3.0 initialises all fields at zero, meaning that a certain amount of simulation time steps are required in order for the fields to build up to their proper values.
+Typically, simulations let the bunches drift for a few millimetres or centimetres in vacuum before the plasma is introduced.
+To prevent evolution of the bunches during this stage, it is possible to either ramp up their charge, or their energy while preventing the bunch from transverse evolution.
+
+QuickPIC allows the user to specify initial emittance of the bunch as well as its spatial distribution.
+The bunch is initialised at waist, that is the Twiss parameter $\alpha = 0$ (see Section~\ref{Int:BPI:EnTwiss}).
+OSIRIS~3.0 does not provide an input option for emittance, but it does allow the user to specify a thermal distribution of particles as well as their fluid momentum.
+The thermal distribution, which is by default Gaussian, can thus be used to specify a transverse momentum distribution that is uncorrelated by the spatial distribution.
+This provides a way to control the initial bunch emittance at waist.
+Evolution of the Twiss parameters during the above mentioned drift phase is effectively prevented by one of the two methods available to ramp the bunch which also freezes their transverse evolution.
