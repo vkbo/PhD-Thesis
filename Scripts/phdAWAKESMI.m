@@ -35,7 +35,8 @@ xAxis = linspace(xMin,xMax,size(aRaw,1));
 yAxis = linspace(yMin,yMax,size(aRaw,2));
 
 imagesc(xAxis, yAxis, aData);
-colormap(flipud(cBlue));
+%colormap(flipud(cBlue));
+colormap('hot');
 colorbar;
 ylim([-1.5 1.5]);
 xlabel('t [ps]');
