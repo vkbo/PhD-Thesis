@@ -6,7 +6,6 @@
 \chapter{Simulation Analysis}
 \label{Ch:SimA}
 
-A lot of work has been put into writing analysis tools to perform both initial and quick, as well as detailed, analyses of the many simulations run.
 This chapter outlines some of the key considerations and calculations performed on the data sets generated in these simulations.
 Analysis tools were developed in MATLAB for both OSIRIS and QuickPIC data sets.
 These are available online, and are described in more detail in Appendix~\ref{Apx:DA}.
@@ -17,8 +16,8 @@ These are available online, and are described in more detail in Appendix~\ref{Ap
 
 Both OSIRIS and QuickPIC dump the macro particles as large arrays of six-dimensional data, providing each particle's position and momentum vector.
 QuickPIC uses equally weighted macro particles, greatly simplifying the analysis.
-OSIRIS 3, however, uses weighted macro particles, so the weights need to be considered when performing the statistical calculations.
-Additional statistical functions were added to MATLAB to perform these weighted calculations (see Appendix~\ref{Apx:DA}).
+OSIRIS~3, however, uses weighted macro particles, so the weights need to be considered when performing the statistical calculations.
+Additional statistical functions were added to MATLAB's own to perform these weighted calculations (see Appendix~\ref{Apx:DA}).
 
 To study the collective motion of particles it is useful to calculate the bunch total emittance in terms of the RMS value or standard deviation of its particles.
 Equation~\ref{EQ:EmittFull} from Section~\ref{Int:BPI:EnTwiss} can be rewritten in terms of the statistical distributions of its particles such that
@@ -49,12 +48,11 @@ The Twiss parameters can be extracted from the matrix $\mathbf{T}$ as well:
 \section{A Measure for Beam Quality}
 \label{SimA:QTilde}
 
-For the emittance study in Publication~\ref{Pub:BL17}, it was necessary to define a convenient unit for the quality of the accelerated bunch in terms of emittance evolution in regions along the bunch length.
+For the emittance study in Publication~\ref{Pub:BL17} it was necessary to define a convenient unit for the quality of the accelerated bunch in terms of emittance evolution in regions along the bunch length.
 In the quasi-linear plus non-linear regime this publication investigates, emittance growth only occurs at the head of the bunch.
 However, the region of emittance growth varies when parameters such as charge and beam size changes.
-In the study, we defines the quantity
+In the study we defined a parameter that quantifies emittance preservation,
 \begin{equation}
-    % \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \left[\sum_{n=0}^{N} Q_{m+n}\right] \cdot \chi(\xi_{m},N),
     \tilde{Q} = \frac{1}{N} \sum_{m=0}^{M} \sum_{n=0}^{N} Q_{m+n}\,\chi(\xi_{m},N),\label{EQ:BeamQ}
 \end{equation}
 where $M$ is the number of longitudinal grid slices of length $\Delta\xi$ which contains macro particles for the witness bunch, and with corresponding coordinate $\xi_{m}$; $N$ is the number of such slices to average over; and $\chi(\xi_{m},N)$ is the step function
@@ -79,8 +77,12 @@ The first slice coordinate for the iterator $m$ is
 \end{equation}
 where $\mu_{\mathrm{eb}}$ is the longitudinal centre of the bunch.
 
-\paragraph{Note:} This method may yield a misleading result if the Twiss parameter $\alpha$ varies too much along the length of the bunch (the rotation of the ellipse, see Figure~\ref{Fig:BPI:Twiss}).
-That is, the emittance can be locally small, and qualify for the $5\%$ criterion, even if the total emittance of the region included in $\tilde{Q}$ is not.
+The quantity $\tilde{Q}$ is thus the total charge that retains its initial emittance within a limit of $5\%$ growth.
+The emittance is calculated with a moving window of $4$ grid cells over $\pm 5\sigma_z$ of the bunch.
+
+\paragraph{Note:} This method may yield a misleading result if the Twiss parameter $\alpha$ varies too much along the length of the bunch.
+That is, a rotation of the phase-space ellipse, see Figure~\ref{Fig:BPI:Twiss}.
+The emittance can be locally small, and qualify for the $5\%$ criterion, even if the total emittance of the region included in $\tilde{Q}$ is not.
 This can easily be checked after the seemingly optimal region of the bunch is known by verifying that its total emittance does not exceed the same criterion.
 
 % ================================================================================================================================ %
@@ -133,11 +135,6 @@ The transverse size of the beam was initially chosen to be $\sigma_{x,y}=105\uni
 This is the size initially proposed for Run~1.
 The longitudinal size was chosen to be $\sigma_{z}=40\unit{\mu m}$ for the studies included in Publication~\ref{Pub:IPAC15}, but several lengths were tested in simulations.
 
-Tuning the longitudinal size is essential.
-On the one hand, a short bunch positioned at an optimal accelerating phase ensures a low energy spread as all electrons see close to the same accelerating field.
-On the other hand, a long bunch is capable of holding a larger charge without the charge density becoming critical.
-The bunch length and charge the field is able to support can be improved by tuning the parameters such that the field is flat in the region where the witness bunch is located; as discussed in Section~\ref{Int:BPI:BLoad}.
-
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.625\linewidth]{figures/NAPACEGainSpreadScan}
@@ -147,6 +144,11 @@ The bunch length and charge the field is able to support can be improved by tuni
         The figure is presented in Publication~\ref{Pub:NAPAC16} and in Adli \etal~\cite{adli:2016a}.
     }
 \end{figure}
+
+Tuning the longitudinal size is essential.
+On the one hand, a short bunch positioned at an optimal accelerating phase ensures a low energy spread as all electrons see close to the same accelerating field.
+On the other hand, a long bunch is capable of holding a larger charge without the charge density becoming critical.
+The bunch length and charge the field is able to support can be improved by tuning the parameters such that the field is flat in the region where the witness bunch is located; as discussed in Section~\ref{Int:BPI:BLoad}.
 
 The initial studies showed that $\sigma_{z} = 40-60\unit{\mu m}$ is a good compromise between having a short enough bunch to stay within the accelerating region of the accelerating wakefield, $\approx \lambda_{pe}/4$ (see Section~\ref{Int:BPI:BLoad}), and a long enough bunch to contain a reasonable amount of electrons without overloading the wakefield.
 A larger parameter scan was done for Publication~\ref{Pub:NAPAC16} presented as a contributing talk at North American Particle Accelerator Conference in Chicago in 2016, and was also included in~\cite{adli:2016a}.
@@ -161,9 +163,7 @@ The main results of this parameter scan is shown in Figure~\ref{Fig:SimA:BLoadSc
 Achieving a good energy gradient as well as low energy spread, while maximising charge, is a compromise between parameters~\cite{berglyd_olsen:2018}.
 High charge density affects beam loading which, when mismatched, may lead to increased energy spread.
 An overloaded accelerating field will also reduce energy gain through the accelerating region.
-
 In addition to these considerations, we also seek to preserve the initial emittance and avoid emittance growth.
-Emittance is preserved in the linear regime, but the linear regime affects energy spread due to continuous field variations (see Section~\ref{Int:BPI:Lin}).
 
 \begin{figure}[hbt]
     \centering
@@ -203,7 +203,7 @@ The quasi-linear regime has the benefit of combining near radially uniform accel
 \end{figure}
 
 However, in the presence of a high density electron witness bunch, a secondary bubble forms behind it.
-This bubble us typically non-linear.
+This bubble is typically non-linear.
 The simulations for Publication~\ref{Pub:NAPAC16} showed that this was the case for our optimal range of bunch size and density,
 One such example is shown in Figure~\ref{Fig:SimA:NAPACPD}, taken from Publication~\ref{Pub:NAPAC16}.
 We labelled this setup as the \textit{Quasi-Linear + Non-Linear Case}.
