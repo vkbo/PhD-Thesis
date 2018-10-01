@@ -17,11 +17,11 @@ They key points of that work is presented here, and summarised in Publication~\r
 AWAKE instrumentation involves many CERN standard instruments like analogue cameras (BTVs), sensors, etc.
 These are already supported by the CERN control system.
 Several instruments, however, are not CERN-standard, and a subset of these again only have driver software available for the Windows operating system.
-Since the CERN Control System run on a Scientific Linux or a CERN CentOS platform, some adaptations had to be made to make these instruments available to the existing infrastructure.
+Since the CERN Control System runs on a Scientific Linux or a CERN CentOS platform, some adaptations had to be made to make these instruments available to the existing infrastructure.
 They are as follows:
 \begin{description}
     \item[Vapour Density Measurement:]
-    The density of the Rubidium vapour is measured using a Mach-Zehnder type interferometers.
+    The density of the Rubidium vapour is measured using a Mach-Zehnder type interferometer.
     The interferogram acquired by the interferometers is stored as a file which the needs to be imported into the logging system for post-processing.
     In post-processing a fitting algorithm is applied to calculate the density to within $\pm0.5\%$ accuracy \cite{oz:2016}.
     
@@ -37,8 +37,8 @@ They are as follows:
     Specifically, a 4-channel Tektronix oscilloscope which produces per-channel data files needed to be integrated into the data logging system.
     
     \item[Various Probes:]
-    In addition to the above specialised instruments, a number of simple probes needed to send single measurement values to the logging systems.
-    these were treated with a flexible interface that could handle multiple data sources.
+    In addition to the above specialised instruments, a number of simple probes were needed to send single measurement values to the logging systems.
+    These were treated with a flexible interface that could handle multiple data sources.
 \end{description}
 
 % ================================================================================================================================ %
@@ -68,7 +68,7 @@ This tool was named the \textit{Event Builder}, and developed by J.~Batkiewicz a
 \label{DAQ:FESA}
 
 The APIs of the Control System are standardised, and this is also the case on the Front End.
-The Front End Software Architecture (FESA), is a software framework originally developed at CERN.
+The Front End Software Architecture (FESA) is a software framework originally developed at CERN.
 It provides a set of tools for developers to generate large portions of the code needed to control and read instruments and control infrastructure in the main accelerators at CERN, including the LHC.
 Collectively, the FESA classes provide a standard API towards the higher layers of the controls framework.
 
@@ -93,12 +93,12 @@ These generated files could then be picked up by specially prepared FESA File Re
 \end{figure}
 
 For the laser diagnostics instrument, however, the available software did not have an automatic logging feature, so we had to write our own.
-The solution was to extract data directly from the digital camera built into the instrument itself, and write a to binary file format specially designed for our purpose.
-This allowed the laser diagnostics to be treated in the same way as the other instruments: with a file reader class.
+The solution was to extract data directly from the digital camera built into the instrument itself, and write to a binary file format specially designed for our purpose.
+This allowed the laser diagnostics to be treated in the same way as the other instruments; with a file reader class.
 Figure~\ref{Fig:DAQ:Reader} illustrates the flow used for the development of these classes.
 
 The class will probe for a new file every $500\unit{ms}$, building a list of files.
-The list is then sorted, and the most recent file by file creation stamp, is read into a buffer and parsed.
+The list is then sorted, and the most recent file by file creation stamp is read into a buffer and parsed.
 The parsing itself varies between the different classes depending on the format written by the respective instruments.
 If the file is deemed to be invalid, either because it does not conform to the expected format, or it is truncated for one reason or another, the file is dropped and moved into a special folder for discarded files.
 If the file is valid, the data is converted into the correct data type and published.

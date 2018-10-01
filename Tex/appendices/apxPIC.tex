@@ -40,7 +40,7 @@ while the particles are advanced in time using the Newton-Lorentz equations
     \frac{\mathrm{d}(\gamma x)}{\mathrm{d}x} &= \frac{q}{m}\left(\vec{E}+\vec{v}\times\vec{B}\right).
 \end{align}
 
-The charge density $\rho$ and current density $\vec{J}$ are interpolated onto the grid from the particle positions and velocity respectively, while the electric and magnetic fields are interpolated onto the particles when updating their position and velocity~\cite{vay:2016}.
+The charge density, $\rho,$ and current density, $\vec{J}$, are interpolated onto the grid from the particle positions and velocity respectively, while the electric and magnetic fields are interpolated onto the particles when updating their position and velocity~\cite{vay:2016}.
 
 \begin{figure}[hbt]
     \centering
@@ -75,17 +75,17 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
         \vec{J} &= \frac{1}{\Delta x \Delta y \Delta z} \sum_n q_n \vec{v}_n S_n.
     \end{align}
     Accumulation of errors resulting from violation of Gauss' law by the discretisation need to be prevented.
-    This can be achieved by either modifying the deposition to prevent such violations, or by using methods that are exact when combined with the field solver in step 3 \cite{vay:2016}.
+    This can be achieved by either modifying the deposition to prevent such violations, or by using methods that are exact when combined with the field solver in step 3~\cite{vay:2016}.
     OSIRIS makes several interpolation methods available to the user, with varying level of performance and accuracy.
     
     \item[Step 3 -- Field Solver] There are many implementations of field solvers for PIC codes, and OSIRIS supports multiple such methods.
-    The most relevant here, and the OSIRIS default, is the Yee solver \cite{yee:1966}.
-    The Yee solver uses a staggered grid where the electric field components are located between nodes. while the magnetic field components are located at the centre of the grid cell faces.
+    The most relevant here, and the OSIRIS default, is the Yee solver~\cite{yee:1966}.
+    The Yee solver uses a staggered grid where the electric field components are located between nodes, while the magnetic field components are located at the centre of the grid cell faces.
     This is illustrated in Figure~\ref{Fig:PIC:EMF}.
     The time integration of the fields is done using alternate half time-step leaps, also known as the \textit{Leapfrog} integration scheme.
-    Other solvers not covered here are outlined in \cite{vay:2016}, some of which are also available in OSIRIS.
+    Other solvers not covered here are outlined in~\cite{vay:2016}, some of which are also available in OSIRIS.
     
-    \item[Step 4 -- Gather Fields:] The fields are gathered from the grid and onto the macro particles, usually through the same interpolation $S$ as used in Step 2.
+    \item[Step 4 -- Gather Fields:] The fields are gathered from the grid and onto the macro particles, usually through the same interpolation, $S$, as used in Step~2.
     This is generally done through a scheme tuned to conserve either energy or momentum.
 \end{description}
 
@@ -102,9 +102,9 @@ The charge density $\rho$ and current density $\vec{J}$ are interpolated onto th
 This method is computationally heavy as all the particle species that make up the plasma accelerator need to be simulated.
 This includes the electrons and possibly ions that makes up the plasma.
 In most cases the ions can be assumed to be stationary, and can thus be replaced by a static background charge density.
-However, OSIRIS does have the ability to simulation ions as well as ionisation of a neutral gas if necessary.
+However, OSIRIS does have the ability to simulate ions as well as ionisation of a neutral gas if necessary.
 
-A common way to reduce the computational cost is to only simulate the region populated by the propagating beams using both a moving window in a Lorentz-boosted frame.
+A common way to reduce the computational cost is to only simulate the region populated by the propagating beams using a moving window in a Lorentz-boosted frame.
 The latter significantly reduces the number of time steps needed by up to $\approx (i+\betar)\gammar^2$~\cite{vay:2011}.
 
 % ================================================================================================================================ %
@@ -114,8 +114,8 @@ The latter significantly reduces the number of time steps needed by up to $\appr
 Relativistic PIC codes nearly universally suffer a well understood numerical instability known as \textit{Numerical Cherenkov}.
 This issue arises with finite difference time domain algorithms like the Yee solver, and is caused by an anisotropic numerical phase error.
 The result of this is that the numerical phase velocity is slower than the physical phase velocity of the fields for some modes.
-It is in addition both frequency dependant and time resolution dependant~\cite{godfrey:1974, greenwood:2004}.
-This implies that it can be managed in many cases by limiting its impact by paying close attention to the time resolution of the simulation as well as ensuring a good grid resolution.
+It is, in addition, both frequency dependant and time resolution dependant~\cite{godfrey:1974,greenwood:2004}.
+Paying close attention to the time resolution of the simulation as well as ensuring good grid resolution can, in many cases, limit its impact.
 However, this is not always cost effective in terms of computing power.
 
 The consequence of this numerical instability is that it induces emittance growth in simulations with high charge density witness bunches.
@@ -125,8 +125,8 @@ The problem can also be mitigated by modifying the discretisation of the Maxwell
 This scheme, however, triggers numerical oscillations around the Nyquist frequency $k = \pi/\Delta x$~\cite{vay:2011a}.
 
 Other methods were developed to prevent Numerical Cherenkov without the $\delta t = \Delta x/c$ criterion, but which requires an isotropic grid, limiting practical applications~\cite{greenwood:2004}.
-This method modifies the Yee grid by taking into account the fields another grid layer out from the cell being computed, in order to better approximate the curl of the field at high frequency.
-There most recent scheme is the Lehe solver, based on a 2013 paper, which is a modification the isotropic grid solver, but which is adapted for an anisotropic grid~\cite{lehe:2013}.
+This method modifies the Yee grid by taking into account the fields from a grid layer one step out from the cell being computed in order to better approximate the curl of the field at high frequency.
+Their most recent scheme is the Lehe solver, based on a 2013 paper, which is a modification the isotropic grid solver, but which is adapted for an anisotropic grid~\cite{lehe:2013}.
 OSIRIS~3.0 implements a version of this solver.
 
 % ================================================================================================================================ %
@@ -170,9 +170,9 @@ OSIRIS~3.0 initialises all fields at zero, meaning that a certain amount of simu
 Typically, simulations let the bunches drift for a few millimetres or centimetres in vacuum before the plasma is introduced.
 To prevent evolution of the bunches during this stage, it is possible to either ramp up their charge, or their energy while preventing the bunch from transverse evolution.
 
-QuickPIC allows the user to specify initial emittance of the bunch as well as its spatial distribution.
-The bunch is initialised at waist, that is the Twiss parameter $\alpha = 0$ (see Section~\ref{Int:BPI:EnTwiss}).
+QuickPIC allows the user to specify the initial emittance of the bunch as well as its spatial distribution.
+The bunch is initialised at the waist, that is the Twiss parameter $\alpha = 0$ (see Section~\ref{Int:BPI:EnTwiss}).
 OSIRIS~3.0 does not provide an input option for emittance, but it does allow the user to specify a thermal distribution of particles as well as their fluid momentum.
 The thermal distribution, which is by default Gaussian, can thus be used to specify a transverse momentum distribution that is uncorrelated by the spatial distribution.
-This provides a way to control the initial bunch emittance at waist.
+This provides a way to control the initial bunch emittance at the waist.
 Evolution of the Twiss parameters during the above mentioned drift phase is effectively prevented by one of the two methods available to ramp the bunch which also freezes their transverse evolution.

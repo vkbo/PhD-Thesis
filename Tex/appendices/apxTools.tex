@@ -30,7 +30,7 @@ It was designed as a three layer tool to wrap a single data set of OSIRIS simula
     \item[Layer 1] consists of the core data wrapper class \emph{OsirisData} with its subclass \emph{OsirisConfig}.
         The \emph{OsirisData} class provides an interface for accessing the raw data files, while the \emph{OsirisConfig} class parses the simulation input file.
         \emph{OsirisData} provides a uniform set of calls for extracting the data, and gives through \emph{OsirisConfig} access to all the simulation parameters and conversion factors for converting OSIRIS' normalised units into SI units.
-    \item[Layer 2] consists of a set of classes that takes an \emph{OsirisData} object as input, and returns standardised structs of data that can be scaled and converted to preferred units.
+    \item[Layer 2] consists of a set of classes that takes an \emph{OsirisData} object as input, and returns standardised structs\footnote{A \textit{struct} is a type of data structure in programming typically capable of holding a set of values of varying data types. Commonly, as is the case in MATLAB, a struct can contain other structs, allowing data to be stored in a hierarchical manner.} of data that can be scaled and converted to preferred units.
     They perform often needed tools and methods to parse data and extract more detailed information from the larger raw datasets.
     \item[Layer 3] consist of a number of useful standardised plots, and a GUI tool to quickly do a preliminary analysis of simulation data.
 \end{description}
@@ -67,7 +67,7 @@ The classes provided are:
 \begin{description}
     \item[Density and Field:] These are classes that produce grid diagnostics data for the particle density data dumps or the field diagnostics data.
     They support all the different density diagnostics outputs of OSIRIS, and will in addition calculate the wakefields from the magnetic and electric fields given by $W = F/q = E - v \times B$.
-    \item[Momentum:] This class consists of a set of methods that will calculate the evolution of the beams energy and momentum over several time dumps.
+    \item[Momentum:] This class consists of a set of methods that will calculate the evolution of the beam's energy and momentum over several time dumps.
     \item[Phase:] This class provides several tools for phase space diagnostics, including calculations of Twiss parameters.
     \item[UDist:] This class is similar to the \emph{Density} and \emph{Field} classes, and provides methods to process velocity and thermal distribution data.
     \item[Species:] This class provides a few additional specialised tools for calculating energy deposition and gain into and from the plasma by the beams, and is also the class where particle tracking data is parsed.
@@ -82,7 +82,7 @@ This class is mainly used to extract geometric information about beam density ba
 \label{Tools:OALay3}
 
 The final layer of the OsirisAnalysis framework is a set of very flexible plotting tools.
-Most of these have a long list of optional input argument that will change the way data is aggregated and presented.
+Most of these have a long list of optional input arguments that will change the way data is aggregated and presented.
 To make these plots easier to use, most of these optional arguments are available through a graphical interface, also written in MATLAB, named \emph{AnalysisGUI}.
 
 \begin{figure}[hbt]
