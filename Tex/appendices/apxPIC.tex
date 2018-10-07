@@ -82,7 +82,7 @@ The charge density, $\rho,$ and current density, $\vec{J}$, are interpolated ont
     The most relevant here, and the OSIRIS default, is the Yee solver~\cite{yee:1966}.
     The Yee solver uses a staggered grid where the electric field components are located between nodes, while the magnetic field components are located at the centre of the grid cell faces.
     This is illustrated in Figure~\ref{Fig:PIC:EMF}.
-    The time integration of the fields is done using alternate half time-step leaps, also known as the \textit{Leapfrog} integration scheme.
+    The time integration of the fields is done using alternate half time-step leaps, also known as the \textit{Leapfrog integration scheme}.
     Other solvers not covered here are outlined in~\cite{vay:2016}, some of which are also available in OSIRIS.
     
     \item[Step 4 -- Gather Fields:] The fields are gathered from the grid and onto the macro particles, usually through the same interpolation, $S$, as used in Step~2.
@@ -102,13 +102,13 @@ The charge density, $\rho,$ and current density, $\vec{J}$, are interpolated ont
 This method is computationally heavy as all the particle species that make up the plasma accelerator need to be simulated.
 This includes the electrons and possibly ions that makes up the plasma.
 In most cases the ions can be assumed to be stationary, and can thus be replaced by a static background charge density.
-However, OSIRIS does have the ability to simulate ions as well as ionisation of a neutral gas if necessary.
+However, OSIRIS does have the ability to simulate ions as well as ionisation of a neutral gas if needed.
 
 A common way to reduce the computational cost is to only simulate the region populated by the propagating beams using a moving window in a Lorentz-boosted frame.
 The latter significantly reduces the number of time steps needed by up to $\approx (i+\betar)\gammar^2$~\cite{vay:2011}.
 
 % ================================================================================================================================ %
-\subsection{Numerical Cherencov}
+\subsection{Numerical Cherenkov}
 \label{PIC:NumCher}
 
 Relativistic PIC codes nearly universally suffer a well understood numerical instability known as \textit{Numerical Cherenkov}.
@@ -124,7 +124,7 @@ However, this inevitably has an impact of the physics.
 The problem can also be mitigated by modifying the discretisation of the Maxwell equations such that one can choose a $\Delta t = \Delta x/c$~\cite{pukhov:1999}.
 This scheme, however, triggers numerical oscillations around the Nyquist frequency $k = \pi/\Delta x$~\cite{vay:2011a}.
 
-Other methods were developed to prevent Numerical Cherenkov without the $\delta t = \Delta x/c$ criterion, but which requires an isotropic grid, limiting practical applications~\cite{greenwood:2004}.
+Other methods were developed to prevent Numerical Cherenkov without the $\Delta t = \Delta x/c$ criterion, but which requires an isotropic grid, limiting practical applications~\cite{greenwood:2004}.
 This method modifies the Yee grid by taking into account the fields from a grid layer one step out from the cell being computed in order to better approximate the curl of the field at high frequency.
 Their most recent scheme is the Lehe solver, based on a 2013 paper, which is a modification the isotropic grid solver, but which is adapted for an anisotropic grid~\cite{lehe:2013}.
 OSIRIS~3.0 implements a version of this solver.
@@ -133,7 +133,7 @@ OSIRIS~3.0 implements a version of this solver.
 \section{The Quasi-Static Electromagnetic Method}
 \label{PIC:QS}
 
-The quasi-static approximation takes advantage of the fact that a beam travelling close to the speed of light is very rigid, and therefore responds slowly, while the plasma response is very fast in comparison.
+The quasi-static approximation takes advantage of the fact that a particle bunch travelling close to the speed of light is very rigid, and therefore responds slowly, while the plasma response is very fast in comparison.
 This separation of response in time scale allows a separation in how these components of the simulation are treated.
 
 While the particle bunches are simulated in 3D, the plasma is simulated in 2D slices.
@@ -145,6 +145,12 @@ This can then be applied to the macro particles to evolve their position and vel
 There are several ways to perform the necessary calculations, and each implementation of the method may have different solutions.
 Some key details are outlined in \cite{vay:2016}.
 
+The flow of the QuickPIC algorithm is slightly different than presented for full PIC in Figure~\ref{Fig:PIC}.
+While the main loop is 3D, a 2D loop is embedded inside it.
+After initialisation, the 3D loop hands the token over to the 2D loop which initialises new slices of plasma, runs its field solver, pushes the plasma particles, and deposits onto the grid.
+The token is then passed back to the 3D routine which pushes the beam particles, and deposits the charge and current of these onto the grid, before returning to the start of the 3D loop again.
+For a full review of the flow and the numerical implementation of each of the steps, see Huang \etal~\cite{huang:2006}.
+
 \bigskip
 \noindent\textbf{For example:}
 \bigskip
@@ -154,25 +160,21 @@ The variables $\xi$ and $s$ have the same unit, but correspond to the two differ
 This approximation implies that for short bunches, $s$ is the same for all plasma particles, reducing the plasma particle motion to movement in the $x,y$-plane.
 At the same time the beam evolves very slowly and with respect to $s$, compared to the fast plasma response on the plasma wavelength scale of the coordinate $\xi$.
 When solving the field equations it is thus assumed that $\partial/\partial s = 0$, meaning the corresponding first and second derivative terms can be dropped~\cite{an:2013}.
-The charge and current densities for the beam are deposited onto the grid in the same way as with the full PIC method.
-
-The flow of the QuickPIC algorithm is slightly different than presented for full PIC in Figure~\ref{Fig:PIC}.
-While the main loop is 3D, a 2D loop is embedded inside it.
-After initialisation, the 3D loop hands the token over to the 2D loop which initialises new slices of plasma, runs its field solver, pushes the plasma particles, and deposits onto the grid.
-The token is then passed back to the 3D routine which pushes the beam particles, and deposits the charge and current of these onto the grid, before returning to the start of the 3D loop again.
-For a full review of the flow and the numerical implementation of each of the steps, see Huang \etal~\cite{huang:2006}.
+The charge and current densities for the bunch are deposited onto the grid in the same way as with the full PIC method.
 
 % ================================================================================================================================ %
 \section{Considerations}
 \label{PIC:Full}
 
-OSIRIS~3.0 initialises all fields at zero, meaning that a certain amount of simulation time steps are required in order for the fields to build up to their proper values.
-Typically, simulations let the bunches drift for a few millimetres or centimetres in vacuum before the plasma is introduced.
-To prevent evolution of the bunches during this stage, it is possible to either ramp up their charge, or their energy while preventing the bunch from transverse evolution.
-
-QuickPIC allows the user to specify the initial emittance of the bunch as well as its spatial distribution.
-The bunch is initialised at the waist, that is the Twiss parameter $\alpha = 0$ (see Section~\ref{Int:BPI:EnTwiss}).
-OSIRIS~3.0 does not provide an input option for emittance, but it does allow the user to specify a thermal distribution of particles as well as their fluid momentum.
-The thermal distribution, which is by default Gaussian, can thus be used to specify a transverse momentum distribution that is uncorrelated by the spatial distribution.
-This provides a way to control the initial bunch emittance at the waist.
-Evolution of the Twiss parameters during the above mentioned drift phase is effectively prevented by one of the two methods available to ramp the bunch which also freezes their transverse evolution.
+\begin{itemize}
+    \item OSIRIS~3.0 initialises all fields at zero, meaning that a certain amount of simulation time steps are required in order for the fields to build up to their proper values.
+    Typically, simulations let the bunches drift for a few millimetres or centimetres in vacuum before the plasma is introduced.
+    To prevent evolution of the bunches during this stage, it is possible to either ramp up their charge, or their energy while preventing the bunch from transverse evolution.
+    
+    \item QuickPIC allows the user to specify the initial emittance of the bunch as well as its spatial distribution.
+    The bunch is initialised at the waist, that is the Twiss parameter $\alpha = 0$ (see Section~\ref{Int:BPI:EnTwiss}).
+    OSIRIS~3.0 does not provide an input option for emittance, but it does allow the user to specify a thermal distribution of particles as well as their fluid momentum.
+    The thermal distribution, which is by default Gaussian, can thus be used to specify a transverse momentum distribution that is uncorrelated by the spatial distribution.
+    This provides a way to control the initial bunch emittance at the waist.
+    Evolution of the Twiss parameters during the above mentioned drift phase is effectively prevented by one of the two methods available to ramp the bunch which also freezes their transverse evolution.
+\end{itemize}
