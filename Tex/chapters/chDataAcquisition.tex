@@ -7,7 +7,7 @@
 \label{Ch:DAQ}
 
 Most of the work presented in this thesis is focused on determining the experiment parameters for Run~2 of AWAKE.
-However, during the final stages of construction and commissioning of Run~1, several month were designated to help integrate AWAKE instrumentation with the CERN Control System and data logging infrastructure.
+However, during the final stages of construction and commissioning of Run~1, several months were designated to help integrate AWAKE instrumentation with the CERN Control System and data logging infrastructure.
 They key points of that work is presented here, and summarised in Publication~\ref{Pub:IPAC17} which was presented at IPAC in Copenhagen in 2017.
 
 % ================================================================================================================================ %
@@ -22,15 +22,15 @@ They are as follows:
 \begin{description}
     \item[Vapour Density Measurement:]
     The density of the Rubidium vapour is measured using a Mach-Zehnder type interferometer.
-    The interferogram acquired by the interferometers is stored as a file which the needs to be imported into the logging system for post-processing.
-    In post-processing a fitting algorithm is applied to calculate the density to within $\pm0.5\%$ accuracy \cite{oz:2016}.
+    The interferogram acquired by the interferometers is stored as a file which then needs to be imported into the logging system for post-processing.
+    In post-processing, a fitting algorithm is applied to calculate the density to within $\pm0.5\%$ accuracy \cite{oz:2016}.
     
     \item[Laser Diagnostics:]
     The Rubidium vapour is ionised by a $4.5\unit{TW}$, $100-120\unit{fs}$ laser~\cite{gschwendtner:2016}.
     The pulse length is measured by a single shot optical auto-correlator~\cite{salin:1987}.
     This device does not produce an automatic log file of the measurement, so a special tool was written to extract the information on a trigger.
     The digital camera data is post-processed with a fitting algorithm written by the instrument operator, and the pulse width is extracted.
-    The data is the written to a specially designed binary file format.
+    The data is the written to a specially designed binary file format, which is then inmported into the logging system.
     
     \item[Oscilloscopes:]
     Fast oscilloscopes are also used, for instance to measure real time signals from various Schottky diodes installed to measure Coherent Transition Radiation (CTR) emitted in the microwave band.
@@ -52,9 +52,10 @@ The benefit of integrating these instruments into the existing CERN Control Syst
     \includegraphics[width=0.85\linewidth,trim={0mm 0mm 0mm 0mm},clip]{figures/CERNControls}
     \caption{\label{Fig:DAQ:CERN}
         An overview of the CERN Control System structure.
-        The system is layered and with standardised interfaces.
-        The data acquisition happens on the Front End Layer where high performance PCs and PLCs provides real time processing of raw data, which is then fed up to the data logging layer, and then made available to the displays at the top layer.
-        Illustration taken from Publication~\ref{Pub:IPAC17}, which is again recreated from~\cite{add:gorbonosov:2013}.
+        The system is layered, and has standardised interfaces.
+        The data acquisition happens on the Front End Layer where high performance PCs and PLCs provides real time processing of raw data.
+        This is then fed upstream to the data logging layer, and then made available to the displays at the top layer.
+        The illustration is taken from Publication~\ref{Pub:IPAC17}, which is again recreated from~\cite{add:gorbonosov:2013}.
     }
 \end{figure}
 
@@ -73,14 +74,14 @@ It provides a set of tools for developers to generate large portions of the code
 Collectively, the FESA classes provide a standard API towards the higher layers of the controls framework.
 
 While originally developed by CERN, FESA was always intended to be usable for other experiments.
-The current iteration, FESA3, is developed in collaboration with GSI Helmholtz Centre for Heavy Ion Research in Germany, where it is used at the FAIR facility \cite{schwinn:2010}.
+The current iteration, FESA~3, is developed in collaboration with GSI Helmholtz Centre for Heavy Ion Research in Germany, where it is used at the FAIR facility \cite{schwinn:2010}.
 
 % ================================================================================================================================ %
 \subsection{AWAKE Integration with FESA}
 \label{DAQ:Integration}
 
 As discussed above, several of the instruments used for AWAKE only have drivers for the Windows operating system.
-The straight forward solution in most of these cases were to use the file logging features available in the instrumentation software.
+The straightforward solution in most of these cases were to use the file logging features available in the instrumentation software.
 These generated files could then be picked up by specially prepared FESA File Reader classes accessing the Windows servers through Samba file shares.
 
 \begin{figure}[hbt]
@@ -97,11 +98,12 @@ The solution was to extract data directly from the digital camera built into the
 This allowed the laser diagnostics to be treated in the same way as the other instruments; with a file reader class.
 Figure~\ref{Fig:DAQ:Reader} illustrates the flow used for the development of these classes.
 
+The general flow of the file reader classes is as follows:
 The class will probe for a new file every $500\unit{ms}$, building a list of files.
 The list is then sorted, and the most recent file by file creation stamp is read into a buffer and parsed.
 The parsing itself varies between the different classes depending on the format written by the respective instruments.
 If the file is deemed to be invalid, either because it does not conform to the expected format, or it is truncated for one reason or another, the file is dropped and moved into a special folder for discarded files.
-If the file is valid, the data is converted into the correct data type and published.
+If the file is valid, the data is converted into the correct data type and published on the API.
 The reader is designed such that no file is deleted, so a successfully parsed file is also moved to an archive folder.
 
 The successfully acquired data is merged with the most recent information from the SPS accelerator, namely the information that identifies the specific proton bunch that was extracted and sent to the experiment at that given time.
