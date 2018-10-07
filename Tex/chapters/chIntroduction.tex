@@ -3,16 +3,16 @@
 % ==============
 %
 
-\chapter{Introduction}
+\chapter{Introduction and Theory}
 \label{Ch:Intro}
 
-The Advanced Wakefield Experiment (AWAKE)~\cite{awake_collaboration:2014}, located at the old CNGS\footnote{The CERN Neutrinos to Gran Sasso (CNGS) experiment was operational between 2006 and 2012.} facility at CERN, became operational in December 2016.
-It is a proof-of-concept Proton Driven Plasma Wakefield Accelerator (PDPWFA) using a proton bunch from the Super Proton Synchrotron (SPS) as its \textit{drive bunch}.
+The Advanced Wakefield Experiment (AWAKE)~\cite{awake_collaboration:2014}, located at the former CNGS\footnote{The CERN Neutrinos to Gran Sasso (CNGS) experiment was operational between 2006 and 2012.} facility at CERN, became operational in December 2016.
+It is a proof-of-concept Proton Driven Plasma Wakefield Accelerator (PDPWFA) using a proton bunch from the Super Proton Synchrotron (SPS)~\cite{benedikt:2004} as its \textit{drive bunch}.
 
 AWAKE is currently in Run~1, where the interaction between the proton drive bunch and the plasma will be studied, and where a long electron witness bunch will be injected to sample the wakefields.
 Run~2 is planned to start after the next Long Shutdown of the LHC~\cite{bernardini:2016} scheduled for 2019 and 2020, when significant upgrades will also be made to AWAKE.
 Run~2 will attempt to accelerate a short, intense electron bunch to high energy, while avoiding growth in emittance and large energy spread.
-In preparation for Run~2, a number of design choices needs to be made based on the results of Run~1 as well as simulations of Run~2.
+In preparation for Run~2, a number of design choices needs to be made based on the results of Run~1, as well as detailed simulations of Run~2.
 The work presented in this thesis primarily focuses on the beam loading of a short electron witness bunch through simulations, in preparation for AWAKE Run~2.
 
 The key results are presented in Publication~\ref{Pub:BL17}, with the studies leading up to this publication presented in two conference papers: Publication~\ref{Pub:IPAC15} and~\ref{Pub:NAPAC16}.
@@ -32,9 +32,10 @@ Accelerating particle bunches in a plasma is an attractive concept as plasmas ar
 Such RF structures suffer electrical breakdowns at very high electric fields, and these breakdowns can over time damage the structures~\cite{braun:2003}.
 This puts an upper limit on the accelerating gradient.
 These breakdowns cause damage to the surfaces of the RF cavities.
-In practice, the upper limit is determined by the statistical probability of a breakdown and the acceptable number of breakdowns in a given period of time~\cite{pritzkau:2002}, and the practical limit is therefore lower -- around $100\unit{MV/m}$~\cite{aicheler:2012}.
+In practice, the upper limit is determined by the statistical probability of a breakdown and the acceptable number of breakdowns in a given period of time~\cite{pritzkau:2002}.
+The practical limit is therefore lower, around $100\unit{MV/m}$~\cite{aicheler:2012}.
 
-While RF cavities use standing electromagnetic waves to accelerate particles, plasma accelerators use an energetic bunch to drive strong electromagnetic wakefields in the plasma.
+While RF cavities use standing electromagnetic waves to accelerate particles, plasma accelerators use an energetic beam or bunch to drive strong electromagnetic wakefields in the plasma.
 The two main techniques for producing these strong accelerating fields are by the use of an intense laser beam, or by the use of a particle drive bunch.
 Laser accelerator techniques were investigated in the early 1970s~\cite{chan:1971, palmer:1972}, and wakefield acceleration techniques through the use of computer simulations at the end of the decade~\cite{tajima:1979}.
 Using particle bunches to drive accelerating wakefields were proposed some time later, in 1985~\cite{chen:1985}.
@@ -48,7 +49,7 @@ The characteristic time of the electron motion is related to the plasma frequenc
 where $n_{0}$ is the initial plasma electron density, $e$ is the elementary charge, $m_{e}$ is the electron mass, and $\epsilon_{0}$ is the vacuum permittivity~\cite{tonks:1929, esarey:1996, pecseli:2012}.
 Here we ignore the ion mass and we assume the plasma is cold, that is, we ignore the thermal motion of the electrons.
 The characteristic time and length of ion motion scales as the square root of the charge/mass ratio difference compared to the plasma electrons and tend, depending on the ion mass, to be a few orders of magnitude longer than those of the electrons.
-In the case of very long accelerating structures, the motion of the ions may become an issue~\cite{rosenzweig:2005}.
+In the case of very long accelerating structures, the motion of plasma ions may become an issue~\cite{rosenzweig:2005}.
 
 Plasmas can, in general, sustain accelerating electric fields on the order of the non-relativistic wave-breaking field~\cite{dawson:1959, esarey:1996}
 \begin{equation}
@@ -57,9 +58,9 @@ Plasmas can, in general, sustain accelerating electric fields on the order of th
 For instance, for a plasma density of $10^{18}\unit{cm}^{-3}$, the maximum field is on the order of $100\unit{GV/m}$.
 This has been inferred by experiment in the mid 1990s when a few electrons were accelerated to over $40\unit{MeV}$ in about $300\unit{\mu m}$ of Helium plasma driven by a $25\unit{TW}$ pico second laser~\cite{modena:1995}.
 
-Both techniques require a drive bunch that deposits energy into the plasma in the form of wakefields.
-The drive bunch is trailed by another bunch, called the \textit{witness bunch}, which draws energy from the fields in order to accelerate.
-We thus see a transfer of energy from the drive bunch to the witness bunch through plasma as the intermediate medium~\cite{muggli:2009}.
+Both techniques require a driver that deposits energy into the plasma in the form of wakefields.
+The driver is trailed by a bunch, called the \textit{witness bunch}, which draws energy from the fields in order to accelerate.
+We thus see a transfer of energy from the drive beam or bunch to the witness bunch through plasma as the intermediate medium~\cite{muggli:2009}.
 Let us briefly introduce the core principle of the two methods of plasma wakefield acceleration. 
 
 % ================================================================================================================================ %
@@ -82,27 +83,27 @@ The space charge of the drive bunch displaces the plasma electrons, which oscill
 The longitudinal and transverse fields generated by this wake are then loaded by a trailing bunch of particles.
 The principles behind this technique were formulated in the 1980s by Pisin Chen \etal~\cite{chen:1985}.
 
-Any type of charged particle bunch can be used in such an accelerator, and most experiments to date have used electrons.
-It has been shown that energy can be transferred from one or more electron drive bunches to a single electron witness bunch, or trailing electrons in an electron drive bunch, in multiple past experiments~\cite{rosenzweig:1988, blumenfeld:2007, kallos:2007, litos:2014, nakajima:1990}.
+Any type of charged particle beam or bunch can be used in such an accelerator, and most experiments to date have used electrons.
+It has been shown that energy can be transferred from one or more electron drive bunches to a single electron witness bunch, or trailing electrons inside an electron drive bunch, in multiple past experiments~\cite{rosenzweig:1988, blumenfeld:2007, kallos:2007, litos:2014, nakajima:1990}.
 In one such experiment, at the Stanford Linear Accelerator Center (SLAC), a $42\unit{GeV}$ electron bunch passing through an $85\unit{cm}$ section of ionised Lithium vapour saw the trailing part of the electron bunch reach $85\unit{GeV}$.
 This corresponds to a gradient of $52\unit{GV/m}$~\cite{blumenfeld:2007}.
 
 A limitation using an electron bunch with a similar initial charge and energy for both drive and witness bunches is that the witness bunch will rapidly gain energy, while the drive bunch loses energy, leading to dephasing.
 This both causes the drive bunch to quickly decelerate, while the witness bunch undergoing acceleration will at the same time catch up with the drive bunch.
-Typically propagation length of an electron drive bunch is a few tens of centimetres of plasma due to limited energy in the bunch.
+Typically, propagation length of an electron drive bunch is a few tens of centimetres of plasma due to limited energy in the bunch.
 
 % ================================================================================================================================ %
-%  Beam and Plasma Interactions
+%  Bunch and Plasma Interactions
 % ================================================================================================================================ %
 \section{Bunch and Plasma Interactions}
 \label{Int:BPI}
 
 As a relativistic, charged bunch propagates through plasma, it affects the local density of the plasma electrons.
-The charged bunch generates strong transverse fields, pushing or pulling the plasma electrons away or towards the propagation axis of the beam~\cite{lee:2001,adli:2016b}.
+The charged bunch generates strong transverse fields, pushing or pulling the plasma electrons away or towards the propagation axis of the bunch~\cite{lee:2001,adli:2016b}.
 As the heavier plasma ions will move on a much longer time scale, due to inertia, the plasma electrons expelled from the axis will be pulled back towards it by the ion charge.
 The electrons will tend to overshoot the axis, creating an oscillation system.
 A positively charged drive bunch will initially pull the electrons towards the axis, where they overshoot, creating a similar effect to a negative drive bunch, but with a half-period phase offset.
-The oscillation period is determined by the plasma frequency of the electrons~\cite{hogan:2016,muggli:2017}. 
+The oscillation period is determined by the plasma frequency of the electrons, $\omega_{pe}$~\cite{hogan:2016,muggli:2017}. 
 
 \begin{figure}[hbt]
     \centering
@@ -114,13 +115,13 @@ The oscillation period is determined by the plasma frequency of the electrons~\c
 A conceptual illustration of an electron bunch driven plasma accelerator is shown in Figure~\ref{Fig:PWFA:Illust}.
 Several regions of decreasing magnitude of accelerating\slash decelerating and focusing\slash defocusing are generated behind the drive bunch.
 By positioning a trailing bunch in an optimal phase it can be both accelerated and focused.
-The drive bunch needs to be shorter than the plasma period for this structure to be most effective, but multiple short drive bunches with a separation of the plasma wavelength can resonantly amplify the wakefields.
+The drive bunch needs to be shorter than the plasma period $\lambda_{pe}$ for this structure to be most effective, but multiple short drive bunches with a separation of the plasma wavelength can resonantly amplify the wakefields.
 
 % ================================================================================================================================ %
 \subsection{Emittance and Twiss Parameters}
 \label{Int:BPI:EnTwiss}
 
-Before we continue, let us briefly introduce an important set of parameters which describe the evolution of a charged particle bunch or beam: the beam emittance, and the Twiss parameters also known as the Courant-Snyder parameters~\cite{courant:1958}.
+Before we continue, let us briefly introduce an important set of parameters which describe the evolution of a charged particle bunch or beam: the beam emittance, $\epsilon$, and the Twiss parameters, $\alpha$, $\beta$, $\gamma$, also known as the Courant-Snyder parameters~\cite{courant:1958}.
 The Twiss parameters are useful quantities to describe the trajectory of particles in an accelerator in the transverse phase space.
 The following, brief, derivation is based on Klauss Wille, \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.
 
@@ -136,7 +137,7 @@ where the parameter
 \end{equation}
 and $\Psi(s)$ is the phase advance.
 
-In order to arrive at an expression describing the particle motion in the $x-x^\prime$ plane, where $x^\prime$ is the angle of the particle trajectory in relation to the forward direction, we must eliminate the terms depending on $\Psi$.
+In order to arrive at an expression describing the particle motion in the $x-x^\prime$ plane, where $x$ is the transverse position, and $x^\prime$ is the angle of the particle trajectory in relation to the forward direction, we must eliminate the terms depending on $\Psi$.
 We thus obtain:
 \begin{equation}
     \epsilon = \frac{x^2}{\beta(s)} + \left(\frac{\alpha(s)}{\sqrt{\beta(s)}}x + \sqrt{\beta(s)}x^{\prime}\right)^2.
@@ -155,12 +156,12 @@ we obtain the equation for geometric emittance
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Twiss}
     \caption{\label{Fig:BPI:Twiss}
-        The phase space ellipse of bunch particles.
+        The phase space ellipse of bunch particles showing the distribution of position and angle, and the Twiss parameters describing the correlation between these.
         The figure is recreated from Figure~3.23 by Klauss Wille in \textit{The Physics of Particle Accelerators}~\cite{wille:2001}.
     }
 \end{figure}
 
-This equation describes an ellipse in the $x-x^\prime$ phase space, related to the geometric emittance $\epsilon$ via the Twiss parameters $\alpha$, $\beta$ and $\gamma$.
+This equation describes an ellipse in the $x-x^\prime$ phase space, related to the geometric emittance via the Twiss parameters.
 The relation between these parameters is illustrated in Figure~\ref{Fig:BPI:Twiss}.
 It is often useful to refer to normalised emittance, which is the geometric emittance multiplied with the relativistic factor
 \begin{equation}
@@ -304,7 +305,7 @@ For a bunch with a Gaussian profile in both dimensions, the wakefields are
     W_{\perp}(r,\xi) &= \frac{e}{\epsilon_{0}k_{pe}}
         \int_{-\infty}^{\xi} n_{b\parallel}(\xi^{\prime}) \sin\left[k_{pe}(\xi-\xi^{\prime})\right] \,\deriv\xi^{\prime} \,\cdot\, \frac{\mathrm{d}}{\mathrm{d}r}R(r), \label{EQ:WrFull}
 \end{align}
-where the transverse dependency $R(r)$ is
+where the transverse dependency $R(r)$ is given as
 \begin{align}
     R(r) &= k_{pe}^{2} \int_{0}^{r} n_{b\perp}(r^{\prime}) I_{0}(k_{pe}r^{\prime})
            K_{0}(k_{pe}r) \,r^{\prime}\,\deriv r^{\prime} \nonumber \\
@@ -333,8 +334,8 @@ Additionally, the radially varying focusing field from Equation~\ref{EQ:WrFull} 
 \subsubsection{The Non-Linear Regime}
 \label{Int:BPI:NLin}
 
-When the beam density $n_{b} > n_{pe}$, the system enters the non-linear regime, and becomes highly non-linear when $n_{b} \gg n_{pe}$ -- often referred to as the \textit{blowout regime} (see Figure~\ref{Fig:BPI:Regime}).
-In this regime the plasma electrons are expelled entirely from the region around the axis, to form a region populated by only plasma ions.
+When the bunch density $n_{b} > n_{pe}$, the system enters the non-linear regime, and becomes highly non-linear when $n_{b} \gg n_{pe}$ -- often referred to as the \textit{blowout regime} (see Figure~\ref{Fig:BPI:Regime}).
+In this regime the plasma electrons are expelled entirely from the region around the axis to form a region populated by only plasma ions.
 As the ions are practically stationary on the time scale of the plasma electrons, they form a uniform column of positive charge.
 The electrons displaced by the space charge of the drive bunch are pulled back on axis by the ions in the form a thin sheath with the shape of a bubble.
 Hence, this regime is also sometimes referred to as the \textit{bubble regime}.
@@ -455,7 +456,7 @@ However, this does not result in high efficiency as every trailing bunch will se
 Efficiency is instead increased when each bunch experiences a similar wake field.
 
 This effect can be mitigated in two ways that will in turn maximise transformer ratio.
-The first option, named \textit{Ramped Bunch Train}, is to position the bunches with a $1.5\,\lambda_{pe}$ separation, such that each bunch is in the accelerating phase of the forward bunches, while at the same time ramp their charge such that the wakefield inside each bunch matches the decelerating field from the first bunch.
+The first option, called \textit{Ramped Bunch Train}, is to position the bunches with a $1.5\,\lambda_{pe}$ separation, such that each bunch is in the accelerating phase of the forward bunches, while at the same time ramp their charge such that the wakefield inside each bunch matches the decelerating field from the first bunch.
 This scheme has been demonstrated experimentally by Jing \etal in a dielectric accelerator~\cite{jing:2006,jing:2007}.
 
 The second method, described by Kallos \etal, called \textit{Phased Bunch Train}, proposes using short, $k_{pe}l_{z} \ll 1$, equally charged bunches placed in a specific decelerating phase.
@@ -472,7 +473,7 @@ where $N_{d,1}$ is the first of $M$ drive bunches.
 Compared to Eq.~\ref{EQ:TRat:DeltaE} this is an improvement, although not linearly increasing with the number of bunches~\cite{ruth:1985}.
 
 % ================================================================================================================================ %
-\section{Using a Proton Drive Beam}
+\section{Using a Proton Drive Bunch}
 \label{Int:DBeam}
 
 Electron bunches used in previous experiments have a low energy and thus a limited propagation length in the plasma, as can be estimated using Equation~\ref{EQ:Trat:LStop}.
@@ -482,7 +483,7 @@ The propagation length of such a bunch is on the order of a metre, and the exper
 Such short accelerator segments are suitable for multi staged accelerators, but they require multiple high energy electron drive bunches. 
 
 % ================================================================================================================================ %
-\subsection{Protons vs. Electrons as Drive Beam}
+\subsection{Protons vs. Electrons as Drive Bunch}
 \label{Int:DBeam:PDPWFA}
 
 As ultra-high energy electron bunches are not readily available, the possibility of using proton bunches as drivers instead has been of interest for some time~\cite{blue:2003,caldwell:2009}.
@@ -529,19 +530,19 @@ This is true for both laser beams~\cite{esarey:1994} and particle bunches~\cite{
 For a laser beam, the self-modulation arises from alternating regions of focusing and diffraction.
 For a particle bunch, the wakefields generated within the bunch acts back on itself, breaking it up into short micro bunches with a surrounding, defocused halo.
 
-In the 1980s this self-modulating effect was taken advantage of in LWFA experiments as only long laser pulses were available.
+In the 1980s, this self-modulating effect was taken advantage of in LWFA experiments as only long laser pulses were available.
 Advances in ultra short laser technology later removed the dependence of this effect~\cite{pukhov:2002}, but for proton bunches, this remains a challenge.
 However, the self-modulation instability can also be exploited for proton bunches to generate high accelerating gradients~\cite{schroeder:2012,schroeder:2011,caldwell:2009}.
 
 Self-modulation in particle bunches is caused by a transverse two-stream instability which occurs for a bunch radius on the order of the plasma skin depth, $\sigma_{r} \simeq c/\omega_{pe}$~\cite{vieira:2012}.
 Much narrower bunches will see pinching effects, while wider bunches will experience filamentation instabilities~\cite{keinigs:1987}.
 
-The micro bunching caused by self-modulation has a period close to the plasma wavelength, but long bunches are also subject to hosing instabilities~\cite{whittum:1991}, an effect also seen in long laser beams~\cite{duda:1999,duda:2000}.
+The micro bunching caused by self-modulation has a period close to the plasma wavelength, $\lambda_{pe}$, but long bunches are also subject to hosing instabilities~\cite{whittum:1991}, an effect also seen in long laser beams~\cite{duda:1999,duda:2000}.
 This may prove to be a limitation to stability over long propagation lengths.
 Hosing, however, can be prevented by the breaking up of the bunch caused by self-modulation \cite{vieira:2014}.
 A sharp leading edge of the bunch can be used to seed modulation \cite{fang:2014}.
 Seeding can significantly reduce the risk of hosing.
-This is also the case for long laser pulses, and resolved by seeding~\cite{vieira:2012}. 
+This is also the case for long laser pulses, and also here resolved by seeding~\cite{vieira:2012}. 
 
 Self-modulation has been shown experimentally for long electron bunches at SLAC~\cite{muggli:2014,muggli:2015} as well halo formation on short and long positron bunches~\cite{muggli:2008,hogan:2003}.
 Self-modulation has also recently been seen for proton bunches at AWAKE~\cite{muggli:2017a}.
