@@ -89,6 +89,7 @@
 \definecolor{tblfoot} {gray}{0.90}
 \definecolor{ttcol}   {rgb}{0.333,0.039,0.098}
 \definecolor{emcol}   {rgb}{0.333,0.039,0.098}
+\definecolor{toclink} {gray}{0.098}
 \definecolor{d-blue}  {rgb}{0.000,0.200,0.741}
 \definecolor{d-red}   {rgb}{0.850,0.125,0.000}
 \definecolor{d-green} {rgb}{0.231,0.333,0.094}
@@ -260,6 +261,7 @@
 % Front Matters
 
 \frontmatter
+    \pdfbookmark{Front Page}{FrontPage}
     \input{includes/incFrontPage}
 
     \cleardoublepage
@@ -270,6 +272,8 @@
     \pdfbookmark{Acknowledgements}{Acknowledgements}
     \input{includes/incAcknowledgements}
 
+    \begingroup
+    \hypersetup{linkcolor=toclink}
     \tocloftpagestyle{plain}
     \cleardoublepage
     \pdfbookmark{\contentsname}{Contents}
@@ -287,6 +291,7 @@
     \backrefsetup{enable}
     \microtypesetup{protrusion=true}
     \cleardoublepage
+    \endgroup
 
 % Main Matters
 
