@@ -104,7 +104,7 @@ This includes the electrons and possibly ions that makes up the plasma.
 In most cases the ions can be assumed to be stationary, and can thus be replaced by a static background charge density.
 However, OSIRIS does have the ability to simulate ions as well as ionisation of a neutral gas if needed.
 
-A common way to reduce the computational cost is to only simulate the region populated by the propagating beams using a moving window in a Lorentz-boosted frame.
+A common way to reduce the computational cost is to only simulate the region populated by the propagating bunches using a moving window in a Lorentz-boosted frame.
 The latter significantly reduces the number of time steps needed by up to $\approx (i+\betar)\gammar^2$~\cite{vay:2011}.
 
 % ================================================================================================================================ %
@@ -148,17 +148,17 @@ Some key details are outlined in \cite{vay:2016}.
 The flow of the QuickPIC algorithm is slightly different than presented for full PIC in Figure~\ref{Fig:PIC}.
 While the main loop is 3D, a 2D loop is embedded inside it.
 After initialisation, the 3D loop hands the token over to the 2D loop which initialises new slices of plasma, runs its field solver, pushes the plasma particles, and deposits onto the grid.
-The token is then passed back to the 3D routine which pushes the beam particles, and deposits the charge and current of these onto the grid, before returning to the start of the 3D loop again.
+The token is then passed back to the 3D routine which pushes the bunch particles, and deposits the charge and current of these onto the grid, before returning to the start of the 3D loop again.
 For a full review of the flow and the numerical implementation of each of the steps, see Huang \etal~\cite{huang:2006}.
 
 \bigskip
 \noindent\textbf{For example:}
 \bigskip
 
-In QuickPIC, the plasma particle trajectories are parametrised with $[x(\xi), y(\xi), s(\xi)]$, while the beam particles are parametrised with $[x(s),y(s),\xi(s)]$, where $\xi = ct - z$ is the simulation window coordinate and $s=z$ is the position along the simulation.
+In QuickPIC, the plasma particle trajectories are parametrised with $[x(\xi), y(\xi), s(\xi)]$, while the bunch particles are parametrised with $[x(s),y(s),\xi(s)]$, where $\xi = ct - z$ is the simulation window coordinate and $s=z$ is the position along the simulation.
 The variables $\xi$ and $s$ have the same unit, but correspond to the two different time scales, fast and slow respectively~\cite{huang:2006}.
 This approximation implies that for short bunches, $s$ is the same for all plasma particles, reducing the plasma particle motion to movement in the $x,y$-plane.
-At the same time the beam evolves very slowly and with respect to $s$, compared to the fast plasma response on the plasma wavelength scale of the coordinate $\xi$.
+At the same time the bunch evolves very slowly and with respect to $s$, compared to the fast plasma response on the plasma wavelength scale of the coordinate $\xi$.
 When solving the field equations it is thus assumed that $\partial/\partial s = 0$, meaning the corresponding first and second derivative terms can be dropped~\cite{an:2013}.
 The charge and current densities for the bunch are deposited onto the grid in the same way as with the full PIC method.
 
