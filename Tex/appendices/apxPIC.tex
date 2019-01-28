@@ -36,8 +36,8 @@ This method is solved on a grid using Maxwell's equations
 \end{align}
 while the particles are advanced in time using the Newton-Lorentz equations
 \begin{align}
-    \frac{\mathrm{d}x}{\mathrm{d}x} &= \vec{v} \\
-    \frac{\mathrm{d}(\gamma x)}{\mathrm{d}x} &= \frac{q}{m}\left(\vec{E}+\vec{v}\times\vec{B}\right).
+    \frac{\mathrm{d}x}{\mathrm{d}t} &= \vec{v} \\
+    \frac{\mathrm{d}(\gamma x)}{\mathrm{d}t} &= \frac{q}{m}\left(\vec{E}+\vec{v}\times\vec{B}\right).
 \end{align}
 
 The charge density, $\rho,$ and current density, $\vec{J}$, are interpolated onto the grid from the particle positions and velocity respectively, while the electric and magnetic fields are interpolated onto the particles when updating their position and velocity~\cite{vay:2016}.
