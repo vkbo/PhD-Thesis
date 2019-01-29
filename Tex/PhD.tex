@@ -111,14 +111,19 @@
 % Cyan      0.301  0.745  0.933     77   190   238    4dbeeeff
 % Brown     0.635  0.078  0.184    162    20    47    a2142fff
 
+% Colour Pages:
+%  1, 16, 20, 21, 24, 25, 26, 27, 29, 31, 33, 35, 36, 37, 38, 42, 43, 46, 48, 49, 55, 56, 57, 58, 59, 60,
+% 62, 67, 68, 69, 70, 73, 74, 75, 79, 80, 81, 86, 87, 88, 89, 90, 96, 98, 103
+
 % Links
 \usepackage{bookmark}
 \usepackage[verbose,hyperpageref]{backref}
 \usepackage{hyperref}
 % \usepackage{url}
-\hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=m-brown}
+\hypersetup{colorlinks=true, citecolor=d-blue, urlcolor=d-blue, linkcolor=m-brown} % PDF Version
+% \hypersetup{colorlinks=true, citecolor=black,  urlcolor=black,  linkcolor=black} % Print Version
 \urlstyle{same}
-\renewcommand*{\backrefalt}[4]{\ifcase #1 No citations.\or Cited on page #2.\else Cited on pages #2.\fi}
+\renewcommand*{\backrefalt}[4]{\ifcase #1 No citations.\or Cited on page~#2.\else Cited on pages~#2.\fi}
 
 % Tables
 \newcommand{\texthh}[1]{\textsc{#1}}
@@ -143,8 +148,10 @@
 \renewcommand{\rmdefault}{ptm} % Times
 % \renewcommand{\sfdefault}{sb}
 % \renewcommand{\ttdefault}{sourcecodepro}
-\renewcommand{\texttt}[1]{\textcolor{ttcol}{\small\ttfamily #1}}
-\renewcommand{\emph}[1]{\textcolor{emcol}{\slshape #1}}
+\renewcommand{\texttt}[1]{\textcolor{ttcol}{\small\ttfamily #1}} % PDF Version
+% \renewcommand{\texttt}[1]{\textcolor{black}{\small\ttfamily #1}} % Print Version
+\renewcommand{\emph}[1]{\textcolor{emcol}{\slshape #1}} % PDF Version
+% \renewcommand{\emph}[1]{\textcolor{black}{\slshape #1}} % Print Version
 
 % TOC
 %% Content
@@ -334,13 +341,17 @@
     \renewcommand{\thechapter}{\Roman{chapter}}
     \renewcommand{\theHchapter}{\Roman{chapter}}
     \input{includes/incIPAC15}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC15-WEPWA026.pdf}
+    \cleardoublepage
+    \includepdf[pages=1-last,scale=0.95,pagecommand={}]{files/IPAC15-WEPWA026.pdf}
     \input{includes/incNAPAC16}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/NAPAC16-TUA4CO03.pdf}
+    \cleardoublepage
+    \includepdf[pages=1-last,scale=0.95,pagecommand={}]{files/NAPAC16-TUA4CO03.pdf}
     \input{includes/incIPAC17}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/IPAC17-TUPIK061.pdf}
+    \cleardoublepage
+    \includepdf[pages=1-last,scale=0.95,pagecommand={}]{files/IPAC17-TUPIK061.pdf}
     \input{includes/incPeerRev17}
-    \includepdf[pages=1-last,openright,scale=0.95,pagecommand={}]{files/BeamLoading17.pdf}
+    \cleardoublepage
+    \includepdf[pages=1-last,scale=0.95,pagecommand={}]{files/BeamLoading17.pdf}
 
 % Appendices
 
