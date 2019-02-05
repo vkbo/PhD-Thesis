@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PhD Defence - Veronica Berglyd Olsen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <style>
+  </style>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link  = document.createElement("link");
+    link.rel  = "stylesheet";
+    link.type = "text/css";
+    link.href = window.location.search.match(/print-pdf/gi) ? "css/print/pdf.css" : "css/print/paper.css";
+    document.getElementsByTagName("head")[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="s-intro"  data-background-image="files/uio_logo.svg" data-background-size="50%" data-background-opacity="0.2" data-background-position="center left">
+        <h2>PhD Defence</h2>
+        <br/>
+        <p>
+          <b>Veronica Berglyd Olsen</b><br/>
+          University of Oslo<br/>
+          25<sup>th</sup> February, 2019
+        </p>
+      </section>
+
+      <section id="s-title">
+        <div style="display: inline-block; text-align: left;">
+          <svg class="button" expanded="true" width="75px" height="150px" style="vertical-align: top;">
+            <circle class="innerCircle" cx="50%" cy="28%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+              <animate attributeType="SVG" id="uiodot1_1" attributeName="r"       begin="indefinite"    dur="0.8s" repeatCount="1" from="0%"  to="0%"/>
+              <animate attributeType="CSS" id="uiodot1_2" attributeName="opacity" begin="uiodot1_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
+              <animate attributeType="SVG" id="uiodot1_3" attributeName="r"       begin="uiodot1_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
+              <animate attributeType="SVG" id="uiodot1_4" attributeName="r"       begin="uiodot1_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
+            </circle>
+            <circle class="innerCircle" cx="50%" cy="72%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+              <animate attributeType="SVG" id="uiodot2_1" attributeName="r"       begin="indefinite"    dur="1.2s" repeatCount="1" from="0%"  to="0%"/>
+              <animate attributeType="CSS" id="uiodot2_2" attributeName="opacity" begin="uiodot2_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
+              <animate attributeType="SVG" id="uiodot2_3" attributeName="r"       begin="uiodot2_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
+              <animate attributeType="SVG" id="uiodot2_4" attributeName="r"       begin="uiodot2_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
+            </circle>
+          </svg>
+          <div style="display: inline-block; margin: 4px 0 0 20px;">
+            <b>Thesis Title:</b><br>
+            <h3>Beam Loading in a Proton Driven<br>Plasma Wakefield Accelerator</h3>
+            <br>
+            <b>Thesis Advisors:</b><br>
+            Erik Adli &ndash; University of Oslo<br>
+            Patric Muggli &ndash; Max Planck and CERN
+          </div>
+        </div>
+      </section>
+      <section>Slide 2</section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+
+      // Size
+      width:    1280,
+      height:   720,
+      margin:   0.1,
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      // Options
+      controls:             true,
+      controlsTutorial:     true,
+      controlsLayout:       "bottom-right",
+      controlsBackArrows:   "faded",
+      progress:             true,
+      slideNumber:          true,
+      keyboard:             true,
+      overview:             true,
+      center:               true,
+      touch:                true,
+      fragments:            true,
+      fragmentInURL:        false,
+      showNotes:            false,
+      autoPlayMedia:        null,
+      defaultTiming:        120,
+      hideAddressBar:       true,
+      previewLinks:         false,
+      transition:           "convex", // none/fade/slide/convex/concave/zoom
+      transitionSpeed:      "default", // default/fast/slow
+      backgroundTransition: "fade", // none/fade/slide/convex/concave/zoom
+      viewDistance:         3,
+      display:             "block",
+
+      dependencies: [
+        { src: "plugin/math/math.js" },
+        { src: "plugin/notes/notes.js", async: true },
+        { src: "plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      var state = Reveal.getState();
+      console.log(state);
+      if(state.indexh == 1 && state.indexv == 0) {
+        document.getElementById("uiodot1_1").beginElement();
+        document.getElementById("uiodot2_1").beginElement();
+        console.log("Here!");
+      }
+    });
+
+</script>
+</body>
+</html>
