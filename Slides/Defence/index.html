@@ -39,21 +39,21 @@
 
       <section id="s-title">
         <div style="display: inline-block; text-align: left;">
-          <svg class="button" expanded="true" width="75px" height="150px" style="vertical-align: top;">
-            <circle class="innerCircle" cx="50%" cy="28%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+          <svg xmlns="http://www.w3.org/2000/svg" expanded="true" width="75px" height="150px" style="vertical-align: top;">
+            <circle cx="50%" cy="28%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
               <animate attributeType="SVG" id="uiodot1_1" attributeName="r"       begin="indefinite"    dur="0.8s" repeatCount="1" from="0%"  to="0%"/>
               <animate attributeType="CSS" id="uiodot1_2" attributeName="opacity" begin="uiodot1_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
               <animate attributeType="SVG" id="uiodot1_3" attributeName="r"       begin="uiodot1_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
               <animate attributeType="SVG" id="uiodot1_4" attributeName="r"       begin="uiodot1_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
             </circle>
-            <circle class="innerCircle" cx="50%" cy="72%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+            <circle cx="50%" cy="72%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
               <animate attributeType="SVG" id="uiodot2_1" attributeName="r"       begin="indefinite"    dur="1.2s" repeatCount="1" from="0%"  to="0%"/>
               <animate attributeType="CSS" id="uiodot2_2" attributeName="opacity" begin="uiodot2_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
               <animate attributeType="SVG" id="uiodot2_3" attributeName="r"       begin="uiodot2_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
               <animate attributeType="SVG" id="uiodot2_4" attributeName="r"       begin="uiodot2_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
             </circle>
           </svg>
-          <div style="display: inline-block; margin: 4px 0 0 20px;">
+          <div style="display: inline-block; margin: 8px 0 0 24px;">
             <b>Thesis Title:</b><br>
             <h3>Beam Loading in a Proton Driven<br>Plasma Wakefield Accelerator</h3>
             <br>
@@ -63,7 +63,50 @@
           </div>
         </div>
       </section>
-      <section>Slide 2</section>
+
+      <section id="s-outline">
+        <div style="display: inline-block; text-align: left;">
+          <h3>Outline</h3>
+          <ul style="margin-left: 48px;">
+            <li class="fragment fade-in-then-semi-out">Particle Accelerators and Why We Need Them</li>
+            <li class="fragment fade-in-then-semi-out">What is a Plasma Wakefield Accelerator Anyway?</li>
+            <li class="fragment fade-in-then-semi-out">... So, How Do You Build One?</li>
+            <li class="fragment fade-in-then-semi-out">The Challenges with Plasma Wakefield</li>
+            <li class="fragment fade-in-then-semi-out">Solutions from Computer Simulations</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="s-acc">
+
+        <section id="s-acc-start">
+          <div style="display: inline-block; text-align: left;">
+            <h3>Particle Accelerators<br>... and Why We Need Them</h3>
+            <br/>
+            <div style="text-align: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="250px" viewBox="0 0 800 250">
+                <path id="accpath" fill="none" stroke="#5281e7" stroke-width="2" d="m400,10 a-115,-380 -90 1,0 0,230 a115,380 -90 1,0 0,-230"/>
+                <circle cx="0" cy="0" r="7" fill="#e75252" stroke="#b33f3f" stroke-width="2">
+                  <animateMotion id="acc_1" begin="indefinite" dur="2.5s" repeatCount="indefinite" keyPoints="1;0" calcMode="linear" keyTimes="0;1">
+                    <mpath xlink:href="#accpath"/>
+                  </animateMotion>
+                </circle>
+                <circle cx="0" cy="0" r="7" fill="#5ee752" stroke="#49b33f" stroke-width="2">
+                  <animateMotion id="acc_2" begin="indefinite" dur="2.5s" repeatCount="indefinite" keyPoints="0;1" calcMode="linear" keyTimes="0;1">
+                    <mpath xlink:href="#accpath"/>
+                  </animateMotion>
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <section id="s-acc-start">
+          <div style="display: inline-block; text-align: left;">
+            Slide 2
+          </div>
+        </section>
+      </section>
     </div>
   </div>
 
@@ -114,13 +157,27 @@
       ]
     });
 
-    Reveal.addEventListener( 'slidechanged', function( event ) {
+    var accOn = false;
+    Reveal.addEventListener("slidechanged", function(event) {
       var state = Reveal.getState();
       console.log(state);
       if(state.indexh == 1 && state.indexv == 0) {
         document.getElementById("uiodot1_1").beginElement();
         document.getElementById("uiodot2_1").beginElement();
-        console.log("Here!");
+        console.log("Starting UiO-dots animation.");
+      }
+      if(state.indexh == 3 && state.indexv == 0) {
+        document.getElementById("acc_1").beginElement();
+        document.getElementById("acc_2").beginElement();
+        accOn = true;
+        console.log("Starting UiO-dots animation.");
+      } else {
+        if(accOn) {
+          document.getElementById("acc_1").endElement();
+          document.getElementById("acc_2").endElement();
+          accOn = false;
+          console.log("Stoping UiO-dots animation.");
+        }
       }
     });
 
