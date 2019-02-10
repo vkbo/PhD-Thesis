@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" expanded="true" width="75px" height="150px" style="vertical-align: top;">
+  <circle cx="50%" cy="28%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+    <animate attributeType="SVG" id="uiodot1_1" attributeName="r"       begin="indefinite"    dur="0.8s" repeatCount="1" from="0%"  to="0%"/>
+    <animate attributeType="CSS" id="uiodot1_2" attributeName="opacity" begin="uiodot1_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
+    <animate attributeType="SVG" id="uiodot1_3" attributeName="r"       begin="uiodot1_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
+    <animate attributeType="SVG" id="uiodot1_4" attributeName="r"       begin="uiodot1_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
+  </circle>
+  <circle cx="50%" cy="72%" r="0%" fill="#ed1c24" stroke="#cf181f" opacity="0" stroke-width="2%">
+    <animate attributeType="SVG" id="uiodot2_1" attributeName="r"       begin="indefinite"    dur="1.2s" repeatCount="1" from="0%"  to="0%"/>
+    <animate attributeType="CSS" id="uiodot2_2" attributeName="opacity" begin="uiodot2_1.end" dur="0.1s" repeatCount="1" from="0"   to="1"   fill="freeze"/>
+    <animate attributeType="SVG" id="uiodot2_3" attributeName="r"       begin="uiodot2_1.end" dur="0.3s" repeatCount="1" from="5%"  to="30%"/>
+    <animate attributeType="SVG" id="uiodot2_4" attributeName="r"       begin="uiodot2_3.end" dur="0.1s" repeatCount="1" from="30%" to="20%" fill="freeze"/>
+  </circle>
+</svg>

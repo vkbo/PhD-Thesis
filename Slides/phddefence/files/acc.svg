@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="250px" viewBox="0 0 800 250">
+  <defs>
+    <radialGradient id="particle" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%"   style="stop-color:#7ea0eb; stop-opacity:1.0" />
+      <stop offset="50%"  style="stop-color:#b8c8e9; stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffffff; stop-opacity:0.0" />
+    </radialGradient>
+  </defs>
+  <path id="accpath" fill="none" stroke="#5281e7" stroke-width="3" d="m400,10 a-115,-380 -90 1,0 0,230 a115,380 -90 1,0 0,-230"/>
+  <circle cx="0" cy="0" r="10" fill="url(#particle)">
+    <animateMotion id="acc_1" begin="indefinite" dur="2.5s" repeatCount="indefinite" keyPoints="1;0" calcMode="linear" keyTimes="0;1">
+      <mpath xlink:href="#accpath"/>
+    </animateMotion>
+  </circle>
+  <circle cx="0" cy="0" r="10"  fill="url(#particle)">
+    <animateMotion id="acc_2" begin="indefinite" dur="2.5s" repeatCount="indefinite" keyPoints="0;1" calcMode="linear" keyTimes="0;1">
+      <mpath xlink:href="#accpath"/>
+    </animateMotion>
+  </circle>
+</svg>
