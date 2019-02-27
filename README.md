@@ -3,10 +3,13 @@
 ## Beam Loading in a Proton Driven Plasma Wakefield Accelerator
 
 **Veronica K. Berglyd Olsen**<br/>
-**Submitted:** 15.10.2018<br/>
-**Published:** 25.02.2019<br/>
 
-Download: [PhD Thesis - Final - Full Colour.pdf](https://github.com/vkbo/PhD-Thesis/releases/download/v1.1/PhD.Thesis.-.Final.-.Full.Colour.pdf)
+**Submitted:** 15.10.2018<br/>
+**Defended:** 25.02.2019<br/>
+
+**Download:**
+* [PhD Thesis - As Printed](https://github.com/vkbo/PhD-Thesis/releases/download/v1.1/PhD.Thesis.-.Final.-.Full.Colour.pdf)
+* [PhD Thesis - Minor Corrections after Defence](https://github.com/vkbo/PhD-Thesis/releases/download/v1.1.1/PhD.pdf)
 
 ## Abstract
 
