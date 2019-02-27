@@ -393,13 +393,21 @@
 
 \phantomsection
 \bookmarksetup{startatroot}
-\pdfbookmark{End}{EndOfDoc}
 \vspace*{\fill}
 \footnotesize
 \noindent Document compiled on \today~at~\currenttime
 \newline
 \pdftexbanner
 \cleardoublepage
+
+\pagestyle{plain}
+\normalsize
+\pdfbookmark{Corrections}{Corrections}
+\chapter*{Corrections}
+Corrections made to this document after publication of thesis prior to defence on 25\ts{th} of February, 2019.
+This excludes minor typographic and grammatical corrections.
+\paragraph{Figure~\ref{Fig:BPI:BLoad}:} Changed units on blue vertical axis from ``MeV'' to ``MV/m''.
+\paragraph{Section~\ref{Sim:PBPreMod}:} Changed ``$\Delta z \gtrsim \lambda_{pe}/10$'' to ``$\Delta z \lesssim \lambda_{pe}/10$''.
 
 \end{document}
 
